@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Concert Companion</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script src="./js/keys.js"></script>
+    <script src="./js/mapbox-geocoder-utils.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoianJ1ZWRhcyIsImEiOiJja29lZzZzaHAwYTNtMm5ucjAzajdleDkyIn0.yY13LnqWTQzsI8ESEwK-1A';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            center: [-98.48725, 29.44879], // starting position [lng, lat]
+            zoom: 11, // starting zoom
+        });
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
