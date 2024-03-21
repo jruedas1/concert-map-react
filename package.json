@@ -4,7 +4,7 @@
   },
 
   "scripts": {
-    "db": "json-server -p 3001 --watch db.json"
+    "db": "json-server -p 3001 --watch data/db.json"
   }
 
 }

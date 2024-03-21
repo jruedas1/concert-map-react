@@ -3,6 +3,8 @@ const fetchVenues = async () => {
     return await venues.json();
 }
 
+
+
 const updateVenue = async (id, venue) => {
     try {
         const url = `http://localhost:3001/venues/${id}`;
@@ -22,7 +24,8 @@ const updateVenue = async (id, venue) => {
 
 (async () => {
     const venues = await fetchVenues();
-    venues.forEach(venue => {
+
+    venues.forEach((venue) => {
        if (venue.longitude && venue.latitude){
            const venueMarker = new mapboxgl.Marker();
            venueMarker.setLngLat([venue.longitude, venue.latitude]);
@@ -32,7 +35,7 @@ const updateVenue = async (id, venue) => {
            venueMarker.setPopup(popup);
        } else {
            console.log(venue);
-           const searchString = `=${venue.name}, ${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`;
+           const searchString = `=${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`;
            geocode(searchString, MAPBOX_API_KEY).then(coords => {
                if (coords){
                    const venueMarker = new mapboxgl.Marker();
