@@ -1,0 +1,7 @@
+.marker {
+    background-image: url('../img/noun-musical-note-1014122.svg');
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
