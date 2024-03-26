@@ -1,5 +1,4 @@
-import { fetchData, fetchYear } from "./concertsDataAccess.js";
-
+import {fetchYear} from "./concertsDataAccess.js";
 
 // technique for setting up callback with extra parameters:
 // https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -36,12 +35,29 @@ const emptyContent = () => {
 const yearSelector = document.querySelector("#year-selector");
 const handleYearSelection = async event => {
     emptyContent();
-    console.log(event.target.value);
     const dataOnSelectedYear = await fetchYear(event.target.value);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(venues);
 }
 yearSelector.addEventListener('change', handleYearSelection);
+
+const decadeSelector = document.querySelector("#decade-selector");
+const selectedDecadeOutput = document.querySelector("#selected-decade");
+decadeSelector.addEventListener('input', event => {
+    const selectedDecade = parseInt(event.target.value);
+    selectedDecadeOutput.textContent = `${selectedDecade}s`;
+    const existingOptions = yearSelector.children;
+    const newOptions = [];
+    for (let i = selectedDecade; i < selectedDecade + 10; i++){
+        const option = document.createElement('option');
+        option.text = i.toString();
+        option.value = i.toString();
+        newOptions.push(option);
+    }
+    yearSelector.replaceChildren(...newOptions);
+});
+
+
 
 const outputVenuesToMap = venuesArray => {
     venuesArray.forEach((venue) => {
