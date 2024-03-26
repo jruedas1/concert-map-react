@@ -43,7 +43,7 @@ yearSelector.addEventListener('change', handleYearSelection);
 
 const decadeSelector = document.querySelector("#decade-selector");
 const selectedDecadeOutput = document.querySelector("#selected-decade");
-decadeSelector.addEventListener('input', event => {
+decadeSelector.addEventListener('input', async event => {
     const selectedDecade = parseInt(event.target.value);
     selectedDecadeOutput.textContent = `${selectedDecade}s`;
     const existingOptions = yearSelector.children;
@@ -55,6 +55,12 @@ decadeSelector.addEventListener('input', event => {
         newOptions.push(option);
     }
     yearSelector.replaceChildren(...newOptions);
+    let selectedYear = document.querySelector("#year-selector").value;
+
+    const dataOnSelectedYear = await fetchYear(selectedYear);
+    const venues = dataOnSelectedYear.venues;
+    emptyContent();
+    outputVenuesToMap(venues);
 });
 
 
@@ -79,6 +85,7 @@ const outputVenuesToMap = venuesArray => {
 
 (async () => {
     removeMarkers();
+    document.querySelector("#decade-selector").value = 1970;
     let selectedYear = document.querySelector("#year-selector").value;
 
     const dataOnSelectedYear = await fetchYear(selectedYear);
