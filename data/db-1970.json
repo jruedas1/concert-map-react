@@ -1,0 +1,2839 @@
+{
+  "years" : [
+    {
+      "id" : 1970,
+      "venues" : [
+        {
+          "address" : "One Trintiy Place",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Milton Ryan (violin)",
+              "Day" : 2,
+              "Event_Artists" : "Milton Ryan (violin)",
+              "Event_Formulas" : null,
+              "Index" : 2603,
+              "Month" : "March",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lyova Anderson (piano)",
+              "Day" : 1,
+              "Event_Artists" : "Lyova Anderson (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2706,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lee Ann Hendryx",
+              "Day" : 6,
+              "Event_Artists" : "Lee Ann Hendryx, George Christ (organ)",
+              "Event_Formulas" : null,
+              "Index" : 2713,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Christ (organ)",
+              "Day" : 6,
+              "Event_Artists" : "Lee Ann Hendryx, George Christ (organ)",
+              "Event_Formulas" : null,
+              "Index" : 2713,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Trinity University Community Orchestra",
+              "Day" : 14,
+              "Event_Artists" : "Trinity University Community Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2720,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sam Rotman (piano)",
+              "Day" : 15,
+              "Event_Artists" : "Sam Rotman (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2721,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sam Rotman (piano)",
+              "Day" : 16,
+              "Event_Artists" : "Sam Rotman (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2722,
+              "Month" : "December",
+              "Venue" : "Ruth Taylor Theater",
+              "Year" : 1970
+            }
+          ],
+          "id" : 583,
+          "latitude" : 29.463766,
+          "longitude" : -98.483775,
+          "name" : "Ruth Taylor Theater",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : "2012 Broadway",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "The Le Jazz Trio featuring Morva Jackson",
+              "Day" : 19,
+              "Event_Artists" : "The Le Jazz Trio featuring Morva Jackson",
+              "Event_Formulas" : null,
+              "Index" : 2613,
+              "Month" : "April",
+              "Venue" : "Club Ron Rico",
+              "Year" : 1970
+            }
+          ],
+          "id" : 154,
+          "latitude" : 29.450211,
+          "longitude" : -98.482663,
+          "name" : "Club Ron Rico",
+          "state" : "Texas",
+          "zip" : 78215
+        },
+        {
+          "address" : "7703 Floyd Curl Dr",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Madrigal Singers of San Antonio College",
+              "Day" : 21,
+              "Event_Artists" : "Madrigal Singers of San Antonio College",
+              "Event_Formulas" : null,
+              "Index" : 2729,
+              "Month" : "December",
+              "Venue" : "University of Texas Health Science Center at San Antonio - UT Health San Antonio",
+              "Year" : 1970
+            }
+          ],
+          "id" : 967,
+          "latitude" : 29.508487,
+          "longitude" : -98.573526,
+          "name" : "University of Texas Health Science Center at San Antonio - UT Health San Antonio",
+          "state" : "Texas",
+          "zip" : 78229
+        },
+        {
+          "address" : "801 N. Main Street",
+          "city" : "Bandera",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Arkey Blue and the Blue Cowboys",
+              "Day" : 30,
+              "Event_Artists" : "Arkey Blue and the Blue Cowboys",
+              "Event_Formulas" : null,
+              "Index" : 2678,
+              "Month" : "August",
+              "Venue" : "Cabaret",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush and the Bandoleros",
+              "Day" : 18,
+              "Event_Artists" : "Johnny Bush and the Bandoleros",
+              "Event_Formulas" : null,
+              "Index" : 2685,
+              "Month" : "September",
+              "Venue" : "Cabaret",
+              "Year" : 1970
+            }
+          ],
+          "id" : 108,
+          "latitude" : 29.727007,
+          "longitude" : -99.072459,
+          "name" : "Cabaret",
+          "state" : "Texas",
+          "zip" : 78003
+        },
+        {
+          "address" : "1619 S Flores St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Rosita Fernandez",
+              "Day" : 5,
+              "Event_Artists" : "Bishop Flores' consecration luncheon: Rosita Fernandez",
+              "Event_Formulas" : "Bishop Flores' consecration luncheon",
+              "Index" : 2621,
+              "Month" : "May",
+              "Venue" : "St. Henry's Catholic Church",
+              "Year" : 1970
+            }
+          ],
+          "id" : 965,
+          "latitude" : null,
+          "longitude" : null,
+          "name" : "St. Henry's Catholic Church",
+          "state" : "Texas",
+          "zip" : 78204
+        },
+        {
+          "address" : "434 S Alamo St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Jane and Don Brasswell",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Jane and Don Brasswell",
+              "Event_Formulas" : null,
+              "Index" : 2614,
+              "Month" : "April",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Jane and Don Brasswell",
+              "Event_Formulas" : null,
+              "Index" : 2614,
+              "Month" : "April",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 8,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Maria Moreno Dancers",
+              "Event_Formulas" : null,
+              "Index" : 2622,
+              "Month" : "May",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Maria Moreno Dancers",
+              "Day" : 8,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Maria Moreno Dancers",
+              "Event_Formulas" : null,
+              "Index" : 2622,
+              "Month" : "May",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Raphael",
+              "Day" : 16,
+              "Event_Artists" : "Raphael",
+              "Event_Formulas" : null,
+              "Index" : 2624,
+              "Month" : "May",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar",
+              "Day" : 11,
+              "Event_Artists" : "Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar, Frank Garcia and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2663,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Garcia and his Orchestra",
+              "Day" : 11,
+              "Event_Artists" : "Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar, Frank Garcia and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2663,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ambrosia Urriega and Hermanos Gallardo",
+              "Day" : 12,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar, Paul Elizondo and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2664,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mariachi de Mexico with Luis Baldera Tio Lauriano Siimon Aguilar",
+              "Day" : 12,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar, Paul Elizondo and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2664,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Paul Elizondo",
+              "Day" : 12,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Mexico with Luis Baldera Tio Lauriano and Siimon Aguilar, Paul Elizondo and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2664,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mariachi Eco de Mexico",
+              "Day" : 18,
+              "Event_Artists" : "Mariachi Eco de Mexico, Ballet Folklorico de Juan Casado, Sonora Caribe",
+              "Event_Formulas" : null,
+              "Index" : 2666,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ballet Folklorico de Juan Casado",
+              "Day" : 18,
+              "Event_Artists" : "Mariachi Eco de Mexico, Ballet Folklorico de Juan Casado, Sonora Caribe",
+              "Event_Formulas" : null,
+              "Index" : 2666,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sonora Caribe",
+              "Day" : 18,
+              "Event_Artists" : "Mariachi Eco de Mexico, Ballet Folklorico de Juan Casado, Sonora Caribe",
+              "Event_Formulas" : null,
+              "Index" : 2666,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ambrosia Urriega and Hermanos Gallardo",
+              "Day" : 19,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Eco Mexico, Sonora Caribe, Ballet Folklorico de Juan Casado",
+              "Event_Formulas" : null,
+              "Index" : 2667,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mariachi de Eco Mexico",
+              "Day" : 19,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Eco Mexico, Sonora Caribe, Ballet Folklorico de Juan Casado",
+              "Event_Formulas" : null,
+              "Index" : 2667,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sonora Caribe",
+              "Day" : 19,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Eco Mexico, Sonora Caribe, Ballet Folklorico de Juan Casado",
+              "Event_Formulas" : null,
+              "Index" : 2667,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ballet Folklorico de Juan Casado",
+              "Day" : 19,
+              "Event_Artists" : "Ambrosia Urriega and Hermanos Gallardo, Mariachi de Eco Mexico, Sonora Caribe, Ballet Folklorico de Juan Casado",
+              "Event_Formulas" : null,
+              "Index" : 2667,
+              "Month" : "July",
+              "Venue" : "Hemisfair Plaza",
+              "Year" : 1970
+            }
+          ],
+          "id" : 845,
+          "latitude" : 29.419552,
+          "longitude" : -98.487966,
+          "name" : "Hemisfair Plaza",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "5432 WW White",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Johnny Bush and the Bandoleros",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Leon Rausch",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bobby Stone and the\nNewsboys",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Rusty McDonald",
+              "Day" : 9,
+              "Event_Artists" : "Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Slim Roberts and His Men of\nthe West",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jimmy Martin and the Texas Playboys",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lee Harmon and the Harmonaires",
+              "Day" : 9,
+              "Event_Artists" : "Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin andthe Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Lee Wills",
+              "Day" : 9,
+              "Event_Artists" : " Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "The Circle C Band",
+              "Day" : 9,
+              "Event_Artists" : "Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin and the Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Adolph Hofner",
+              "Day" : 9,
+              "Event_Artists" : "Bob Wills Benefit Concert: Johnny Bush and the Bandoleros, Leon Rausch, Bobby Stone and the Newsboys, Rusty McDonald, Slim Roberts and His Men of the West, Jimmy Martin andthe Texas Playboys, Lee Harmon and the Harmonaires, Johnny Lee Wills, the Circle Band, Adolph Hofner",
+              "Event_Formulas" : "Bob Wills Benefit Concert",
+              "Index" : 2586,
+              "Month" : "February",
+              "Venue" : "Farmer's Daughter",
+              "Year" : 1970
+            }
+          ],
+          "id" : 243,
+          "latitude" : 29.41923,
+          "longitude" : -98.394889,
+          "name" : "Farmer's Daughter",
+          "state" : "Texas",
+          "zip" : 78222
+        },
+        {
+          "address" : "800 W Ashby Pl",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Flash",
+              "Day" : 2,
+              "Event_Artists" : "Flash",
+              "Event_Formulas" : "S.A.L.T. 'N FLASH",
+              "Index" : 2653,
+              "Month" : "July",
+              "Venue" : "The Public Theater of San Antonio",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Flash",
+              "Day" : 3,
+              "Event_Artists" : "Flash",
+              "Event_Formulas" : "S.A.L.T. 'N FLASH",
+              "Index" : 2657,
+              "Month" : "July",
+              "Venue" : "The Public Theater of San Antonio",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Flash",
+              "Day" : 4,
+              "Event_Artists" : "Flash",
+              "Event_Formulas" : "S.A.L.T. 'N FLASH",
+              "Index" : 2659,
+              "Month" : "July",
+              "Venue" : "The Public Theater of San Antonio",
+              "Year" : 1970
+            }
+          ],
+          "id" : 959,
+          "latitude" : 29.448197,
+          "longitude" : -98.502522,
+          "name" : "The Public Theater of San Antonio",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : "4301 Broadway",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Doug Fetters (trumpet)",
+              "Day" : 6,
+              "Event_Artists" : "Doug Fetters (trumpet)",
+              "Event_Formulas" : null,
+              "Index" : 2712,
+              "Month" : "December",
+              "Venue" : "University of the Incarnate Word",
+              "Year" : 1970
+            }
+          ],
+          "id" : 800,
+          "latitude" : 29.466944,
+          "longitude" : -98.465851,
+          "name" : "University of the Incarnate Word",
+          "state" : "Texas",
+          "zip" : 78209
+        },
+        {
+          "address" : "434 S Alamo St ",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 29,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2625,
+              "Month" : "May",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 30,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2626,
+              "Month" : "May",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 31,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2627,
+              "Month" : "May",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 1,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2629,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 2,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2630,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 3,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2631,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 4,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2632,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Four Lads",
+              "Day" : 5,
+              "Event_Artists" : "Four Lads",
+              "Event_Formulas" : null,
+              "Index" : 2633,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 12,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2635,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 13,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2638,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 14,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2639,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 15,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2640,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 16,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2641,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 17,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2642,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martha and the Vandellas",
+              "Day" : 18,
+              "Event_Artists" : "Martha and the Vandellas",
+              "Event_Formulas" : null,
+              "Index" : 2643,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 28,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2647,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 29,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2648,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 30,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2649,
+              "Month" : "June",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 1,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2650,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 2,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2651,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 3,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2654,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lionel Hampton",
+              "Day" : 4,
+              "Event_Artists" : "Lionel Hampton",
+              "Event_Formulas" : null,
+              "Index" : 2658,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Sinatra Jr.",
+              "Day" : 5,
+              "Event_Artists" : "Frank Sinatra Jr.",
+              "Event_Formulas" : null,
+              "Index" : 2660,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Sinatra Jr.",
+              "Day" : 6,
+              "Event_Artists" : "Frank Sinatra Jr.",
+              "Event_Formulas" : null,
+              "Index" : 2661,
+              "Month" : "July",
+              "Venue" : "Club Abrazo",
+              "Year" : 1970
+            }
+          ],
+          "id" : 146,
+          "latitude" : 29.419552,
+          "longitude" : -98.487966,
+          "name" : "Club Abrazo",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "200 E Market St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Jim Cullum Jazz Band",
+              "Day" : 6,
+              "Event_Artists" : "Second Annual World Series of Jazz: Pete Fountain vs. Jim Cullum's Happy Jazz Band",
+              "Event_Formulas" : "Second Annual World Series of Jazz",
+              "Index" : 2634,
+              "Month" : "June",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Pete Fountain and his New Orleans Jazz Stars",
+              "Day" : 6,
+              "Event_Artists" : "Second Annual World Series of Jazz: Pete Fountain and his New Orleans Jazz Stars vs. Jim Cullum's Happy Jazz Band",
+              "Event_Formulas" : "Second Annual World Series of Jazz",
+              "Index" : 2634,
+              "Month" : "June",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Duke Ellington and his Orchestra",
+              "Day" : 4,
+              "Event_Artists" : "Duke Ellington and his Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2697,
+              "Month" : "November",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra ",
+              "Day" : 3,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Robert Casadesus (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2710,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Robert Casadesus (piano)",
+              "Day" : 3,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Robert Casadesus (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2710,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 5,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Robert Casadesus (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2711,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : " Robert Casadesus (piano)",
+              "Day" : 5,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Robert Casadesus (piano)",
+              "Event_Formulas" : null,
+              "Index" : 2711,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 17,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2723,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Julius Rudel",
+              "Day" : 17,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2723,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 18,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2725,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Julius Rudel",
+              "Day" : 18,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2725,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2726,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Julius Rudel",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Julius Rudel",
+              "Event_Formulas" : null,
+              "Index" : 2726,
+              "Month" : "December",
+              "Venue" : "Lila Cockrell Theatre",
+              "Year" : 1970
+            }
+          ],
+          "id" : 399,
+          "latitude" : 29.422052,
+          "longitude" : -98.486184,
+          "name" : "Lila Cockrell Theatre",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "1 Dominion Dr",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Bobby Blue Bland",
+              "Day" : 1,
+              "Event_Artists" : "Bobby Blue Bland",
+              "Event_Formulas" : null,
+              "Index" : 2619,
+              "Month" : "May",
+              "Venue" : "Eastwood Country Club",
+              "Year" : 1970
+            }
+          ],
+          "id" : 217,
+          "latitude" : 29.655529,
+          "longitude" : -98.617408,
+          "name" : "Eastwood Country Club",
+          "state" : "Texas",
+          "zip" : 78257
+        },
+        {
+          "address" : "1514 W César E Chávez Blvd",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Mariachi Juvenile de Guadalajara",
+              "Day" : 1,
+              "Event_Artists" : "Mariachi Juvenile de Guadalajara",
+              "Event_Formulas" : null,
+              "Index" : 2602,
+              "Month" : "March",
+              "Venue" : "Lanier High School",
+              "Year" : 1970
+            }
+          ],
+          "id" : 380,
+          "latitude" : null,
+          "longitude" : null,
+          "name" : "Lanier High School",
+          "state" : "Texas",
+          "zip" : 78207
+        },
+        {
+          "address" : "901 E Drexel ",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Ron and Patricia Owens",
+              "Day" : 29,
+              "Event_Artists" : "Ron and Patricia Owens",
+              "Event_Formulas" : null,
+              "Index" : 2704,
+              "Month" : "November",
+              "Venue" : "Baptist Temple Church",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ron and Patricia Owens",
+              "Day" : 30,
+              "Event_Artists" : "Ron and Patricia Owens",
+              "Event_Formulas" : null,
+              "Index" : 2705,
+              "Month" : "November",
+              "Venue" : "Baptist Temple Church",
+              "Year" : 1970
+            }
+          ],
+          "id" : 961,
+          "latitude" : 29.400786,
+          "longitude" : -98.456272,
+          "name" : "Baptist Temple Church",
+          "state" : "Texas",
+          "zip" : 78210
+        },
+        {
+          "address" : "12002 Jones Maltsberger Rd",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "B. J. Thomas",
+              "Day" : 12,
+              "Event_Artists" : "B. J. Thomas, Blues Image, Flash",
+              "Event_Formulas" : null,
+              "Index" : 2587,
+              "Month" : "February",
+              "Venue" : "Blossom Athletic Center",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Blues Image",
+              "Day" : 12,
+              "Event_Artists" : "B. J. Thomas, Blues Image, Flash",
+              "Event_Formulas" : null,
+              "Index" : 2587,
+              "Month" : "February",
+              "Venue" : "Blossom Athletic Center",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Flash",
+              "Day" : 12,
+              "Event_Artists" : "B. J. Thomas, Blues Image, Flash",
+              "Event_Formulas" : null,
+              "Index" : 2587,
+              "Month" : "February",
+              "Venue" : "Blossom Athletic Center",
+              "Year" : 1970
+            }
+          ],
+          "id" : 958,
+          "latitude" : 29.548031,
+          "longitude" : -98.466249,
+          "name" : "Blossom Athletic Center",
+          "state" : "Texas",
+          "zip" : 78216
+        },
+        {
+          "address" : "3201 E Houston St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "James Brown",
+              "Day" : 30,
+              "Event_Artists" : "James Brown",
+              "Event_Formulas" : null,
+              "Index" : 2584,
+              "Month" : "January",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sonny James",
+              "Day" : 13,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Sonny James",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2588,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sonny James",
+              "Day" : 14,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Sonny James",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2589,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sonny James",
+              "Day" : 15,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Sonny James",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2590,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Dolly Parton",
+              "Day" : 16,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2591,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Dolly Parton",
+              "Day" : 17,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2592,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Dolly Parton",
+              "Day" : 18,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2593,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Dolly Parton",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2594,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Porter Waggoner ",
+              "Day" : 16,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2591,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Porter Waggoner ",
+              "Day" : 17,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2592,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Porter Waggoner ",
+              "Day" : 18,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2593,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Porter Waggoner ",
+              "Day" : 19,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: Porter Waggoner & Dolly Parton",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2594,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Jones ",
+              "Day" : 20,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones, Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2596,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tammy Wynette",
+              "Day" : 20,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones, Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2596,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tammy Wynette",
+              "Day" : 21,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones & Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2598,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tammy Wynette",
+              "Day" : 22,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones & Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2599,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Jones",
+              "Day" : 21,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones & Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2598,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Jones",
+              "Day" : 22,
+              "Event_Artists" : "San Antonio Stock Show & Rodeo: George Jones & Tammy Wynette",
+              "Event_Formulas" : "San Antonio Stock Show & Rodeo",
+              "Index" : 2599,
+              "Month" : "February",
+              "Venue" : "Freeman Coliseum",
+              "Year" : 1970
+            }
+          ],
+          "id" : 257,
+          "latitude" : 29.42597,
+          "longitude" : -98.442844,
+          "name" : "Freeman Coliseum",
+          "state" : "Texas",
+          "zip" : 78219
+        },
+        {
+          "address" : "512 W. Houston",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Antonio Aguilar",
+              "Day" : 13,
+              "Event_Artists" : "Lopez Brothers Benefit: Antonio Aguilar, Monterey Boys' Home Mariachi",
+              "Event_Formulas" : "Lopez Brothers Benefit",
+              "Index" : 2719,
+              "Month" : "December",
+              "Venue" : "Alameda Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Monterey Boys' Home Mariachi",
+              "Day" : 13,
+              "Event_Artists" : "Lopez Brothers Benefit: Antonio Aguilar, Monterey Boys' Home Mariachi",
+              "Event_Formulas" : "Lopez Brothers Benefit",
+              "Index" : 2719,
+              "Month" : "December",
+              "Venue" : "Alameda Theater",
+              "Year" : 1970
+            }
+          ],
+          "id" : 13,
+          "latitude" : 29.42543,
+          "longitude" : -98.521993,
+          "name" : "Alameda Theater",
+          "state" : "Texas",
+          "zip" : 78207
+        },
+        {
+          "address" : "11 St Lukes Ln",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "San Antonio Choral Society",
+              "Day" : 18,
+              "Event_Artists" : "San Antonio Choral Society",
+              "Event_Formulas" : null,
+              "Index" : 2724,
+              "Month" : "December",
+              "Venue" : "St. Luke's Episcopal Church",
+              "Year" : 1970
+            }
+          ],
+          "id" : 966,
+          "latitude" : 29.48488,
+          "longitude" : -98.47963,
+          "name" : "St. Luke's Episcopal Church",
+          "state" : "Texas",
+          "zip" : 78209
+        },
+        {
+          "address" : "100 Auditorium Cir.",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Spirit",
+              "Day" : 9,
+              "Event_Artists" : "Spirit, Country Joe & the Fish",
+              "Event_Formulas" : null,
+              "Index" : 2731,
+              "Month" : "January",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Country Joe & the Fish",
+              "Day" : 9,
+              "Event_Artists" : "Spirit, Country Joe & the Fish",
+              "Event_Formulas" : null,
+              "Index" : 2731,
+              "Month" : "January",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Vikki Carr",
+              "Day" : 16,
+              "Event_Artists" : "Vikki Carr",
+              "Event_Formulas" : null,
+              "Index" : 2582,
+              "Month" : "January",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jefferson Airplane",
+              "Day" : 7,
+              "Event_Artists" : "Jefferson Airplane, Glen McKay Light Show",
+              "Event_Formulas" : null,
+              "Index" : 2605,
+              "Month" : "March",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Glen McKay Light Show",
+              "Day" : 7,
+              "Event_Artists" : "Jefferson Airplane, Glen McKay Light Show",
+              "Event_Formulas" : null,
+              "Index" : 2605,
+              "Month" : "March",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Faron Young",
+              "Day" : 3,
+              "Event_Artists" : "KBER Grand Old Opry: Faron Young, Charley Pride, Johnny Duncan, Johnny & Jonie Mosby & Carol Jones",
+              "Event_Formulas" : "KBER Grand Old Opry",
+              "Index" : 2620,
+              "Month" : "May",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Charley Pride",
+              "Day" : 3,
+              "Event_Artists" : "KBER Grand Old Opry: Faron Young, Charley Pride, Johnny Duncan, Johnny & Jonie Mosby & Carol Jones",
+              "Event_Formulas" : "KBER Grand Old Opry",
+              "Index" : 2620,
+              "Month" : "May",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Duncan",
+              "Day" : 3,
+              "Event_Artists" : "KBER Grand Old Opry: Faron Young, Charley Pride, Johnny Duncan, Johnny & Jonie Mosby & Carol Jones",
+              "Event_Formulas" : "KBER Grand Old Opry",
+              "Index" : 2620,
+              "Month" : "May",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny and Jonie Mosby",
+              "Day" : 3,
+              "Event_Artists" : "KBER Grand Old Opry: Faron Young, Charley Pride, Johnny Duncan, Johnny & Jonie Mosby & Carol Jones",
+              "Event_Formulas" : "KBER Grand Old Opry",
+              "Index" : 2620,
+              "Month" : "May",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Carol Jones",
+              "Day" : 3,
+              "Event_Artists" : "KBER Grand Old Opry: Faron Young, Charley Pride, Johnny Duncan, Johnny & Jonie Mosby & Carol Jones",
+              "Event_Formulas" : "KBER Grand Old Opry",
+              "Index" : 2620,
+              "Month" : "May",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Zappa and the Mothers of Invention",
+              "Day" : 12,
+              "Event_Artists" : "Frank Zappa and the Mothers of Invention, Love, Captain Beefheart",
+              "Event_Formulas" : null,
+              "Index" : 2637,
+              "Month" : "June",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Love",
+              "Day" : 12,
+              "Event_Artists" : "Frank Zappa and the Mothers of Invention, Love, Captain Beefheart",
+              "Event_Formulas" : null,
+              "Index" : 2637,
+              "Month" : "June",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Captain Beefheart",
+              "Day" : 12,
+              "Event_Artists" : "Frank Zappa and the Mothers of Invention, Love, Captain Beefheart",
+              "Event_Formulas" : null,
+              "Index" : 2637,
+              "Month" : "June",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "ZZ Top",
+              "Day" : 18,
+              "Event_Artists" : "ZZ Top",
+              "Event_Formulas" : null,
+              "Index" : 2675,
+              "Month" : "August",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Loretta Lynn",
+              "Day" : 13,
+              "Event_Artists" : "Stars of the Grand Old Opry: Loretta Lynn, Jim Ed Brown, Bobby Bare, Tommy Cash, Johnny Bush",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2683,
+              "Month" : "September",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jim Ed Brown",
+              "Day" : 13,
+              "Event_Artists" : "Stars of the Grand Old Opry: Loretta Lynn, Jim Ed Brown, Bobby Bare, Tommy Cash, Johnny Bush",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2683,
+              "Month" : "September",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bobby Bare",
+              "Day" : 13,
+              "Event_Artists" : "Stars of the Grand Old Opry: Loretta Lynn, Jim Ed Brown, Bobby Bare, Tommy Cash, Johnny Bush",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2683,
+              "Month" : "September",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tommy Cash",
+              "Day" : 13,
+              "Event_Artists" : "Stars of the Grand Old Opry: Loretta Lynn, Jim Ed Brown, Bobby Bare, Tommy Cash, Johnny Bush",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2683,
+              "Month" : "September",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 13,
+              "Event_Artists" : "Stars of the Grand Old Opry: Loretta Lynn, Jim Ed Brown, Bobby Bare, Tommy Cash, Johnny Bush",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2683,
+              "Month" : "September",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Steve Miller Band",
+              "Day" : 17,
+              "Event_Artists" : "Steve Miller Band",
+              "Event_Formulas" : null,
+              "Index" : 2692,
+              "Month" : "October",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Hank Williams Jr.",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Don Gibson",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Roy Drusky",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Waylon Jennings",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Wynn Stewart",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sammi Smith",
+              "Day" : 15,
+              "Event_Artists" : "Stars of the Grand Old Opry: Hank Williams Jr., Don Gibson, Roy Drusky, Waylon Jennings, Wynn Stewart, Sammi Smith",
+              "Event_Formulas" : "Stars of the Grand Old Opry",
+              "Index" : 2699,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ten Years After",
+              "Day" : 17,
+              "Event_Artists" : "Ten Years After",
+              "Event_Formulas" : null,
+              "Index" : 2700,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Grand Funk Railroad",
+              "Day" : 28,
+              "Event_Artists" : "Grand Funk Railroad, Humble Pie",
+              "Event_Formulas" : null,
+              "Index" : 2703,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Humble Pie",
+              "Day" : 28,
+              "Event_Artists" : "Grand Funk Railroad, Humble Pie",
+              "Event_Formulas" : null,
+              "Index" : 2703,
+              "Month" : "November",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sunny and the Sunliners",
+              "Day" : 8,
+              "Event_Artists" : "Sunny and the Sunliners, Billy Joe Royal, the Royal Jesters",
+              "Event_Formulas" : null,
+              "Index" : 2714,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Billy Joe Royal",
+              "Day" : 8,
+              "Event_Artists" : "Sunny and the Sunliners, Billy Joe Royal, the Royal Jesters",
+              "Event_Formulas" : null,
+              "Index" : 2714,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "the Royal Jesters",
+              "Day" : 8,
+              "Event_Artists" : "Sunny and the Sunliners, Billy Joe Royal, the Royal Jesters",
+              "Event_Formulas" : null,
+              "Index" : 2714,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Winter",
+              "Day" : 19,
+              "Event_Artists" : "JAM Factory: Johnny Winter, Bloodrock, Ballin' Jack",
+              "Event_Formulas" : "JAM Factory",
+              "Index" : 2727,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bloodrock",
+              "Day" : 19,
+              "Event_Artists" : "JAM Factory: Johnny Winter, Bloodrock, Ballin' Jack",
+              "Event_Formulas" : "JAM Factory",
+              "Index" : 2727,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ballin' Jack",
+              "Day" : 19,
+              "Event_Artists" : "JAM Factory: Johnny Winter, Bloodrock, Ballin' Jack",
+              "Event_Formulas" : "JAM Factory",
+              "Index" : 2727,
+              "Month" : "December",
+              "Venue" : "San Antonio Municipal Auditorium",
+              "Year" : 1970
+            }
+          ],
+          "id" : 601,
+          "latitude" : null,
+          "longitude" : null,
+          "name" : "San Antonio Municipal Auditorium",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "1819 N. Main Ave",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "SAC Chorale",
+              "Day" : 12,
+              "Event_Artists" : "SAC Chorale",
+              "Event_Formulas" : null,
+              "Index" : 2717,
+              "Month" : "December",
+              "Venue" : "San Antonio College",
+              "Year" : 1970
+            }
+          ],
+          "id" : 447,
+          "latitude" : 29.44631,
+          "longitude" : -98.494224,
+          "name" : "San Antonio College",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : " One Trinity Pl",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "The Rose Colored Glass",
+              "Day" : 25,
+              "Event_Artists" : "The Rose Colored Glass",
+              "Event_Formulas" : null,
+              "Index" : 2601,
+              "Month" : "February",
+              "Venue" : "Trinity University",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Campbell Smith (organ)",
+              "Day" : 28,
+              "Event_Artists" : "Campbell Smith (organ)",
+              "Event_Formulas" : null,
+              "Index" : 2687,
+              "Month" : "September",
+              "Venue" : "Trinity University",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Paul Manz",
+              "Day" : 4,
+              "Event_Artists" : "Paul Manz",
+              "Event_Formulas" : null,
+              "Index" : 2688,
+              "Month" : "October",
+              "Venue" : "Trinity University",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Trinity University Collegium Musicum",
+              "Day" : 11,
+              "Event_Artists" : "Trinity University Collegium Musicum",
+              "Event_Formulas" : null,
+              "Index" : 2716,
+              "Month" : "December",
+              "Venue" : "Trinity University",
+              "Year" : 1970
+            }
+          ],
+          "id" : 391,
+          "latitude" : 29.463303,
+          "longitude" : -98.482574,
+          "name" : "Trinity University",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : "601 Hemisfair Plaza Way",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Willie Nelson",
+              "Day" : 1,
+              "Event_Artists" : "KBER Holiday Show:  Willie Nelson, Charley Pride, Grandpa Jones, David Houston",
+              "Event_Formulas" : "KBER Holiday Show",
+              "Index" : 2581,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Charley Pride",
+              "Day" : 1,
+              "Event_Artists" : "KBER Holiday Show:  Willie Nelson, Charley Pride, Grandpa Jones, David Houston",
+              "Event_Formulas" : "KBER Holiday Show",
+              "Index" : 2581,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Grandpa Jones",
+              "Day" : 1,
+              "Event_Artists" : "KBER Holiday Show:  Willie Nelson, Charley Pride, Grandpa Jones, David Houston",
+              "Event_Formulas" : "KBER Holiday Show",
+              "Index" : 2581,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "David Houston",
+              "Day" : 1,
+              "Event_Artists" : "KBER Holiday Show:  Willie Nelson, Charley Pride, Grandpa Jones, David Houston",
+              "Event_Formulas" : "KBER Holiday Show",
+              "Index" : 2581,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Chicago Transit Authority",
+              "Day" : 23,
+              "Event_Artists" : "Chicago Transit Authority, Youngbloods",
+              "Event_Formulas" : null,
+              "Index" : 2583,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Youngbloods",
+              "Day" : 23,
+              "Event_Artists" : "Chicago Transit Authority, Youngbloods",
+              "Event_Formulas" : null,
+              "Index" : 2583,
+              "Month" : "January",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Grateful Dead",
+              "Day" : 21,
+              "Event_Artists" : "Grateful Dead, Quicksilver Messenger Service, John Mayall, It's  A Beautiful Day, Rocksand",
+              "Event_Formulas" : null,
+              "Index" : 2597,
+              "Month" : "February",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Quicksilver Messenger Service",
+              "Day" : 21,
+              "Event_Artists" : "Grateful Dead, Quicksilver Messenger Service, John Mayall, It's  A Beautiful Day, Rocksand",
+              "Event_Formulas" : null,
+              "Index" : 2597,
+              "Month" : "February",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "John Mayall",
+              "Day" : 21,
+              "Event_Artists" : "Grateful Dead, Quicksilver Messenger Service, John Mayall, It's  A Beautiful Day, Rocksand",
+              "Event_Formulas" : null,
+              "Index" : 2597,
+              "Month" : "February",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "It's  A Beautiful Day",
+              "Day" : 21,
+              "Event_Artists" : "Grateful Dead, Quicksilver Messenger Service, John Mayall, It's  A Beautiful Day, Rocksand",
+              "Event_Formulas" : null,
+              "Index" : 2597,
+              "Month" : "February",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Rocksand",
+              "Day" : 21,
+              "Event_Artists" : "Grateful Dead, Quicksilver Messenger Service, John Mayall, It's  A Beautiful Day, Rocksand",
+              "Event_Formulas" : null,
+              "Index" : 2597,
+              "Month" : "February",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Moody Blues",
+              "Day" : 31,
+              "Event_Artists" : "Moody Blues, Argent, John Mayall, Turley Richards",
+              "Event_Formulas" : null,
+              "Index" : 2609,
+              "Month" : "March",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Argent",
+              "Day" : 31,
+              "Event_Artists" : "Moody Blues, Argent, John Mayall, Turley Richards",
+              "Event_Formulas" : null,
+              "Index" : 2609,
+              "Month" : "March",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "John Mayall",
+              "Day" : 31,
+              "Event_Artists" : "Moody Blues, Argent, John Mayall, Turley Richards",
+              "Event_Formulas" : null,
+              "Index" : 2609,
+              "Month" : "March",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Turley Richards",
+              "Day" : 31,
+              "Event_Artists" : "Moody Blues, Argent, John Mayall, Turley Richards",
+              "Event_Formulas" : null,
+              "Index" : 2609,
+              "Month" : "March",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Steppenwolf",
+              "Day" : 11,
+              "Event_Artists" : "Steppenwolf",
+              "Event_Formulas" : null,
+              "Index" : 2611,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 15,
+              "Event_Artists" : "Mitch Miller, San Antonio Symphony Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2612,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mitch Miller",
+              "Day" : 15,
+              "Event_Artists" : "Mitch Miller, San Antonio Symphony Orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2612,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 21,
+              "Event_Artists" : "Johnny Bush",
+              "Event_Formulas" : null,
+              "Index" : 2616,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 22,
+              "Event_Artists" : "Johnny Bush",
+              "Event_Formulas" : null,
+              "Index" : 2617,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 23,
+              "Event_Artists" : "Johnny Bush",
+              "Event_Formulas" : null,
+              "Index" : 2618,
+              "Month" : "April",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jimi Hendrix",
+              "Day" : 10,
+              "Event_Artists" : "Jimi Hendrix, Country Funk",
+              "Event_Formulas" : null,
+              "Index" : 2623,
+              "Month" : "May",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Country Funk",
+              "Day" : 10,
+              "Event_Artists" : "Jimi Hendrix, Country Funk",
+              "Event_Formulas" : null,
+              "Index" : 2623,
+              "Month" : "May",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Grand Funk Railroad",
+              "Day" : 31,
+              "Event_Artists" : "Grand Funk Railroad, Lee Michaels, Bloodrock",
+              "Event_Formulas" : null,
+              "Index" : 2628,
+              "Month" : "May",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lee Michaels",
+              "Day" : 31,
+              "Event_Artists" : "Grand Funk Railroad, Lee Michaels, Bloodrock",
+              "Event_Formulas" : null,
+              "Index" : 2628,
+              "Month" : "May",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bloodrock",
+              "Day" : 31,
+              "Event_Artists" : "Grand Funk Railroad, Lee Michaels, Bloodrock",
+              "Event_Formulas" : null,
+              "Index" : 2628,
+              "Month" : "May",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Sly and the Family Stone",
+              "Day" : 12,
+              "Event_Artists" : "Sly and the Family Stone, Gentle Reign",
+              "Event_Formulas" : null,
+              "Index" : 2636,
+              "Month" : "June",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Gentle Reign",
+              "Day" : 12,
+              "Event_Artists" : "Sly & the Family Stone, Gentle Reign",
+              "Event_Formulas" : null,
+              "Index" : 2636,
+              "Month" : "June",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Traffic",
+              "Day" : 24,
+              "Event_Artists" : "Traffic, Mountain, Mott the Hoople",
+              "Event_Formulas" : null,
+              "Index" : 2645,
+              "Month" : "June",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mountain",
+              "Day" : 24,
+              "Event_Artists" : "Traffic, Mountain, Mott the Hoople",
+              "Event_Formulas" : null,
+              "Index" : 2645,
+              "Month" : "June",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Mott the Hoople",
+              "Day" : 24,
+              "Event_Artists" : "Traffic, Mountain, Mott the Hoople",
+              "Event_Formulas" : null,
+              "Index" : 2645,
+              "Month" : "June",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Sinatra Jr.",
+              "Day" : 2,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2652,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jaye P. Morgan",
+              "Day" : 2,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2652,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "The Harmonica Rascals",
+              "Day" : 2,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2652,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frank Sinatra Jr.",
+              "Day" : 3,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2655,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jaye P. Morgan",
+              "Day" : 3,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2655,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "The Harmonica Rascals",
+              "Day" : 3,
+              "Event_Artists" : "Frank Sinatra Jr., Jaye P. Morgan, The Harmonica Rascals",
+              "Event_Formulas" : null,
+              "Index" : 2655,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tom Jones",
+              "Day" : 23,
+              "Event_Artists" : "Tom Jones, Count Basie and his orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2668,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Count Basie and his orchestra",
+              "Day" : 23,
+              "Event_Artists" : "Tom Jones, Count Basie and his orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2668,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Procol Harum",
+              "Day" : 26,
+              "Event_Artists" : "Procol Harum, Ten Years After, Josephus",
+              "Event_Formulas" : null,
+              "Index" : 2670,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Ten Years After",
+              "Day" : 26,
+              "Event_Artists" : "Procol Harum, Ten Years After, Josephus",
+              "Event_Formulas" : null,
+              "Index" : 2670,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Josephus",
+              "Day" : 26,
+              "Event_Artists" : "Procol Harum, Ten Years After, Josephus",
+              "Event_Formulas" : null,
+              "Index" : 2670,
+              "Month" : "July",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Led Zeppelin",
+              "Day" : 23,
+              "Event_Artists" : "Led Zeppelin",
+              "Event_Formulas" : null,
+              "Index" : 2677,
+              "Month" : "August",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Three Dog Night",
+              "Day" : 4,
+              "Event_Artists" : "Three Dog Night",
+              "Event_Formulas" : null,
+              "Index" : 2679,
+              "Month" : "September",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Santana",
+              "Day" : 26,
+              "Event_Artists" : "Santana, Cold Blood, Elvin Bishop",
+              "Event_Formulas" : null,
+              "Index" : 2686,
+              "Month" : "September",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Cold Blood",
+              "Day" : 26,
+              "Event_Artists" : "Santana, Cold Blood, Elvin Bishop",
+              "Event_Formulas" : null,
+              "Index" : 2686,
+              "Month" : "September",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Elvin Bishop",
+              "Day" : 26,
+              "Event_Artists" : "Santana, Cold Blood, Elvin Bishop",
+              "Event_Formulas" : null,
+              "Index" : 2686,
+              "Month" : "September",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Tex Beneke & the Modernaires",
+              "Day" : 24,
+              "Event_Artists" : "A Salute to Glenn Miller: Tex Beneke & the Modernaires",
+              "Event_Formulas" : "A Salute to Glenn Miller",
+              "Index" : 2702,
+              "Month" : "November",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "San Antonio Symphony Orchestra",
+              "Day" : 30,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Hildegarde",
+              "Event_Formulas" : null,
+              "Index" : 2730,
+              "Month" : "December",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Hildegarde",
+              "Day" : 30,
+              "Event_Artists" : "San Antonio Symphony Orchestra, Hildegarde",
+              "Event_Formulas" : null,
+              "Index" : 2730,
+              "Month" : "December",
+              "Venue" : "San Antonio Convention Center Arena",
+              "Year" : 1970
+            }
+          ],
+          "id" : 596,
+          "latitude" : 29.418394,
+          "longitude" : -98.48718,
+          "name" : "San Antonio Convention Center Arena",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "4301 Broadway",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Guarneri String Quartet",
+              "Day" : 6,
+              "Event_Artists" : "Guarneri String Quartet",
+              "Event_Formulas" : null,
+              "Index" : 2604,
+              "Month" : "March",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Him He and Me",
+              "Day" : 20,
+              "Event_Artists" : "Him He and Me",
+              "Event_Formulas" : null,
+              "Index" : 2607,
+              "Month" : "March",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Him He and Me",
+              "Day" : 21,
+              "Event_Artists" : "Him He and Me",
+              "Event_Formulas" : null,
+              "Index" : 2608,
+              "Month" : "March",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Lili Chookasian (alto)",
+              "Day" : 24,
+              "Event_Artists" : "Lili Chookasian (alto)",
+              "Event_Formulas" : null,
+              "Index" : 2696,
+              "Month" : "October",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Rachel's Children (Don Harding, Charlie Burns, Meerily Webber, Jimmy Newhouse, Lowell Relkin)",
+              "Day" : 23,
+              "Event_Artists" : "Rachel's Children (Don Harding, Charlie Burns, Meerily Webber, Jimmy Newhouse, Lowell Relkin)",
+              "Event_Formulas" : null,
+              "Index" : 2701,
+              "Month" : "November",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Shane and Kitty",
+              "Day" : 19,
+              "Event_Artists" : "Shane and Kitty, Karen Bella, Eddie Shook",
+              "Event_Formulas" : null,
+              "Index" : 2728,
+              "Month" : "December",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Karen Bella",
+              "Day" : 19,
+              "Event_Artists" : "Shane and Kitty, Karen Bella, Eddie Shook",
+              "Event_Formulas" : null,
+              "Index" : 2728,
+              "Month" : "December",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Eddie Shook",
+              "Day" : 19,
+              "Event_Artists" : "Shane and Kitty, Karen Bella, Eddie Shook",
+              "Event_Formulas" : null,
+              "Index" : 2728,
+              "Month" : "December",
+              "Venue" : "IWC Auditorium",
+              "Year" : 1970
+            }
+          ],
+          "id" : 843,
+          "latitude" : 29.466194,
+          "longitude" : -98.466515,
+          "name" : "IWC Auditorium",
+          "state" : "Texas",
+          "zip" : 78209
+        },
+        {
+          "address" : "418 Villita St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Paul Elizondo",
+              "Day" : 16,
+              "Event_Artists" : "NIOSA: Paul Elizondo Orchestra, Los Conquistadores, Rosita Fernandez, Hilda Jimenez, Willie Champion",
+              "Event_Formulas" : "NIOSA",
+              "Index" : 2684,
+              "Month" : "September",
+              "Venue" : "La Villita",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Los Conquistadores",
+              "Day" : 16,
+              "Event_Artists" : "NIOSA: Paul Elizondo Orchestra, Los Conquistadores, Rosita Fernandez, Hilda Jimenez, Willie Champion",
+              "Event_Formulas" : "NIOSA",
+              "Index" : 2684,
+              "Month" : "September",
+              "Venue" : "La Villita",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Rosita Fernandez",
+              "Day" : 16,
+              "Event_Artists" : "NIOSA: Paul Elizondo Orchestra, Los Conquistadores, Rosita Fernandez, Hilda Jimenez, Willie Champion",
+              "Event_Formulas" : "NIOSA",
+              "Index" : 2684,
+              "Month" : "September",
+              "Venue" : "La Villita",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Hilda Jimenez",
+              "Day" : 16,
+              "Event_Artists" : "NIOSA: Paul Elizondo Orchestra, Los Conquistadores, Rosita Fernandez, Hilda Jimenez, Willie Champion",
+              "Event_Formulas" : "NIOSA",
+              "Index" : 2684,
+              "Month" : "September",
+              "Venue" : "La Villita",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Willie Champion",
+              "Day" : 16,
+              "Event_Artists" : "NIOSA: Paul Elizondo Orchestra, Los Conquistadores, Rosita Fernandez, Hilda Jimenez, Willie Champion",
+              "Event_Formulas" : "NIOSA",
+              "Index" : 2684,
+              "Month" : "September",
+              "Venue" : "La Villita",
+              "Year" : 1970
+            }
+          ],
+          "id" : 868,
+          "latitude" : 29.421076,
+          "longitude" : -98.488729,
+          "name" : "La Villita",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "1534 Bandera Road",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Woody Herman and his 16 piece orchestra",
+              "Day" : 2,
+              "Event_Artists" : "Woody Herman and his 16 piece orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2585,
+              "Month" : "February",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jerry Lee Lewis",
+              "Day" : 19,
+              "Event_Artists" : "Jerry Lee Lewis",
+              "Event_Formulas" : null,
+              "Index" : 2595,
+              "Month" : "February",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 3,
+              "Event_Artists" : "Johnny Bush",
+              "Event_Formulas" : null,
+              "Index" : 2610,
+              "Month" : "April",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Russ Morgan and his 12-piece orchestra",
+              "Day" : 20,
+              "Event_Artists" : "Russ Morgan and his 12-piece orchestra",
+              "Event_Formulas" : null,
+              "Index" : 2615,
+              "Month" : "April",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Charlie Walker",
+              "Day" : 19,
+              "Event_Artists" : "Charlie Walker",
+              "Event_Formulas" : null,
+              "Index" : 2644,
+              "Month" : "June",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Waylon Jennings ",
+              "Day" : 26,
+              "Event_Artists" : "Waylon Jennings",
+              "Event_Formulas" : null,
+              "Index" : 2646,
+              "Month" : "June",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Johnny Bush",
+              "Day" : 3,
+              "Event_Artists" : "Johnny Bush",
+              "Event_Formulas" : null,
+              "Index" : 2656,
+              "Month" : "July",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Jones",
+              "Day" : 10,
+              "Event_Artists" : "George Jones, Tammy Wynette",
+              "Event_Formulas" : null,
+              "Index" : 2662,
+              "Month" : "July",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Jones",
+              "Day" : 10,
+              "Event_Artists" : "George Jones, Tammy Wynette",
+              "Event_Formulas" : null,
+              "Index" : 2662,
+              "Month" : "July",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "The Pickering Brothers",
+              "Day" : 17,
+              "Event_Artists" : "The Pickering Brothers",
+              "Event_Formulas" : null,
+              "Index" : 2665,
+              "Month" : "July",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Willie Nelson",
+              "Day" : 25,
+              "Event_Artists" : "Willie Nelson",
+              "Event_Formulas" : null,
+              "Index" : 2669,
+              "Month" : "July",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Metheny Brothers",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Moe Bandy and the Mavericks",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "George Chambers and the Country Gentlemen",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Frenchie Burke",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke,The Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "The Bandoleros",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Slim Roberts",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bubba Littrell",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Jimmy Peters Lee Harmon and Tex Allan",
+              "Day" : 9,
+              "Event_Artists" : "Metheny Brothers, Moe Bandy and the Mavericks, George Chambers and the Country Gentlemen, Frenchie Burke and the Bandeleros, Slim Roberts, Bubba Littrell, Jimmy Peters Lee Harmon and Tex Allan",
+              "Event_Formulas" : null,
+              "Index" : 2674,
+              "Month" : "August",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Faron Young",
+              "Day" : 11,
+              "Event_Artists" : "Faron Young",
+              "Event_Formulas" : null,
+              "Index" : 2715,
+              "Month" : "December",
+              "Venue" : "Randy's",
+              "Year" : 1970
+            }
+          ],
+          "id" : 545,
+          "latitude" : 29.468901,
+          "longitude" : -98.568123,
+          "name" : "Randy's",
+          "state" : "Texas",
+          "zip" : 78228
+        },
+        {
+          "address" : "3875 N. St. Mary St.",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Country Joe and the Fish",
+              "Day" : 22,
+              "Event_Artists" : "Country Joe and the Fish, Flash",
+              "Event_Formulas" : null,
+              "Index" : 2600,
+              "Month" : "February",
+              "Venue" : "Sunken Garden Theater",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Flash",
+              "Day" : 22,
+              "Event_Artists" : "Country Joe and the Fish, Flash",
+              "Event_Formulas" : null,
+              "Index" : 2600,
+              "Month" : "February",
+              "Venue" : "Sunken Garden Theater",
+              "Year" : 1970
+            }
+          ],
+          "id" : 668,
+          "latitude" : 29.460958,
+          "longitude" : -98.478334,
+          "name" : "Sunken Garden Theater",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : " 758 Donaldson Ave",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Southern Methodist University Choir",
+              "Day" : 8,
+              "Event_Artists" : "Southern Methodist University Choir",
+              "Event_Formulas" : null,
+              "Index" : 2606,
+              "Month" : "March",
+              "Venue" : "Jefferson United Methodist Church",
+              "Year" : 1970
+            }
+          ],
+          "id" : 844,
+          "latitude" : 29.463684,
+          "longitude" : -98.539801,
+          "name" : "Jefferson United Methodist Church",
+          "state" : "Texas",
+          "zip" : 78201
+        },
+        {
+          "address" : "415 N Main Ave",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Nat Adams (organ)",
+              "Day" : 13,
+              "Event_Artists" : "Nat Adams (organ)",
+              "Event_Formulas" : null,
+              "Index" : 2718,
+              "Month" : "December",
+              "Venue" : "San Antonio Music Company",
+              "Year" : 1970
+            }
+          ],
+          "id" : 964,
+          "latitude" : 29.42875,
+          "longitude" : -98.494206,
+          "name" : "San Antonio Music Company",
+          "state" : "Texas",
+          "zip" : 78205
+        },
+        {
+          "address" : "2623 N St Mary's St",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Flash Cadillac & the Continental Kids",
+              "Day" : 26,
+              "Event_Artists" : "Flash Cadillac & the Continental Kids",
+              "Event_Formulas" : null,
+              "Index" : 2671,
+              "Month" : "July",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Fleetwood Mac",
+              "Day" : 2,
+              "Event_Artists" : "Fleetwood Mac, Bangor Flying Machine",
+              "Event_Formulas" : null,
+              "Index" : 2672,
+              "Month" : "August",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Bangor Flying Machine",
+              "Day" : 2,
+              "Event_Artists" : "Fleetwood Mac, Bangor Flying Machine",
+              "Event_Formulas" : null,
+              "Index" : 2672,
+              "Month" : "August",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Fats Domino",
+              "Day" : 15,
+              "Event_Artists" : "Fats Domino",
+              "Event_Formulas" : null,
+              "Index" : 2673,
+              "Month" : "August",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Deep Purple",
+              "Day" : 21,
+              "Event_Artists" : "Deep Purple",
+              "Event_Formulas" : null,
+              "Index" : 2676,
+              "Month" : "August",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Pacific Gas & Electric",
+              "Day" : 6,
+              "Event_Artists" : "Pacific Gas & Electric",
+              "Event_Formulas" : null,
+              "Index" : 2680,
+              "Month" : "September",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Allman Brothers",
+              "Day" : 11,
+              "Event_Artists" : "Allman Brothers, Wildfire",
+              "Event_Formulas" : null,
+              "Index" : 2681,
+              "Month" : "September",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Wildfire",
+              "Day" : 11,
+              "Event_Artists" : "Allman Brothers, Wildfire",
+              "Event_Formulas" : null,
+              "Index" : 2681,
+              "Month" : "September",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Leon Russell ",
+              "Day" : 13,
+              "Event_Artists" : "Leon Russell",
+              "Event_Formulas" : null,
+              "Index" : 2682,
+              "Month" : "September",
+              "Venue" : "JAM Factory",
+              "Year" : 1970
+            }
+          ],
+          "id" : 325,
+          "latitude" : 29.450367,
+          "longitude" : -98.487419,
+          "name" : "JAM Factory",
+          "state" : "Texas",
+          "zip" : 78212
+        },
+        {
+          "address" : "1 Camino Santa Maria",
+          "city" : "San Antonio",
+          "concerts" : [
+            {
+              "Artist_Formula" : "Martin and Sally",
+              "Day" : 12,
+              "Event_Artists" : "Martin and Sally",
+              "Event_Formulas" : null,
+              "Index" : 2689,
+              "Month" : "October",
+              "Venue" : "St. Mary's University",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martin and Sally",
+              "Day" : 13,
+              "Event_Artists" : "Martin and Sally",
+              "Event_Formulas" : null,
+              "Index" : 2690,
+              "Month" : "October",
+              "Venue" : "St. Mary's University",
+              "Year" : 1970
+            },
+            {
+              "Artist_Formula" : "Martin and Sally",
+              "Day" : 14,
+              "Event_Artists" : "Martin and Sally",
+              "Event_Formulas" : null,
+              "Index" : 2691,
+              "Month" : "October",
+              "Venue" : "St. Mary's University",
+              "Year" : 1970
+            }
+          ],
+          "id" : 960,
+          "latitude" : 29.453442,
+          "longitude" : -98.564122,
+          "name" : "St. Mary's University",
+          "state" : "Texas",
+          "zip" : 78228
+        }
+      ]
+    }
+  ]
+}

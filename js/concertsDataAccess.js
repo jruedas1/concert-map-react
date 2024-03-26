@@ -1,26 +1,10 @@
-export const fetchVenues = async () => {
-    const venues = await fetch('http://localhost:3001/venues');
+export const fetchData = async () => {
+    const venues = await fetch('http://localhost:3001/years');
     return await venues.json();
 }
 
-export const fetchVenue = async (id) => {
-    const venue = await fetch(`http://localhost:3001/venues/${id}`);
+export const fetchYear = async (year) => {
+    const venue = await fetch(`http://localhost:3001/years/${year}`);
     return await venue.json();
 }
 
-export const updateVenue = async (id, venue) => {
-    try {
-        const url = `http://localhost:3001/venues/${id}`;
-        const options = {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(venue)
-        };
-        const response = await fetch(url, options);
-        return await response.json();
-    } catch (error) {
-        console.log(error);
-    }
-}
