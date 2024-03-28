@@ -1,0 +1,3 @@
+This is the companion web application for the "Sounds of San Anto" project.
+
+To get this working on your local machine, you must have node.js installed on your system. Once you have installed node, clone this project. If you are working in VSCode, you should then open two terminal windows. First run `npm install` to install all the dependencies. Then in one terminal window run `npm run db`. This will activate the json-server mock server, which will serve the concert data. Then in the other terminal window run `npm start`. This will activate the lite server, which should automatically open the `index.html` file on port 10001. The JavaScript code connected to this file will automatically 

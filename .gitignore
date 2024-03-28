@@ -1,6 +1,6 @@
 .DS_Store
 .idea/*
 *.iml
-keys.js
+*/keys.js
 node_modules/
 node_modules/*
