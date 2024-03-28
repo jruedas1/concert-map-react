@@ -1,7 +1,41 @@
+* {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: Quicksand, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+section#filters {
+    margin: 1rem 0;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+#selected-decade {
+    font-size: 1.8rem;
+    font-weight: 550;
+}
+
+#map {
+    width: 75dvw;
+    height: 60dvh;
+}
+
 .marker {
     background-image: url('../img/noun-musical-note-1014122.svg');
     background-size: cover;
     width: 48px;
     height: 48px;
     cursor: pointer;
+}
+
+#concerts {
+    text-align: center;
 }

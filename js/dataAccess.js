@@ -1,3 +1,7 @@
+/*
+* This file should contain all the code that interacts with data storage
+* */
+
 export const fetchData = async () => {
     const venues = await fetch('http://localhost:3001/years');
     return await venues.json();
