@@ -1,0 +1,4222 @@
+{
+    "Dierks Bentley": [
+        "Country",
+        "bluegrass"
+    ],
+    "Keith Urban": [
+        "Country",
+        "country pop",
+        "country rock",
+        "pop rock",
+        "alternative rock"
+    ],
+    "George Jones": [
+        "Country",
+        "gospel"
+    ],
+    "Hilary Duff": [
+        "Pop",
+        "dance",
+        "rock"
+    ],
+    "Aaron Barker": [
+        "Country"
+    ],
+    "Kid Rock": [
+        "Country rock",
+        "rap rock",
+        "hip hop",
+        "rap metal"
+    ],
+    "Bill Engvall": [
+        "Country Comedy",
+        "observational comedy",
+        "satire"
+    ],
+    "Cross Canadian Ragweed": [
+        "Southern rock",
+        "country rock",
+        "alternative country",
+        "Americana",
+        "Red Dirt"
+    ],
+    "Big & Rich": [
+        "Country"
+    ],
+    "Montgomery Gentry": [
+        "Country",
+        "Southern rock",
+        "country rock"
+    ],
+    "Bellamy Brothers": [
+        "Country",
+        "country pop",
+        "soft rock",
+        "country rock"
+    ],
+    "Kumbia Kings": [
+        "Mexican cumbia",
+        "Latin pop",
+        "Tejano",
+        "reggae",
+        "hip hop",
+        "R&B"
+    ],
+    "Gary Allan": [
+        "Country"
+    ],
+    "Clay Walker": [
+        "Country"
+    ],
+    "Rascal Flatts": [
+        "Country",
+        "country pop"
+    ],
+    "Willie Nelson": [
+        "Country",
+        "blues",
+        "jazz",
+        "gospel"
+    ],
+    "Charlie Daniels Band": [
+        "Southern rock",
+        "country rock",
+        "progressive country"
+    ],
+    "Lynryd Skynyrd": [
+        "Southern rock",
+        "blues rock",
+        "country rock",
+        "hard rock"
+    ],
+    "Wayne Newton": [
+        "Jazz",
+        "pop",
+        "lounge"
+    ],
+    "George Strait": [
+        "Neotraditional country",
+        "Texas country",
+        "Western swing",
+        "honky-tonk"
+    ],
+    "Miranda Lambert": [
+        "Country",
+        "country rock",
+        "alternative country"
+    ],
+    "Tracy Lawrence": [
+        "Country"
+    ],
+    "Tim McGraw": [
+        "Country"
+    ],
+    "Faith Hill": [
+        "Country",
+        "pop"
+    ],
+    "Shakira": [
+        "Latin pop",
+        "pop",
+        "dance",
+        "reggaeton",
+        "rock"
+    ],
+    "Wyclef Jean": [
+        "East Coast hip hop",
+        "reggae fusion",
+        "R&B",
+        "pop rap",
+        "neo soul"
+    ],
+    "Brad Paisley": [
+        "Country"
+    ],
+    "Carrie Underwood": [
+        "Country",
+        "country pop",
+        "gospel"
+    ],
+    "Jake Owen": [
+        "Country"
+    ],
+    "Trans-Siberian Orchestra": [
+        "Symphonic metal",
+        "progressive metal",
+        "heavy metal",
+        "Christmas",
+        "hard rock",
+        "neoclassical metal"
+    ],
+    "Kevin Fowler": [
+        "Country"
+    ],
+    "Gretchen Wilson": [
+        "Country",
+        "country rock"
+    ],
+    "Brooks & Dunn": [
+        "Neotraditional country"
+    ],
+    "Ben King": [],
+    "Trace Adkins": [
+        "Country"
+    ],
+    "Aly & AJ": [
+        "Pop rock",
+        "indie pop",
+        "synth-pop"
+    ],
+    "Lynyrd Skynyrd": [
+        "Southern rock",
+        "blues rock",
+        "country rock",
+        "hard rock"
+    ],
+    "Beto and the Fairlanes": [
+        "worldbeat",
+        "latin pop",
+        "jazz",
+        "salsa"
+    ],
+    "Sugarland": [
+        "Country",
+        "country pop"
+    ],
+    "Alan Jackson": [
+        "Neotraditional country",
+        "bluegrass",
+        "gospel"
+    ],
+    "Josh Turner": [
+        "Neotraditional country"
+    ],
+    "Intocable": [
+        "Tejano",
+        "Northeastern Norteño"
+    ],
+    "Beyond Black": [],
+    "The Beach Boys": [
+        "Rock",
+        "pop",
+        "surf",
+        "psychedelia"
+    ],
+    "Neal McCoy": [
+        "Country"
+    ],
+    "Big Al Downing": [
+        "rockabilly",
+        "rock and roll",
+        "blues",
+        "rhythm and blues",
+        "country",
+        "gospel"
+    ],
+    "Staind": [
+        "Nu metal",
+        "hard rock",
+        "post-grunge",
+        "alternative metal"
+    ],
+    "Wade Bowen": [
+        "country",
+        "red dirt",
+        "Texas country"
+    ],
+    "Stoney LaRue": [
+        "Red dirt",
+        "Texas country"
+    ],
+    "Eric Clapton": [
+        "Rock",
+        "blues"
+    ],
+    "Jason Aldean": [
+        "Country",
+        "country rock",
+        "bro-country"
+    ],
+    "Chamillionaire": [
+        "Hip hop",
+        "Southern hip hop"
+    ],
+    "Sean Kingston": [
+        "Dancehall",
+        "R&B",
+        "hip hop"
+    ],
+    "Soulja Boy": [
+        "Hip hop",
+        "pop rap",
+        "snap",
+        "trap"
+    ],
+    "Shop Boyz": [
+        "Hip hop"
+    ],
+    "Fabolous": [
+        "Hip hop",
+        "East Coast hip hop"
+    ],
+    "DJ Unk": [
+        "hip hop",
+        "snap",
+        "southern hip hop"
+    ],
+    "Huey": [
+        "hip hop"
+    ],
+    "Rob G.": [
+        "hip hop"
+    ],
+    "MIMS": [
+        "hip hop"
+    ],
+    "Amanda Perez": [
+        "R&B",
+        "hip hop"
+    ],
+    "Hannah Montana": [],
+    "Miley Cyrus": [
+        "Pop",
+        "rock",
+        "country"
+    ],
+    "Jonas Brothers": [
+        "Pop rock",
+        "rock",
+        "pop punk",
+        "power pop"
+    ],
+    "The Police": [
+        "New wave",
+        "reggae rock",
+        "post-punk",
+        "pop rock"
+    ],
+    "Fictionplane": [
+        "alternative rock",
+        "post-grunge",
+        "indie rock"
+    ],
+    "Bobby Lloyd": [],
+    "Blue Man Group": [
+        "performance art"
+    ],
+    "Van Halen": [
+        "Hard rock",
+        "heavy metal",
+        "pop rock",
+        "arena rock",
+        "glam metal"
+    ],
+    "Marley": [],
+    "Randy Rogers Band": [
+        "Texas country",
+        "red dirt",
+        "country"
+    ],
+    "Ronnie Milsap": [
+        "Country",
+        "blue-eyed soul"
+    ],
+    "TobyMac": [
+        "Christian hip hop",
+        "Christian rock"
+    ],
+    "Jeremy Camp": [
+        "Christian rock",
+        "Contemporary Christian music"
+    ],
+    "Jack Ingram": [
+        "Country"
+    ],
+    "Stoney Larue": [
+        "red dirt",
+        "Texas country"
+    ],
+    "Mike Eli": [
+        "Country"
+    ],
+    "Craig Morgan": [
+        "Country"
+    ],
+    "Los Tigres del Norte": [
+        "Pacific Norte\u00f1o",
+        "Norte\u00f1o with Sax"
+    ],
+    "Sara Evans": [
+        "country"
+    ],
+    "The Jonas Brothers": [
+        "Pop rock",
+        "rock",
+        "pop punk",
+        "power pop"
+    ],
+    "Conspiracy of Silence": [],
+    "Joe Nichols": [
+        "Country"
+    ],
+    "Stone Temple Pilots": [
+        "Alternative rock",
+        "grunge",
+        "hard rock",
+        "alternative metal"
+    ],
+    "Eagles": [
+        "rock",
+        "country rock",
+        "soft rock",
+        "folk rock"
+    ],
+    "Creed Taylor": [],
+    "AC/DC": [
+        "Hard rock",
+        "blues rock",
+        "rock and roll",
+        "heavy metal"
+    ],
+    "The Answer": [
+        "hard rock"
+    ],
+    "Pat Green": [
+        "Country"
+    ],
+    "Darrell Clanton": [
+        "Country"
+    ],
+    "Push Play": [
+        "Pop rock"
+    ],
+    "Reba McEntire": [
+        "Country",
+        "gospel"
+    ],
+    "Taylor Swift": [
+        "Pop",
+        "country",
+        "folk",
+        "rock",
+        "alternative"
+    ],
+    "Switchfoot": [
+        "Alternative rock",
+        "post-grunge",
+        "hard rock",
+        "indie rock",
+        "Christian rock",
+        "power pop",
+        "pop rock"
+    ],
+    "Deadpool": [],
+    "Cory Morrow": [
+        "Country"
+    ],
+    "Darius Rucker": [
+        "Rock",
+        "pop",
+        "country",
+        "R&B",
+        "blues",
+        "alternative rock"
+    ],
+    "Nickelback": [
+        "Post-grunge",
+        "hard rock",
+        "alternative rock",
+        "alternative metal",
+        "pop rock"
+    ],
+    "Kenny Chesney": [
+        "Country",
+        "country rock",
+        "gulf and western",
+        "neotraditional country"
+    ],
+    "Lady Antebellum": [
+        "Country",
+        "country pop"
+    ],
+    "Coldplay": [
+        "Alternative rock",
+        "pop rock",
+        "post-Britpop",
+        "pop"
+    ],
+    "Snow Patrol": [
+        "Alternative rock",
+        "power pop",
+        "post-Britpop",
+        "indie rock"
+    ],
+    "Dissension": [],
+    "Howling Bells": [
+        "Indie rock"
+    ],
+    "Meg and Dia": [
+        "indie rock",
+        "indie pop",
+        "pop rock",
+        "indie folk",
+        "emo pop"
+    ],
+    "Bad Religion": [
+        "Melodic hardcore",
+        "punk rock",
+        "skate punk",
+        "hardcore punk"
+    ],
+    "Underoath": [
+        "Metalcore",
+        "post-hardcore",
+        "screamo",
+        "emo",
+        "Christian metal"
+    ],
+    "Don Albert": [
+        "Jazz"
+    ],
+    "The White Tie Affair": [
+        "Pop rock",
+        "neon pop",
+        "dance-rock",
+        "electronic"
+    ],
+    "Less than Jake": [
+        "Ska punk",
+        "pop-punk",
+        "punk rock",
+        "skate punk"
+    ],
+    "Chiodos": [
+        "Post-hardcore",
+        "alternative rock",
+        "emo",
+        "progressive rock"
+    ],
+    "The Millionaires": [
+        "electropop",
+        "hip hop",
+        "crunkcore"
+    ],
+    "Judas Priest": [
+        "Heavy metal"
+    ],
+    "Whitesnake": [
+        "Hard rock",
+        "blues rock",
+        "glam metal"
+    ],
+    "Green Day": [
+        "Punk rock",
+        "pop-punk",
+        "alternative rock",
+        "skate punk",
+        "power pop"
+    ],
+    "Franz Ferdinand": [
+        "Indie rock",
+        "post-punk revival",
+        "dance-punk",
+        "garage rock revival",
+        "dance-rock",
+        "art rock"
+    ],
+    "Jordin Sparks": [
+        "Pop",
+        "R&B"
+    ],
+    "Honor Society": [
+        "Pop rock"
+    ],
+    "Marilyn Manson": [
+        "Industrial metal",
+        "industrial rock",
+        "alternative metal",
+        "hard rock",
+        "gothic rock",
+        "shock rock"
+    ],
+    "Slayer": [
+        "Thrash metal"
+    ],
+    "Killswitch": [],
+    "Engage": [],
+    "Bullet for My Valentine": [
+        "Metalcore",
+        "melodic metalcore",
+        "heavy metal",
+        "thrash metal",
+        "hard rock"
+    ],
+    "Trivium": [
+        "heavy metal",
+        "thrash metal",
+        "metalcore",
+        "progressive metal"
+    ],
+    "Creed": [
+        "post-grunge",
+        "hard rock",
+        "alternative metal",
+        "alternative rock"
+    ],
+    "Jamie Foxx": [
+        "R&B",
+        "comedy"
+    ],
+    "Metallica": [
+        "Heavy metal",
+        "thrash metal",
+        "speed metal",
+        "hard rock"
+    ],
+    "Ernesto Rodriguez": [],
+    "Gojira": [
+        "technical death metal",
+        "progressive metal",
+        "groove metal",
+        "post-metal"
+    ],
+    "Everlast": [
+        "Hip hop",
+        "folk rock",
+        "blues"
+    ],
+    "Lamb of God": [
+        "Groove metal",
+        "metalcore",
+        "thrash metal",
+        "death metal "
+    ],
+    "Vincente Fernandez": [],
+    "Randy Houser": [
+        "Country"
+    ],
+    "Selena Gomez": [
+        "Pop",
+        "dance-pop",
+        "electropop"
+    ],
+    "Third Day": [
+        "Christian rock",
+        "Southern rock",
+        "contemporary Christian",
+        "contemporary worship music"
+    ],
+    "Foreigner": [
+        "Hard rock",
+        "soft rock",
+        "AOR"
+    ],
+    "James Otto": [
+        "Country"
+    ],
+    "Rodney Atkins": [
+        "Country"
+    ],
+    "Blake Shelton": [
+        "country"
+    ],
+    "Toby Keith": [
+        "country"
+    ],
+    "George Chambers": [
+        "Psychedelic soul"
+    ],
+    "Eli Young Band": [
+        "Country"
+    ],
+    "Iron Maiden": [
+        "Heavy metal"
+    ],
+    "All-American Rejects": [
+        "Alternative rock",
+        "power pop",
+        "pop rock",
+        "pop-punk",
+        "emo"
+    ],
+    "Michael Buble": [
+        "Traditional pop",
+        "easy listening",
+        "jazz",
+        "swing"
+    ],
+    "Ratt": [
+        "Glam metal",
+        "heavy metal",
+        "hard rock"
+    ],
+    "Scorpions": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Rihanna": [
+        "Pop",
+        "R&B",
+        "reggae",
+        "hip hop",
+        "EDM"
+    ],
+    "Ke$ha": [
+        "electropop",
+        "dance-pop",
+        "synth-pop",
+        "pop rock",
+        "pop rap"
+    ],
+    "Travie McCoy": [
+        "Alternative hip hop",
+        "pop rap",
+        "rap rock"
+    ],
+    "Kiss": [
+        "Hard rock",
+        "heavy metal",
+        "shock rock",
+        "glam metal"
+    ],
+    "Rush": [
+        "Progressive rock",
+        "hard rock",
+        "heavy metal"
+    ],
+    "Billy Currington": [
+        "Country",
+        "country pop",
+        "country rock"
+    ],
+    "Sons of Sylvia": [
+        "country pop"
+    ],
+    "Justin Bieber": [
+        "Pop",
+        "R&B",
+        "dance-pop",
+        "EDM"
+    ],
+    "Mazz": [
+        "Tejano",
+        "Mexican cumbia"
+    ],
+    "Emilio Navaira": [
+        "Tejano",
+        "country",
+        "Norte\u00f1o"
+    ],
+    "Lee Roy Parnell": [
+        "Blues",
+        "Roots",
+        "Country"
+    ],
+    "Suzy Bogguss": [
+        "Country",
+        "folk"
+    ],
+    "Delbert McClinton": [
+        "Americana",
+        "blues rock"
+    ],
+    "McBride & the Ride": [
+        "Country"
+    ],
+    "Pink Floyd": [
+        "Progressive rock",
+        "art rock",
+        "psychedelic rock",
+        "space rock",
+        "experimental rock"
+    ],
+    "Melissa Etheridge": [
+        "Heartland rock",
+        "roots rock",
+        "folk rock",
+        "blues rock",
+        "country rock"
+    ],
+    "Wynonna": [],
+    "Jesse Gonzales": [],
+    "Dan Seals": [
+        "Country",
+        "soft rock"
+    ],
+    "Doug Stone": [
+        "Country"
+    ],
+    "Little Texas": [
+        "Country",
+        "country rock"
+    ],
+    "Joe \"King\" Carrasco": [
+        "Tex-Mex new wave",
+        "Tex-Mex rock"
+    ],
+    "Rolling Stones": [
+        "Rock",
+        "pop",
+        "blues"
+    ],
+    "Boys II Men": [
+        "R&B",
+        "soul",
+        "pop",
+        "new jack swing"
+    ],
+    "Montell Jordan": [
+        "R&B",
+        "hip hop soul",
+        "hip hop",
+        "new jack swing"
+    ],
+    "Ozzy Osbourne": [
+        "Heavy metal",
+        "hard rock"
+    ],
+    "Korn": [
+        "Nu metal",
+        "alternative metal"
+    ],
+    "Life of Agony": [
+        "Alternative metal"
+    ],
+    "The Poor": [],
+    "Alice Cooper": [
+        "Hard rock",
+        "shock rock",
+        "glam rock",
+        "heavy metal"
+    ],
+    "xxxx": [],
+    "Gloria Estefan": [
+        "Latin pop",
+        "dance-pop",
+        "tropical"
+    ],
+    "Neil Diamond": [
+        "Rock",
+        "pop",
+        "folk",
+        "country",
+        "soft rock"
+    ],
+    "Michael W. Smith": [
+        "CCM",
+        "Christian rock",
+        "pop",
+        "pop rock"
+    ],
+    "dc talk": [
+        "Christian hip hop",
+        "Christian rock",
+        "rap rock",
+        "pop rock",
+        "alternative rock"
+    ],
+    "Johnny Z": [],
+    "Amy Grant": [
+        "Contemporary Christian",
+        "pop rock",
+        "soft rock",
+        "gospel"
+    ],
+    "Jaci Velazquez": [
+        "Contemporary Christian",
+        "Pop",
+        "Latin Pop"
+    ],
+    "Corrosion of Conformity": [
+        "Stoner rock",
+        "sludge metal",
+        "southern metal",
+        "southern rock",
+        "hardcore punk",
+        "crossover thrash"
+    ],
+    "Black Sabbath": [
+        "Heavy metal"
+    ],
+    "Pantera": [
+        "Groove metal",
+        "thrash metal",
+        "glam metal"
+    ],
+    "Type O Negative": [
+        "Gothic metal",
+        "doom metal"
+    ],
+    "Fear Factory": [
+        "Industrial metal",
+        "groove metal",
+        "nu metal",
+        "death metal"
+    ],
+    "Machine Head": [
+        "Groove metal",
+        "thrash metal",
+        "heavy metal",
+        "nu metal"
+    ],
+    "Powerman 5000": [
+        "Industrial metal",
+        "industrial rock",
+        "electronic rock",
+        "hard rock",
+        "alternative metal",
+        "nu metal"
+    ],
+    "Downset": [
+        "Rap metal",
+        "hardcore punk",
+        "nu metal",
+        "funk metal"
+    ],
+    "Neurosis": [
+        "Post-metal",
+        "sludge metal",
+        "hardcore punk "
+    ],
+    "Coal Chamber": [
+        "Nu metal",
+        "alternative metal"
+    ],
+    "Jon Secada": [
+        "Pop",
+        "Latin",
+        "Latin pop",
+        "R&B",
+        "funk",
+        "pop rock"
+    ],
+    "Angelina": [
+        "freestyle",
+        "dance-pop",
+        "Latin pop"
+    ],
+    "Rome": [
+        "Neofolk",
+        "martial industrial"
+    ],
+    "Zapp & Roger": [
+        "Funk",
+        "electro"
+    ],
+    "Az Yet": [
+        "R&B"
+    ],
+    "Freak Nasty": [
+        "Hip hop"
+    ],
+    "Corina": [],
+    "Dru Hill": [
+        "R&B"
+    ],
+    "Krystal": [],
+    "Boston": [
+        "Hard rock",
+        "arena rock"
+    ],
+    "Prince": [
+        "funk",
+        "rock",
+        "R&B",
+        "pop",
+        "neo-psychedelia",
+        "progressive soul"
+    ],
+    "Mark Chesnutt": [
+        "Country"
+    ],
+    "Mindy McCready": [
+        "Country"
+    ],
+    "Lee Ann Womack": [
+        "Neotraditionalist country",
+        "country pop",
+        "Americana"
+    ],
+    "Deanna Carter": [
+        "Country"
+    ],
+    "LeAnn Rimes": [
+        "Country",
+        "pop",
+        "contemporary Christian",
+        "adult contemporary",
+        "dance-pop"
+    ],
+    "Fleetwood Mac": [
+        "Rock",
+        "pop rock",
+        "folk rock",
+        "soft rock",
+        "blues rock",
+        "art pop",
+        "British blues"
+    ],
+    "M\u00f6tley Cr\u00fce": [
+        "Heavy metal",
+        "glam metal",
+        "hard rock"
+    ],
+    "Cheap Trick": [
+        "Power pop",
+        "hard rock",
+        "pop rock"
+    ],
+    "U2": [
+        "Rock",
+        "alternative rock",
+        "pop rock",
+        "post-punk"
+    ],
+    "Third Eye Blind": [
+        "Alternative rock",
+        "pop rock",
+        "post-grunge",
+        "power pop",
+        "pop punk"
+    ],
+    "Luis Miguel": [
+        "Latin pop",
+        "bolero",
+        "mariachi",
+        "ballads",
+        "Regional mexican"
+    ],
+    "Aerosmith": [
+        "Hard rock",
+        "blues rock",
+        "heavy metal",
+        "glam metal"
+    ],
+    "Talk Show": [
+        "Alternative rock",
+        "hard rock"
+    ],
+    "Salt 'N Pepa": [
+        "Hip hop",
+        "pop rap",
+        "pop",
+        "dance-pop"
+    ],
+    "Usher": [
+        "R&B",
+        "pop"
+    ],
+    "Bone Thugs-n-Harmony": [
+        "Hip hop",
+        "gangsta rap",
+        "R&B"
+    ],
+    "Elton John": [
+        "Rock",
+        "pop rock",
+        "glam rock",
+        "soft rock",
+        "blues"
+    ],
+    "The Mavericks": [
+        "Country",
+        "alternative country",
+        "country rock",
+        "Americana",
+        "Tex-Mex"
+    ],
+    "Emilio": [
+        "Tejano",
+        "country",
+        "Norte\u00f1o"
+    ],
+    "Fama": [
+        "Tejano",
+        "Latin",
+        "World"
+    ],
+    "David Lee Garza": [
+        "Tejano"
+    ],
+    "Bobby Pulido": [
+        "Tejano",
+        "Regional Mexican"
+    ],
+    "Michael Salgado": [],
+    "Los Lonely Boys": [
+        "Rock"
+    ],
+    "Stefani": [],
+    "Garth Brooks": [
+        "Country",
+        "country pop",
+        "country rock"
+    ],
+    "Trisha Yearwood": [
+        "Country",
+        "country pop",
+        "adult contemporary"
+    ],
+    "Man Mountain": [],
+    "LL Cool J": [
+        "hip hop"
+    ],
+    "Mase": [
+        "Hip hop"
+    ],
+    "Link": [
+        "R&B"
+    ],
+    "Jon B": [
+        "R&B",
+        "soul"
+    ],
+    "K-Ci & JoJo": [
+        "R&B",
+        "soul"
+    ],
+    "Jagged Edge": [
+        "R&B"
+    ],
+    "Luke": [],
+    "Xscape": [
+        "R&B",
+        "hip hop",
+        "soul"
+    ],
+    "Duke": [
+        "soul",
+        "house",
+        "dance"
+    ],
+    "Mike Campbell": [
+        "rock"
+    ],
+    "Beastie Boys": [
+        "Hip hop",
+        "rap rock",
+        "alternative hip hop",
+        "hardcore punk"
+    ],
+    "Rancid": [
+        "Punk rock",
+        "ska punk",
+        "street punk"
+    ],
+    "Asian Dub Foundation": [
+        "Jungle",
+        "big beat",
+        "trip hop",
+        "drum and bass",
+        "electronic rock",
+        "Asian underground"
+    ],
+    "Janet Jackson": [
+        "R&B",
+        "pop",
+        "dance",
+        "hip hop",
+        "funk",
+        "rock",
+        "new jack swing"
+    ],
+    "Moe Bandy": [
+        "Country"
+    ],
+    "Monsanto": [],
+    "Shania Twain": [
+        "Country",
+        "pop",
+        "country pop",
+        "country rock"
+    ],
+    "Leahy": [
+        "Folk",
+        "Country",
+        "Celtic"
+    ],
+    "Depeche Mode": [
+        "Synth-pop",
+        "electronic rock",
+        "new wave",
+        "dark wave",
+        "alternative rock"
+    ],
+    "Stabbing Westward": [
+        "Industrial rock",
+        "alternative rock"
+    ],
+    "Incubus": [
+        "Alternative rock",
+        "alternative metal",
+        "funk metal",
+        "nu metal"
+    ],
+    "Enrique Inglesias": [],
+    "No Authority": [
+        "R&B",
+        "teen pop"
+    ],
+    "Celine Dion": [
+        "Pop",
+        "R&B",
+        "chanson",
+        "soft rock",
+        "gospel"
+    ],
+    " Tim McGraw": [
+        "Country"
+    ],
+    "Dixie Chicks": [
+        "Country",
+        "bluegrass",
+        "country pop"
+    ],
+    "Jo Dee Messina": [
+        "Country"
+    ],
+    "Mark Wills": [
+        "Country"
+    ],
+    "Paul Carrack": [
+        "Blue-eyed soul",
+        "pop rock",
+        "soft rock"
+    ],
+    "Asleep at the Wheel": [
+        "Country",
+        "progressive country",
+        "rockabilly",
+        "Western swing"
+    ],
+    "Cher": [
+        "Pop",
+        "rock",
+        "folk",
+        "disco",
+        "dance"
+    ],
+    "Cyndi Lauper": [
+        "Pop",
+        "dance",
+        "new wave"
+    ],
+    "Wild Orchid": [
+        "R&B",
+        "pop",
+        "soul"
+    ],
+    "98 Degrees": [
+        "Pop",
+        "R&B"
+    ],
+    "Monica": [
+        "R&B",
+        "soul",
+        "hip hop soul"
+    ],
+    "Tatyana Ali": [
+        "R&B"
+    ],
+    "Aaron Carter": [
+        "Pop",
+        "hip hop"
+    ],
+    "Santana": [
+        "Latin rock",
+        "blues rock",
+        "psychedelic rock",
+        "acid rock",
+        "Chicano rock",
+        "jazz fusion",
+        "yacht rock"
+    ],
+    "Mana": [
+        "Latin pop",
+        "rock",
+        "pop-rock",
+        "rock en espa\u00f1ol"
+    ],
+    "Ozomatli": [
+        "Rap rock",
+        "Chicano rock",
+        "funk",
+        "hip hop",
+        "Latin rock",
+        "world fusion"
+    ],
+    "N'Sync": [
+        "Pop",
+        "dance-pop",
+        "teen pop",
+        "R&B",
+        "electronica"
+    ],
+    "Jordan Knight": [
+        "Pop",
+        "R&B"
+    ],
+    "Five": [
+        "Pop",
+        "dance-pop",
+        "rap rock"
+    ],
+    "Ricky Martin": [
+        "Latin pop",
+        "pop",
+        "dance",
+        "reggaeton",
+        "salsa"
+    ],
+    "Rage Against the Machine": [
+        "Rap metal",
+        "rap rock",
+        "funk metal",
+        "alternative metal"
+    ],
+    "Backstreet Boys": [
+        "Pop",
+        "dance-pop",
+        "R&B",
+        "teen pop",
+        "adult contemporary"
+    ],
+    "Jungle Brothers": [
+        "Golden age hip hop",
+        "progressive rap",
+        "psychedelic rap"
+    ],
+    "Sisqo": [
+        "R&B",
+        "hip hop soul",
+        "pop"
+    ],
+    "P!nk": [
+        "pop",
+        "pop rock",
+        "R&B"
+    ],
+    "Papa Roach": [
+        "Alternative rock",
+        "rap metal",
+        "nu metal",
+        "alternative metal",
+        "hard rock"
+    ],
+    "Limp Bizkit": [
+        "Nu metal",
+        "rap rock",
+        "rap metal"
+    ],
+    "Shaggy": [
+        "reggae",
+        "dancehall",
+        "hip hop",
+        "reggae fusion"
+    ],
+    "112": [
+        "R&B",
+        "hip hop",
+        "hip hop soul"
+    ],
+    "Britney Spears": [
+        "Pop",
+        "dance-pop",
+        "electropop",
+        "teen pop"
+    ],
+    "Dokken": [
+        "Glam metal",
+        "heavy metal",
+        "hard rock"
+    ],
+    "Montrose": [
+        "Hard rock"
+    ],
+    "Siggno": [
+        "Tejano music",
+        "Regional Mexican music",
+        "Latin pop",
+        "Norte\u00f1o"
+    ],
+    "Ronnie Rogers": [
+        "Country"
+    ],
+    "Rosita Fernandez": [
+        "Tejano"
+    ],
+    "La Mafia": [
+        "Tejano",
+        "Grupero"
+    ],
+    "Los Caminantes": [
+        "Regional Mexican"
+    ],
+    "Sarah Pierce": [],
+    "Colima": [],
+    "Gloria Aguilar": [],
+    "Jr.": [],
+    "Adolph Hofner": [
+        "Western swing",
+        "polka"
+    ],
+    "Timberline": [],
+    "Mariachi Vargas de Tecalitlan": [
+        "Son jaliscience",
+        "canci\u00f3n ranchera",
+        "bolero ranchero",
+        "corrido",
+        "huapango de mariachi",
+        "polka",
+        "jarabe",
+        "son jarocho and vals mexicano."
+    ],
+    "Johnny Rodriguez": [
+        "Country",
+        "outlaw country"
+    ],
+    "Freddie Fender": [
+        "Tejano",
+        "country",
+        "rock",
+        "swamp pop"
+    ],
+    "Barbara Fairchild": [
+        "Country",
+        "gospel"
+    ],
+    "Pedro Rodriguez": [],
+    "Johnny Lee": [],
+    "Kenny Dale": [
+        "Country"
+    ],
+    "The Kendalls": [
+        "Country",
+        "urban cowboy"
+    ],
+    "Razzy Bailey": [
+        "Country"
+    ],
+    "Sylvia Garcia": [],
+    "Rex Allen": [],
+    "Boxcar Willie": [
+        "Country",
+        "gospel"
+    ],
+    "James & Michael Younger": [
+        "Country"
+    ],
+    "Gus Hardin": [
+        "Country"
+    ],
+    "Steve Earle & the Dukes": [
+        "Alternative country",
+        "country rock",
+        "outlaw country",
+        "contemporary folk"
+    ],
+    "Kathy Mattea": [
+        "Country",
+        "country folk",
+        "Bluegrass"
+    ],
+    "Sunny and the Sunliners": [],
+    "Association": [],
+    "the True Believers": [
+        "Country rock",
+        "hard rock"
+    ],
+    "Cerrito": [],
+    "Fearless Iranians from Hell": [
+        "Hardcore punk",
+        "thrash metal"
+    ],
+    "The McCarters": [
+        "Country"
+    ],
+    "Dottsy": [
+        "Country"
+    ],
+    "Geezinslaws": [
+        "Country"
+    ],
+    "John Conlee": [
+        "Country"
+    ],
+    "Johnny Duncan": [],
+    "Tom Frost": [],
+    "Stoney Edwards": [
+        "Country"
+    ],
+    "Maritza": [],
+    "Kevin Evans": [],
+    "Nick Lowe": [
+        "Pub rock",
+        "new wave",
+        "power pop"
+    ],
+    "Wall of Voodoo": [
+        "Post-punk",
+        "new wave",
+        "art rock"
+    ],
+    "Mannequin": [],
+    "Paul Butterfield": [
+        "Blues",
+        "blues-rock"
+    ],
+    "Iggy Pop": [
+        "Rock",
+        "punk rock",
+        "proto-punk",
+        "hard rock",
+        "garage rock"
+    ],
+    "Grand Alliance": [],
+    "The Bangles": [
+        "Pop rock",
+        "power pop",
+        "paisley underground"
+    ],
+    "Ramones": [
+        "Punk rock",
+        "pop-punk"
+    ],
+    "Our Daughter's Wedding": [
+        "Synthpop",
+        "new wave"
+    ],
+    "Tina Turner": [
+        "Rock",
+        "R&B",
+        "soul",
+        "pop",
+        "rock and roll"
+    ],
+    "Andre Cymone": [
+        "Rock",
+        "funk",
+        "new wave",
+        "urban contemporary",
+        "R&B"
+    ],
+    "Modern English": [
+        "New wave",
+        "post-punk"
+    ],
+    "Ministry": [
+        "Industrial metal",
+        "industrial rock",
+        "thrash metal",
+        "synth-pop "
+    ],
+    "Kon Kan": [
+        "Synth-pop",
+        "hi-NRG",
+        "electronic"
+    ],
+    "Olives": [],
+    "Dan Ryan": [],
+    "Karen Finley": [
+        "performance art"
+    ],
+    "Martha Wash": [
+        "R&B",
+        "house",
+        "disco",
+        "soul"
+    ],
+    "Deborah Harry": [],
+    "Small World": [],
+    "Jai": [
+        "Electronic",
+        "pop",
+        "soul"
+    ],
+    "Alondra": [],
+    "Las 3 Divas": [],
+    "Arthur Hanlon": [
+        "New-age",
+        "instrumental",
+        "Latin pop"
+    ],
+    "Franco": [
+        "Alternative metal",
+        "nu metal",
+        "post-grunge",
+        "hard rock",
+        "reggae rock"
+    ],
+    "Jorge Infante": [],
+    "Sammy Davis": [],
+    "Vladimir Ashkenazy": [],
+    "Gallagher": [],
+    "DeBarge": [
+        "R&B",
+        "soul",
+        "funk",
+        "pop"
+    ],
+    "R.J.'s Latest Arrival": [
+        "R&B",
+        "soul"
+    ],
+    "White Heart": [
+        "Contemporary Christian music",
+        "Christian rock"
+    ],
+    "Don Wallace": [],
+    "Janis Martin": [
+        "Rockabilly",
+        "country",
+        "rock and roll"
+    ],
+    "Bent Norup": [],
+    "Berlin Opera": [],
+    "Marvin Hamlisch": [
+        "Musical theatre",
+        "film music",
+        "pops"
+    ],
+    "Preservation Hall Jazz Band": [
+        "New Orleans jazz"
+    ],
+    "Jim Cullum Jazz Band": [],
+    "US Navy Band": [],
+    "Laura Canales": [
+        "Tejano",
+        "Country",
+        "Latin pop",
+        "R&B"
+    ],
+    "Itzhak Perlman": [],
+    "George Winston": [
+        "Stride",
+        "New Orleans R&B",
+        "folk",
+        "new age"
+    ],
+    "Joe Piscopo": [],
+    "Rich Hall": [],
+    "Lucha Villa": [],
+    "Herbie Hancock": [
+        "Jazz",
+        "post-bop",
+        "modal jazz",
+        "jazz fusion",
+        "jazz-funk",
+        "electro",
+        "pop"
+    ],
+    "Moscow Virtuosi": [],
+    "Vladimir Spivakov": [],
+    "Hassan Hakmoun": [
+        "World fusion",
+        "Gnawa music"
+    ],
+    "Ali Ekber Cicek": [],
+    "Kathleen Battle": [],
+    "Gordon Lightfoot": [
+        "Folk",
+        "folk rock",
+        "country",
+        "soft rock",
+        "pop"
+    ],
+    "Jackyl": [
+        "Hard rock",
+        "glam metal",
+        "southern rock"
+    ],
+    "Maynard Ferguson": [
+        "Jazz",
+        "jazz rock",
+        "jazz fusion",
+        "pop"
+    ],
+    "Tommy Flanagan": [
+        "Bebop",
+        "hard bop",
+        "mainstream jazz"
+    ],
+    "New York Voices": [
+        "Jazz",
+        "vocal jazz"
+    ],
+    "Jon Hendricks": [
+        "Jazz"
+    ],
+    "Milt Hinton": [
+        "Traditional jazz",
+        "swing",
+        "pop"
+    ],
+    "Joe Williams": [],
+    "Arturo Sandoval": [
+        "Jazz",
+        "Latin jazz",
+        "Afro-Cuban"
+    ],
+    "Betty Carter": [
+        "Jazz",
+        "post-bop"
+    ],
+    "The Original Drifters": [
+        "R&B",
+        "doo-wop",
+        "soul",
+        "pop"
+    ],
+    "Flaco Jimenez": [
+        "Conjunto",
+        "Norte\u00f1o",
+        "Tejano",
+        "country",
+        "rock"
+    ],
+    "Joe Satriani": [
+        "Instrumental rock",
+        "hard rock",
+        "blues rock"
+    ],
+    "Steve Vai": [
+        "Instrumental rock",
+        "hard rock",
+        "heavy metal",
+        "progressive metal"
+    ],
+    "Kenny Wayne Shepherd": [
+        "Blues rock",
+        "blues",
+        "rock",
+        "roots rock",
+        "hard rock"
+    ],
+    "Deniece Williams": [
+        "Soul",
+        "R&B",
+        "disco",
+        "gospel",
+        "dance",
+        "pop"
+    ],
+    "Sam the Sham": [
+        "Rock and roll",
+        "Chicano rock",
+        "proto-punk"
+    ],
+    "Gary Lewis & the Playboys": [
+        "Rock",
+        "pop",
+        "rock and roll"
+    ],
+    "Lou Christie": [
+        "Pop",
+        "soft rock",
+        "pop rock"
+    ],
+    "Rosie Hamlin": [
+        "Doo-wop",
+        "R&B"
+    ],
+    "Merrilee Rush": [],
+    "Eddie Holman": [
+        "R&B",
+        "soul",
+        "gospel",
+        "pop"
+    ],
+    "Sunny Ozuna": [],
+    "Rene": [],
+    "Dave Koz": [
+        "Jazz",
+        "rock",
+        "glam rock",
+        "heavy metal"
+    ],
+    "Norman Brown": [],
+    "Patti Austin": [
+        "R&B",
+        "pop",
+        "jazz"
+    ],
+    "Brian Culbertson": [
+        "Smooth jazz",
+        "R&B",
+        "funk"
+    ],
+    "America": [
+        "Soft rock",
+        "folk rock",
+        "pop rock",
+        "country rock"
+    ],
+    "Rick Springfield": [
+        "Rock",
+        "power pop",
+        "hard rock",
+        "pop rock"
+    ],
+    "Susan Gibson": [],
+    "Cheats": [
+        "Indie",
+        "Pop rock",
+        "Alternative rock"
+    ],
+    "Los #3 Dinners": [],
+    "True Stories": [],
+    "Katherine Dawn": [],
+    "Laura Marie": [
+        "Adult alternative",
+        "acoustic rock"
+    ],
+    "Jack Russell": [
+        "Hard rock",
+        "heavy metal",
+        "glam metal"
+    ],
+    "Steve Palmer": [],
+    "Bill Bailey": [],
+    "James Brown": [
+        "Soul",
+        "R&B",
+        "funk"
+    ],
+    "Sonny James": [
+        "country",
+        "pop"
+    ],
+    "Roy Clark": [
+        "Country",
+        "rockabilly"
+    ],
+    "Conway Twitty": [
+        "Country",
+        "rockabilly"
+    ],
+    "Doobie Brothers": [
+        "Rock",
+        "soft rock",
+        "pop",
+        "blue-eyed soul"
+    ],
+    "Mother Earth": [],
+    "Sly & the Family Stone": [
+        "Psychedelic soul",
+        "funk",
+        "rock",
+        "progressive soul"
+    ],
+    "Ruth Copeland": [
+        "Pop",
+        "folk",
+        "funk",
+        "soul"
+    ],
+    "Judy Lynn": [],
+    "Jerry Reed": [
+        "Country",
+        "rockabilly"
+    ],
+    "The Isaac Hayes Movement": [],
+    "Willis Alan Ramsey": [],
+    "Lynn Anderson": [
+        "Country",
+        "Countrypolitan",
+        "western",
+        "bluegrass",
+        "gospel"
+    ],
+    "John Davidson": [],
+    "The Statler Brothers": [
+        "Country",
+        "gospel",
+        "southern gospel",
+        "traditional pop"
+    ],
+    "Freddy Fender": [
+        "Tejano",
+        "country",
+        "rock",
+        "swamp pop"
+    ],
+    "Anacani": [],
+    "Ted Nugent": [
+        "Hard rock"
+    ],
+    "The Right Combination": [],
+    "Myron Floren": [],
+    "Jimmy Dean": [
+        "Country",
+        "rockabilly"
+    ],
+    "Sara Jordan Powell": [
+        "Gospel",
+        "traditional black gospel"
+    ],
+    "Blue \u00d6yster Cult": [
+        "Hard rock",
+        "heavy metal",
+        "occult rock",
+        "progressive rock",
+        "psychedelic rock",
+        "acid rock"
+    ],
+    "Black Oak Arkansas": [
+        "Southern rock",
+        "country rock",
+        "boogie rock",
+        "hard rock"
+    ],
+    "Commodores": [
+        "Funk",
+        "soul",
+        "R&B",
+        "pop"
+    ],
+    "Emotions": [
+        "Gospel",
+        "R&B",
+        "soul",
+        "disco",
+        "pop"
+    ],
+    "KISS": [
+        "Hard rock",
+        "heavy metal",
+        "shock rock",
+        "glam metal"
+    ],
+    "Detective": [
+        "Hard rock",
+        "funk rock",
+        "soul"
+    ],
+    "Rod Stewart": [
+        "Rock",
+        "pop",
+        "blue-eyed soul",
+        "blues rock",
+        "folk rock",
+        "soft rock",
+        "disco",
+        "traditional pop"
+    ],
+    "Air Supply": [
+        "Soft rock",
+        "pop rock",
+        "pop",
+        "adult contemporary",
+        "middle-of-the-road"
+    ],
+    "Robin Trower": [
+        "Blues rock",
+        "hard rock"
+    ],
+    "Wishbone Ash": [
+        "Hard rock",
+        "blues rock",
+        "folk rock",
+        "progressive rock",
+        "jazz fusion"
+    ],
+    "Starcastle": [
+        "Progressive rock"
+    ],
+    "Mel Tillis": [
+        "Country"
+    ],
+    "Don Williams": [
+        "Country"
+    ],
+    "Barbara Mandrell": [
+        "Country",
+        "R&B",
+        "soul",
+        "country pop",
+        "gospel"
+    ],
+    "Oak Ridge Boys": [
+        "Country",
+        "southern gospel",
+        "doo wop",
+        "pop"
+    ],
+    "Stella Parton": [
+        "Country",
+        "gospel"
+    ],
+    "Whispers": [],
+    "Shalamar": [
+        "Disco",
+        "funk",
+        "soul",
+        "post-disco",
+        "boogie"
+    ],
+    "Lakeside": [
+        "Funk"
+    ],
+    "Dynasty": [
+        "Funk",
+        "disco",
+        "soul"
+    ],
+    "Mundo Earwood": [
+        "Country"
+    ],
+    "Beach Boys": [
+        "Rock",
+        "pop",
+        "surf",
+        "psychedelia"
+    ],
+    "Jerry Jeff Walker": [
+        "Progressive country",
+        "outlaw country"
+    ],
+    "Flash Cadillac & the Continental Kids": [],
+    "Evelyn \"Champagne\" King": [
+        "R&B",
+        "disco",
+        "pop",
+        "soul",
+        "post-disco"
+    ],
+    "Bar-Kays": [
+        "Funk",
+        "funk rock",
+        "psychedelic soul",
+        "disco"
+    ],
+    "Grandmaster Flash & the Furious Five": [
+        "Hip hop"
+    ],
+    "Wuf Ticket": [],
+    "Roberto Pulido": [],
+    "Frankie Valli & the Four Seasons": [
+        "Pop rock",
+        "pop",
+        "soul",
+        "doo-wop",
+        "rock and roll"
+    ],
+    "The Association": [
+        "Sunshine pop"
+    ],
+    "Johnny Rivers": [
+        "Rock and roll",
+        "blue-eyed soul",
+        "blues rock",
+        "country rock"
+    ],
+    "Kitty Wells": [
+        "Country",
+        "honky tonk",
+        "Nashville sound",
+        "gospel"
+    ],
+    "Johnny Bush": [
+        "Country",
+        "honky-tonk",
+        "western swing"
+    ],
+    "Tanya Tucker": [
+        "Country",
+        "outlaw country",
+        "country rock"
+    ],
+    "Atlanta": [
+        "Country"
+    ],
+    "Charlie Walker": [
+        "Country"
+    ],
+    "Hank Thompson": [
+        "Country",
+        "western swing"
+    ],
+    "B.B. King": [
+        "Electric blues",
+        "rhythm and blues",
+        "rock and roll",
+        "soul",
+        "gospel"
+    ],
+    "Bobby Blue Bland": [
+        "Blues",
+        "soul blues",
+        "R&B",
+        "soul"
+    ],
+    "B. J. Thomas": [
+      "country",
+      "contemporary Christian",
+      "pop",
+      "rock"  
+    ],
+    "Millie Jackson": [
+        "Soul",
+        "disco",
+        "R&B"
+    ],
+    "Menudo": [
+        "Latin freestyle",
+        "dance",
+        "R&B",
+        "pop rock"
+    ],
+    "Alabama": [
+        "Country",
+        "Southern rock",
+        "country rock",
+        "bluegrass",
+        "soft rock"
+    ],
+    "New Edition": [
+        "R&B",
+        "pop",
+        "hip hop",
+        "new jack swing"
+    ],
+    "Force M.D.'s": [
+        "R&B",
+        "urban",
+        "new jack swing",
+        "quiet storm"
+    ],
+    "Blues Image": [
+        "blues rock",
+        "hard rock"
+    ],
+    "Cherelle": [],
+    "Hank Williams": [
+        "Country",
+        "Western",
+        "honky-tonk",
+        "gospel"
+    ],
+    "Jr": [],
+    "Eddy Raven": [
+        "Country",
+        "Cajun"
+    ],
+    "Augie Meyers": [
+        "Garage rock",
+        "Psychedelic rock",
+        "rock",
+        "soul",
+        "folk",
+        "tejano/tex-mex",
+        "country",
+        "country rock"
+    ],
+    "Keith Sweat": [
+        "R&B",
+        "new jack swing",
+        "hip hop",
+        "soul",
+        "urban"
+    ],
+    "Rob Base": [
+        "Hip hop"
+    ],
+    "Troop": [
+        "R&B",
+        "new jack swing"
+    ],
+    "New Kids on the Block": [
+        "Pop",
+        "R&B"
+    ],
+    "Dino": [],
+    "William Nelson": [],
+    "Tammy Wynette": [
+        "Country",
+        "Nashville sound"
+    ],
+    "Faron Young": [
+        "Country",
+        "honky tonk"
+    ],
+    "Milli Vanilli": [
+        "R&B"
+    ],
+    "Winger": [
+        "Glam metal",
+        "hard rock",
+        "progressive metal"
+    ],
+    "Slaughter": [
+        "Glam metal",
+        "hard rock"
+    ],
+    "John Michael Montgomery": [
+        "Country"
+    ],
+    "Stigma": [],
+    "Sporty Thievz": [
+        "Hip hop"
+    ],
+    "Blaque": [
+        "R&B",
+        "Pop"
+    ],
+    "Lil Troy": [
+        "Hip Hop"
+    ],
+    "Vengaboys": [
+        "Eurodance",
+        "dance-pop"
+    ],
+    "Nastyboy Klick": [
+        "Hip hop"
+    ],
+    "Juvenile": [],
+    "Destiny's Child": [
+        "R&B",
+        "pop"
+    ],
+    "Lil Wayne": [],
+    "A Perfect Circle": [
+        "Alternative rock",
+        "alternative metal",
+        "hard rock",
+        "art rock"
+    ],
+    "Bonnie Raitt": [
+        "Blues",
+        "blues rock",
+        "roots rock",
+        "folk rock",
+        "folk",
+        "Americana",
+        "country",
+        "rock"
+    ],
+    "Children of Bodom": [
+        "Melodic death metal",
+        "power metal"
+    ],
+    "Mastodon": [
+        "Progressive metal",
+        "sludge metal",
+        "stoner metal",
+        "alternative metal"
+    ],
+    "Lydia Mendoza": [
+        "Tejano",
+        "conjunto"
+    ],
+    "Xavier Rodriguez": [],
+    "Clifford Scott": [],
+    "Richard Garcia": [],
+    "Dave Valentine": [],
+    "Tish Hinojosa": [
+        "Country",
+        "Folk"
+    ],
+    "Solarized": [],
+    "Torch": [
+        "Metalcore"
+    ],
+    "Sun Day": [],
+    "Los Conquistadores": [],
+    "Los Lobos": [
+        "Chicano rock",
+        "roots rock",
+        "Latin rock",
+        "Tex-Mex",
+        "country rock",
+        "Americana",
+        "heartland rock",
+        "cowpunk"
+    ],
+    "Agustin Ramirez": [],
+    "Chente Barrera": [],
+    "Skunkweed": [],
+    "Starchild": [
+        "Hard rock",
+        "progressive rock"
+    ],
+    "Woodbelly": [
+        "folk",
+        "rock",
+        "blues",
+        "reggae"
+    ],
+    "Spin Alley": [],
+    "Micky and the Motorcars": [
+        "Alternative country",
+        "Americana",
+        "Texas country",
+        "roots rock",
+        "country rock"
+    ],
+    "Missing Andy": [
+        "Alternative rock",
+        "post-Britpop",
+        "ska",
+        "mod revival",
+        "British hip hop"
+    ],
+    "Shock": [],
+    "Phoenix": [
+        "Indie pop",
+        "synth-pop",
+        "pop rock",
+        "new wave"
+    ],
+    "Eleven Hundred Springs": [],
+    "Eskalith": [],
+    "Dirty Power": [],
+    "Briggs": [],
+    "I.O.I.": [],
+    "Ashburn": [],
+    "The Meteors": [
+        "Psychobilly"
+    ],
+    "Del Castillo": [
+        "Nuevo americano",
+        "Rock",
+        "Latin",
+        "Blues",
+        "Instrumental",
+        "World music",
+        "Latin rock"
+    ],
+    "Outlier": [],
+    "The Upstarts": [],
+    "Alibi": [],
+    "The Visitor": [
+        "Electronic rock"
+    ],
+    "Man of Sorrows": [],
+    "Bastard Sons of Johnny Cash": [],
+    "Last of Our Kind": [],
+    "Jerry Cole": [
+        "Rock",
+        "country"
+    ],
+    "Remember This": [],
+    "The Lonely H": [
+        "Rock",
+        "indie rock"
+    ],
+    "The Jinx": [],
+    "Reverend": [
+        "Thrash metal",
+        "speed metal",
+        "power\u00a0metal"
+    ],
+    "The Dollyrots": [
+        "Punk rock",
+        "pop punk"
+    ],
+    "Ian Moore": [],
+    "Calhoun": [],
+    "Smile Smile": [
+        "Indie rock",
+        "Indie pop",
+        "Folk pop"
+    ],
+    "Keith Davis": [],
+    "Old 97's": [
+        "Country rock",
+        "alternative country",
+        "indie rock",
+        "power pop",
+        "Americana"
+    ],
+    "The Drams": [
+        "Alt-countryRock"
+    ],
+    "White Ghost Shivers": [
+        "CabaretJazz"
+    ],
+    "Billy Morgan": [],
+    "Sounds Under Radio": [
+        "Alternative rock"
+    ],
+    "Soldier Thread": [
+        "Indie pop",
+        "alternative rock"
+    ],
+    "Brokencyde": [
+        "Crunkcore",
+        "trap"
+    ],
+    "Radney Foster": [
+        "Country"
+    ],
+    "Carolyn Wonderland": [
+        "Blues"
+    ],
+    "Two Tons of Steel": [
+        "Country",
+        "alternative Country",
+        "Americana",
+        "rockabilly"
+    ],
+    "Kinky Friedman": [
+        "Country",
+        "country rock",
+        "outlaw country"
+    ],
+    "Mingo Fishtrap": [
+        "Soul",
+        "funk"
+    ],
+    "Pauline Oliveros": [],
+    "Deborah Hay": [],
+    "BL Lacerta": [],
+    "Footprints": [],
+    "Second Nature": [],
+    "Frankie Valli": [
+        "Rock",
+        "pop",
+        "disco",
+        "blue-eyed soul"
+    ],
+    "Little Richard": [
+        "Rock and roll",
+        "rhythm and blues",
+        "gospel",
+        "soul"
+    ],
+    "Better Than Ezra": [
+        "Alternative rock",
+        "post-grunge",
+        "psychedelic rock",
+        "country rock"
+    ],
+    "Jeff Foxworthy": [],
+    "Carman": [],
+    "Collin Raye": [
+        "Country"
+    ],
+    "Steve Wariner": [],
+    "Styx": [
+        "Progressive rock",
+        "hard rock",
+        "arena rock",
+        "art rock",
+        "soft rock",
+        "pop rock"
+    ],
+    "All Time Low": [
+        "Pop-punk",
+        "pop rock",
+        "power pop",
+        "emo pop",
+        "alternative rock"
+    ],
+    "Katy Perry": [
+        "Pop"
+    ],
+    "Pure Prairie League": [
+        "Country rock",
+        "soft rock"
+    ],
+    "Ray Wylie Hubbard": [
+        "Country",
+        "outlaw country",
+        "Americana"
+    ],
+    "Sammi Smith": [
+        "Country",
+        "outlaw country",
+        "progressive country"
+    ],
+    "Dale Jackson": [],
+    "Maximus": [],
+    "Steve James": [],
+    "Southern Pride": [],
+    "Country Joe and the Fish": [
+        "Psychedelic rock",
+        "acid rock",
+        "folk rock"
+    ],
+    "Charley Pride": [
+      "country",
+      "gospel"  
+    ],
+    "Pete Seeger": [
+        "American folk music",
+        "protest music",
+        "Americana"
+    ],
+    "Cat's Cradle": [],
+    "Denim": [
+        "Glam rock",
+        "indie rock"
+    ],
+    "Janus": [],
+    "Sugarloaf": [
+        "Rock",
+        "Psychedelic rock",
+        "Progressive rock"
+    ],
+    "Blackbird": [
+        "Alternative rock",
+        "post-punk",
+        "new wave",
+        "electronic"
+    ],
+    "Homer": [],
+    "Tim Weisberg": [
+        "Pop",
+        "rock",
+        "easy listening"
+    ],
+    "Wet Willie": [
+        "Southern rock"
+    ],
+    "13th Floor Elevators": [
+        "Psychedelic rock",
+        "garage rock",
+        "acid rock",
+        "proto-punk"
+    ],
+    "Jo Jo Gunne": [
+        "Rock"
+    ],
+    "San Antonio Symphony": [],
+    "Sweet": [
+        "Glam rock",
+        "hard rock",
+        "power pop",
+        "bubblegum "
+    ],
+    "Big Walter Price": [
+        "Texas blues"
+    ],
+    "Lonnie Brooks": [
+        "Chicago blues",
+        "electric blues"
+    ],
+    "Lisa Lopez": [
+        "Pop"
+    ],
+    "Patsy Torres": [
+        "Tejano music",
+        "country"
+    ],
+    "Jerry Lee Lewis": [
+        "Rock and roll",
+        "rockabilly",
+        "country",
+        "gospel",
+        "honky-tonk"
+    ],
+    "Legs Diamond": [
+        "Hard rock",
+        "progressive rock",
+        "heavy metal"
+    ],
+    "Eric Johnson": [],
+    "Madhouse": [],
+    "The Romantics": [
+        "Power pop",
+        "new wave",
+        "pop rock",
+        "rock",
+        "garage rock"
+    ],
+    "Icon": [
+        "Hard rock",
+        "glam metal",
+        "heavy metal"
+    ],
+    "Jumbo": [
+        "RockAlternative rock"
+    ],
+    "Exciter": [
+        "Speed metal",
+        "thrash metal",
+        "heavy metal"
+    ],
+    "Grim Reaper": [
+        "Heavy metal"
+    ],
+    "Laaz Rockit": [
+        "Thrash metal",
+        "heavy metal",
+        "power metal "
+    ],
+    "Dizzy Gillespie": [
+        "Jazz",
+        "bebop",
+        "Afro-Cuban jazz"
+    ],
+    "Helix": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Uriah Heep": [
+        "Hard rock",
+        "heavy metal",
+        "progressive rock"
+    ],
+    "Kilamanjaro": [],
+    "Top Cats": [
+        "Rockabilly"
+    ],
+    "Adam Bomb": [
+        "Glam rock",
+        "hard rock"
+    ],
+    "Talas": [
+        "Hard rock",
+        "heavy metal",
+        "progressive metal",
+        "instrumental rock",
+        "progressive rock"
+    ],
+    "Mania": [],
+    "The Alarm": [
+        "Alternative rock",
+        "new wave",
+        "post-punk"
+    ],
+    "Fabulous Thunderbirds": [
+        "Blues",
+        "Rock and Roll",
+        "R&B"
+    ],
+    "Omar & the Howlers": [
+        "Blues rock",
+        "Texas blues",
+        "Southern rock"
+    ],
+    "The Monkees": [
+        "Pop rock",
+        "rock",
+        "bubblegum",
+        "psychedelia"
+    ],
+    "Herman's Hermits": [
+        "Beat",
+        "pop rock",
+        "bubblegum"
+    ],
+    "The Grass Roots": [
+        "Folk rock",
+        "psychedelic pop",
+        "pop rock"
+    ],
+    "Gary Puckett & the Union Gap": [
+        "Pop"
+    ],
+    "Spyro Gyra": [
+        "Jazz",
+        "jazz fusion",
+        "smooth jazz"
+    ],
+    "Tomas Ramirez": [],
+    "Morris Day": [
+        "Minneapolis sound",
+        "funk",
+        "rock",
+        "R&B",
+        "pop",
+        "new wave",
+        "new jack swing",
+        "hip hop"
+    ],
+    "UFO": [
+        "Hard rock"
+    ],
+    "Three Dog Night": [
+        "Pop rock",
+        "soft rock",
+        "roots rock",
+        "funk rock",
+        "blue-eyed soul"
+    ],
+    "The Jets": [],
+    "Loudness": [
+        "Heavy metal",
+        "glam metal",
+        "speed metal",
+        "progressive metal"
+    ],
+    "Cinderella": [
+        "Glam metal",
+        "hard rock",
+        "blues rock"
+    ],
+    "Poison": [
+        "Glam metal",
+        "hard rock",
+        "heavy metal"
+    ],
+    "John Kay & Steppenwolf": [
+        "Psychedelic rock",
+        "blues rock",
+        "acid rock",
+        "hard rock"
+    ],
+    "Guess Who": [
+        "hard rock",
+        "psychedelic rock",
+        "blues rock",
+        "garage rock"
+    ],
+    "Tierra": [
+        "Latin R&B"
+    ],
+    "Yngwie Malmsteen": [
+        "Heavy metal",
+        "neoclassical metal",
+        "hard rock"
+    ],
+    "Merle Haggard": [
+        "Country",
+        "outlaw country",
+        "Bakersfield sound"
+    ],
+    "Holly Dunn": [],
+    "Queensr\u00ffche": [
+        "Progressive metal",
+        "heavy metal",
+        "hard rock"
+    ],
+    "Keel": [
+        "Hard rock",
+        "heavy metal",
+        "glam metal"
+    ],
+    "Raven": [
+        "Heavy metal",
+        "speed metal"
+    ],
+    "Etta James": [
+        "Gospel",
+        "blues",
+        "jazz",
+        "R&B",
+        "rock and roll",
+        "soul"
+    ],
+    "James Cotton": [
+        "Blues",
+        "Chicago blues",
+        "Delta blues",
+        "electric blues",
+        "Memphis blues",
+        "rock"
+    ],
+    "M\u00f6torhead": [
+        "Heavy metal",
+        "hard rock",
+        "speed metal"
+    ],
+    "Omen": [
+        "Heavy metal",
+        "power metal"
+    ],
+    "Pat Metheny Group": [
+        "Jazz",
+        "Fusion"
+    ],
+    "George Thorogood & the Destroyers": [
+        "Blues rock[1]",
+        "hard rock",
+        "boogie rock",
+        "rock and roll"
+    ],
+    "Georgia Satellites": [
+        "Southern rock",
+        "hard rock",
+        "boogie rock",
+        "roots rock"
+    ],
+    "Jason & the Scorchers": [
+        "Cowpunk",
+        "punk rock",
+        "alt-country",
+        "Americana"
+    ],
+    "Saxon": [
+        "Heavy metal"
+    ],
+    "Stryper": [
+        "Christian metal",
+        "glam metal",
+        "heavy metal",
+        "hard rock"
+    ],
+    "Rhett Forrester": [
+        "Heavy metal",
+        "hard rock"
+    ],
+    "Cutting Crew": [
+        "Pop rock",
+        "new wave"
+    ],
+    "Ruben Blades": [],
+    "Mark Lindsay": [
+        "Rock"
+    ],
+    "Grass Roots": [],
+    "The Byrds": [
+        "Rock",
+        "pop",
+        "folk rock",
+        "psychedelia",
+        "raga rock",
+        "country rock",
+        "jangle pop"
+    ],
+    "Randy Travis": [
+        "Country",
+        "Gospel"
+    ],
+    "Anthrax": [],
+    "Metal Church": [
+        "Heavy metal",
+        "power metal",
+        "thrash metal"
+    ],
+    "DRI": [],
+    "Y&T": [
+        "Heavy metal",
+        "hard rock",
+        "glam metal"
+    ],
+    "Ace Frehley": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Gary Moore": [
+        "Blues",
+        "hard rock",
+        "heavy metal",
+        "jazz fusion"
+    ],
+    "Faster Pussycat": [
+        "Hard rock",
+        "glam metal",
+        "glam punk",
+        "blues rock",
+        "industrial rock"
+    ],
+    "King Diamond": [
+        "Heavy metal",
+        "shock rock"
+    ],
+    "Trouble": [
+        "Doom metal"
+    ],
+    "Devestation": [],
+    "Armored Saint": [
+        "Heavy metal"
+    ],
+    "Little Anthony": [
+        "Rhythm and blues",
+        "soul"
+    ],
+    "Rene & Rene": [
+        "Latin pop"
+    ],
+    "The Cult": [
+        "Hard rock",
+        "gothic rock",
+        "post-punk"
+    ],
+    "Guns 'n' Roses": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Lisa Lisa & Cult Jam": [
+        "Pop",
+        "freestyle",
+        "brown-eyed soul"
+    ],
+    "Expose": [
+        "Latin freestyle",
+        "dance",
+        "pop rock"
+    ],
+    "John Mayall": [
+        "British blues",
+        "blues rock",
+        "jazz rock"
+    ],
+    "Krokus": [
+        "Hard rock",
+        "heavy metal",
+        "glam metal",
+        "progressive rock "
+    ],
+    "Warlock": [
+        "Heavy metal",
+        "speed metal",
+        "power metal"
+    ],
+    "Fate's Warning": [
+        "Progressive metal",
+        "heavy metal"
+    ],
+    "Lillian Axe": [
+        "Glam metal"
+    ],
+    "Lita Ford": [
+        "Glam metal",
+        "heavy metal",
+        "hard rock",
+        "punk rock"
+    ],
+    "Black and Blue": [],
+    "Buddy Guy": [
+        "Chicago blues",
+        "blues",
+        "electric blues",
+        "blues rock"
+    ],
+    "Koko Taylor": [
+        "Chicago blues",
+        "electric blues",
+        "rhythm and blues",
+        "soul",
+        "soul blues",
+        "traditional blues"
+    ],
+    "Junior Wells": [
+        "Blues",
+        "Chicago blues",
+        "rhythm and blues"
+    ],
+    "Richard Marx": [
+        "Pop rock",
+        "soft rock"
+    ],
+    "John Cafferty": [
+        "Rock",
+        "heartland rock"
+    ],
+    "Kenny G": [
+        "Adult contemporary",
+        "smooth jazz",
+        "easy listening"
+    ],
+    "Stanley Jordan": [
+        "Jazz",
+        "jazz fusion"
+    ],
+    "Flotsam & Jetsam": [
+        "thrash metal",
+        "speed metal"
+    ],
+    "REO Speedwagon": [
+        "Rock",
+        "pop rock",
+        "hard rock",
+        "arena rock"
+    ],
+    "Joan Jett & the Blackhearts": [
+        "Rock",
+        "hard rock",
+        "punk rock"
+    ],
+    "Helloween": [
+        "Power metal",
+        "heavy metal",
+        "speed metal"
+    ],
+    "Exodus": [
+        "Thrash metal"
+    ],
+    "Eddie Money": [
+        "Rock",
+        "pop rock",
+        "hard rock"
+    ],
+    "Henry Lee Summer": [
+        "Pop",
+        "rock"
+    ],
+    "Ed Shaughnessy": [
+        "Swing",
+        "bebop",
+        "jazz",
+        "big band"
+    ],
+    "Four Freshmen": [
+        "Jazz",
+        "traditional pop",
+        "barbershop"
+    ],
+    "East Meets West": [],
+    "John Watkins": [],
+    "the Fever": [
+        "Indie rock"
+    ],
+    "Accept": [
+        "Heavy metal"
+    ],
+    "David Sanborn": [
+        "Jazz",
+        "jazz fusion",
+        "blues rock",
+        "R&B",
+        "pop",
+        "blues"
+    ],
+    "Brenda Russell": [
+        "R&B",
+        "pop",
+        "soul",
+        "dance",
+        "jazz"
+    ],
+    "Great White": [
+        "Hard rock",
+        "glam metal"
+    ],
+    "Tesla": [
+        "Hard rock",
+        "glam metal "
+    ],
+    "Kix": [
+        "Glam metal",
+        "hard rock"
+    ],
+    "Otis Day and the Knights": [
+        "R&B",
+        "P funk"
+    ],
+    "Jackson Browne": [
+        "Rock",
+        "folk rock",
+        "soft rock",
+        "pop rock",
+        "country rock"
+    ],
+    "David Lindley": [
+        "Rock",
+        "country",
+        "world"
+    ],
+    "El Rayo X": [
+        "Rock",
+        "country",
+        "world"
+    ],
+    "Julian Lennon": [
+        "Rock",
+        "pop"
+    ],
+    "Rumillajta": [
+        "Andean music"
+    ],
+    "L.A. Guns": [
+        "Glam metal",
+        "hard rock"
+    ],
+    "Dangerous Toys": [
+        "Hard rock"
+    ],
+    "Tora Tora Tora": [],
+    "Tracy Chapman": [
+        "Folk",
+        "blues rock",
+        "pop",
+        "soul"
+    ],
+    "Bad Company": [
+        "Hard rock",
+        "blues rock"
+    ],
+    "Damn Yankees": [
+        "Hard rock"
+    ],
+    "Tony Garnier": [
+        "Rock",
+        "folk-rock",
+        "blues",
+        "country"
+    ],
+    "Dio": [
+        "Heavy metal"
+    ],
+    "Love": [
+        "Psychedelic rock",
+        "folk rock",
+        "acid rock",
+        "psychedelic pop"
+    ],
+    "Hate": [
+        "Blackened death metal",
+        "death metal"
+    ],
+    "Cold Sweat": [],
+    "Robert Plant": [
+        "Rock",
+        "blues",
+        "folk",
+        "country",
+        "hard rock",
+        "heavy metal"
+    ],
+    "Black Crowes": [
+        "Southern rock",
+        "blues rock",
+        "hard rock",
+        "roots rock",
+        "jam band"
+    ],
+    "Warrant": [],
+    "Trixter": [
+        "Glam metal"
+    ],
+    "Firehouse": [
+        "Glam metal",
+        "hard rock"
+    ],
+    "Bob Dylan": [
+        "Folk",
+        "blues",
+        "rock",
+        "gospel",
+        "country",
+        "traditional pop",
+        "jazz"
+    ],
+    "T.K.O.": [],
+    "Petting Zoo": [],
+    "Pariah": [
+        "heavy metal",
+        "glam metal",
+        "hard rock",
+        "alternative rock"
+    ],
+    "Night Ranger": [
+        "Hard rock",
+        "glam metal",
+        "AOR"
+    ],
+    "Aswad": [
+        "Reggae",
+        "reggae fusion",
+        "R&B"
+    ],
+    "Lucky Dube": [
+        "Reggae",
+        "mbaqanga"
+    ],
+    "John Holt": [],
+    "Barrington Levy": [
+        "Reggae",
+        "dancehall",
+        "reggae fusion",
+        "ragga jungle"
+    ],
+    "Papa San": [
+        "Reggae",
+        "dancehall",
+        "gospel reggae"
+    ],
+    "Skool": [],
+    "Paquito D'Rivera": [
+        "Afro-Cuban jazz",
+        "songo",
+        "classical"
+    ],
+    "Crosby": [],
+    "Michael Hedges": [
+        "New acoustic",
+        "world",
+        "new-age"
+    ],
+    "Emerson": [],
+    "Bonham": [
+        "Hard rock"
+    ],
+    "Cedella Marley Booker": [],
+    "Julian Marley": [
+        "Roots reggae"
+    ],
+    "Suicidal Tendencies": [
+        "Crossover thrash",
+        "thrash metal",
+        "hardcore punk",
+        "funk metal",
+        "skate punk"
+    ],
+    "Shabba Ranks": [
+        "Reggae",
+        "dancehall",
+        "reggae fusion",
+        "ragga"
+    ],
+    "The Posse": [],
+    "Buffalo Soldier": [],
+    "Ipso Facto": [
+        "Neo-psychedelia",
+        "post-punk"
+    ],
+    "Algiers Brass Band": [
+        "Brass band"
+    ],
+    "Butthole Surfers": [
+        "Noise rock",
+        "experimental rock",
+        "alternative rock",
+        "psychedelic rock",
+        "art punk"
+    ],
+    "Basehead": [
+        "Alternative rock",
+        "alternative hip hop"
+    ],
+    "fIREHOSE": [
+        "Alternative rock",
+        "post-punk",
+        "progressive rock",
+        "punk rock"
+    ],
+    "Spin Doctors": [
+        "Alternative rock",
+        "funk rock",
+        "pop rock",
+        "jam band"
+    ],
+    "Soul Asylum": [
+        "Alternative rock",
+        "grunge",
+        "country rock",
+        "punk rock"
+    ],
+    "Screaming Trees": [
+        "Grunge",
+        "neo-psychedelia",
+        "hard rock",
+        "country rock"
+    ],
+    "Selena": [
+        "Tejano",
+        "Tex-Mex cumbia",
+        "Latin pop"
+    ],
+    "La Sombra": [
+        "Tejano",
+        "Tex-Mex",
+        "cumbia",
+        "hip hop",
+        "rock",
+        "soul"
+    ],
+    "La Tropa F": [],
+    "Los Desperados": [],
+    "Big Mountain": [
+        "Reggae"
+    ],
+    "April Wine": [
+        "Hard rock"
+    ],
+    "Brother Cane": [
+        "Alternative rock",
+        "hard rock",
+        "southern rock"
+    ],
+    "Soundgarden": [
+        "Grunge",
+        "heavy metal",
+        "alternative metal",
+        "alternative rock"
+    ],
+    "Larry Carlton": [
+        "Jazz fusion",
+        "rock",
+        "pop"
+    ],
+    "Billy Cobham": [
+        "Jazz",
+        "jazz fusion",
+        "jazz funk",
+        "progressive rock"
+    ],
+    "Najee": [
+        "Jazz",
+        "smooth jazz",
+        "R&B"
+    ],
+    "The Newport Jazz Festival": [],
+    "Cranberries": [
+        "Alternative rock",
+        "indie rock",
+        "pop rock",
+        "jangle pop",
+        "post-punk",
+        "dream pop"
+    ],
+    "Grant Lee Buffalo": [
+        "Alternative rock",
+        "Americana"
+    ],
+    "Fingerprints": [],
+    "Mason Ruffner": [
+        "Blues",
+        "rock"
+    ],
+    "Doyle Bramhall": [
+        "Blues",
+        "R&B"
+    ],
+    "Lou Ann Barton": [
+        "Blues",
+        "Jump blues"
+    ],
+    "Megadeth": [
+        "Thrash metal",
+        "speed metal",
+        "heavy metal"
+    ],
+    "Bush": [],
+    "Toadies": [
+        "Grunge",
+        "punk rock"
+    ],
+    "Hum": [
+        "Alternative rock",
+        "alternative metal",
+        "post-hardcore",
+        "space rock"
+    ],
+    "Stevie B.": [
+        "Dance",
+        "Latin freestyle",
+        "R&B",
+        "pop",
+        "electronic"
+    ],
+    "Candlebox": [
+        "Grunge",
+        "hard rock",
+        "alternative rock",
+        "post-grunge"
+    ],
+    "Gravity Kills": [
+        "Industrial rock",
+        "industrial metal"
+    ],
+    "Everclear": [
+        "Alternative rock",
+        "power pop",
+        "post-grunge",
+        "pop rock",
+        "grunge ",
+        "punk rock "
+    ],
+    "Rocket from the Crypt": [
+        "Punk rock"
+    ],
+    "Zap": [],
+    "Roger": [
+        "Funk"
+    ],
+    "Lustre": [
+        "Power pop"
+    ],
+    "Spot": [
+        "Rock",
+        "pop rock",
+        "alternative"
+    ],
+    "Rick Derringer": [
+        "Hard rock",
+        "blues",
+        "rock",
+        "pop rock"
+    ],
+    "Humble Pie": [
+        "Hard rock",
+        "blues rock",
+        "boogie rock"
+    ],
+    "the Toadies": [
+        "Grunge",
+        "punk rock"
+    ],
+    "Reverend Horton Heat": [
+        "Psychobilly",
+        "rockabilly"
+    ],
+    "Supersuckers": [
+        "Hard rock",
+        "punk rock",
+        "cowpunk",
+        "southern rock"
+    ],
+    "Budgie": [
+        "Heavy metal",
+        "hard rock"
+    ],
+    "Girls Against Boys": [
+        "Indie rock",
+        "post-hardcore"
+    ],
+    "Stanford Prison Experiment": [
+        "Hardcore punk"
+    ],
+    "Ottmar Liebert": [
+        "New-age",
+        "smooth jazz",
+        "classical",
+        "flamenco"
+    ],
+    "Goo Goo Dolls": [
+        "Alternative rock",
+        "pop rock",
+        "post-grunge",
+        "punk rock"
+    ],
+    "The Nixons": [
+        "Alternative rock",
+        "post-grunge"
+    ],
+    "Poe": [
+        "Alternative rock",
+        "pop rock",
+        "electronic",
+        "trip hop",
+        "R&B"
+    ],
+    "Imperial Drag": [
+        "Glam rock"
+    ],
+    "Pushmonkey": [
+        "Rock"
+    ],
+    "Fluffy": [
+        "Punk rock"
+    ],
+    "Cowboy Mouth": [
+        "Alternative rock",
+        "album-oriented rock",
+        "roots rock",
+        "jam band"
+    ],
+    "Protein": [
+        "punk",
+        "alternative",
+        "post-grunge",
+        "metal"
+    ],
+    "The Marshall Tucker Band": [
+        "Progressive country",
+        "Southern rock",
+        "blues rock",
+        "country rock",
+        "jazz rock"
+    ],
+    "Rev. Horton Heat": [
+        "Psychobilly",
+        "rockabilly"
+    ],
+    "Sponge": [
+        "Alternative rock",
+        "grunge",
+        "post-grunge",
+        "hard rock"
+    ],
+    "Bloodhound Gang": [
+        "Alternative rock",
+        "comedy rock",
+        "rap rock"
+    ],
+    "Linda Perry": [
+        "Alternative rock",
+        "pop rock"
+    ],
+    "Ryan Downe": [],
+    "Catfish": [
+        "Rock",
+        "hard rock",
+        "pub rock",
+        "blues",
+        "alternative country"
+    ],
+    "Soak": [],
+    "Sammy Hagar": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "ZZ Top": [
+        "Blues rock",
+        "hard rock",
+        "boogie rock",
+        "Southern rock"
+    ],
+    "Blue Norther": [],
+    "Head East": [
+        "Rock"
+    ],
+    "Foo Fighters": [
+        "Alternative rock",
+        "post-grunge",
+        "hard rock",
+        "grunge"
+    ],
+    "Cool for August": [
+        "Rock"
+    ],
+    "Big Wreck": [
+        "Alternative rock",
+        "progressive rock",
+        "blues rock",
+        "post-grunge"
+    ],
+    "Eve 6": [
+        "Alternative rock",
+        "post-grunge"
+    ],
+    "Rob Zombie": [
+        "Industrial metal",
+        "shock rock",
+        "groove metal",
+        "alternative metal",
+        "hard rock",
+        "nu metal"
+    ],
+    "The Godz": [],
+    "The Offspring": [
+        "Punk rock",
+        "skate punk",
+        "pop-punk",
+        "melodic hardcore",
+        "hardcore punk",
+        "alternative rock"
+    ],
+    "Los Palominos": [
+        "Tejano"
+    ],
+    "Raul Hernandez": [],
+    "Insane Clown Posse": [
+        "Hip hop",
+        "horrorcore",
+        "rap rock"
+    ],
+    "Biohazard": [
+        "Hardcore punk",
+        "rap metal",
+        "groove metal",
+        "crossover thrash"
+    ],
+    "Collective Soul": [
+        "Alternative rock",
+        "hard rock",
+        "post-grunge"
+    ],
+    "The Toadies": [
+        "Grunge",
+        "punk rock"
+    ],
+    "Oleander": [
+        "Post-grunge",
+        "alternative rock"
+    ],
+    "Econoline Crush": [
+        "Industrial rock",
+        "alternative rock",
+        "Industrial metal"
+    ],
+    "Puya": [
+        "Progressive metal",
+        "jazz",
+        "salsa",
+        "rock en espa\u00f1ol"
+    ],
+    "Flash": [
+        "Progressive rock"
+    ],
+    "Quiet Riot": [
+        "Heavy metal",
+        "glam metal",
+        "hard rock"
+    ],
+    "Ruben Ramos": [
+        "Tejano",
+        "Mariachi"
+    ],
+    "Los Jovenes": [],
+    "Sandra": [],
+    "The Unband": [
+        "Hard rock",
+        "punk rock",
+        "heavy metal"
+    ],
+    "Queensryche": [
+        "Progressive metal",
+        "heavy metal",
+        "hard rock"
+    ],
+    "The Deftones": [
+        "Alternative metal",
+        "art rock",
+        "experimental rock",
+        "nu metal "
+    ],
+    "Moxy": [
+        "\nHard rock\nheavy metal\n"
+    ],
+    "Frank Marino & Mahogany Rush": [
+        "Heavy metal",
+        "hard rock",
+        "acid rock",
+        "blues rock",
+        "psychedelic rock"
+    ],
+    "Ludacris": [
+        "Hip hop",
+        "Southern hip hop"
+    ],
+    "Trick Daddy": [
+        "Gangsta rap",
+        "southern hip hop"
+    ],
+    "Trina": [
+        "Hip hop"
+    ],
+    "The Outfield": [
+        "Pop rock",
+        "power pop",
+        "new wave"
+    ],
+    "Taylor Dayne": [
+        "Pop",
+        "dance-pop",
+        "freestyle",
+        "adult contemporary",
+        "blue-eyed soul"
+    ],
+    "The Zoo": [],
+    "Default": [
+        "Hard rock",
+        "post-grunge",
+        "alternative rock"
+    ],
+    "Jokester": [],
+    "Static-X": [
+        "Industrial metal",
+        "nu metal",
+        "alternative metal"
+    ],
+    "Michael Schenker Group": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Blue October": [
+        "Alternative rock",
+        "art rock",
+        "post-grunge",
+        "new wave",
+        "synth-pop",
+        "shoegaze"
+    ],
+    "JFJ": [],
+    "Kimberly Locke": [
+        "R&B",
+        "pop",
+        "dance"
+    ],
+    "Starz": [
+        "Hard rock",
+        "power pop",
+        "heavy metal"
+    ],
+    "Uli Jon Roth": [
+        "Heavy metal",
+        "hard rock",
+        "speed metal",
+        "neoclassical metal",
+        "progressive metal",
+        "psychedelic rock",
+        "blues rock"
+    ],
+    "Buckcherry": [
+        "Hard rock",
+        "sleaze rock"
+    ],
+    "Revolution Theory": [
+        "Hard rock"
+    ],
+    "Nonpoint": [
+        "Nu metal",
+        "alternative metal",
+        "hard rock",
+        "groove metal",
+        "rap metal"
+    ],
+    "Lila Downs": [
+        "Latin",
+        "Latin rock"
+    ],
+    "ANJ": [],
+    "Adler's Appetite": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Axe": [
+        "Hard rock"
+    ],
+    "Eden Burning": [
+        "Folk rock",
+        "Christian rock"
+    ],
+    "Vicious Rumors": [
+        "Power metal",
+        "heavy metal",
+        "groove metal"
+    ],
+    "The Rods": [
+        "Heavy metal",
+        "hard rock"
+    ],
+    "Deicide": [
+        "Death metal"
+    ],
+    "Hatebreed": [
+        "Metalcore",
+        "hardcore punk",
+        "beatdown hardcore"
+    ],
+    "Loverboy": [
+        "Rock",
+        "arena rock",
+        "hard rock"
+    ],
+    "The Max": [],
+    "Rick Trevino": [
+        "Country"
+    ],
+    "David Ball": [
+        "Synth-pop",
+        "new wave"
+    ],
+    "Survivor": [
+        "Rock"
+    ],
+    "Ram Herrera": [
+        "Tejano"
+    ],
+    "John Waite": [
+        "Pop rock",
+        "hard rock",
+        "power pop",
+        "country"
+    ],
+    "Deryl Dodd": [
+        "Country"
+    ],
+    "Little River Band": [
+        "Rock",
+        "AOR",
+        "pop rock",
+        "soft rock"
+    ],
+    "Lorrie Morgan": [
+        "country"
+    ],
+    "Exile": [],
+    "Starship": [
+        "Rock",
+        "arena rock",
+        "pop rock"
+    ],
+    "Bachman Turner Overdrive": [
+        "Rock",
+        "hard rock",
+        "boogie rock"
+    ],
+    "Foghat": [
+        "Hard rock",
+        "blues rock",
+        "boogie rock"
+    ],
+    "The Move": [
+        "Rock",
+        "pop",
+        "psychedelia"
+    ],
+    "Marshall Tucker Band": [
+        "Progressive country",
+        "Southern rock",
+        "blues rock",
+        "country rock",
+        "jazz rock"
+    ],
+    "Martina McBride": [
+        "Country",
+        "country pop"
+    ],
+    "Jeff Healey Band": [
+        "Blues",
+        "rock",
+        "jazz"
+    ],
+    "Randy Meisner": [
+        "Rock",
+        "country rock",
+        "hard rock",
+        "pop rock"
+    ],
+    "Nick St. Nicholas": [
+        "Psychedelic rock",
+        "acid rock",
+        "blues rock",
+        "hard rock",
+        "heavy metal"
+    ],
+    "Michael Monarch": [
+        "Hard rock",
+        "heavy metal",
+        "blues-rock",
+        "rock and roll",
+        "jazz-rock"
+    ],
+    "Fergie Frederiksen": [
+        "Hard rock",
+        "pop rock",
+        "progressive rock",
+        "pop"
+    ],
+    "Kurt Griffey": [
+        "Roots rock",
+        "swamp rock"
+    ],
+    "Steve Stewart": [],
+    "Denny Laine": [
+        "Rock",
+        "pop",
+        "R&B"
+    ],
+    "Albita": [],
+    "Bamboleo": [
+        "salsa",
+        "timba"
+    ],
+    "Orgy": [
+        "Industrial rock",
+        "electronic rock",
+        "nu metal",
+        "alternative metal"
+    ],
+    "Cano Estremera": [
+        "salsa"
+    ],
+    "Dave Wakeling": [
+        "New wave",
+        "ska",
+        "two-tone",
+        "post-punk"
+    ],
+    "Robert Cray": [
+        "Blues",
+        "blues rock",
+        "soul blues"
+    ],
+    "Concrete Blonde": [
+        "Alternative rock"
+    ],
+    "Steve Wynn": [
+        "Alternative rock",
+        "Paisley Underground"
+    ],
+    "Tommy Lee": [
+        "Heavy metal",
+        "hard rock",
+        "glam metal",
+        "nu metal",
+        "rap metal"
+    ],
+    "Dirty Dozen Brass Band": [
+        "Jazz",
+        "New Orleans R&B",
+        "Jazz fusion",
+        "Second Line",
+        "Funk",
+        "Soul",
+        "Jam Band"
+    ],
+    "OC Supertones": [
+        "Christian ska",
+        "ska punk",
+        "third wave ska"
+    ],
+    "Relient K": [
+        "Alternative rock"
+    ],
+    "Pillar": [
+        "Christian rock",
+        "Christian metal",
+        "hard rock",
+        "rap rock",
+        "alternative metal",
+        "nu metal "
+    ],
+    "John Reuben": [
+        "Hip hop",
+        "alternative hip hop",
+        "Christian hip hop"
+    ],
+    "Sanctus Real": [
+        "Christian alternative rock",
+        "Christian rock",
+        "power pop",
+        "rock"
+    ],
+    "Mudvayne": [
+        "Alternative metal",
+        "nu metal",
+        "progressive metal",
+        "hard rock"
+    ],
+    "the Suspects": [],
+    "Leon Russell": [
+        "Rock",
+        "country",
+        "gospel",
+        "R&B"
+    ],
+    "Chevelle": [
+        "Hard rock",
+        "alternative metal",
+        "alternative rock",
+        "post-grunge",
+        "nu metal"
+    ],
+    "Train": [
+        "Rock",
+        "pop rock",
+        "roots rock"
+    ],
+    "Sister Hazel": [
+        "Alternative rock",
+        "southern rock",
+        "folk rock",
+        "jangle pop"
+    ],
+    "Better than Ezra": [
+        "Alternative rock",
+        "post-grunge",
+        "psychedelic rock",
+        "country rock"
+    ],
+    "Blues Traveler": [
+        "Blues rock",
+        "folk rock",
+        "alternative rock",
+        "southern rock",
+        "jam band"
+    ],
+    "Loretta Lynn": [
+        "Country",
+        "honky-tonk",
+        "Americana",
+        "gospel"
+    ],
+    "Vince Neil": [
+        "Heavy metal",
+        "hard rock",
+        "glam metal"
+    ],
+    "Liz Phair": [
+        "Indie rock",
+        "lo-fi",
+        "alternative rock",
+        "pop rock"
+    ],
+    "The Cardigans": [
+        "Alternative rock",
+        "pop rock",
+        "indie rock",
+        "indie pop"
+    ],
+    "Katy Rose": [
+        "Pop",
+        "rock",
+        "pop rock"
+    ],
+    "Bela Fleck and the Flecktones": [
+        "Jazz fusion",
+        "progressive bluegrass",
+        "jam band"
+    ],
+    "Muse": [
+        "Alternative rock",
+        "progressive rock",
+        "space rock",
+        "hard rock",
+        "art rock",
+        "electronic rock"
+    ],
+    "Razorlight": [
+        "Indie rock",
+        "garage rock",
+        "post-punk revival"
+    ],
+    "New Found Glory": [
+        "Pop-punk",
+        "alternative rock",
+        "easycore",
+        "melodic hardcore",
+        "punk rock"
+    ],
+    "Eisley": [
+        "Indie pop",
+        "emo"
+    ],
+    "Reggie & the Full Effect": [
+        "Alternative rock",
+        "pop punk",
+        "emo",
+        "post-hardcore"
+    ],
+    "Baby Bash": [
+        "Hip hop"
+    ],
+    "Frankie J": [
+        "R&B",
+        "pop",
+        "Latin pop"
+    ],
+    "Natalie": [
+        "R&B",
+        "hip hop"
+    ],
+    "John Legend": [
+        "R&B",
+        "pop"
+    ],
+    "Carlos Vives": [
+        "Vallenato",
+        "cumbia",
+        "porro",
+        "champeta",
+        "rock",
+        "Latin pop",
+        "bambuco",
+        "dance-pop",
+        "reggaeton",
+        "tropical music"
+    ],
+    "H.I.M.": [
+        "Gothic rock",
+        "gothic metal",
+        "alternative rock"
+    ],
+    "Bo Bice": [
+        "Southern rock",
+        "hard rock",
+        "country rock"
+    ],
+    "Kings of Leon": [
+        "Alternative rock",
+        "Southern rock",
+        "indie rock",
+        "garage rock revival"
+    ],
+    "The Stills": [
+        "Indie rock",
+        "post-punk revival"
+    ],
+    "Brand New": [
+        "Alternative rock",
+        "indie rock",
+        "post-hardcore",
+        "emo",
+        "pop punk"
+    ],
+    "Good Charlotte": [
+        "Pop-punk",
+        "alternative rock",
+        "punk rock",
+        "emo",
+        "pop rock"
+    ],
+    "Lifehouse": [
+        "Alternative rock",
+        "post-grunge",
+        "pop rock"
+    ],
+    "Three Days Grace": [
+        "Post-grunge",
+        "hard rock",
+        "alternative rock",
+        "alternative metal",
+        "nu metal"
+    ],
+    "Plain White T's": [
+        "Pop-punk",
+        "pop rock",
+        "soft rock",
+        "alternative rock",
+        "power pop",
+        "emo"
+    ],
+    "Boys Like Girls": [
+        "Pop rock",
+        "pop punk",
+        "emo",
+        "alternative rock"
+    ],
+    "The Last Goodnight": [
+        "Alternative rock",
+        "pop rock"
+    ],
+    "Seether": [
+        "Post-grunge",
+        "hard rock",
+        "alternative metal",
+        "nu metal"
+    ],
+    "10 Years": [
+        "Alternative metal",
+        "progressive metal",
+        "post-grunge",
+        "nu\u00a0metal"
+    ],
+    "Theory of a Deadman": [
+        "Post-grunge",
+        "hard rock",
+        "alternative rock",
+        "alternative metal",
+        "pop rock"
+    ],
+    "Airbourne": [
+        "Hard rock",
+        "heavy metal"
+    ],
+    "Metro Station": [
+        "Pop rock",
+        "synth-pop",
+        "emo pop",
+        "pop punk"
+    ],
+    "Gavin DeGraw": [
+        "Blue-eyed soul",
+        "pop rock",
+        "rock",
+        "Country"
+    ],
+    "We The Kings": [
+        "Pop-punk",
+        "pop rock",
+        "emo pop",
+        "power pop",
+        "alternative rock",
+        "pop"
+    ],
+    "Lesley Roy": [
+        "Alternative rock",
+        "pop rock",
+        "pop"
+    ],
+    "We the Kings": [
+        "Pop-punk",
+        "pop rock",
+        "emo pop",
+        "power pop",
+        "alternative rock",
+        "pop"
+    ],
+    "7seconds": [
+        "Hardcore punk"
+    ],
+    "Adolescents": [
+        "Hardcore punk",
+        "punk rock"
+    ],
+    "Bill Cosby": [],
+    "Joe Venuti": [
+        "Jazz"
+    ],
+    "Bob Haggart": [
+        "Jazz",
+        "dixieland"
+    ],
+    "Benny Goodman": [
+        "Jazz",
+        "swing"
+    ],
+    "One O'Clock Lab Band": [
+        "Jazz"
+    ],
+    "Pittsburgh Symphony Orchestra": [],
+    "Sarah Vaughan": [
+        "Jazz",
+        "traditional pop",
+        "bossa nova"
+    ],
+    "Bob James": [
+        "Jazz",
+        "smooth jazz",
+        "jazz fusion",
+        "jazz-funk"
+    ],
+    "Trio": [
+        "Neue Deutsche Welle",
+        "new wave",
+        "minimalism"
+    ],
+    "Stuart Adamson": [
+        "Punk rock",
+        "new wave",
+        "Celtic rock",
+        "alternative rock"
+    ],
+    "the Mannish Boys": [
+        "blues"
+    ],
+    "Michael Francis": [],
+    "Fine Line": [],
+    "the Tyrones": [],
+    "Smith Brothers": [],
+    "Rain": [],
+    "Eye 2 Eye": [],
+    "Hoi Polloi": [],
+    "Dreamscape": [
+        "Progressive metal"
+    ],
+    "The Chromatics": [
+        "synth-pop",
+        "synth-rock",
+        "indie rock",
+        "dream pop",
+        "no wave"
+    ],
+    "The Titans": [],
+    "Eclipse": [
+        "Hard rock",
+        "heavy metal",
+        "AOR"
+    ],
+    "Hired Guns": [],
+    "Pulse": [],
+    "Double or Nothing": [],
+    "The Tyrones": [
+        "rock and roll"
+    ],
+    "Taboo": [
+        "hip hop",
+        "electro",
+        "alternative hip hop"
+    ],
+    "Bobby Martin": [
+        "Jazz"
+    ],
+    "Swindles": [],
+    "Infidels": [
+        "funk rock"
+    ],
+    "Zephyr": [
+        "Hard rock",
+        "blues rock"
+    ],
+    "Texas Radio": [],
+    "Albert Garcia": [],
+    "David Larson": []
+}
