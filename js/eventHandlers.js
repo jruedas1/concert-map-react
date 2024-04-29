@@ -1,5 +1,6 @@
-import { emptyContent, outputVenuesToMap } from "./domUtils.js";
-import {fetchYear} from "./dataAccess.js";
+import {emptyContent, outputVenuesToMap, removeMarkers} from "./domUtils.js";
+import {fetchGenre, fetchGenreData, fetchYear} from "./dataAccess.js";
+import {findMatchesInArray} from "./utils.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -84,4 +85,17 @@ export const handleYearSelection = async event => {
     const venues = dataOnSelectedYear.venues;
     // Output venues to locations on map
     outputVenuesToMap(venues);
+}
+
+export const handleGenreSelection = async (event, genreList) => {
+    event.preventDefault();
+    const userInput = event.target.value;
+    const matches = findMatchesInArray(userInput, genreList);
+    for (let genre of matches){
+        const genreData = await fetchGenre(genre);
+        const selectedYear = parseInt(document.querySelector("#year-selector").value);
+        const dataOnSelectedYearForSelectedGenre = genreData['years'].find(yearData => yearData.id === selectedYear);
+        console.log(dataOnSelectedYearForSelectedGenre);
+
+    }
 }

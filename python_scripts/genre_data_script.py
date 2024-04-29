@@ -21,7 +21,6 @@ with open(year_venue_concert_data) as db_json:
 with open('artist_genres.json') as ag:
     artists_genres = json.load(ag)
 
-
 genre_to_artists = {}
 for artist, genres in artists_genres.items():
     for genre in genres:
@@ -32,12 +31,22 @@ for artist, genres in artists_genres.items():
 
 # Generate the desired data structure
 result = {}
+# Here we have a list of genres with their associated artists
 for genre, artists in genre_to_artists.items():
+    # print(genre, artists)
     result[genre] = {"years": []}
+    # for each genre we create an empty list
+    # now we loop over each year in the data
+    # in other words, for every genre, it loops over all the years in the data
     for year_data in all_data["years"]:
+        # for every year, it grabs the year id,
+        # which is the year identifier (1970, 1971, etc.)
         year = year_data["id"]
+        # now it creates an empty venues list
         venues = []
+        # now it loops over that year's venues
         for venue_data in year_data["venues"]:
+            # it creates an empty list for the concerts in that venue
             venue_concerts = []
             for concert in venue_data["concerts"]:
                 if concert["Artist_Formula"] in artists:
