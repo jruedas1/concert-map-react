@@ -21,3 +21,8 @@ export const fetchGenre = async(genre) => {
     const allGenreData = await fetchGenreData();
     return allGenreData[genre];
 }
+
+export const fetchUniqueGenreList = async () => {
+    const uniqueGenres = await fetch('http://localhost:3001/unique_genres');
+    return await uniqueGenres.json();
+}

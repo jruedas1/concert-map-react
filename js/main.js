@@ -1,10 +1,9 @@
-import { fetchYear, fetchGenreData } from "./dataAccess.js";
-import { removeMarkers, outputVenuesToMap, getYearAndOutputToMap } from "./domUtils.js";
+import { fetchYear, fetchUniqueGenreList } from "./dataAccess.js";
+import { removeMarkers, outputVenuesToMap } from "./domUtils.js";
 import {handleYearSelection, handleDecadeSelection, handleGenreSelection} from "./eventHandlers.js";
 
 // get the list of genres from the data set
-const genreData = await fetchGenreData();
-const genreList = Object.keys(genreData);
+const genreList = await fetchUniqueGenreList();
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors
@@ -15,7 +14,10 @@ yearSelector.addEventListener('change', handleYearSelection);
 // get reference to genre filter
 // add event handler to genre selector
 const genreSelector = document.querySelector("#genre-selector");
-genreSelector.addEventListener('input', event => handleGenreSelection(event, genreList));
+genreSelector.addEventListener('input', async event => {
+    event.preventDefault();
+    await handleGenreSelection(event, genreList);
+});
 
 
 /* main line of code is an async IIFE
@@ -32,6 +34,9 @@ genreSelector.addEventListener('input', event => handleGenreSelection(event, gen
     */
     removeMarkers();
     document.querySelector("#decade-selector").value = 1970;
-    await getYearAndOutputToMap();
+    let selectedYear = document.querySelector("#year-selector").value;
+    const dataOnSelectedYear = await fetchYear(selectedYear);
+    const venues = dataOnSelectedYear.venues;
+    outputVenuesToMap(venues);
 
 })();

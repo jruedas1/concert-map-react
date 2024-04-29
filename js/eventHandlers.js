@@ -88,14 +88,24 @@ export const handleYearSelection = async event => {
 }
 
 export const handleGenreSelection = async (event, genreList) => {
-    event.preventDefault();
+    emptyContent();
     const userInput = event.target.value;
-    const matches = findMatchesInArray(userInput, genreList);
-    for (let genre of matches){
-        const genreData = await fetchGenre(genre);
-        const selectedYear = parseInt(document.querySelector("#year-selector").value);
-        const dataOnSelectedYearForSelectedGenre = genreData['years'].find(yearData => yearData.id === selectedYear);
-        console.log(dataOnSelectedYearForSelectedGenre);
-
+    if (userInput.length >= 3){
+        const matches = genreList.filter(genre => (genre.includes(userInput.toLowerCase())));
+        console.log(matches);
+        const selectedYear = document.querySelector("#year-selector").value;
+        let venues = [];
+        for (const match of matches){
+            const dataOnSelectedGenre = await fetchGenre(match);
+            if (dataOnSelectedGenre[selectedYear]){
+                const genreVenues = dataOnSelectedGenre[selectedYear];
+                console.log(genreVenues);
+                venues = venues.concat(genreVenues);
+            }
+        }
+        outputVenuesToMap(venues);
     }
 }
+
+// issues - when you select genres it empties the map,
+// but when you delete back to empty it doesn't refill the map

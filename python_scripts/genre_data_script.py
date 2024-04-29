@@ -62,5 +62,20 @@ for genre, artists in genre_to_artists.items():
 with open('new_json.json', 'w') as f:
     json.dump(result, f, indent=4)
 
+# In addition, it is helpful for the application to have a list of unique genres
+# this can be generated from loading the genres and getting all the keys, but as that is a large data set,
+# it seems beneficial to derive the unique genres list separately
+
+with open('new_json.json') as full_genres:
+    all_genre_data = json.load(full_genres)
+    unique_genres = list(all_genre_data.keys())
+    unique_genre_dict = {
+        "unique_genres": unique_genres
+    }
+    print(unique_genre_dict)
+    with open('unique_genres.json', 'w') as ugs:
+        json.dump(unique_genre_dict, ugs, indent=4)
+
+
 
 
