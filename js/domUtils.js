@@ -70,10 +70,3 @@ export const outputVenuesToMap = venuesArray => {
     const markers = document.querySelectorAll('.marker');
     markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
 }
-
-export const getYearAndOutputToMap = async () => {
-    let selectedYear = document.querySelector("#year-selector").value;
-    const dataOnSelectedYear = await fetchYear(selectedYear);
-    const venues = dataOnSelectedYear.venues;
-    outputVenuesToMap(venues);
-}

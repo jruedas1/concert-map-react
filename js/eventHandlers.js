@@ -1,6 +1,5 @@
-import {emptyContent, outputVenuesToMap, removeMarkers} from "./domUtils.js";
-import {fetchGenre, fetchGenreData, fetchYear} from "./dataAccess.js";
-import {findMatchesInArray} from "./utils.js";
+import {emptyContent, outputVenuesToMap} from "./domUtils.js";
+import {fetchGenre, fetchYear} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -88,24 +87,50 @@ export const handleYearSelection = async event => {
 }
 
 export const handleGenreSelection = async (event, genreList) => {
-    emptyContent();
+    // every time the user input changes, we detect it
     const userInput = event.target.value;
+    // when the selection reaches a length of 3, we take action
     if (userInput.length >= 3){
+        emptyContent();
+        // we find all the genres in the master genre list that
+        // match the search string
         const matches = genreList.filter(genre => (genre.includes(userInput.toLowerCase())));
         console.log(matches);
+        // we get the year that is currently selected
         const selectedYear = document.querySelector("#year-selector").value;
         let venues = [];
         for (const match of matches){
+            // now we loop through the list of genre matches
             const dataOnSelectedGenre = await fetchGenre(match);
+            // we get all the data for that genre
             if (dataOnSelectedGenre[selectedYear]){
+                // if there is any data for that genre on that selected year,
+                // we create a div
+                const genreDiv = document.createElement("div");
+                const genreTitle = document.createElement("h2");
+                genreTitle.innerText = match;
+                genreDiv.appendChild(genreTitle);
                 const genreVenues = dataOnSelectedGenre[selectedYear];
-                console.log(genreVenues);
                 venues = venues.concat(genreVenues);
+                for (const venue of genreVenues){
+                    for (const concert of venue.concerts){
+                        const concertDiv = document.createElement("div");
+                        concertDiv.innerHTML = `
+                             <h3>${concert.Artist_Formula}</h3>
+                             <p>${concert.Month} ${concert.Day}, ${concert.Year}</p>
+                             <p>${concert.Venue}</p>
+                         `;
+                        genreDiv.appendChild(concertDiv);
+                    }
+                }
+                document.querySelector("#concerts").appendChild(genreDiv);
             }
         }
         outputVenuesToMap(venues);
+
     }
 }
 
 // issues - when you select genres it empties the map,
 // but when you delete back to empty it doesn't refill the map
+
