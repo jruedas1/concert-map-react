@@ -1,4 +1,4 @@
-import {emptyContent, outputVenuesToMap} from "./domUtils.js";
+import {emptyContent, outputVenuesToMap, detectYearAndOutputYearData} from "./domUtils.js";
 import {fetchGenre, fetchYear} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
@@ -100,6 +100,12 @@ export const handleGenreSelection = async (event, genreList) => {
         const selectedYear = document.querySelector("#year-selector").value;
         let venues = [];
         for (const match of matches){
+            const genresOutput = document.getElementById("genre-output");
+            genresOutput.replaceChildren();
+            const matchingGenreOutput = `${matches.join(', ')}`;
+            const matchingGenreP = document.createElement('p');
+            matchingGenreP.innerText = matchingGenreOutput;
+            genresOutput.appendChild(matchingGenreP);
             // now we loop through the list of genre matches
             const dataOnSelectedGenre = await fetchGenre(match);
             // we get all the data for that genre
@@ -128,6 +134,11 @@ export const handleGenreSelection = async (event, genreList) => {
         }
         outputVenuesToMap(venues);
 
+    } else {
+        if (event.inputType === 'deleteContent'){
+            console.log('yo')
+           await detectYearAndOutputYearData();
+        }
     }
 }
 

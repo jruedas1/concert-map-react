@@ -38,5 +38,4 @@ genreSelector.addEventListener('input', async event => {
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(venues);
-
 })();

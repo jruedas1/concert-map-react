@@ -2,12 +2,46 @@
     margin: 0;
 }
 
+body {
+    font-family: "New Nord", 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1rem 4dvh;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+header nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2.5rem;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
 main {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    font-family: Quicksand, 'Helvetica Neue', Helvetica, sans-serif;
+
 }
 
 section#filters {
@@ -21,6 +55,11 @@ section#filters {
 #selected-decade {
     font-size: 1.8rem;
     font-weight: 550;
+}
+
+#genre-output {
+    width: 75dvh;
+    margin-top: 1rem;
 }
 
 #map {
