@@ -59,7 +59,6 @@ section#filters {
     background-color: #EDE8E4;
 
     max-height: 100dvh;
-    overflow: scroll;
 }
 
 .filter {
@@ -118,4 +117,5 @@ section#filters {
 
 #concerts {
     text-align: center;
+    overflow: scroll;
 }
