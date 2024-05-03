@@ -22,9 +22,10 @@ export const handleMarkerClick =  (event, venuesArray) => {
     let concertsOutput = '';
     // generate the html for the concerts list
     concerts.forEach(concert => concertsOutput+= `
-            <div>
+            <div class="concert-info">
                 <h3>${concert.Artist_Formula}</h3>
-                <p>${concert.Venue} ${concert.Month} ${concert.Day} ${concert.Year}</p>
+                <p>${concert.Venue}</p>
+                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
             </div>
         `);
     // output concerts info to the page
@@ -86,62 +87,50 @@ export const handleYearSelection = async event => {
     outputVenuesToMap(venues);
 }
 
-export const handleGenreSelection = async (event, genreList) => {
-    // every time the user input changes, we detect it
-    const userInput = event.target.value;
-    // when the selection reaches a length of 3, we take action
-    if (userInput.length >= 3){
-        emptyContent();
-        // we find all the genres in the master genre list that
-        // match the search string
-        const matches = genreList.filter(genre => (genre.includes(userInput.toLowerCase())));
-        console.log(matches);
-        // we get the year that is currently selected
-        const selectedYear = document.querySelector("#year-selector").value;
-        let venues = [];
-        for (const match of matches){
-            const genresOutput = document.getElementById("genre-output");
-            genresOutput.replaceChildren();
-            const matchingGenreOutput = `${matches.join(', ')}`;
-            const matchingGenreP = document.createElement('p');
-            matchingGenreP.innerText = matchingGenreOutput;
-            genresOutput.appendChild(matchingGenreP);
-            // now we loop through the list of genre matches
-            const dataOnSelectedGenre = await fetchGenre(match);
-            // we get all the data for that genre
-            if (dataOnSelectedGenre[selectedYear]){
-                // if there is any data for that genre on that selected year,
-                // we create a div
-                const genreDiv = document.createElement("div");
-                const genreTitle = document.createElement("h2");
-                genreTitle.innerText = match;
-                genreDiv.appendChild(genreTitle);
-                const genreVenues = dataOnSelectedGenre[selectedYear];
-                venues = venues.concat(genreVenues);
-                for (const venue of genreVenues){
-                    for (const concert of venue.concerts){
-                        const concertDiv = document.createElement("div");
-                        concertDiv.innerHTML = `
-                             <h3>${concert.Artist_Formula}</h3>
-                             <p>${concert.Month} ${concert.Day}, ${concert.Year}</p>
-                             <p>${concert.Venue}</p>
-                         `;
-                        genreDiv.appendChild(concertDiv);
-                    }
-                }
-                document.querySelector("#concerts").appendChild(genreDiv);
-            }
-        }
-        outputVenuesToMap(venues);
+export const handleGenreSelection = async event => {
+    emptyContent();
+    // user might click on the h3, or on the padding for the genre selector div
+    // if it's the h3, grab its text content
+    // otherwise select the h3 and get its text content
+    const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
 
-    } else {
-        if (event.inputType === 'deleteContent'){
-            console.log('yo')
-           await detectYearAndOutputYearData();
-        }
-    }
+    const selectedYear = document.querySelector("#year-selector").value;
+    console.log(selectedYear);
+    const genreResults = await fetchGenre(selectedGenre === "metal" ? "heavy metal" : selectedGenre);
+    console.log(genreResults);
+    const genreVenuesForSelectedYear = genreResults[selectedYear];
+    console.log(genreVenuesForSelectedYear);
+    outputVenuesToMap(genreVenuesForSelectedYear);
+    let concertsOutput = '';
+    genreVenuesForSelectedYear.forEach(venue => {
+
+        // generate the html for the concerts list
+        venue.concerts.forEach(concert => concertsOutput+= `
+            <div class="concert-info">
+                <h3>${concert.Artist_Formula}</h3>
+                <p>${concert.Venue}</p>
+                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
+            </div>
+        `);
+        // output concerts info to the page
+
+    });
+    document.querySelector("#concerts").innerHTML = concertsOutput;
+    document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
+    document.querySelector("#genres").click();
 }
 
-// issues - when you select genres it empties the map,
-// but when you delete back to empty it doesn't refill the map
+// instead, we should just have it in the html hard coded
+// this will just toggle its visibility
+
+export const generateGenreList = event => {
+    const icon = document.querySelector("#genres").querySelector("img:first-of-type");
+    const upIconSrc = "./img/arrow-up.svg";
+    const downIconSrc = "./img/arrow-down.svg";
+    icon.src = icon.src.includes('down') ? upIconSrc : downIconSrc;
+
+    const genreList = document.querySelector("#genre-list");
+    genreList.classList.toggle('hidden');
+    genreList.classList.toggle('visible');
+}
 

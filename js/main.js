@@ -1,6 +1,6 @@
 import { fetchYear, fetchUniqueGenreList } from "./dataAccess.js";
 import { removeMarkers, outputVenuesToMap } from "./domUtils.js";
-import {handleYearSelection, handleDecadeSelection, handleGenreSelection} from "./eventHandlers.js";
+import {handleYearSelection, handleDecadeSelection, handleGenreSelection, generateGenreList} from "./eventHandlers.js";
 
 // get the list of genres from the data set
 const genreList = await fetchUniqueGenreList();
@@ -13,11 +13,12 @@ const yearSelector = document.querySelector("#year-selector");
 yearSelector.addEventListener('change', handleYearSelection);
 // get reference to genre filter
 // add event handler to genre selector
-const genreSelector = document.querySelector("#genre-selector");
-genreSelector.addEventListener('input', async event => {
-    event.preventDefault();
-    await handleGenreSelection(event, genreList);
-});
+const genreFilter = document.querySelector("#genres");
+genreFilter.addEventListener('click', generateGenreList);
+// get references to all individual genre selectors
+const genreSelectors = document.querySelectorAll('.genre');
+// add event handlers to genre selectors
+genreSelectors.forEach(genreSelector => genreSelector.addEventListener('click', handleGenreSelection));
 
 
 /* main line of code is an async IIFE
