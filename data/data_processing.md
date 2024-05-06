@@ -12,3 +12,7 @@ The worksheet was exported from Excel as a csv file called `venue_artist_event.c
 
 The application allows users to retrieve data on concerts in San Antonio in any given year. For any given year, the application displays the venues that held concerts that year. When the user clicks on a venue, the app displays the concerts in that venue that year. To facilitate data retrieval, at this point we combine our venues and events files into one file called `years.json`. To do this, run the DataWrangler `create_years_json` method. This method takes an events file and a venues file and combines them into one json file, which should be called something like `years_venues_events.json`.
 
+## Handling Genre Data
+
+The source Excel sheet has a worksheet called `artistsGenre` that associates multiple genres to each artist. This worksheet is exported as a csv. In addition, there is a JSON file derived from API requests to the wikimedia API as well as web scraping Wikipedia. This file is called `wiki_artist_genres.json`. These two files are combined into a single JSON file called `artist_genres.json` using the DataWrangler `merge_csv_and_json` method. 
+
