@@ -1,0 +1,975 @@
+id,name,address,city,state,zip,longitude,latitude
+1,1033 Club,1033 Avenue B,San Antonio,Texas,78215,-98.480763,29.4361164387879
+2,151 Saloon,10619 Westover Hills Blvd,San Antonio,Texas,78215,-98.690386,29.464097
+3,1902 Nightclub,1174 East Commerce St,San Antonio,Texas,78205,-98.478249,29.420607
+4,210 Kapone's,1223 East Houston,San Antonio,Texas,78205,-98.47844,29.42519
+5,4th Quarter Sports Bar,8779 Wurzbach Rd,San Antonio,Texas,78240,-98.569389,29.524564
+6,502 Bar,502 Embassy Oaks,San Antonio,Texas,78216,-98.487687,29.563489
+7,Abracadabra,Central Park Mall,San Antonio,Texas,78216,-98.495141,29.4246
+8,Acapulco Sam's,212 College Street,San Antonio,Texas,78205,-98.489205,29.425725
+9,Accents,6700 N New Braunfels Ave,San Antonio,Texas,78209,-98.45581,29.48484
+10,Acquarium III,1929 La Manda,San Antonio,Texas,78201,-98.527021,29.486839
+11,After Midnight,3719 Blanco Rd,San Antonio,Texas,78212,-98.50864,29.481287
+12,Aggie Park,6205 West Ave.,San Antonio,Texas,78213,-98.526667,29.518624
+13,Alameda Theater,512 W. Houston,San Antonio,Texas,78207,-98.521993,29.42543
+14,Alamo Beer Company,202 Lamar St,San Antonio,Texas,78202,-98.458731,29.426962
+15,Alamo City Music Hall,1305 E. Houston St.,San Antonio,Texas,78205,-98.47705,29.425165
+16,Alamo Ice House,802 N. Alamo St.,San Antonio,Texas,78215,-98.481567,29.431847
+17,Alamodome,100 Montana St.,San Antonio,Texas,78203,-98.478756,29.416871
+18,Aldaco's Mexican Restaurant,1141 East Commerce St,San Antonio,Texas,78205,-98.479033,29.422018
+19,Aldo's Ristorante Italian,8539 Fredericksburg Rd.,San Antonio,Texas,78229,-98.573751,29.520491
+20,Alexander's Bar and Café,3422 N. St. Mary's,San Antonio,Texas,78212,-62.184068,16.653923
+21,Alfred's,2308 Blanco Road,San Antonio,Texas,78212,-98.507631,29.467833
+22,Anaqua Room,555 Alamo St.,San Antonio,Texas,78205,-98.486051,29.42818
+23,Andrew's 281 Live,13307 San Pedro Ave.,San Antonio,Texas,78216,-98.481527,29.562078
+24,Anhalt Hall,2390 Anhalt Rd.,Spring Branch,Texas,78070,-98.478884,29.813902
+25,Annie & Ed's,2016 Austin HWY,San Antonio,Texas,78218,-98.417823,29.502353
+26,Antonio Strad Violin,7530 Bandera Rd #108,San Antonio,Texas,78238,-98.628778,29.507923
+27,Apple Tree Lounge,518 E. Blanco,Boerne,Texas,78006,-98.68985,29.83651
+28,Aquariaum Disco,1929 La Manda,San Antonio,Texas,78201,-98.527021,29.486839
+29,Aragon Blue Room,1603 N. Colorado,San Antonio,Texas,78201,-98.534244,29.482984
+30,Arjon's International Club,8736 Tesoro Dr.,San Antonio,Texas,78217,-98.45499,29.518939
+31,Arneson River Theatre,418 Villita St.,San Antonio,Texas,78205,-98.488901,29.421384
+32,Arthur's,4001 Broadway,San Antonio,Texas,78209,-98.4658,29.463437
+33,Artisan on Alamo Distillery,315 8th St.,San Antonio,Texas,78215,-98.482338,29.432039
+34,Artpace San Antonio,445 N. Main Ave.,San Antonio,Texas,78205,-98.49431,29.429827
+35,AT&T Center,1 AT&T Center Parkway,San Antonio,Texas,78219,-98.437492,29.426981
+36,Avalon Grill,509.5 East Commerce,San Antonio,Texas,78205,-98.495141,29.4246
+37,Aztec Theatre,201 E. Commerce St. ,San Antonio,Texas,78205,-98.491058,29.424683
+38,Azuca Nuevo Latino Restaurant & Bar,709 S Alamo St.,San Antonio,Texas,78205,-98.488644,29.417134
+39,Backstage Live,1305 E. Houston St.,San Antonio,Texas,78205,-98.477108,29.425226
+40,Backyard on Broadway,2415 Broadway,San Antonio,Texas,78215,-98.475231,29.448812
+41,Badlands Saloon,522 Riverwalk,San Antonio,Texas,78205,-98.48855,29.424314
+42,Bamboo Room,3301 S. Gevers,San Antonio,Texas,78210,-98.45707,29.38715
+43,Bar 414,205 E Houston St.,San Antonio,Texas,78205,-98.491,29.426958
+44,Bar America,723 S Alamo St,San Antonio,Texas,78205,-98.488773,29.416719
+45,Bar Rojo at The Grand Hyatt Hotel,600 E. Market St.,San Antonio,Texas,78205,-98.483946,29.421639
+46,Barclay's Piano Bar,2615 Mossrock,San Antonio,Texas,78230,-98.577415,29.54797
+47,Barriba Cantina,111 W Crockett St #214,San Antonio,Texas,78205,-98.489094,29.425241
+48,Beethoven Maennerchor Halle Und Garten,422 Pereida St,San Antonio,Texas,78210,-98.491764,29.411714
+49,Bentley's,802 N. Alamo St.,San Antonio,Texas,78215,-98.481514,29.431832
+50,Beto's Comida Latina,8142 Broadway St,San Antonio,Texas,78209,-98.465905,29.511278
+51,Bier Garten Riverwalk,126 Losoya Street,San Antonio,Texas,78205,-98.487766,29.425609
+52,Big Band Fun Club,9821 Colonnade,San Antonio,Texas,78230,-98.559125,29.502351
+53,Big Bob's Burgers,​447 W. Hildebrand Ave. ,San Antonio,Texas,78212,-98.511348,29.46646
+54,Big Texas Ice House,16620 San Pedro Ave #1,San Antonio,Texas,78232,-98.470183,29.593178
+55,Bihl Haus Arts,2803 Fredericksburg Rd,San Antonio,Texas,78201,-98.531612,29.469665
+56,Billy Blues BBQ,330 East Grayson,San Antonio,Texas,78215,-98.477389,29.443545
+57,Billy D's Club,1805 Pat Booker Road,San Antonio,Texas,78148,-98.308273,29.552775
+58,Billy Marbles,409 East Commerce,San Antonio,Texas,78205,-98.488567,29.424114
+59,BJ's Night Club,2710 East Commerce,San Antonio,Texas,78203,-98.449339,29.419216
+60,Black Canteen,605 VFW Blvd,San Antonio,Texas,78214,-98.48027,29.367135
+61,Black Clover Pub,3030 Thousand Oaks,San Antonio,Texas,78247,-98.451421,29.585041
+62,Black Orchid,2726 N St. Mary's,San Antonio,Texas,78212,-98.486169,29.450903
+63,Blanco Ballroom,3719 Blanco Rd,San Antonio,Texas,78212,-98.508962,29.481275
+64,Blind Tiger Comedy Club,902 NE Interstate 410 Loop,San Antonio,Texas,78209,-98.427862,29.531482
+65,Bluebonnet Palace,17630 Lookout Rd,Schertz,Texas,78154,-98.297618,29.600872
+66,Blue Note Club,2102 Blanco,San Antonio,Texas,78212,-98.49126,29.452192
+67,Blue Note Lounge,2547 East Commerce,San Antonio,Texas,78203,-98.45481,29.414071
+68,Blue Star Brewing Co.,1414 S Alamo St,San Antonio,Texas,78210,-98.495346,29.409663
+69,Boardwalk Bistro,4011 Broadway,San Antonio,Texas,78209,-98.465834,29.463749
+70,Bogart's,11341 West Avenue,San Antonio,Texas,78216,-98.512402,29.542928
+71,Bohanan's Prime Steaks & Seafood,219 E Houston St ,San Antonio,Texas,78205,-98.490525,29.426677
+72,Boiler House Texas Grill & Wine Garden,"312 Pearl Pkwy., Bldg. 3 ",San Antonio,Texas,78215,-98.480251,29.443165
+73,Bombay Bicycle Club,3506 N St Mary's St,San Antonio,Texas,78212,-98.485251,29.402692
+74,Bond's 007 Rock Bar,450 Soledad St,San Antonio,Texas,78205,-98.493127,29.429727
+75,Bone Club,828 San Pedro,San Antonio,Texas,78212,-98.479944,29.55961
+76,Bonesshakers Tap House and Pizzeria,306 Austin Street,San Antonio,Texas,78215,-98.482663,29.450211
+77,Bonham Exchange,411 Bonham,San Antonio,Texas,78205,-98.484451,29.426719
+78,Bonnie Jean's,5118 Fredericksburg,San Antonio,Texas,78229,-98.5813429,29.511125
+79,Boozehounds,8531 Perrin Beitel Rd,San Antonio,Texas,78217,-98.411052,29.517655
+80,Bo's Rodeo,Hwy 173,Bandera,Texas,78003,-99.072459,29.727007
+81,Botika Peruvian-Asian Restaurant,"The Pearl, 303 Pearl Pkwy #111",San Antonio,Texas,78215,-98.47996,29.442498
+82,Bottom Bracket Social Club,1603 N Colorado St.,San Antonio,Texas,78201,-98.509292,29.442701
+83,Bottom Line,1164 East Commerce,San Antonio,Texas,78205,-98.47863,29.42149
+84,Boudro’s Texas Bistro,421 E. Commerce St.,San Antonio,Texas,78205,-98.488337,29.424058
+85,Bowlero,13307 San Pedro Ave.,San Antonio,Texas,78216,-98.484859,29.562625
+86,Brandi's Piano Bar,5152 Fredericksburg,San Antonio,Texas,78229,-98.5813429,29.511125
+87,Brass Monkey,2702 N St Mary's St,San Antonio,Texas,78212,-98.486915,29.450244
+88,Braun Hall,9721 Braun Rd ,San Antonio,Texas,78254,-98.655157,29.616585
+89,Brazakka's Reef,5223 Blanco Road,San Antonio,Texas,78216,-98.516711,29.551812
+90,Brews Brothers,7403 Leslie Rd ,San Antonio,Texas,78254,-98.699274,29.508356
+91,Brick at Blue Star Arts Complex,108 Blue Star ,San Antonio,Texas,78204,-98.495616,29.409467
+92,Briscoe Western Art Museum,210 W. Market St. ,San Antonio,Texas,78205,-98.489009,29.422921
+93,Broad Street,258 Central  Park Mall,San Antonio,Texas,78216,-98.5017004,29.5184561
+94,Broadway Turk's,1826 N New Braunfels,San Antonio,Texas,78208,-98.46096,29.398065
+95,Brooklyn Street Bar and Grill,516 Brooklyn Street,San Antonio,Texas,78215,-98.482663,29.450211
+96,Brooks Pub,3354 Lasses Blvd,San Antonio,Texas,78223,-98.4339,29.355304
+97,Brooster's Backyard IceHouse,815 Pleasanton Rd,San Antonio,Texas,78214,-98.51699,29.31194
+98,Buckley's Jazz Bar,5500 Babcock,San Antonio,Texas,78240,-98.597357,29.517233
+99,Bucko's Boardroom,2714 N. St. Mary's,San Antonio,Texas,78212,-98.48675,29.450667
+100,Buddy's Ize House,1920 N. Main Avenue,San Antonio,Texas,78212,-98.494226,29.447843
+101,Budro's,4211 Sungate Drive,San Antonio,Texas,78217,-98.457242,29.524766
+102,Bull Moose,6501 N Blanco Rd,San Antonio,Texas,78216,-98.481527,29.562078
+103,Burgundy Woods,2379 NE Loop 410,San Antonio,Texas,78217,-98.41911,29.51988
+104,Burleson Yard Beer Garden,430 Austin St,San Antonio,Texas,78215,-98.47839,29.432553
+105,Burnhouse Cigar & Martini Lounge,4553 North Loop 1604 W #122,San Antonio,Texas,78249,-98.574274,29.596033
+106,Burro Land,800 Cincinatti,San Antonio,Texas,78201,-98.534244,29.482984
+107,Bwana Dik,421 East Commerce,San Antonio,Texas,78205,-98.488339,29.424078
+108,Cabaret,801 N. Main Street,Bandera,Texas,78003,-99.072459,29.727007
+109,Cactus Beer Garden,2913 N. St. Mary's,San Antonio,Texas,78212,-98.49126,29.452192
+110,Cactusland Brewery,368 County Rd 325 b,Adkins,Texas,78101,-98.254405,29.289989
+111,Cadillac Bar,212 South Flores,San Antonio,Texas,78204,-98.494967,29.422308
+112,Cafe Americain,2714 N. St. Mary's,San Antonio,Texas,78212,-98.48675,29.450667
+113,Cafe Shalom International Coffee House,103 West Rampart,San Antonio,Texas,78216,-98.49428,29.51401
+114,Caliente Harley-Davidson,7230 NW Loop 410,San Antonio,Texas,78245,-98.630222,29.450938
+115,Cameo Theater,1123 East Commerce,San Antonio,Texas,78205,-98.479326,29.422148
+116,Candlelight Coffeehouse & Wine Bar,3011 N Saint Marys St,San Antonio,Texas,78212,-98.484648,29.452984
+117,Cantina del Rio,200 S Alamo St,San Antonio,Texas,78205,-98.487846,29.422428
+118,Cardi's,1534 Bandera Road,San Antonio,Texas,78228,,
+119,Carlsbad Tavern,11407 West Ave ,San Antonio,Texas,78213,,
+120,Carmen's de la Calle,320 N Flores St,San Antonio,Texas,78205,-98.494182,29.427963
+121,Carousel Court Shopping Center,"1836 Nacogdoches Rd, ",San Antonio,Texas,78209,-98.458157,29.505124
+122,The Carver Community Cultural Center – The Jo Long Theatre for Performing Arts,226 N Hackberry,San Antonio,Texas,78202,-98.472462,29.421692
+123,Casablanca,1929 La Manda St,San Antonio,Texas,78201,-98.534244,29.482984
+124,Casbeers,1719 Blanco Road,San Antonio,Texas,78212,-98.51213,29.48627
+125,Casbeers at the Church,1150 South Alamo,San Antonio,Texas,78205,-98.492949,29.411452
+126,Casey's Saloon and Dance,Riverwalk,San Antonio,Texas,78205,-98.4884669728261,29.4242555
+127,Casino Club,N Zarzamora St & Culebra Rd,San Antonio,Texas,78201,-98.524926042683,29.4453977354397
+128,Castle Hills Market Shopping Center (Two locations - (2211 NW Military Highway),2195 NW Military Hwy,San Antonio,Texas,78213,-98.521949,29.532999
+129,Cattlemen Square Tavern,904 West Houston,San Antonio,Texas,78207,,
+130,Chance Are Lounge,743 Historic Old Hwy 90,San Antonio,Texas,78237,-98.576454,29.425384
+131,Chandelier Club,3418 Eisenhauer,San Antonio,Texas,78218,-98.4162499,29.501472
+132,Charlie Brown's Neighborhood Bar & Grill,11888 Starcrest Dr #101,San Antonio,Texas,78247,-98.461145,29.548179
+133,Charline McCombs Empire Theatre,226 N. St. Mary's St.,San Antonio,Texas,78205,-98.490586,29.426265
+134,Chaser's,13550 O'Connor Road,San Antonio,Texas,78233,-98.37916,29.54863
+135,Cheers,3625 West Avenue,San Antonio,Texas,78213,-98.554005,29.495579
+136,Chelsea Street,2310 SW Military,,Texas,78224,-98.605345,29.340932
+137,Cherrity Bar,302 Montana Street,San Antonio,Texas,78203,-98.475943,29.4183
+138,Cibolo Creek Country Club,8640 East Evans Road,San Antonio,Texas,78266,-98.316916,29.601428
+139,Cibolo Nature Center,140 City Park Road,Boerne,Texas,78006,-98.709097,29.781648
+140,Circle B&R,3603 S WW White Road,San Antonio,Texas,78222,-98.404747,29.362979
+141,City Limits Cantina,17200 Bandera Road,San Antonio,Texas,78203,-98.461836,29.437559
+142,Clay's Ice House,6727 S Zarzamora,San Antonio,Texas,78224,-98.53443,29.36069
+143,Clem's Old Fashioned Barbeque,1615 N Zarzamora,San Antonio,Texas,78201,-98.525017,29.444505
+144,Clown Alley,5520 SW Military,San Antonio,Texas,78242,-98.613368,29.376452
+145,Club 181,8902 South Presa,San Antonio,Texas,78223,-98.451473,29.33475
+146,Club Abrazo,434 S Alamo St ,San Antonio,Texas,78205,-98.487966,29.419552
+147,Club Country,10929 Nacogdoches,San Antonio,Texas,78217,-98.422985,29.539699
+148,Club Eldorado,1918 Wyoming Street,San Antonio,Texas,78203,-98.46013,29.41774
+149,Club Miami,3534 Fredricksburg,San Antonio,Texas,78201,-98.538227,29.477421
+150,Club Movida,306 E Mitchell St,San Antonio,Texas,78210,-98.488405,29.391628
+151,Club Oasis,1720 North Main,San Antonio,Texas,78212,-98.494218,29.445884
+152,Club Reflex,3740 NW 410,San Antonio,Texas,78229,-98.569102,29.523837
+153,Club Ricardo,514 River Walk,San Antonio,Texas,78205,-98.487694,29.424339
+154,Club Ron Rico,2012 Broadway,San Antonio,Texas,78215,-98.482663,29.450211
+155,Club Sirius,228 Losoya St,San Antonio,Texas,78205,-98.487607,29.424623
+156,Club Vortex,1720 N. Main Avenue,San Antonio,Texas,78212,-98.494218,29.445884
+157,Co Lab,723 N Alamo St,San Antonio,Texas,78215,-98.482302,29.43188
+158,Cobalt Club,2022 McCullough,San Antonio,Texas,78212,,
+159,Coco Beach,2725 N. St. Mary's,San Antonio,Texas,78212,,
+160,Comanche Ice House,2603 Rigsby,San Antonio,Texas,78222,,
+161,Come On Inn,1735 Fair Ave,San Antonio,Texas,78223,-98.448655,29.384287
+162,Conglomeration,4923 NW 410,San Antonio,Texas,78229,-98.584299,29.490035
+163,Connor's Night Club,2022 McCullough Ave,San Antonio,Texas,78212,-98.491605,29.448875
+164,Conroy's Irish Pub,9091 Fair Oaks Pkwy,Boerne,Texas,78015,-98.664812,29.720585
+165,Continental Cafe,6390 Fairdale Dr,San Antonio,Texas,78218,-98.405075,29.485378
+166,Conway's,262 W. Jahn Street,New Braunfels,Texas,78130,-98.119612,29.697039
+167,Cooter Brown's,7022 Seco Creek,San Antonio,Texas,78256,,
+168,Cooter Browns Saloon,11881 Bandera Rd,Helotes,Texas,78023,-98.670186,29.555345
+169,Cootey's Tavern,8318 Jones Maltsberger Rd,San Antonio,Texas,78216,-98.480649,29.513741
+170,Corner Pocket Bar,2363 Austin Hwy,San Antonio,Texas,78218,-98.410805,29.508199
+171,Cottonwood Country Club,1225 West Commerce,,Texas,78207,-98.620397,29.436128
+172,Country Cabaret,839 FM 467,Seguin,Texas,78155,-97.974159,29.536249
+173,Country Down Under,622 NW Loop 410,San Antonio,Texas,78216,,
+174,Country Gold,7405 Old Pearsall Road,San Antonio,Texas,78252,-98.64514,29.323885
+175,Country on the Rocks,8024 Cross Creek,San Antonio,Texas,78218,,
+176,Country Road Ballroom,15624 S US Highway 281,San Antonio,Texas,78221,-98.47054,29.26674
+177,County Line - Downtown,111 W Crockett St #104,San Antonio,Texas,78205,-98.489094,29.425241
+178,County Line- I 10,10101 Interstate 10 Frontage Rd.,San Antonio,Texas,78230,-98.567315,29.537484
+179,Courtyard,11403 West Avenue,,Texas,78213,-98.523695,29.510289
+180,Cowboys Dance Hall,3030 NE Interstate 410 Loop,San Antonio,Texas,78218,-98.398168,29.517595
+181,Coyote Ugly Saloon,409 E Commerce St,San Antonio,Texas,78205,-98.488553,29.424173
+182,Coyote's,8759 Grissom Road,San Antonio,Texas,78251,-98.641084,29.481578
+183,Crazy Darryl's,3600 Fredericksburg Road,San Antonio,Texas,78201,-98.532753,29.357093
+184,Crazy J's Sports Bar,126 Gembler Road,San Antonio,Texas,78219,-98.43303,29.43519
+185,Crockett Park,"1300 N Main Ave,",San Antonio,Texas,78212,-98.494756,29.441614
+186,Crumpets Restaurant & Bakery,3920 Harry Wurzbach Rd,San Antonio,Texas,78209,-98.434103,29.506214
+187,Crystal Sea Drama Co Inc,8414 Speedway Dr,San Antonio,Texas,78230,-98.531304,29.517141
+188,Cuatro Aces,1110 Pleasanton Rd,San Antonio,Texas,78214,-98.504037,29.373085
+189,Cured at Pearl,306 Pearl Pkwy #101,San Antonio,Texas,78215,-98.479965,29.441938
+190,Cyrano's,8401 Datapoint,San Antonio,Texas,78229,-98.569908,29.517585
+191,Da Silva's,2611 Broadway,San Antonio,Texas,78215,-98.482663,29.450211
+192,Dad's,2615 Mossrock,San Antonio,Texas,78230,-98.535767,29.513465
+193,Dad's Karaoke,2615 Mossrock,San Antonio,Texas,78230,-98.535767,29.513465
+194,Daiquiri Lounge,630 N. New Braunfels Ave.,San Antonio,Texas,78202,-98.460775,29.42758
+195,Danceland,427 East Josephine,San Antonio,Texas,78215,,
+196,D'Angelo's,3921 Naco-Perrin,San Antonio,Texas,78217,-98.417179,29.543908
+197,Daniel's Brooklyn Street,516 Brooklyn Street,San Antonio,Texas,78215,-98.484589,29.43321
+198,Deco Pizzeria,1815 Fredericksburg Rd,San Antonio,Texas,78201,-98.523325,29.461489
+199,Deer Crossing Saloon,4810 FM 1518,Schertz,Texas,78154,-98.302398,29.574985
+200,Denim and Diamonds,2335 NW Military Hwy,San Antonio,Texas,78231,-98.5363425,29.5543855
+201,Deol Bar,6851 North Loop 1604 W #101,San Antonio,Texas,78249,-98.624418,29.588908
+202,Desperado,6844 Ingram Road,San Antonio,Texas,78238,,
+203,Dick's Last Resort,"406 Navarro St,",San Antonio,Texas,78205,-98.489576,29.425401
+204,Doc Holliday's,3740 NW Loop 410,San Antonio,Texas,78213,-98.555599,29.492177
+205,Dog and Pony Grill,1481 S Main St,Boerne,Texas,78006,-98.721511,29.774215
+206,Dominion Country Club,1 Dominion Dr,San Antonio,Texas,78257,-98.620379,29.650268
+207,Dos Guys,2121 N. St. Mary's,San Antonio,Texas,78212,-98.486505,29.44553
+208,Downtown San Antonio (Alamo Address inputted),300 Alamo Plaza,San Antonio,Texas,78205,-98.48702,29.425165
+209,Doza's,3306 N St Mary's St,San Antonio,Texas,78212,-98.480491,29.45554
+210,Draft Station at Sonterra,700 E Sonterra Blvd,San Antonio,Texas,78258,-98.484456,29.61413
+211,Drink Texas Bar,200 Navarro St,San Antonio,Texas,78205,-98.489825,29.423624
+212,Drink Texas Stone Oak,19903 Stone Oak Pkwy #202,San Antonio,Texas,78258,-98.490848,29.642787
+213,Durdy Annie's (Americana Inn),96 NE Loop 410,San Antonio,Texas,78216,-98.482265,29.520665
+214,Durty Nelly's Irish Pub,200 S Alamo St,San Antonio,Texas,78205,-98.487846,29.422428
+215,Eagle's Hall,211 North Alamo,San Antonio,Texas,78205,-98.495141,29.4246
+216,Earl of Country,310 Valley Hi Drive,San Antonio,Texas,78227,-98.639935,29.380124
+217,Eastwood Country Club,1 Dominion Dr,San Antonio,Texas,78257,-98.617408,29.655529
+218,Edge of Town,Culebra and Ingram,San Antonio,Texas,78251,-98.665781,29.457955
+219,Edwards Ridge Distillery,"16104 University Oak,",San Antonio,Texas,78249,-98.577258,29.588382
+220,El Antonio's Hacienda Ballroom,1400 Austin Hwy,San Antonio,Texas,78209,-98.438721,29.491335
+221,El Cabaret,4906 West Commerce,San Antonio,Texas,78237,-98.557919,29.430875
+222,El Camaroncito,411 Old Highway 90 West,San Antonio,Texas,78237,-98.59884525,29.4082105
+223,El Caribe,2611 Wagon Wheel,San Antonio,Texas,78217,-98.449039,29.517576
+224,El Chamizal Nightclub,1134 N. Flores,San Antonio,Texas,78212,-98.501578,29.436585
+225,El Fandango,114 West Carolina,San Antonio,Texas,78210,-98.48429,29.40709
+226,El Jarro,13421 San Pedro Ave,San Antonio,Texas,78216,-98.484105,29.564953
+227,El Luchador Bar,622 Roosevelt Ave,San Antonio,Texas,78210,-98.485809,29.396998
+228,El Machito,7300 Jones Maltsberger Rd,San Antonio,Texas,78209,-98.479047,29.497587
+229,El Rancho Nite Club,1134 N. Flores,San Antonio,Texas,78212,-98.49126,29.452192
+230,El Taxco,625 N. Medina,San Antonio,Texas,78207,-98.504612,29.430228
+231,El Tropicano Nite Club,7167 Somerset Road,San Antonio,Texas,78211,-98.551155,29.355528
+232,El Venadito Club,117 1/2 N Flores,San Antonio,Texas,78205,-98.495141,29.4246
+233,Elbow Room,1788 Austin Highway,San Antonio,Texas,78218,-98.423994,29.498253
+234,Element Ultra Lounge,1581 Bandera Road,San Antonio,Texas,78228,-98.5486534017857,29.4527155
+235,Embers Wood Fire Grill & Bar,9818 Interstate 10 Frontage Rd,San Antonio,Texas,78230,-98.563897,29.531352
+236,Engle's Place,Nacogdoches Rd,San Antonio,Texas,78217,-98.495141,29.4246
+237,Epic Bar,"1375 Austin Hwy,",San Antonio,Texas,78209,-98.439479,29.491199
+238,Esperanza Peace & Justice Center,922 San Pedro Ave,San Antonio,Texas,78212,-98.499039,29.442633
+239,Eva's Cozy Spot,2217 Blanco Road,San Antonio,Texas,78212,-98.50761,29.45542
+240,Evil Olive Elixir Lounge,2950 Thousand Oaks,San Antonio,Texas,78247,-98.441134,29.576844
+241,Fantastic 60s,611 HWY 90,Castroville,Texas,78009,-98.865332,29.355849
+242,Far West Event Center,2502 Pleasanton Road,San Antonio,Texas,78221,-98.503102,29.354416
+243,Farmer's Daughter,5432 WW White,San Antonio,Texas,78222,-98.394889,29.41923
+244,Fatso's BBQ,1743 Bandera Road,San Antonio,Texas,78228,-98.572736,29.470225
+245,Faust Brewery,499 South Castell,New Braunfels,Texas,78130,-98.120295,29.698681
+246,Feast Restaurant,1024 S Alamo St,San Antonio,Texas,78210,-98.491053,29.413353
+247,Fiasco's,2250 Thousand Oaks,San Antonio,Texas,78232,-98.452881,29.587551
+248,Fiesta Ballroom,735 IH 10,Seguin,Texas,78155,-97.957016,29.598297
+249,Fiesta Club,1112 Pleasanton Road,San Antonio,Texas,78214,,
+250,Fitzgerald's Bar and Live Music,"437 McCarty Rd #101,",San Antonio,Texas,78216,-98.499397,29.528875
+251,Five Stones Artisan Brewery,11335 FM 1863,New Braunfels,Texas,78132,,
+252,Flying Saucer Draught Emporium,11255 Huebner Rd #212,San Antonio,Texas,78230,-98.577891,29.547727
+253,Fountain Bleu Banquet Hall,8353 Culebra Road,San Antonio,Texas,78251,-98.665781,29.457955
+254,Fralo’s Art of Pizza,23651 Interstate 10 Frontage Rd,San Antonio,Texas,78257,-98.62779,29.66143
+255,Franco's Lounge,10003 NW Military,San Antonio,Texas,78231,-98.52812,29.55471
+256,Frankie G's Sports Bar,2008 Cupples Rd,San Antonio,Texas,78226,-98.495141,29.4246
+257,Freeman Coliseum,3201 E Houston St,San Antonio,Texas,78219,-98.442844,29.42597
+258,Freetail Taproom,2000 S Presa St,San Antonio,Texas,78210,-98.482232,29.401606
+259,Freiheit Country Store,2157 FM1101,New Braunfels,Texas,78130,-98.070143,29.716859
+260,Fuggawi,8011 Webbles Drive,San Antonio,Texas,78218,-98.400135,29.50904
+261,Fun Palace,3662 Culebra,San Antonio,Texas,78228,-98.594969,29.453734
+262,Gallagher's,9502 I-10 West,San Antonio,Texas,78230,-98.601154,29.605492
+263,Garden Tea Lounge,2375 NW Military Hwy,Shavano Park,Texas,78231,-98.53024,29.546753
+264,Gasoline Alley,6800 Wurzbach,San Antonio,Texas,78240,-98.614705,29.517654
+265,Gemini Ink,1111 Navarro St,San Antonio,Texas,78205,-98.49121,29.432004
+266,Gennie's Lounge,2139 Frio City Road,San Antonio,Texas,78226,-98.542882,29.390292
+267,George's Keep,17101 La Cantera Pkwy #1200,San Antonio,Texas,78256,-98.606746,29.610892
+268,GIG on the Strip,2803 N. St. Mary's,San Antonio,Texas,78212,-98.49126,29.452192
+269,Golden Stallion,1500 Ackerman,San Antonio,Texas,78219,-98.396637,29.452797
+270,Graffiti's,3707 Colony Dr,San Antonio,Texas,78230,-98.558631,29.531469
+271,Graham Central Station,4902 Fredricksburg Rd,San Antonio,Texas,78229,,
+272,Grasshopper Club,8308 Marbach,San Antonio,Texas,78227,-98.6552,29.41668
+273,Grayze on Grayson,521 E Grayson St,San Antonio,Texas,78215,-98.47462,29.44345
+274,Great Jubilations,4841 Fredericksburg,San Antonio,Texas,78229,-98.557075,29.496897
+275,Gruene Hall,1281 Gruene Road,New Braunfels,Texas,78130,-98.104462,29.738324
+276,Guadalupe Brewing Company,1586 Wald Road,New Braunfels,Texas,78132,-98.16399,29.684443
+277,Guadalupe County Coliseum,950 S. Austin Street,Seguin,Texas,78155,,
+278,Guadalupe Theatre,1301 Guadalupe St.,San Antonio,Texas,78207,-98.514563,29.418601
+279,H&R,1819 Goliad Road,San Antonio,Texas,78223,-98.443293,29.36785
+280,Hacienda Salas,3127 Mission Road,San Antonio,Texas,78214,,
+281,Half Price Books-Fredericksburg,7959 Fredericksburg,San Antonio,Texas,78229,-98.568536,29.51162
+282,Hallelujah Hollywood,10127 Coachlight,San Antonio,Texas,78216,,
+283,Hangin' Tree Saloon,18424 2nd St,San Antonio,Texas,78266,-98.320018,29.610993
+284,Hard Rock Cafe | San Antonio,111 W Crockett St #210,San Antonio,Texas,78205,-98.489094,29.425241
+285,Hard Times Saloon and Party House,11523 Bandera Rd,San Antonio,Texas,78250,-98.662743,29.512633
+286,Harem Skarem,3185 Nacogdoches Road,San Antonio,Texas,78217,-98.43842,29.52663
+287,HEAT Nightclub,8306 Marbach Rd,San Antonio,Texas,78266,-98.655165,29.417473
+288,Helotes Event Hall,16148 Bandera Rd,Helotes,Texas,78023,-98.68627,29.562804
+289,Helotes Inn,14405 Old Bandera ,Helotes,Texas,78203,-98.690339,29.576985
+290,Henry B. Gonzalez Convention Center,900 E Market St,San Antonio,Texas,78205,-98.484022,29.42178
+291,Here it Tiz,3314 Clark Street,San Antonio,Texas,78223,-98.448047,29.383429
+292,High Tide,1146 Austin Highway,San Antonio,Texas,78209,-98.448147,29.486562
+293,Hill Country Farmers Market,18039 I- 10 Access Rd,San Antonio,Texas,78220,-98.431942,29.413165
+294,Historic Jackson Ranch,8910 Callaghan Rd,San Antonio,Texas,78230,-98.540711,29.521533
+295,Historic Pearl,303 Pearl Pkwy #300,San Antonio,Texas,78215,-98.479558,29.442508
+296,Historic Sunset Station,1174 E Commerce St,San Antonio,Texas,78205,-98.478265,29.420533
+297,Hi-Tones,621 E Dewey Pl,San Antonio,Texas,78212,-98.486872,29.447201
+298,Holiday Club,1500 N Main Ave.,San Antonio,Texas,78212,-98.493988,29.442997
+299,Hollywood Cafe,4318 Callaghan Road,San Antonio,Texas,78228,-98.60123,29.466602
+300,Hookah House At Bentleys,8123 Broadway,San Antonio,Texas,78209,-98.4646229,29.470119
+301,Hooligan's Bar & Grill," 13920 I-35,",San Antonio,Texas,78233,-98.334337,29.565831
+302,Hot Joy,1014 S Alamo Street,San Antonio,Texas,78210,-98.490887,29.41361
+303,Hot Shot Night Club,517 North St. Mary's,San Antonio,Texas,78205,-98.49134,29.429196
+304,Hot Tin Roof,7710 Frontage Road,San Antonio,Texas,78230,-98.5656356587302,29.5358535
+305,Hotel Discotheque,18326 Tuscany Stone,San Antonio,Texas,78258,-98.488894,29.610914
+306,Hotel Havana,1015 Navarro St,San Antonio,Texas,78205,-98.489854,29.430796
+307,Howl at the Moon, 111 W Crockett St,San Antonio,Texas,78205,-98.489094,29.425241
+308,Huey's,2734 N. St. Mary's,San Antonio,Texas,78212,-98.48522,29.45112
+309,Hyatt Hill Country Resort,9800 Hyatt Resort D,San Antonio,Texas,78251,-98.681267,29.461875
+310,Iguana Bay Bar & Grill,1031 Patricia Dr.,San Antonio,Texas,78213,-98.512088,29.545451
+311,Illusions Night Club,2823 Martin Luther King Dr,San Antonio,Texas,78220,-98.441172,29.413735
+312,Illusions Theatre at the Alamodome,100 Montana S,San Antonio,Texas,78203,-98.478756,29.416871
+313,Imagine Books & Records, 8373 Culebra Rd #201b,San Antonio,Texas,78251,-98.648709,29.470486
+314,Institute of Texan Cultures,801 E César E. Chávez Blvd,San Antonio,Texas,78205,-98.482218,29.416617
+315,International Folk Culture Center,"411 SW 24th St, ",San Antonio,Texas,78207,-98.542512,29.425622
+316,Club Iries,7920 Fredericksburg,San Antonio,Texas,78229,-98.5813429,29.511125
+317,Irish Pub,9726 Datapoint Dr,San Antonio,Texas,78229,-98.564748,29.52776
+318,Iron Armadillo,2411 Broadway,San Antonio,Texas,78215,-98.482663,29.450211
+319,Iskcon Mission Society,103 Bernice Dr,San Antonio,Texas,78228,-98.575315,29.44224
+320,Ivory Lounge & Nightclub,1201 Austin Highway,,Texas,,-98.44681,29.489438
+321,Izzy's Party House,10703 Pleasanton Rd,San Antonio,Texas,78221,-98.50271,29.311123
+322,Jack Rabbit,6322 San Pedro Ave,San Antonio,Texas,78216,-98.498718,29.495242
+323,Jack's Bar,2950 Thousand Oaks,San Antonio,Texas,78247,98.439556,29.574315
+324,Jaime's Place,1514 W Commerce,San Antonio,Texas,78207,-98.511694,29.426449
+325,JAM Factory,2623 N St Mary's St,San Antonio,Texas,78212,-98.487419,29.450367
+326,Jandro's Garden Patio,120 Villita ,San Antonio,Texas,78205,-98.495141,29.4246
+327,"Jazz, TX","312 Pearl Parkway, Bld. #6 Suite #6001",San Antonio,Texas,78215,-98.480251,29.443165
+328,Jerry Dean's,12536 Nacogdoches,San Antonio,Texas,78217,-98.457242,29.524766
+329,Jiggers,1639 E. Bitters,San Antonio,Texas,78216,,
+330,Jilly's,8779 Wurzbach Road,San Antonio,Texas,78240,-98.569404,29.524535
+331,Jimenez Restaurant and Bar,1010 NW Loop 410,San Antonio,Texas,78213,-98.508026,29.51969
+332,JJ's,2617 Wagonwheel,San Antonio,Texas,78217,-98.448878,29.517432
+333,JK's,5607 Kenwick,San Antonio,Texas,78238,-98.597758,29.484525
+334,Jo Long Theatre,226 N Hackenberry,San Antonio,Texas,78202,-98.458731,29.426962
+335,Joe Blue's,1414 S Alamo St Ste 1420,San Antonio,Texas,78210,-98.495422,29.409866
+336,Joe's Blues, 1420 S Alamo St,San Antonio,Texas,78210,-98.495732,29.409751
+337,Joe's Corner Saloon,5023 S. Presa,San Antonio,Texas,78223,-98.472632,29.371175
+338,Joe's Volcano,6844 Ingram Rd,San Antonio,Texas,78238,-98.625053,29.46404
+339,John T. Floore's Country Store,14492 Old Bandera Rd,Helotes,Texas,78023,-98.69053,29.57787
+340,Johnny Lew Ice,1717 West Avenue,San Antonio,Texas,78201,-98.52625,29.477554
+341,Jolly Joker,3114 Commercial Avenue,San Antonio,Texas,78221,-98.51594,29.345947
+342,Josabi's Acres,17200 TX-16,Helotes,Texas,78023,-98.706825,29.602995
+343,Josephine Theatre,339 W Josephine St.,San Antonio,Texas,78212,-98.485972,29.447399
+344,Joseph's Foodliner,2410 N. St. Mary's,San Antonio,Texas,78212,-98.487581,29.448567
+345,Judge's,16260 San Pedro,San Antonio,Texas,78232,,
+346,Juniper Tar,244 W Houston St.,San Antonio,Texas,78205,-98.485972,29.447399
+347,Just Country,9323 Perrin Beitel,,Texas,,-94.64242,30.146324
+348,JW S Bracken Saloon,18400 FM 2252,San Antonio,Texas,78266,-98.324201,29.610246
+349,K T Dance Hall,2017 Austin Hwy,San Antonio,Texas,78218,-98.4162499,29.501472
+350,K23 Gallery,704 Fredericksburg Rd,San Antonio,Texas,78201,-98.511048,29.449304
+351,Kelly Bar Patio,2433 Frio City Rd,San Antonio,Texas,78226,-98.54299,29.389986
+352,Kelly Field Terrace,corner Mission and Mitchell Road,,Texas,,-100.872166,32.400862
+353,Kelly's Archway,6894 US Hwy 87 E,China Grove,Texas,78263,-98.354009,29.389727
+354,Kendalia Halle,1135 FM 3351,Boerne,Texas,78006,-98.73197,29.794664
+355,Keyhole (#1),728 Iowa St,San Antonio,Texas,78203,-98.495141,29.4246
+356,Keyhole (#2),1619 W. Poplar St.,San Antonio,Texas,78207,-98.514974,29.440115
+357,Keystone Club,5152 Fredericksburg,,Texas,,-98.871984,30.275201
+358,King Armadillo,1824 West Olmos,San Antonio,Texas,78201,-98.52537,29.473387
+359,King Arthur's Court,1903 Jackson Keller Rd,San Antonio,Texas,78213,-98.523695,29.510289
+360,Kirby's Steakhouse,123 Loop 1604 NE,San Antonio,Texas,78232,-98.488566,29.610072
+361,Klub Amnesia,520 Roosevelt Ave,San Antonio,Texas,78210,-98.49303,29.39356
+362,Knave Pub,1375 Austin Hwy,San Antonio,Texas,78209,-98.439574,29.491443
+363,Knight Time Lounge,2026 Basse Road,San Antonio,Texas,78213,-98.519089,29.488588
+364,Kopy Kat Klub,416 E Pecan St,San Antonio,Texas,78205,-98.488436,29.428616
+365,Krause's Cafe and Biergarten,148 S Castell Ave,New Braunfels,Texas,78130,-98.124995,29.701212
+366,Krueger's Bar and Party House,6870 East Highway 87,,Texas,,-94.64242,30.146324
+367,La Bamba Super Nite Club,1621 Quintana Rd,San Antonio,Texas,78211,-98.55613,29.37309
+368,La Botanica,2911 N. Saint Mary's St.,San Antonio,Texas,78212,-98.485413,29.452288
+369,La Fonda on Main,2415 N Main Ave,San Antonio,Texas,78212,-98.494174,29.452524
+370,La Playa,2702 N. St. Mary's,San Antonio,Texas,78212,,
+371,La Quinta Inn and Suites Riverwalk,303 Blum St,San Antonio,Texas,78205,-98.482547,29.424069
+372,La Rancherita Night Club,4906 West Commerce,San Antonio,Texas,78237,-98.557919,29.430875
+373,La Rumba Nite Club,411 Old Hwy 90,,Texas,,-96.56253,29.70536
+374,La Tuna Grill,100 Probandt,San Antonio,Texas,78204,-98.49602,29.407601
+375,La Tuna Icehouse,100 Probandt,San Antonio,Texas,78204,-98.496118,29.407724
+376,La Vernia Chamber of Commerce Hall,12301 US-87 West,La Vernia,Texas,78121,-98.108521,29.344801
+377,La Villita Historic Arts Village, 418 Villita St,San Antonio,Texas,78205,-98.489115,29.421754
+378,Laboratory Brewing Company,7310 Jones Maltsberger,San Antonio,Texas,78209,,
+379,Lamp Post Lounge,1571 Austin Highway,San Antonio,Texas,78218,,
+380,Lanier High School,1514 W César E Chávez Blvd,San Antonio,Texas,78207,,
+381,Larry's Cantina,10929 Nacogdoches,,Texas,,,
+382,Larry's Lounge,2219 South Flores,,Texas,,,
+383,Lartos Lounge,2303 East Commerce,,Texas,,-95.9000439,33.2471342
+384,Las Canarias,112 College Street,San Antonio,Texas,78205,-98.490452,29.425479
+385,Las Chiladas,2387 NW Military HWY,Shavano Park,Texas,78231,-98.528073,29.545044
+386,Las Ramblas at The Hotel Contessa,"306 W Market St, ",San Antonio,Texas,78205,-98.489797,29.423078
+387,Las Vegas Night Club,1019 El Paso,San Antonio,Texas,78207,,
+388,Last National Bank,10127 Coachlight,,Texas,,,
+389,Last Stand,1807 Mission Road,San Antonio,Texas,78214,-98.489266,29.37815
+390,Laugh Out Loud Comedy Club,326 East Market Rd,San Antonio,Texas,78205,,
+391,Trinity University, One Trinity Pl,San Antonio,Texas,78212,-98.482574,29.463303
+392,Le Bistro Restaurant and Bar,114 Produce Row,San Antonio,Texas,78207,-98.498895,29.425109
+393,Lejac Club,618 NW Loop 410,San Antonio,Texas,78216,-98.500956,29.519649
+394,Leon Valley Bar and Grill,7007 Bandera Road,San Antonio,Texas,78238,,
+395,Lerma's Nite Club,1602 N. Zarzamora Street,San Antonio,Texas,78201,,
+396,Let's Go Bottom Up,542 Fredericksburg,,Texas,,-98.509654,29.44792
+397,Liberty Bar, 1111 S Alamo St,San Antonio,Texas,78210,-98.492443,29.412413
+398,Li'L Hut Lounge,3052 East Commerce St,San Antonio,Texas,78220,-98.441012,29.419727
+399,Lila Cockrell Theatre,200 E Market St,San Antonio,Texas,78205,-98.486184,29.422052
+400,Limelight,2719 N St Mary's St,San Antonio,Texas,78212,-98.486924,29.450511
+401,Limon's Lounge,722 S. St. Mary's,,Texas,,-94.64242,30.146324
+402,Lindbergh's,3820 Parkdale,San Antonio,Texas,78220,-98.560251,29.525908
+403,Lion and Rose British Restaurant and Pub - Park North, 842 NW Loop 410 Suite 115,San Antonio,Texas,78216,-98.506294,29.519642
+404,Lion and Rose British Restaurant and Pub -La Cantera,17627 La Cantera Pkwy,San Antonio,Texas,78257,-98.596909,29.608714
+405,Little Italy Restaurant,824 Afterglow St.,San Antonio,Texas,78216,-98.506395,29.547487
+406,Little Jamaica Bar and Grill,8816 Broadway,San Antonio,Texas,78217,-98.457242,29.524766
+407,Little Las Vegas Club,1602 N. Zarzamora Street,,Texas,,-99.489765,28.548039
+408,Little Nashville,1805 Pat Booker Road,Universal City,Texas,78148,-98.306704,29.55335
+409,Little Red Barn Steakhouse,1836 South Hackberry St.,San Antonio,Texas,78210,-98.473186,29.398021
+410,Local Motion,123 Goliad Road,San Antonio,Texas,78223,,
+411,Lone Star Corral,310 Riverside,San Antonio,Texas,78210,-98.480784,29.376992
+412,Lonely Ladies,2308 Blanco Road,San Antonio,Texas,78212,-98.50761,29.45542
+413,Lonestar Pavillion,1174 East Commerce,San Antonio,Texas,78205,-98.478249,29.420607
+414,Loose Screws,1620 Fredericksburg,San Antonio,Texas,78201,-98.534244,29.482984
+415,Los Barrios Mexican Restaurant,4223 Blanco Rd,San Antonio,Texas,78212,-98.508197,29.485864
+416,Los Mesquites,9901 Moursund Blvd,San Antonio,Texas,78221,-98.504116,29.318835
+417,Los Padrinos,2424 West Avenue,San Antonio,Texas,78201,,
+418,Loyalty Lounge,4250 Thousand Oaks Dr,San Antonio,Texas,78217,-98.410787,29.551858
+419,LUNA,6740 San Pedro Ave,San Antonio,Texas,78216,-98.498825,29.501839
+420,Luther's Cafe,1503 N Main Ave,San Antonio,Texas,78212,-98.49451,29.442969
+421,Luxello Hall,8640 East Evans,San Antonio,Texas,78266,,
+422,Lyndy's Great Indoors,5562 Fredericksburg,,Texas,,-98.871984,30.275201
+423,Mad Dogs British Pub Riverwalk,123 Losoya St #19,San Antonio,Texas,78205,-98.488242,29.425557
+424,Mad Michael's,435 McCarty Road,San Antonio,Texas,78216,-98.499204,29.529183
+425,Maggiano’s Little Italy San Antonio,17603 IH 10W,San Antonio,Texas,78257,-98.601263,29.608477
+426,Maggie's,9715 San Pedro,San Antonio,Texas,78216,-98.49827,29.529125
+427,Mai Tai,532 Riverwalk,San Antonio,Texas,78205,,
+428,Main Plaza Conservancy- San Antonio,111 Soledad St # 825,San Antonio,Texas,78205,-98.493258,29.425308
+429,Main Street,13477 Wetmore,San Antonio,Texas,78247,-98.420776,29.563909
+430,Majestic Theatre,224 E Houston St,San Antonio,Texas,78205,-98.490586,29.426265
+431,Make My Day Lounge Make sure to use 12114 Nacogdoches Rd,12114 Nacogdoches Rd,San Antonio,Texas,78217,-98.408913,29.54978
+432,Manana,207 Camaron,,Texas,,-96.97693,30.853245
+433,Mantle Art Space,714 Fredericksburg Road,San Antonio,Texas,78201,-98.511382,29.449615
+434,Margaritaville,849 E Commerce S,San Antonio,Texas,78205,-98.484418,29.423758
+435,Mariachi Bar,218 Produce Row,San Antonio,Texas,78217,-98.506013,29.607792
+436,Mario's Mexican Restaurant,325 South Pecos,,Texas,,-101.869848,33.52203
+437,Market Square, 514 W Commerce St,San Antonio,Texas,78207,-98.499438,29.425398
+438,Martinez Social Club,4922 SW Military Dr,San Antonio,Texas,78242,,
+439,Martini Ranch,4904 West Ave,San Antonio,Texas,78213,-98.525651,29.511467
+440,Marty's Outback,2913 N. St Mary's,San Antonio,Texas,78212,-98.485393,29.45204
+441,Marty's Veranda,15609 San Pedro,San Antonio,Texas,78232,-98.476378,29.582976
+442,Mary's Café,1518 South Flores,,Texas,,-94.64242,30.146324
+443,Matamoros Restaurant y Cantina,12844 IH10 West,San Antonio,Texas,78249,-98.593471,29.566858
+444,Maverick Music Festival,503 La Villita St,San Antonio,Texas,78205,-98.49056,29.419437
+445,Max's Lil'B,2432 Nogalitos,San Antonio,Texas,78225,-98.520465,29.38999
+446,Max's Wine Dive,340 E Basse Rd #101,San Antonio,Texas,78209,-98.478564,29.496378
+447,San Antonio College,1819 N. Main Ave,San Antonio,Texas,78212,-98.494224,29.44631
+448,McNay Art Museum,6000 N New Braunfels Ave,San Antonio,Texas,78209,-98.456748,29.485516
+449,Mcqueeney Hall,3211 W Farm to Market Rd 78,McQueeney,Texas,78123,-98.02933,29.592992
+450,Medina County Fairgrounds,1612 Avenue M,Hondo,Texas,78861,-99.141962,29.349727
+451,Melody's,2231 Quintana Road,San Antonio,Texas,78211,-98.560517,29.36764
+452,Mendiola's Ballroom,16490 IH 35 S,,Texas,,-98.714849,29.258477
+453,Midnight Cowboy (Hemisfair Plaza),600 Hemisfair Plaza Way,San Antonio,Texas,78205,-98.485485,29.419375
+454,Midnight Rodeo,12260 Nacogdoches Rd,San Antonio,Texas,78217,-98.405096,29.551075
+455,Midtown,2014 East Houston,San Antonio,Texas,78202,-98.458731,29.426962
+456,Milo's Backyard,14543 Roadrunner Way,,Texas,,-100.182308,31.59738
+457,Mine Shaft Saloon - Inside Magic Time Machine,902 NE Interstate 410 Loop,San Antonio,Texas,78209,-98.461487,29.515508
+458,Moe's Lounge,2323 Quintana Rd,San Antonio,Texas,78211,-98.561077,29.367044
+459,Morgan's Wonderland,5223 David Edwards Dr,San Antonio,Texas,78233,-98.391591,29.539823
+460,Moses Rose's Hideout,516 E Houston S.,San Antonio,Texas,78205,-98.487339,29.426251
+461,Moulin Rouge Lounge,1921.5 Fredricksburg Road,,Texas,,,
+462,Movement Gallery/Galeria del Movimiento,1412 E Commerce St,San Antonio,Texas,78205,-98.474149,29.420409
+463,"Musical Arts Center of San Antonio, Inc. (1604)","2106 E Sonterra Blvd, Ste 211",San Antonio,Texas,78259,-98.459399,29.608239
+464,"Musical Arts Center of San Antonio, Inc. (I-10)",12732 Cimarron Path #100,San Antonio,Texas,78249,-98.599304,29.55923
+465,Mustang Lounge,7201 East Houston,San Antonio,Texas,78220,-98.43350075,29.423915
+466,Naked Iguana Tequila Bar,421 E Commerce St,San Antonio,Texas,78205,-98.488339,29.424078
+467,Nana's Grill,701 Seguin Street,,Texas,,-97.964727,29.568841
+468,Neal's Ice House,4910 South Presa,San Antonio,Texas,78223,-98.473436,29.372463
+469,Nesta Dive Bar,122 Nogalitos St,San Antonio,Texas,78204,,
+470,Network for Young Musicians,1800 Fredericksburg Rd,San Antonio,Texas,78201,-98.522586,29.461527
+471,Newsroom,4106 N San Pedro,San Antonio,Texas,78212,-98.479944,29.55961
+472,Nibble's Eatery,13489 Blanco Road,San Antonio,Texas,78216,-98.476623,29.430642
+473,Nightrocker,725 S. Presa St,San Antonio,Texas,78210,-98.488243,29.413391
+474,Noche Caliente,2502 Pleasanton Road,San Antonio,Texas,78221,-98.51699,29.31194
+475,Nona's,2809 N St. Mary's,San Antonio,Texas,78212,-98.486085,29.45153
+476,Norma Jean,4429 Walzem Road,San Antonio,Texas,78218,-98.405754,29.511088
+477,Number 10 Club, 7791 FM 1346,San Antonio,Texas,78220,-98.33653,29.419177
+478,Oak Grove Hall,Nacogdoches Road,San Antonio,Texas,78217,-98.457242,29.524766
+479,Oak Hills,7401 Wurzbach,San Antonio,Texas,78229,-98.564579,29.497967
+480,Oak Hills Country Club,9726 Datapoint,San Antonio,Texas,78229,-98.564579,29.497967
+481,Ocho at Hotel Havana,1015 Navarro St.,San Antonio,Texas,78205,-98.489854,29.430796
+482,Old Spanish Inn,1355 Donaldson Road,San Antonio,Texas,78228,-98.553228,29.465221
+483,Old Tin Barn Saloon,1405 N Colorado St,San Antonio,Texas,78207,-98.521993,29.42543
+484,Olivia's,117 Goliad Road,,Texas,,-97.391114,28.66891
+485,Olmos Club,5403 Fredricksburg Rd,San Antonio,Texas,78229,-98.554959,29.49671
+486,Olmos Pharmacy,3902 McCullough Ave,San Antonio,Texas,78212,-98.491593,29.466693
+487,On The Rocks Pub,270 Losoya St.,San Antonio,Texas,78205,-98.487506,29.423862
+488,O'Neill's Irish House,302 E. Commerce,San Antonio,Texas,78205,-98.489608,29.423925
+489,Orphan Annie's Lounge,3621 West Avenue,San Antonio,Texas,78213,-98.526507,29.496419
+490,Oxtail Inn,8517 Starcrest,San Antonio,Texas,78217,-98.423298,29.517105
+491,Paesano's 1604,3622 Paesanos Pkwy,Shavano Park,Texas,78231,-98.553543,29.600569
+492,Palo Alto College Performing Arts Center,1400 West Villaret BLVD,San Antonio,Texas,78224,-98.545039,29.322791
+493,Pan Am Plaza,1419 Commercial Ave,San Antonio,Texas,78221,-98.504503,29.346501
+494,Pan American Nite Club,607 Dolorosa St,,Texas,,-98.8223185136653,31.8039734986915
+495,Panama's Red,2410 N St Mary's St,San Antonio,Texas,78212,-98.487581,29.448567
+496,Pandora's,11532 Perrin Beitel,San Antonio,Texas,78217,-98.410698,29.54556
+497,Paper Tiger,2410 N St Mary's St,San Antonio,Texas,78212,-98.487504,29.448645
+498,Pappy's,1502 Bitters Road,San Antonio,Texas,78216,-98.512353,29.575251
+499,Paramour Bar,102 9th St Suite 400,San Antonio,Texas,78215,-98.483589,29.435464
+500,Patsy's Ice House,2602 N. Flores St.,San Antonio,Texas,78212,-98.502526,29.451239
+501,Paul's Place,2026 Basse Road,San Antonio,Texas,78213,,
+502,Pearl Stable,307 Pearl Pkwy.,San Antonio,Texas,78215,-98.479113,29.44222
+503,Pedrotti's North Wind Ranch,13715 Fm 1560 N.,Helotes,Texas,78023,-98.664177,29.570814
+504,Pelican's Landing,2525 Jackson Keller,San Antonio,Texas,78230,,
+505,Pennie's Lounge,5132 W Military,San Antonio,Texas,78242,-98.602386,29.369724
+506,Pepe's Cantina,8476 Fredericksburg Road,San Antonio,Texas,78229,-98.571823,29.520089
+507,Perch Coworking Space,5231 Broadway St.,San Antonio,Texas,78209,-98.462915,29.475906
+508,Perfect Timing Night Club,607 Dolorosa,San Antonio,Texas,78207,-98.49696,29.42421
+509,Performing Arts San Antonio,15705 San Pedro Ave.,San Antonio,Texas,78232,-98.474677,29.586274
+510,Pericos Mexican Restaurant,10820 Bandera Rd,San Antonio,Texas,78250,-98.65715,29.544449
+511,Perry’s Steakhouse and Grille,"15900 La Cantera Parkway, Suite 22200",San Antonio,Texas,78256,-98.61094,29.593293
+512,Peters Brothers,433 East Commerce,,Texas,,-95.9000439,33.2471342
+513,Phazez,119 El Mio,San Antonio,Texas,78216,-98.49991,29.493852
+514,Picks Bar,4553 North Loop 1604 W #1101,San Antonio,Texas,78249,-98.574274,29.596033
+515,PJ's,700 N. St. Mary's,San Antonio,Texas,78205,-98.490602,29.430255
+516,Planeta Mexico,3830 Parkdale Dr,San Antonio,Texas,78229,-98.56257,29.525565
+517,Playa Santa Maria,2702 N. St. Mary's,San Antonio,Texas,78212,-98.486925,29.450315
+518,Player's Club,111 Daniels Road,San Antonio,Texas,78220,,
+519,Playpen North,San Pedro,,Texas,,,
+520,Plaza de Armas Gallery,115 Plaza De Armas #102,San Antonio,Texas,78205,-98.496003,29.424467
+521,Plaza Guadalupe,1327 Guadalupe St,San Antonio,Texas,78207,-98.515389,29.418873
+522,Poco Loco,505 N. Presa,,Texas,,-100.152612,34.717558
+523,Posey's Pasture,12930 Hwy 181 South,San Antonio,Texas,78223,-98.35531,29.29075
+524,Pour House,4750 Old Seguin Rd,San Antonio,Texas,78219,-98.39894,29.46301
+525,Powerhouse Café,255 E Basse Rd,San Antonio,Texas,78209,-98.480171,29.443516
+526,Prelude Club,11431 Perrin Beitel Rd,San Antonio,Texas,78213,-98.412355,29.543247
+527,Prize Bull Saloon and Dance Hall,1502 Bitters Road,,Texas,,-94.64242,30.146324
+528,Pueblo Hall & Activity Center,3315 N Western,San Antonio,Texas,78238,-98.625866,29.46701
+529,Pullman Inn,Sulphor Springs Road,San Antonio,Texas,78101,-98.281322,29.338947
+530,Pump House Lounge,2022 McCullough,San Antonio,Texas,78212,-98.491605,29.448875
+531,Pusi Kat,120 Villita Street,San Antonio,Texas,78205,,
+532,Quihi Gun Club and Dance Hall,1146 Austin Highway,San Antonio,Texas,78209,,
+533,R & J Lounge,Co Road 4517,Hondo,Texas,78861,-99.03095,29.38659
+534,R & J Lounge Music Pavillion,18086 Pleasanton Rd,San Antonio,Texas,78221,-98.497547,29.244371
+535,R & R Ice House,3800 Nogalitos,San Antonio,Texas,78211,-98.530815,29.378132
+536,R&J Music Pavilion,18086 Pleasanton Rd,San Antonio,Texas,78221,-98.497266,29.24431
+537,R&J Saloon,4910 S Flores St,San Antonio,Texas,78214,-98.499061,29.376878
+538,R&R Bar and Grill,306 East Mitchell St,San Antonio,Texas,78210,-98.47313,29.397191
+539,Radius Cafe,106 Auditorium Cir,San Antonio,Texas,78205,-98.488144,29.429802
+540,Radius Center,106 Auditorium Circle,,Texas,,-98.488144,29.429802
+541,Raffles Restaurant and Bar,1039 NE Interstate 410 Loop,San Antonio,Texas,78209,-98.456695,29.516789
+542,Rainbow Cafe,1028 N Flores,San Antonio,Texas,78212,-98.500439,29.435759
+543,Rancho Bar,2606 W Southcross Blvd,San Antonio,Texas,78211,,
+544,Random Beer Garden,11 Upper Cibolo Creek road,Boerne,Texas,78006,,
+545,Randy's,1534 Bandera Road,San Antonio,Texas,78228,-98.568123,29.468901
+546,Rascal's Night Club,1534 Bandera Road,San Antonio,Texas,78228,-98.568123,29.468901
+547,Raul's``,1010 NW 410,San Antonio,Texas,78213,-98.456473,29.515836
+548,Rawpower and Light Company,2315 San Pedro,San Antonio,Texas,78212,,
+549,Ray's Ice House,3110 Pleasanton Road,,Texas,,-98.478627,28.967194
+550,Razz Club,1375 Austin Highway,San Antonio,Texas,78209,-98.439574,29.491443
+551,Razzle Dazzle,Austin Hwy and Perrin Beitel,,Texas,,-96.182532,29.819799
+552,RC Peacock's,8523 Teecee,San Antonio,Texas,78217,-98.45701,29.517003
+553,Rebar,8134 Broadway St.,San Antonio,Texas,78209,-98.465938,29.511031
+554,Recovery Room,7949 Fredericksburg,San Antonio,Texas,78229,-98.5813429,29.511125
+555,Red Cobra Country Club,1146 East Commerce,San Antonio,Texas,78205,-98.495141,29.4246
+556,Reed's Red Derby,9715 San Pedro,San Antonio,Texas,78216,-98.479944,29.55961
+557,Remington's,7401 Wurzbach Rd,San Antonio,Texas,78229,-98.58331,29.506466
+558,Repitlez Sports Bar,5418 Old HWY 90,,Texas,,-98.596798,29.416517
+559,Reptilez Live Music Venue,5418 Enrique M. Barrera Pkwy,San Antonio,Texas,78227,-98.62062,29.40521
+560,Republique of Boko-Maru,5545 Northwest Loop 410,San Antonio,Texas,78238,-98.595132,29.485457
+561,Retox Bar,1031 Patricia Dr.,San Antonio,Texas,78213,-98.511561,29.544518
+562,Reverb Lounge,1033 Avenue B,San Antonio,Texas,78215,,
+563,Rhino Room,245 E. Commerce,San Antonio,Texas,78205,-98.49002,29.424659
+564,Ricardo's on the River,314 N Presa,San Antonio,Texas,78205,-98.48881,29.42452
+565,Riff House Concerts,14614 Mountain Wood St.,San Antonio,Texas,78232,-98.466319,29.574975
+566,Rio Cibolo Ranch,1101 Ulrich Rd,Marion,Texas,78124,-98.144474,29.485426
+567,Ritmo Latino,3625 West Ave,San Antonio,Texas,78213,-98.526411,29.496575
+568,River Road Ice House,1791 Hueco Springs Road,New Braunfels,Texas,78132,,
+569,Roaring 20's,13445 N Blanco,San Antonio,Texas,78216,-98.481527,29.562078
+570,Rock and Rye,17631 La Cantera Pkwy,San Antonio,Texas,78257,-98.591155,29.64395
+571,Rock Bottom Tattoo Bar,1033 Avenue B,San Antonio,Texas,78215,-98.482663,29.450211
+572,Rock Island,8779 Wurzbach,San Antonio,Texas,78240,-98.614705,29.517654
+573,Rocking M Dude Ranch,216 Soledad,San Antonio,Texas,78205,-98.493215,29.42683
+574,Rosario's Café y Cantina,910 S. Alamo St.,San Antonio,Texas,78205,-98.489594,29.415331
+575,Rosedale Park,303 Dartmouth St.,San Antonio,Texas,78237,-98.552211,29.436278
+576,Rosie O'Grady's,3923 Naco Perrin Blvd,San Antonio,Texas,78217,-98.417645,29.543447
+577,Round Table Club,7218 St. Hedwig Road,,Texas,,-98.20001,29.414401
+578,"Roxy Sports Bar -2801 Pat Booker Rd, Universal City, TX 78148",2801 Pat Booker Rd,San Antonio,Texas,78148,-98.320242,29.557202
+579,Royal Palace Ballroom,3506 SW Military Dr,San Antonio,Texas,78211,-98.556815,29.357549
+580,Ruben's Place,15069 I-35 Frontage Rd,Selma,Texas,78154,,
+581,Ruffino's,9802 Colonnade Blvd,San Antonio,Texas,78230,-98.564388,29.534391
+582,Rusty Nail Saloon,2757 E Houston St,San Antonio,Texas,78202,,
+583,Ruth Taylor Theater,One Trintiy Place,San Antonio,Texas,78212,-98.483775,29.463766
+584,Ruth’s Chris Steak House –La Cantera,"17803 La Cantera Terrace, #8110",San Antonio,Texas,78256,-98.606645,29.609453
+585,Ruth's Chris Steak House-Concord Plaza,"7720 Jones Maltsberger, Concord Plaza",San Antonio,Texas,78216,-98.481463,29.505528
+586,Ruth's Chris Steak House-Grand Hyatt,600 E. Market St. River Walk Grand Hyatt,San Antonio,Texas,78205,-98.483774,29.421719
+587,SA Country Saloon,10127 Coachlight St.,San Antonio,Texas,78216,-98.49353,29.53357
+588,Saengerhalle,255 Saengerhalle Road,New Braunfels,Texas,78130,-98.068368,29.691138
+589,Sahari Club,3645 Interstate 35 Access Rd,San Antonio,Texas,78204,-98.42683,29.44972
+590,Salute,2801 N. St. Mary's,San Antonio,Texas,78212,-98.48624,29.451445
+591,Sam's Burger Joint, 330 E Grayson St,San Antonio,Texas,78215,-98.477414,29.443536
+592,Sam's Town Point,5115 Old Seguin Road,San Antonio,Texas,78219,-98.390969,29.466632
+593,San Antone Cafe and Concerts,1150 S Alamo St,San Antonio,Texas,78210,-62.184068,16.653923
+594,San Antonio Botanical Garden,555 Funston Pl.,San Antonio,Texas,78209,-98.458727,29.458866
+595,San Antonio Club,3645 N I 35,,Texas,,-98.427407,29.449829
+596,San Antonio Convention Center Arena,601 Hemisfair Plaza Way,San Antonio,Texas,78205,-98.48718,29.418394
+597,San Antonio Country,1122 N St. Mary's St,San Antonio,Texas,78215,-98.482663,29.450211
+598,San Antonio Country Club,601 HemisFair Way,San Antonio,Texas,78203,-98.45481,29.414071
+599,San Antonio Event Center,8111 Meadow Leaf Dr,San Antonio,Texas,78227,-98.645944,29.420441
+600,San Antonio Japanese Tea Garden,3853 N. St. Mary's ,San Antonio,Texas,78212,-98.477729,29.459529
+601,San Antonio Municipal Auditorium,100 Auditorium Cir.,San Antonio,Texas,78205,,
+602,San Antonio Museum of Art,200 W Jones Ave.,San Antonio,Texas,78215,-98.48216,29.437303
+603,San Antonio Shrine Auditorium,901 North Loop 1604 W.,San Antonio,Texas,78232,-98.501923,29.609995
+604,Sanchos Cantina & Cocina,628 Jackson St.,San Antonio,Texas,78212,-98.499311,29.439436
+605,Sandra's Bar & Live Music,"1006 VFW Blvd, Bldg 1",San Antonio,Texas,78223,-98.473361,29.370733
+606,Santa's Place,417 Spriggsdale Ave,San Antonio,Texas,78220,,
+607,SAY Si,1518 S Alamo St,San Antonio,Texas,78204,-98.497242,29.409504
+608,Scenic Loop Cafe,25615 Boerne Stage Rd,San Antonio,Texas,78255,-98.675396,29.681698
+609,Scobee Education Center,1819 North Main Avenue,San Antonio,Texas,78212,-98.494224,29.44631
+610,Scout Bar,6300 block Tabor Ave,San Antonio,Texas,78221,-98.504503,29.346501
+611,Scratch,3740 Northwest Loop 410,San Antonio,Texas,78229,-98.555599,29.492177
+612,Sea World of Texas,10500 Sea World Dr,San Antonio,Texas,78251,-98.700196,29.458353
+613,Semeneya Ballroom,2899 NE Interstate 410 Loop,San Antonio,Texas,78218,-98.406807,29.51731
+614,Serape Club,4100 N New Braunfels Ave,San Antonio,Texas,78209,,
+615,Seven Oaks,Austin HWY and Military Road,,Texas,,-97.7437,30.271129
+616,Shadowland Club,2928 S Flores St,San Antonio,Texas,78204,-98.503972,29.39456
+617,Shenanygans -Sports Bar & Lounge,827 Hwy 151 #106 ,San Antonio,Texas,78251,-98.691792,29.464116
+618,Short's Corner,Nacogdoches and Perrin-Beitel,San Antonio,Texas,78217,-94.651899,31.617618
+619,Showcase Events Center,3625 West Avenue,San Antonio,Texas,78213,-98.526411,29.496575
+620,Silver Dollar Saloon,1812 N Main Ave,San Antonio,Texas,78212,-98.49391,29.446655
+621,Silver Saddle,9520 S Presa St,San Antonio,Texas,78223,-98.424821,29.32465
+622,SIN 13,1902 McCullough Ave,San Antonio,Texas,78212,,
+623,Six Flags Fiesta Texas,17000 IH-10 West,San Antonio,Texas,78257,-98.608747,29.604467
+624,Skate Center South,7331 S Zarzamora St,San Antonio,Texas,78224,-98.534921,29.354161
+625,Skip Willy's,1502 Bitters Road,San Antonio,Texas,78248,-98.46924,29.54755
+626,Skit Row,8755 Wurzbach Rd,San Antonio,Texas,78240,-98.568898,29.524524
+627,Slackers Sports Bar Naco,12234 Nacogdoches Rd,San Antonio,Texas,78217,-98.406219,29.550696
+628,Slackers Sports Bar North star,126 W Rector,San Antonio,Texas,78216,-98.495342,29.516305
+629,Smoke: The Restaurant,1170 E. Commerce,San Antonio,Texas,78205,-98.47862,29.421306
+630,Sneak Spot,Frio City Rd,San Antonio,Texas,78226,-98.533125,29.3964465
+631,Sneakers,14040 Nacogdoches Rd,San Antonio,Texas,78247,-98.382423,29.56868
+632,Sneaky Pete's,7007 Bandera,San Antonio,Texas,78238,-98.62437,29.50009
+633,Snoop's Tavern,10726 Perrin Beitel Road,,Texas,,-98.410558,29.537851
+634,Social House,19160 Stone Oak Pkwy,San Antonio,Texas,78258,-98.494374,29.625725
+635,SoHo Wine & Martini Bar,214 W. Crockett St.,San Antonio,Texas,78205,-98.490355,29.424861
+636,Soundcheck,6844 Ingram Rd,San Antonio,Texas,78238,-98.625064,29.464067
+637,South Texas Museum of Popular Culture,1017 E Mulberry Ave,San Antonio,Texas,78209,-98.470576,29.454295
+638,Southern Lady,2432 Nogalitos,,Texas,,,
+639,Southtown 101,101 Pereida St.,San Antonio,Texas,78210,-98.488309,29.41316
+640,Southtown Vinyl,1010 S. Flores St.,San Antonio,Texas,78204,-98.499669,29.413464
+641,Southwest School of Art,300 Augusta St. ,San Antonio,Texas,78205,-98.492222,29.431053
+642,Sparky's Pub,1416 N. Main Ave.,San Antonio,Texas,78212,-98.493866,29.442324
+643,Specht's Store,112 Specht Rd.,San Antonio,Texas,78260,-98.497174,29.736708
+644,Speedway Sports Bar,8811 Grissom Rd.,San Antonio,Texas,78251,-98.658524,29.480192
+645,Speedway Sports Bar II,9055 Marbach,San Antonio,Texas,78245,-98.662338,29.41862
+646,Splashtown,3600 N Pan Am Expy,San Antonio,Texas,78219,-98.425595,29.447376
+647,Squeeze Inn,2102 Quintana Rd,San Antonio,Texas,78211,,
+648,St. Albert's Hall,302 Wyoming,,Texas,,-94.640362,30.108533
+649,St. Hedwig Hall,St. Hedwig Rd,San Antonio,Texas,78220,-98.376205,29.417863
+650,St. Mary University Treadway Recital Hall,One Camino Santa Maria,San Antonio,Texas,78228,-98.561309,29.453066
+651,St. Mary's Bar and Grill,3000 N. St Mary's,San Antonio,Texas,78212,-98.48461,29.452577
+652,St. Mary's Brewing Company,2734 N. St. Mary's,San Antonio,Texas,78212,,
+653,St. Mary's Pit,2913 N St. Mary's,San Antonio,Texas,78212,-98.485393,29.45204
+654,Stardust Ballroom,1599 Bandera Rd,San Antonio,Texas,78228,-98.570401,29.46824
+655,Station Break,1442 Austin Hwy,San Antonio,Texas,78209,-98.435906,29.492155
+656,Steely Nevada's Bar and Lounge,7530 Eckhert Rd.,San Antonio,Texas,78240,-98.627074,29.508202
+657,Stetson Bar,7350 Tezel Rd. ,San Antonio,Texas,78250,-98.661699,29.504804
+658,Stonehenge,16260 San Pedro,San Antonio,Texas,78232,-98.473236,29.589205
+659,Studio 210 Nightclub and Bar,10319 Perrin Beitel,San Antonio,Texas,78217,-98.40421,29.53299
+660,Studio 57,7011 San Pedro Ave,San Antonio,Texas,78216,-98.500416,29.508907
+661,Suburban Club,10319 Perrin Beitel,San Antonio,Texas,78217,-98.411672,29.53417
+662,Suburban Garden(s),1802 Burleson Street,San Antonio,Texas,78202,-98.458731,29.426962
+663,Suga A's Lounge,9291 IH10 East,Converse,Texas,78109,-98.316124,29.518008
+664,Sugar Daddy's,8523 Teecee,,Texas,,-94.64242,30.146324
+665,Sumthin Different,6025 Ingram Road,,Texas,,-99.236562,30.073889
+666,Sum'thin Diff'Rent,6025 Ingram Road,,Texas,,-99.236562,30.073889
+667,Sunken Garden,St. Hedwig Road,,Texas,,-98.20001,29.414401
+668,Sunken Garden Theater,3875 N. St. Mary St.,San Antonio,Texas,78212,-98.478334,29.460958
+669,Sunova Beach,3875 N St Mary's St,San Antonio,Texas,78230,-98.56132,29.562717
+670,Swank Club,3875 N St Mary's St,San Antonio,Texas,78212,,
+671,Swizzle Stick,5951 Ingram Road,San Antonio,Texas,78228,,
+672,Tabasco Beach,1005 Avenue B,San Antonio,Texas,78215,,
+673,Taco Garage,8403 Broadway St.,San Antonio,Texas,78209,-98.465755,29.515328
+674,TACOLAND,103 West Grayson,San Antonio,Texas,78212,,
+675,Tacos & Tequila,1915 Broadway St.,San Antonio,Texas,78215,-98.476938,29.444086
+676,Tandem San Antonio,310 Riverside Drive,San Antonio,Texas,78210,-98.480784,29.376992
+677,Taqueria La Gloria- Pearl,100 East Grayson,San Antonio,Texas,78215,-98.481144,29.44429
+678,Taylor's Tavern,303 Vance Jackson,San Antonio,Texas,78201,-98.535334,29.475156
+679,Teddy Bear Lounge & Café,21713 US Route 281,San Antonio,Texas,78264,-98.4809346288353,29.1998906227891
+680,Teen Canteen,1502 Bitters Road,San Antonio,Texas,78248,-98.46924,29.54755
+681,Tejano Cactus,1581 Bandera Road,San Antonio,Texas,78228,-98.569877,29.468115
+682,Tejano Rodeo,8505 Broadway,San Antonio,Texas,78217,-98.464619,29.519253
+683,"Tejas Rodeo, Steakhouse and Saloon","401 Obst Rd, Bulverde,",Bulverde,Texas,78163,-98.490917,29.738898
+684,Tequila Mockingbird,245 East Commerce,San Antonio,Texas,78205,-98.49002,29.424659
+685,Terry's Lounge,4326 Gardendale,San Antonio,Texas,78240,-98.568754,29.52557
+686,Texas 21 Funhouse,409 East Commerce,San Antonio,Texas,78205,-98.488567,29.424114
+687,"Texas Burgers, Brews, and Blues",2202 N. Zarzamora St.,San Antonio,Texas,78201,-98.524083,29.450695
+688,Texas Ex's,4326 Gardendale,San Antonio,Texas,78240,-98.568754,29.52557
+689,Texas Star Inn,7400 Bandera Road,San Antonio,Texas,78250,-98.630204,29.508461
+690,Texas Theater,425 N. Austin,Seguin,Texas,78155,-97.964431,29.572085
+691,Texco Nite Club,625 N Medina,,Texas,78207,-98.504612,29.430228
+692,The Amp Room,2407 N. Saint Mary's St.,San Antonio,Texas,78212,-98.488098,29.448461
+693,The Aquaduck,9214 Espada Road,San Antonio,Texas,78214,-98.462621,29.330214
+694,The Art Institute of San Antonio,10000 IH-10 W. Ste 200,San Antonio,Texas,78230,-98.565538,29.532835
+695,The Bang Bang Bar,119 El Mio Dr. ,San Antonio,Texas,78216,-98.499885,29.493829
+696,The Bar on Broadway,2411 Broadway St,San Antonio,Texas,78215,-98.482663,29.450211
+697,The Bayous,517 N Presa Street,San Antonio,Texas,78205,-98.488826,29.42588
+698,The Beer Depot,1304 S. Laredo St. ,San Antonio,Texas,78204,-98.505815,29.412687
+699,Big Apple Night Spot,3550 Nebraska,San Antonio,Texas,,-98.495141,29.4246
+700,The Bijou,4522 Fredericksburg Rd,San Antonio,Texas,78201,-98.550768,29.4899
+701,The Brass Tap,"17619 La Cantera Pkwy, Bldg 2",San Antonio,Texas,78257,-98.598057,29.609739
+702,The Broadway 50 50,5050 Broadway St.,San Antonio,Texas,78209,-98.462716,29.472925
+703,The Brooklynite,516 Brooklyn Ave.,San Antonio,Texas,78215,-98.484538,29.433068
+704,The Catacombs,7511 US Hwy 90 W,San Antonio,Texas,78227,,
+705,The Classic Theater,1924 Fredericksburg Rd,San Antonio,Texas,78201,-98.524408,29.463373
+706,The Copper Penny,1217 NE IH410,,Texas,,-94.64242,30.146324
+707,The Corral,310 Riverside Drive,San Antonio,Texas,78210,-98.480784,29.376992
+708,The Courtyard,11403 West Avenue,San Antonio,Texas,78213,-98.511725,29.543617
+709,The Cove,606 W. Cypress St. ,San Antonio,Texas,78212,-98.500597,29.440435
+710,The Crazy Ape,9930 San Pedro Ave,San Antonio,Texas,78216,-98.496664,29.530723
+711,The Davenport Lounge,203 N. Presa St.,San Antonio,Texas,78205,-98.489251,29.423472
+712,The DoSeum,2800 Broadway St.,San Antonio,Texas,78209,-98.472779,29.452391
+713,The Friendly Spot Ice House,943 S Alamo St,San Antonio,Texas,78205,-98.490745,29.41463
+714,The Frutería -Botanero,1401 South Flores Street #102,San Antonio,Texas,78204,-98.501622,29.410006
+715,The Gambler,6844 Ingram Road,San Antonio,Texas,78238,-98.625064,29.464067
+716,The Garter North,2615 Wagonwheel,San Antonio,Texas,78217,-98.448973,29.517458
+717,The Good Kind-Southtown,1127 S. Saint Marys St.,San Antonio,Texas,78210,-98.458642,29.410513
+718,The Good News,1910 San Pedro,San Antonio,Texas,78216,-98.476345,29.583088
+719,The Hangar Bar,8203 Broadway St. ,San Antonio,Texas,78209,-98.466597,29.511602
+720,The Hangout,4922 SW Military,San Antonio,Texas,78242,-98.587986,29.365653
+721,The Hoppy Monk,1010 N. Loop 1604 E. ,San Antonio,Texas,78232,-98.477712,29.609193
+722,The Industry,8021 Pinebrook,San Antonio,Texas,78230,-98.549477,29.510772
+723,The Jackson Ranch in the Heart of San Antonio,8910 Callaghan Rd,San Antonio,Texas,78230,-98.56132,29.562717
+724,The Junction,1704 Blanco,San Antonio,Texas,78212,-98.49126,29.452192
+725,The Korova,107 E. Matrin St.,San Antonio,Texas,78205,-98.493129,29.429456
+726,The Landing,123 Losoya,San Antonio,Texas,78205,-98.495141,29.4246
+727,The Latin Corner,1508 Bandera Road,San Antonio,Texas,78228,-98.567497,29.467465
+728,The Local Bar,600 N Presa St.,San Antonio,Texas,78205,-98.4886,29.426064
+729,The Lonesome Rose,2114 N. St. Mary's,San Antonio,Texas,78212,-98.485942,29.445848
+730,The Martini Club,625 N Medina,San Antonio,Texas,78207,-98.504612,29.430228
+731,The Meridian,1122 Austin Hwy,San Antonio,Texas,78209,-98.449567,29.485971
+732,The Mix,2423 N. Saint Marys St.,San Antonio,Texas,78212,-98.488113,29.448877
+733,The Monty and Ivy Hall,1127 S. Saint Marys St.,San Antonio,Texas,78210,-98.488558,29.411822
+734,The Nash,531 San Pedro Ave,San Antonio,Texas,78212,-98.498328,29.438658
+735,The Nestle Inn,2053 W. Poplar St,San Antonio,Texas,78207,-98.525213,29.4407
+736,The Opera House,6104 Broadway,San Antonio,Texas,78209,-98.4646229,29.470119
+737,The Other Women,1123 Fair Ave,San Antonio,Texas,78223,-98.460402,29.384365
+738,Patio Bar and Grill,2318 Fredericksburg,San Antonio,Texas,78201,-98.534244,29.482984
+739,The Phantom Room,2114 N. St. Mary's,San Antonio,Texas,78212,-98.485942,29.445848
+740,The Pigpen,106 Pershing Ave. ,San Antonio,Texas,78209,-98.466123,29.460872
+741,The Reggae Bar,2016 Austin Hwy.,San Antonio,Texas,78218,-98.417785,29.502372
+742,The Replay Sports Club,8507 N. McCullough Ave. Ste A9,San Antonio,Texas,78216,-98.492058,29.516623
+743,The Republic House,12333 West Avenue,San Antonio,Texas,78216,-98.481527,29.562078
+744,The Ringer Pub,2826 Thousand Oaks Dr. ,San Antonio,Texas,78232,-98.443711,29.578226
+745,The Rock,1905 Pat Booker Road,San Antonio,Texas,78148,-98.310072,29.553151
+746,The Rock Box,1223 E. Houston St.,San Antonio,Texas,78205,-98.478531,29.425276
+747,The Rockin' K,1811 Goliad Road,,Texas,,-98.442959,29.368374
+748,The Roundup,531 FM 3351,Boerne,Texas,78006,,
+749,The Rustic,17619 La Cantera Pkwy Ste 204,San Antonio,Texas,78257,-98.598057,29.609739
+750,The Service Station Cafe and Beer Garden,3011 N. St. Mary's,San Antonio,Texas,78212,-98.495141,29.4246
+751,The Settlement,29360 Bulverde Rd.,San Antonio,Texas,78260,-98.451583,29.732566
+752,The Shadows,1755 S. General McMullen Dr,San Antonio,Texas,78237,-98.558166,29.399605
+753,Tiffany Palace,10127 Coachlight,San Antonio,Texas,78216,-98.493531,29.533598
+754,The Silver Slipper Nite Club,3621 West Avenue,,Texas,,-97.093347,31.803481
+755,The Squeezebox,2806 N. Saint Marys St.,San Antonio,Texas,78212,-98.485636,29.451492
+756,The Stetson Bar,7350 Tezel Rd. ,San Antonio,Texas,78250,-98.66154,29.504931
+757,The Stonehenge,800 West Myrtle,San Antonio,Texas,78212,-98.503236,29.444531
+758,The Ten Eleven,1011 Avenue B,San Antonio,Texas,78215,-98.481345,29.435501
+759,The Three-Legged Monkey,"2313 NW Military Hwy, Ste 115",Shavano Park,Texas,78231,-98.526917,29.541367
+760,The Trap,4711 Pecan Valley Road,San Antonio,Texas,78223,-98.432599,29.378261
+761,The Twig Book Shop,"306 Pearl Pkwy, Ste 106",San Antonio,Texas,78215,-98.479965,29.441938
+762,The Underground Metal Haven,512 Roosevelt Ave,,Texas,,-100.145327,30.455625
+763,The Vineyard Club,506 South Gevers,San Antonio,Texas,78203,,
+764,The Warehouse,1119 S. St Mary's Street,San Antonio,Texas,78210,,
+765,The Well,5539 UTSA Blvd,San Antonio,Texas,78249,-98.592849,29.577092
+766,Third Wave,101 E Fredericksburg Rd,San Antonio,Texas,78207,-98.502716,29.441463
+767,Thirsty Camel Bar & Lounge,5307 McCullough Ave.,San Antonio,Texas,78212,-98.492204,29.479999
+768,Thirsty Horse Saloon,2335 NW Military Hwy,San Antonio,Texas,78231,-98.527257,29.54276
+769,"Thiry Auditorium, Our Lady of the Lake University",411 SW 24th St.,San Antonio,Texas,78207,-98.542512,29.425622
+770,Three Walls,106 Blue Star,San Antonio,Texas,78204,-98.49568,29.40957
+771,Ticket Sports Pub,420 E. Houston St.,San Antonio,Texas,78205,-98.488096,29.426284
+772,Tiffany Lounge,109 W Houston St,San Antonio,Texas,78205,-98.496183,29.426959
+773,Tin Pan Alley,18355 Bracken Drive,San Antonio,Texas,78266,-98.322276,29.61002
+774,Tobin Center for the Performing Arts,100 Auditorium Cir.,San Antonio,Texas,78205,-98.48871,29.430682
+775,Tonic Bar,5500 Babcock Rd,San Antonio,Texas,78240,-98.596968,29.517497
+776,Torres Dance Hall,Pleasanton Road,,Texas,,-97.132959,32.010656
+777,Tourist Club Ballroom,617 N. St. Mary's,San Antonio,Texas,78205,-98.491591,29.429735
+778,Toyota Field San Antonio,5106 David Edward Dr,San Antonio,Texas,78233,-98.394557,29.539323
+779,Traders Village,9333 SW Loop 410,San Antonio,Texas,78242,-98.625964,29.33146
+780,Trading Post,7393 US Hwy 87 E E,San Antonio,Texas,78263,-98.344759,29.38777
+781,Tramp's,7011 San Pedro,,Texas,,-94.64242,30.146324
+782,Tra's Country,12130 Oconner Rd,San Antonio,Texas,78233,-98.375357,29.550063
+783,Tre Trattoria,4003 Broadway St. ,San Antonio,Texas,78209,-98.465708,29.463572
+784,Treasures Events,8825 New Laredo Hwy,San Antonio,Texas,78211,-98.585229,29.337703
+785,Tropical Drink Company,126 Losoya Street,San Antonio,Texas,78205,-98.48767,29.42581
+786,Tropics Dinner Club,617 N. St. Mary's,San Antonio,Texas,78205,-98.491591,29.429735
+787,Tucker's Kozy Korner,1338 E. Houston St.,San Antonio,Texas,78205,-98.47654,29.424777
+788,Turtle Creek Country Club,409 Main Avenue,San Antonio,Texas,78205,-98.493864,29.428232
+789,Tuxedo Junction,9322 Perrin Beitel,San Antonio,Texas,78217,-98.411028,29.52521
+790,Twin Mountain Inn,5 miles north of Helotes on Bandera Road,,Texas,,-99.072459,29.727007
+791,Twin Palms,New Seguin Road,San Antonio,Texas,78155,-97.964727,29.568841
+792,Two Rivers Tavern,13550 O'Connor Rd,San Antonio,Texas,78233,-98.382254,29.562193
+793,Two Step Restaurant and Cantina,9840 W. Loop 1604 N.,San Antonio,Texas,78254,-98.682376,29.53406
+794,Tycoon Flats,2926 N. Saint Mary St.,San Antonio,Texas,78212,-98.484922,29.452225
+795,Union Jack,2022 McCullough,San Antonio,Texas,78212,,
+796,Unique Recreation Ballroom,1434 Callaghan Road,San Antonio,Texas,78228,-98.601581,29.450815
+797,University Bowl,12332 W. IH 10,San Antonio,Texas,78230,-98.591771,29.56509
+798,University of Texas at San Antonio-Downtown Campus, 501 W César E Chávez Blvd,San Antonio,Texas,78207,-98.502969,29.423033
+799,University of Texas at San Antonio-1604 Campus,One UTSA Circle,San Antonio,Texas,78249,-98.618301,29.582755
+800,University of the Incarnate Word,4301 Broadway,San Antonio,Texas,78209,-98.465851,29.466944
+801,Velvet Turtle,6402 Callaghan Road,,Texas,,-99.444481,32.369372
+802,Ventura San Antonio,1011 Ave. B ,San Antonio,Texas,78215,-98.481287,29.435473
+803,Ventura's Nite Club,3830 Parkdale,San Antonio,Texas,78229,-98.56257,29.525565
+804,Verizon Wireless Amphitheater,16765 Lookout Road,Selma,Texas,78154,-98.31733,29.592239
+805,VFW Post 837 Highland Hills Southeast Post,4436 Valleyfield,San Antonio,Texas,78222,-98.4404851,29.364934
+806,VFW Post 8541 James B Sprague Memorial Post,2222 Austin Hwy,San Antonio,Texas,78218,-98.412311,29.50563
+807,Vibes Event Center,1211 East Houston Street,San Antonio,Texas,78205,-98.479029,29.425935
+808,Village Inn,1353 Donaldson Avenue,San Antonio,Texas,78228,-98.553336,29.464913
+809,Villareal's Ice House and Concert Grounds,18508 Bandera Rd,Helotes,Texas,78023,-98.688421,29.563569
+810,VIP's`,501 St. James,,Texas,,-97.604719,29.567178
+811,Virginia's Ace-Hi-Lounge,1912 Pleasanton Road,,Texas,,-98.503931,29.363488
+812,Viva Tacoland,103 W. Grayson St.,San Antonio,Texas,78212,-98.481701,29.445037
+813,Vybrations Luxury Lounge,8800 Broadway #802,San Antonio,Texas,78217,-98.460008,29.519678
+814,Wacky's,2718 N. St Mary's,San Antonio,Texas,78212,-98.486455,29.45064
+815,Waldo's,14532 Brook Hollow Blvd,San Antonio,Texas,78232,-98.474735,29.579686
+816,Walton Buggy Works,8753 Wurzbach,San Antonio,Texas,78240,-98.568898,29.524524
+817,Water Street Oyster Bat,7500 Broadway,,Texas,,-96.39186,30.671419
+818,Watson Fine Arts Center,"1801 Martin Luther King, Jr. Drive",San Antonio,Texas,78203,-98.45481,29.414071
+819,Wax Club Lounge,3903 Fredericksburg,,Texas,,-98.871984,30.275201
+820,Wayfarer Lounge,2635 NE Interstate 410 Loop,San Antonio,Texas,78217,-98.427862,29.531482
+821,Weathered Souls,606 Embassy Oaks #500,San Antonio,Texas,78216,-98.489317,29.564401
+822,Web House Café & Bar,320 Blanco Rd,San Antonio,Texas,78212,-98.507677,29.449005
+823,West Avenue Club & Sports Bar,2211 San Pedro Ave. ,San Antonio,Texas,78212,-98.49953,29.455399
+824,Wetmore City Limits,12329 Wetmore Rd ,San Antonio,Texas,78247,-98.428244,29.553739
+825,Whiskey Cake,15900 La Cantera Pkwy Suite 21200,San Antonio,Texas,78256,-98.61094,29.593293
+826,Who Knows Lounge,5660 FM 78 Road,Kibry,Texas,78219,-98.37907,29.474391
+827,Wild Wild West,2482 NE Loop 410,San Antonio,Texas,78217,-98.416774,29.515255
+828,Willis Corner,1515 S. Gevers,,Texas,,-95.4800608,30.4249479
+829,Witolds,2623 N. St. Mary's Street,San Antonio,Texas,78212,-98.487396,29.450364
+830,Witte Museum,3801 Broadway St. ,San Antonio,Texas,78209,-98.46731,29.461738
+831,Woodlake Country Club,4500 West Ave,San Antonio,Texas,78213,-98.525427,29.506472
+832,Woodlawn Theatre,1920 Fredericksburg Rd,San Antonio,Texas,78201,-98.524326,29.463276
+833,Wyndham Garden Riverwalk,103 9th Street,San Antonio,Texas,78215,-98.484222,29.434716
+834,Yellow Rose Country and Western Bar,I10 and Wurzbach,,Texas,,-94.64242,30.146324
+835,Yosemite Sam's,5999 De Zavala Rd,San Antonio,Texas,78249,-98.600799,29.563786
+836,Zanzibar Nite Club,"Location, six blocks out of city limits, off Risgby, on Sulphur Spring road.",,Texas,,-95.417255,30.079883
+837,Zig Zag,2803 NE Loop 410,San Antonio,Texas,78213,-98.40889,29.5172
+838,Zip 2 Five Sports and Spirits,2432 Nogalitos St,San Antonio,Texas,78225,-98.52048,29.389974
+839,Zombies,12285 Nacogdoches,San Antonio,Texas,78217,-98.40754,29.5527
+840,Zombies Bar and Live Music Venue,4202 Thousand Oaks Dr.,San Antonio,Texas,78217,-98.411469,29.552856
+841,108 Noth Centre,108 North Centre,San Antonio,Texas,78202,-98.479619,29.422591
+842,Club Rico,1003 Rittiman Rd,San Antonio,Texas,78215,-98.428869,29.485887
+843,IWC Auditorium,4301 Broadway,San Antonio,Texas,78209,-98.466515,29.466194
+844,Jefferson United Methodist Church, 758 Donaldson Ave,San Antonio,Texas,78201,-98.539801,29.463684
+845,Hemisfair Plaza,434 S Alamo St,San Antonio,Texas,78205,-98.487966,29.419552
+846,Hemisfair Park,435 S Alamo St,San Antonio,Texas,78205,-98.488253,29.417968
+847,Hilton Palacio del Rio,200 S Alamo St,San Antonio,Texas,78205,-98.487846,29.422428
+848,Castle Hills Baptist Church,6209 West Ave,San Antonio,Texas,78213,-98.526422,29.520143
+849,Austin Municipal Auditorium,701 W. Riverside Drive,San Antonio,Texas,78204,-98.475583,29.385357
+850,Laurel Heights United Methodist Church,227 W. Woodlawn Ave,San Antonio,Texas,78212,-98.496843,29.453279
+851,St. James New Hall,907 W Theo St,San Antonio,Texas,78225,-98.519758,29.388212
+852,Woodlawn Park,1103 Cincinnati Ave,San Antonio,Texas,78201,-98.532575,29.45187
+853,Comanche Park,2600 Rigsby Ave,San Antonio,Texas,78222,-98.416132,29.398787
+854,La Fuente Super Ballroom,3310 S Zarzamora,San Antonio,Texas,78225,-98.523947,29.386665
+855,The Beauregard Cafe,320 Beauregard St,San Antonio,Texas,78210,-98.47313,29.397191
+856,The Gunter Hotel,205 E Houston St.,San Antonio,Texas,78205,-98.495141,29.4246
+857,Barney's-Bandera,607 11 th St,Bandera ,Texas,78003,-99.075,29.7258
+858,Live Oak Civic Center,8101 Pat Booker Rd.,San Antonio,Texas,78233,-98.369258,29.556973
+859,Crazy Horse Saloon,2623 N St Mary's St,San Antonio,Texas,78212,-98.495141,29.4246
+860,Swizzle Stick Lounge,5951 Ingram Road,San Antonio,Texas,78228,-98.601714,29.466892
+861,Mel's,326 E. Grayson St.,San Antonio,Texas,78215,-98.477513,29.44345
+862,O'Riley's,Pat Booker Rd & Coronado Blvd,Universal City,Texas,78148,-98.3128263333333,29.55568
+863,White Rabbit,2410 N St Mary's St,San Antonio,Texas,78212,-98.487504,29.448645
+864,Quiet Valley Ranch,3876 Medina Highway,Kerrville,Texas,78028,-99.140021,30.047469
+865,G.W. Carver Library Auditorium,3350 E Commerce St. ,San Antonio,Texas,78202,-98.495141,29.4246
+866,Mission County Park, 6030 Padre Dr,San Antonio,Texas,78214,-98.492656,29.361635
+867,Villita Assembly Building,145 Navarro St,San Antonio,Texas,78205,-98.49068,29.42272
+868,La Villita,418 Villita St,San Antonio,Texas,78205,-98.488729,29.421076
+869,"Maverick Plaza, La Villita",418 Villita St,San Antonio,Texas,78205,-98.488729,29.421076
+870,La Villita Assembly Hall,401 Villita St,San Antonio,Texas,78205,-98.489325,29.422272
+871,Carver Library Auditorium,226 N Hackberry,San Antonio,Texas,78202,-98.472608,29.422056
+872,Carver Community Cultural Center,226 N Hackberry,San Antonio,Texas,78202,-98.472608,29.422056
+873,The Showcase,10127 Coachlight,San Antonio,Texas,78216,-98.493531,29.533598
+874,Frost Bank Center,1 AT&T Center Parkway,San Antonio,Texas,78219,-98.437492,29.426981
+875,SBC Center,1 AT&T Center Parkway,San Antonio,Texas,78219,-98.437492,29.426981
+876,Travis Park,301 E Travis St,San Antonio,Texas,78205,-98.489243,29.428181
+877,Leon Springs,24135 W. I-10,San Antonio,Texas,78257,-98.62952,29.67135
+878,Leon Springs Café,24116 W I-10,San Antonio,Texas,78257,-98.62953,29.66595
+879,Leon Springs Dance Hall,24135 W I-10 Frontage rd,San Antonio,Texas,78257,-98.62952,29.67135
+880,Silver Fox (Leon Springs),24802 Ima Ruth Pkwy ,San Antonio,Texas,78257,-98.630731,29.670847
+881,DMZ Clubhouse,1318 Cupples Rd,San Antonio,Texas,78226,-98.549359,29.394569
+882,Fiesta Plaza,201 N Pecos St,San Antonio,Texas,78207,-98.521993,29.42543
+883,Texas Dance Hall,3268 FM1863,Bulverde,Texas,78163,-98.434,29.74316
+884,Javelina Harley-Davidson (Boerne),29078 Interstate 10 Frontage Rd,Boerne,Texas,78006,,
+885,Travis Park Church,230 E Travis St,San Antonio,Texas,78205,-98.49001,29.427175
+886,The Sanctuary,1818 N Main,San Antonio,Texas,78212,-98.493983,29.446798
+887,Medieval Knights,4110 Naco-Perrin,San Antonio,Texas,78217,-98.413584,29.543435
+888,Lackland Air Force Base,Lackland AFB,San Antonio,Texas,78236,-98.6207,29.388
+889,Retama Park,1 Retama Pkwy,Schertz,Texas,78154,-98.317896,29.585539
+890,Mateo Camargo Park,5738 Castroville Rd,San Antonio,Texas,78219,,
+891,Alamo Plaza,200 Alamo Plaza,San Antonio,Texas,78205,-98.487267,29.425308
+892,Somerset Road,14430 Somerset Road,San Antonio,Texas,78203,-98.45481,29.414071
+893,Main Plaza (San Antonio),115 Main Plaza,San Antonio,Texas,78205,,
+894,Rockwave,2803 N.E. I-410,San Antonio,Texas,78218,-98.3922995,29.524491
+895,Tejano Texas,8759 Grissom Road,San Antonio,Texas,78251,-98.656802,29.480695
+896,Daddy's,3622 Fredericksburg Rd,San Antonio,Texas,78201,-98.538673,29.477148
+897,Kendall County Fairgrounds,1307 River Rd,Boerne,Texas,78006,-98.710033,29.787772
+898,Brackenridge Park,3700 N St Mary's St,San Antonio,Texas,78209,-98.4646229,29.470119
+899,Far West Rodeo,3030 NE Interstate 410 Loop,San Antonio,Texas,78218,-98.4162499,29.501472
+900,Pablo's Grove,5738 Castroville Rd,San Antonio,Texas,78219,-98.60322,29.405669
+901,Central Park Mall,842 Northwest Loop 410 ,San Antonio,Texas,78216,-98.481527,29.562078
+902,Strutters,2718 N. St Mary's,San Antonio,Texas,78212,-98.486455,29.45064
+903,Alzafar Shrine Temple,901 North Loop 1604 W.,San Antonio,Texas,78232,-98.480408,29.611713
+904,Arturo's Sports Bar & Grill,3310 S Zarzamora,San Antonio,Texas,78225,-98.532173,29.390833
+905,Ricardo's Cadillac,5154 Broadway,San Antonio,Texas,78209,-98.462521,29.474488
+906,Trinity Baptist Church,319 E Mulberry,San Antonio,Texas,78212,-98.48876,29.457458
+907,"""Menudo Acres""",FM 471 & W Loop 1604,San Antonio,Texas,78250,-98.662743,29.512633
+908,Erwin Events Center,1701 Red River St.,Austin,Texas,78701,-97.73295,30.277275
+909,Rolling Oaks Sports Bar & Grill,5550 Mountain Vista,San Antonio,Texas,78247,-98.373251,29.601087
+910,Antonio Ballroom,1067 Bandera Rd. ,San Antonio,Texas,78228,-98.55924,29.459566
+911,Inner City Development,1300 Chihuahua St,San Antonio,Texas,78207,-98.51971,29.415505
+912,Antonian Ballroom,1056 Bandera Rd. ,San Antonio,Texas,78228,-98.5486534017857,29.4527155
+913,Plaza Nueva,418 Villita St,San Antonio,Texas,78205,-98.488729,29.421076
+914,VFW Post 8315 Cibolo Valley Post,1000 FM 78,Schertz,Texas,78154,-98.261067,29.55565
+915,Wings,4904 West Ave,San Antonio,Texas,78213,-98.525651,29.511467
+916,Alamo Heights United Methodist Church,825 E. Basse Rd,San Antonio,Texas,78209,-98.473259,29.498783
+917,North Star Mall,7400 San Pedro Ave,San Antonio,Texas,78216,-98.495349,29.518349
+918,Olmos Basin Park,651 Devine Rd,San Antonio,Texas,78209,-98.4646229,29.470119
+919,VFW Post 76 Sam Houston Post,10 10th St,San Antonio,Texas,78215,-98.482158,29.43543
+920,VFW Post 4700 Sgt. William J. Bordelon Post,2219 Frio City Rd,San Antonio,Texas,78226,-98.543918,29.390257
+921,The Longneck Saloon,9896 Marbach Rd,San Antonio,Texas,78245,-98.685872,29.417884
+922,VFW Post 9186 Manuel Alvarado Post,650 VFW Blvd,San Antonio,Texas,78214,-98.478431,29.367204
+923,VFW Post 7108 Helotes Post,8795 FM 1560 N,San Antonio,Texas,78254,-98.718959,29.522238
+924,The Edge,3740 NW 410,San Antonio,Texas,78229,-98.647873,29.393184
+925,Fatso's Sports Garden,1704 Bandera Rd,San Antonio,Texas,78228,-98.571585,29.470395
+926,American Legion Post 539,326 Legion Dr W,Converse,Texas,78109,-98.317611,29.513412
+927,Rouring 20's,13445 Blanco Rd,San Antonio,Texas,78216,-98.520119,29.568442
+928,Menger Hotel,204 Alamo Plaza,San Antonio,Texas,78205,,
+929,Sadler's Tent Theater,W Josephine St & N St Mary's St,San Antonio,Texas,78212,,
+930,Metropolitan Opera House,115 Auditrorium Cir,San Antonio,Texas,78205,-98.489554,29.430555
+931,Laurie Auditorium,One Trintiy Pl,San Antonio,Texas,78212,-98.49126,29.452192
+932,KAPE 1480 Radio Station,1211 W Hein Rd,San Antonio,Texas,78220,-98.414177,29.41216
+933,Pittman-Sullivan Park,1101 Iowa St,San Antonio,Texas,78203,-98.464945,29.412415
+934,KFHM-AM San Antonio,9940 Braun Rd,San Antonio,Texas,78254,-98.686389,29.536389
+935,Trinity Church,8750 Fourwinds,San Antonio,Texas,78239,-98.393299,29.519089
+936,MacArthur Field - Fort Sam Houston,3630 Stanley Rd,Fort Sam Houston,Texas,78234,-98.458769,29.448517
+937,Monterrey Jack's-Ingram,6820 Ingram Rd,San Antonio,Texas,78238,-98.624433,29.46448
+938,Jack's Corner Nite Club,1025 Nogalitos St,San Antonio,Texas,78204,-98.510133,29.402875
+939,Crabby Jack's,16084 San Pedro Ave,San Antonio,Texas,78232,-98.474014,29.587121
+940,1428 S. Presa St.,1428 S. Presa St,San Antonio,Texas,78210,-98.484064,29.406445
+941,Rancho 181,13514 US-181,San Antonio,Texas,78223,-98.404748,29.315671
+942,The 4 Way Bar and Grill,9743 FM 1283,Lakehills,Texas,78063,-98.935864,29.723557
+943,Mrs. Samuel J. Perkins (House),4303 Blanco Rd.,,,78212,37.447471,33.461329
+944,San Antonio's Opportunities Industrialization Center,712 S Flores,San Antonio,Texas,78204,-98.49748,29.41618
+945,321 Max,2812 NE Interstate 410 Loop,San Antonio,Texas,78217,-98.427862,29.531482
+946,Tejano Explosion 2015,1000 W. Commerce St,,,,119.8679974,-0.8957793
+947,Tejano Explosion, 700 West Houston St,San Antonio,Texas,78207,-98.497785,29.416491
+948,500 Block Madison,500 Madison St,San Antonio,Texas,78204,-98.49398,29.412
+949,500 Carolina Street,500 Carolina St,San Antonio,Texas,78210,-98.478595,29.405172
+950,801 West Russell Place,801 W Russell Pl,San Antonio,Texas,78212,-98.502925,29.451301
+951,Agudas Achim Synagogue,St Cloud & Donaldson Ave,San Antonio,Texas,78228,-98.5492778,29.4648582
+952,Villa Fontana Ballroom,330 E Nueva St,San Antonio,Texas,78205,-98.490961,29.421164
+953,Rocky's,107 Terrell Plaza,San Antonio,Texas,78209,-98.494675,29.36782
+954,Rocky Joe's-Kerrville,1718 Sidney Baker St,Kerrville,Texas,78028,-99.123815,30.062569
+955,Schreiner University,2100 Memorial Blvd,Kerrville,Texas,78208,-99.129379,30.029332
+956,Farmers Market,N Santa Rosa St and W Commerce St,San Antonio,Texas,78207,-62.184068,16.653923
+957,Instituto Cultural Mexicano,600 Hemisfair Plaza Way,San Antonio,Texas,78205,-98.485485,29.419375
+958,Blossom Athletic Center,12002 Jones Maltsberger Rd,San Antonio,Texas,78216,-98.466249,29.548031
+959,The Public Theater of San Antonio,800 W Ashby Pl,San Antonio,Texas,78212,-98.502522,29.448197
+960,St. Mary's University,1 Camino Santa Maria,San Antonio,Texas,78228,-98.564122,29.453442
+961,Baptist Temple Church,901 E Drexel ,San Antonio,Texas,78210,-98.456272,29.400786
+962,Chapel of the Incarnate Word,4503 Broadway,San Antonio,Texas,78209,-98.467167,29.461668
+963,Incarnate Word High School,727 E Hildbrand Ave,San Antonio,Texas,78212,-98.475947,29.466464
+964,San Antonio Music Company,415 N Main Ave,San Antonio,Texas,78205,-98.494206,29.42875
+965,St. Henry's Catholic Church,1619 S Flores St,San Antonio,Texas,78204,,
+966,St. Luke's Episcopal Church,11 St Lukes Ln,San Antonio,Texas,78209,-98.47963,29.48488
+967,University of Texas Health Science Center at San Antonio - UT Health San Antonio,7703 Floyd Curl Dr,San Antonio,Texas,78229,-98.573526,29.508487
+968,San Antonio Raceway,3641 S Santa Clara  Rd,Marion,Texas,78124,-98.137549,29.522272
+969,Hemisfair Theatre for the Performing Arts,434 S Alamo St,San Antonio,Texas,78205,-98.487966,29.419552
+970,Don Strange Ranch,103 Waring Welfare Rd,Boerne,Texas,78006,-98.785587,29.889198
+971,San Fernando Cathedral,115 Main Plaza,San Antonio,Texas,78205,-98.492959,29.424739
+972,St. Anthony Hotel,300 E Travis St,San Antonio,Texas,78205,-98.489474,29.427267
+973,The Warehouse Music Venue,1305 E. Houston St.,San Antonio,Texas,78205,-98.477108,29.425226
+974,Carmens de la Calle,720 E Mistletoe Ave,San Antonio,Texas,78212,-98.49126,29.452192
