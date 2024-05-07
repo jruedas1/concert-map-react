@@ -16,3 +16,13 @@ The application allows users to retrieve data on concerts in San Antonio in any 
 
 The source Excel sheet has a worksheet called `artistsGenre` that associates multiple genres to each artist. This worksheet is exported as a csv. In addition, there is a JSON file derived from API requests to the wikimedia API as well as web scraping Wikipedia. This file is called `wiki_artist_genres.json`. These two files are combined into a single JSON file called `artist_genres.json` using the DataWrangler `merge_csv_and_json` method. 
 
+Next, we generate a list of unique genres. This is derived from the `artist_genres.json` file using the DataWrangler `derive_unique_genres` method, and results in a file called `unique_genres.json`. In this list, all genres are lower-cased for easier comparison. We will eventually capitalize correctly for output purposes only, but store lower-cased versions for storage and processing purposes.
+
+The application uses a limited range of genres for search, so the next step is to use these major genres to develop a hierarchy of genres and sugenres. For this purpose, we use the DataWrangler `generate_genres_hierarchy` method. This method takes the unique genres json file, and a list of master genres, and creates a file called `genres_with_subgenres.json`. Note that it is very context-specific and expects that "tejano" and "r&b" are going to be part of its dataset.
+
+We are now in a position to generate the genres JSON that the application will actually draw on when a user selects one of the master genres. For this purpose we use the `generate_genres_years_json` in the DataWrangler. This takes the years_venues_events json, the artist_genres json, the genres_with_subgenres json, and the master genres list, generates the appropriate data structure, and outputs it to a file.
+
+## Assembling the DB.JSON file
+
+
+
