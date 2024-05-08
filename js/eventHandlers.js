@@ -92,15 +92,15 @@ export const handleGenreSelection = async event => {
     // user might click on the h3, or on the padding for the genre selector div
     // if it's the h3, grab its text content
     // otherwise select the h3 and get its text content
-    console.log()
-    const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
-
-    const selectedYear = document.querySelector("#year-selector").value;
-    console.log(selectedYear);
-    const genreResults = await fetchGenre(selectedGenre === "metal" ? "heavy metal" : selectedGenre);
-    console.log(genreResults);
-    const genreVenuesForSelectedYear = genreResults[selectedYear];
-    console.log(genreVenuesForSelectedYear);
+    const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.id) : parseInt(event.target.id);
+    const selectedYear = parseInt(document.querySelector("#year-selector").value);
+    const genreResults = await fetchGenre(selectedGenreId);
+    let genreVenuesForSelectedYear;
+    for (const year of genreResults['years']){
+        if (year['id'] === selectedYear){
+            genreVenuesForSelectedYear = year["venues"];
+        }
+    }
     outputVenuesToMap(genreVenuesForSelectedYear);
     let concertsOutput = '';
     genreVenuesForSelectedYear.forEach(venue => {
@@ -113,8 +113,6 @@ export const handleGenreSelection = async event => {
                 <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
             </div>
         `);
-        // output concerts info to the page
-
     });
     document.querySelector("#concerts").innerHTML = concertsOutput;
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;

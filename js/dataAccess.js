@@ -12,17 +12,12 @@ export const fetchYear = async (year) => {
     return await venue.json();
 }
 
-export const fetchGenreData = async() => {
+export const fetchGenreData = async () => {
     const genreInfo = await fetch('http://localhost:3001/genres');
     return await genreInfo.json();
 }
 
-export const fetchGenre = async(genre) => {
-    const allGenreData = await fetchGenreData();
-    return allGenreData[genre];
-}
-
-export const fetchUniqueGenreList = async () => {
-    const uniqueGenres = await fetch('http://localhost:3001/unique_genres');
-    return await uniqueGenres.json();
+export const fetchGenre = async (genreId) => {
+    const genreData = await fetch(`http://localhost:3001/genres/${genreId}`);
+    return await genreData.json();
 }

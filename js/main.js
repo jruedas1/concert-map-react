@@ -1,9 +1,6 @@
-import { fetchYear, fetchUniqueGenreList } from "./dataAccess.js";
+import { fetchYear} from "./dataAccess.js";
 import { removeMarkers, outputVenuesToMap } from "./domUtils.js";
 import {handleYearSelection, handleDecadeSelection, handleGenreSelection, generateGenreList, toggleGenreListVisibility} from "./eventHandlers.js";
-
-// get the list of genres from the data set
-const genreList = await fetchUniqueGenreList();
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors
