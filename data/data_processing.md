@@ -20,9 +20,20 @@ Next, we generate a list of unique genres. This is derived from the `artist_genr
 
 The application uses a limited range of genres for search, so the next step is to use these major genres to develop a hierarchy of genres and sugenres. For this purpose, we use the DataWrangler `generate_genres_hierarchy` method. This method takes the unique genres json file, and a list of master genres, and creates a file called `genres_with_subgenres.json`. Note that it is very context-specific and expects that "tejano" and "r&b" are going to be part of its dataset.
 
-We are now in a position to generate the genres JSON that the application will actually draw on when a user selects one of the master genres. For this purpose we use the `generate_genres_years_json` in the DataWrangler. This takes the years_venues_events json, the artist_genres json, the genres_with_subgenres json, and the master genres list, generates the appropriate data structure, and outputs it to a file.
+We are now in a position to generate the genres JSON that the application will actually draw on when a user selects one of the master genres. For this purpose we use the `generate_genres_years_json` in the DataWrangler. This takes the years_venues_events json, the artist_genres json, the genres_with_subgenres json, and the master genres list, generates the appropriate data structure, and outputs it to a file. We can call this file `genres_years_venues_concerts.json`.
+
+Note that the current master genres list is as follows:
+
+```python
+master_genres = ['rock', 'country', 'tejano', 'r&b', 'metal']
+```
+
+This should be amended as needed, and corresponding changes made to the `generate_genres_hierarchy` method.
 
 ## Assembling the DB.JSON file
 
+Currently, the only search selectors on the application are by years and by genres, so only those json files are included. If the genres associated with any given artist are required, the `artist_genres` JSON may be included.
+
+To generate the `db.json` file, we use the `generate_db_json` method in the DataWrangler. This accepts as inputs the years json and the genres json and combines them into one json file. By convention, this file should be called `db.json`.
 
 

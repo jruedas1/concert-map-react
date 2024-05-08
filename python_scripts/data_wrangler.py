@@ -228,8 +228,16 @@ class DataWrangler:
         with open(output_file, 'w') as of:
             json.dump(genres_and_subgenres, of, indent=4)
 
+    # generates the genres JSON.
+    # Inputs are:
+    # 1. the JSON file of years with their venues and concerts
+    # 2. the JSON file of artists with their genres
+    # 3. the JSON file of genres with their subgenres
+    # 4. the list of master genres
+    # 5. the name of the output file
     @classmethod
-    def generate_genres_years_json(cls, year_venue_concert_json, artists_genres_json, genres_subgenres_json, master_genres_list, output_file):
+    def generate_genres_years_json(cls, year_venue_concert_json, artists_genres_json,
+                                   genres_subgenres_json, master_genres_list, output_file):
 
         with open(year_venue_concert_json) as yvcjson:
             year_venue_concert_data = json.load(yvcjson)
@@ -255,10 +263,14 @@ class DataWrangler:
                             if artist["artist"] not in genres_and_artists[master_genre["genre"]]:
                                 genres_and_artists[master_genre["genre"]].append(artist["artist"])
 
-        # print(genres_and_artists)
-        result = {}
+        genre_json = []
+        genre_id = 1
         for genre, artists in genres_and_artists.items():
-            result[genre] = {"years": []}
+            this_genre = {
+                "id": genre_id,
+                "name": genre,
+                "years": []
+            }
             for year_data in year_venue_concert_data["years"]:
                 year = year_data["id"]
                 venues = []
@@ -272,10 +284,26 @@ class DataWrangler:
                         venue_data_copy["concerts"] = venue_concerts
                         venues.append(venue_data_copy)
                 if venues:
-                    result[genre]["years"].append({"id": year, "venues": venues})
-
-        # # Print the result
-        # print(json.dumps(result, indent=4))
+                    this_genre["years"].append({"id": year, "venues": venues})
+            genre_json.append(this_genre)
+            genre_id += 1
 
         with open(output_file, 'w') as f:
-            json.dump(result, f, indent=4)
+            json.dump(genre_json, f, indent=4)
+
+    @classmethod
+    def generate_db_json(cls, years_json, genres_json, output_file):
+
+        with open(years_json) as years:
+            years_data = json.load(years)
+
+        with open(genres_json) as genres:
+            genres_data = json.load(genres)
+
+        db_json = {
+            "years": years_data["years"],
+            "genres": genres_data
+        }
+
+        with open(output_file, 'w') as f:
+            json.dump(db_json, f, indent=4)
