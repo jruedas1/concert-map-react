@@ -1,5 +1,5 @@
-import {emptyContent, outputVenuesToMap, detectYearAndOutputYearData} from "./domUtils.js";
-import {fetchGenre, fetchYear} from "./dataAccess.js";
+import {emptyContent, outputVenuesToMap} from "./domUtils.js";
+import {fetchGenre, fetchGenreData, fetchYear} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -92,6 +92,7 @@ export const handleGenreSelection = async event => {
     // user might click on the h3, or on the padding for the genre selector div
     // if it's the h3, grab its text content
     // otherwise select the h3 and get its text content
+    console.log()
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
 
     const selectedYear = document.querySelector("#year-selector").value;
@@ -120,10 +121,7 @@ export const handleGenreSelection = async event => {
     document.querySelector("#genres").click();
 }
 
-// instead, we should just have it in the html hard coded
-// this will just toggle its visibility
-
-export const generateGenreList = event => {
+export const toggleGenreListVisibility = event => {
     const icon = document.querySelector("#genres").querySelector("img:first-of-type");
     const upIconSrc = "./img/arrow-up.svg";
     const downIconSrc = "./img/arrow-down.svg";
@@ -134,3 +132,17 @@ export const generateGenreList = event => {
     genreList.classList.toggle('visible');
 }
 
+export const generateGenreList = async event => {
+    const genreList = document.querySelector("#genre-list");
+    const genreData = await fetchGenreData();
+    for (const genre of genreData){
+        const genreDiv = document.createElement('div');
+        genreDiv.innerHTML = `
+             <div class="genre filter-option" id="${genre['id']}">
+                 <h3>${genre['name'].toUpperCase()}</h3>
+             </div>
+            `;
+        genreDiv.addEventListener('click', handleGenreSelection);
+        genreList.appendChild(genreDiv);
+    }
+}
