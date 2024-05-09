@@ -92,6 +92,7 @@ export const handleGenreSelection = async event => {
     // user might click on the h3, or on the padding for the genre selector div
     // if it's the h3, grab its text content
     // otherwise select the h3 and get its text content
+    const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
     const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.id) : parseInt(event.target.id);
     const selectedYear = parseInt(document.querySelector("#year-selector").value);
     const genreResults = await fetchGenre(selectedGenreId);

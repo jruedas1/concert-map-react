@@ -119,6 +119,74 @@ class DataWrangler:
         with open(output_file, 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=4)
 
+    @classmethod
+    def create_years_json(cls, events_file, venues_file, output_file):
+
+        # Reading data from venues.json
+        with open(venues_file, 'r') as venues_fh:
+            venues_json = venues_fh.read()
+
+        # Reading data from events.json
+        with open(events_file, 'r') as events_fh:
+            events_json = events_fh.read()
+
+        venues = json.loads(venues_json)
+        events = json.loads(events_json)
+
+        combined_data = {}
+
+        # Iterate through events and match venues based on names
+        for event in events:
+            year = event['Year']
+            venue_name = event['Venue']
+            matching_venue = None
+
+            for venue in venues:
+                if venue['name'] == venue_name:
+                    matching_venue = venue
+                    break
+
+            if matching_venue:
+                venue_id = int(matching_venue['id'])
+                if year not in combined_data:
+                    combined_data[year] = {}
+                if venue_id not in combined_data[year]:
+                    combined_data[year][venue_id] = {
+                        'concerts': [],
+                        'name': matching_venue['name'],
+                        'city': matching_venue['city'],
+                        'address': matching_venue['address'],
+                        'zip': matching_venue['zip'],
+                        'longitude': matching_venue['longitude'],
+                        'latitude': matching_venue['latitude'],
+                        'state': matching_venue['state'],
+                        'id': venue_id
+                    }
+                combined_data[year][venue_id]['concerts'].append(event)
+
+        # Reformat data into the desired structure with numeric ids
+        output_years = []
+        for year, venues_data in combined_data.items():
+            venues = []
+            for venue_id, venue_info in venues_data.items():
+                concerts = venue_info.pop('concerts')
+                venues.append({
+                    **venue_info,
+                    'concerts': concerts
+                })
+            output_years.append({
+                'id': int(year),
+                'venues': venues
+            })
+
+        output = {'years': output_years}
+
+        # Writing output to a file called output.json
+        with open(output_file, 'w') as output_fh:
+            json.dump(output, output_fh, indent=4)
+
+        print(f"Data has been written to {output_file}")
+
     # This method is used to merge a csv file from the source Excel document
     # containing associations of artists with individual genres,
     # with a json file containing associations of artists with lists of genres

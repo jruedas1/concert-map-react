@@ -6003,11 +6003,11 @@
       "zip": 78205,
       "address": "100 Auditorium Cir.",
       "id": 601,
-      "latitude": null,
+      "latitude": 29.43074,
       "state": "Texas",
       "city": "San Antonio",
       "name": "San Antonio Municipal Auditorium",
-      "longitude": null
+      "longitude": -98.48877
     },
     {
       "state": "Texas",
