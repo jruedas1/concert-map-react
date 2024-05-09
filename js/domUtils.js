@@ -1,5 +1,5 @@
-import { handleMarkerClick } from "./eventHandlers.js";
-import {fetchYear} from "./dataAccess.js";
+import {handleGenreSelection, handleMarkerClick} from "./eventHandlers.js";
+import {fetchGenreData, fetchYear} from "./dataAccess.js";
 
 /*
     Removes markers from map
@@ -54,7 +54,7 @@ export const emptyContent = () => {
 * 4. Loop over the markers and add the event handlers to detect user clicks
 * */
 export const outputVenuesToMap = venuesArray => {
-    console.log(venuesArray);
+    // console.log(venuesArray);
     venuesArray.forEach((venue) => {
         if (venue.longitude && venue.latitude){
             const el = document.createElement('div');
@@ -77,4 +77,40 @@ export const detectYearAndOutputYearData = async () => {
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(venues);
+}
+
+// This method runs when the page first loads
+// It dynamically generates the genre list based on
+// the master genres in the db.json file
+// Once the genres list is generated, it is output to the DOM,
+// but it remains hidden until the user interacts
+// with the genres filter
+export const generateGenreList = async event => {
+    const genreList = document.querySelector("#genre-list");
+    const genreData = await fetchGenreData();
+    for (const genre of genreData){
+        const genreDiv = document.createElement('div');
+        genreDiv.innerHTML = `
+             <div class="genre filter-option" data-id="${genre['id']}">
+                 <h3>${genre['name'].toUpperCase()}</h3>
+             </div>
+            `;
+        genreDiv.addEventListener('click', handleGenreSelection);
+        genreList.appendChild(genreDiv);
+    }
+}
+
+export const generateConcertHTML = venuesArray => {
+    let concertsOutput = '';
+    venuesArray.forEach(venue => {
+        // generate the html for the concerts list
+        venue.concerts.forEach(concert => concertsOutput+= `
+            <div class="concert-info">
+                <h3>${concert.Artist_Formula}</h3>
+                <p>${concert.Venue}</p>
+                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
+            </div>
+        `);
+    });
+    return concertsOutput;
 }

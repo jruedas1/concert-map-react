@@ -1,6 +1,6 @@
 import { fetchYear} from "./dataAccess.js";
-import { removeMarkers, outputVenuesToMap } from "./domUtils.js";
-import {handleYearSelection, handleDecadeSelection, handleGenreSelection, generateGenreList, toggleGenreListVisibility} from "./eventHandlers.js";
+import { removeMarkers, outputVenuesToMap, generateGenreList} from "./domUtils.js";
+import {handleYearSelection, handleDecadeSelection, handleGenreSelection, toggleGenreListVisibility} from "./eventHandlers.js";
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors

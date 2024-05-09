@@ -1,5 +1,5 @@
-import {emptyContent, outputVenuesToMap} from "./domUtils.js";
-import {fetchGenre, fetchGenreData, fetchYear} from "./dataAccess.js";
+import {emptyContent, generateConcertHTML, outputVenuesToMap} from "./domUtils.js";
+import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -70,9 +70,14 @@ export const handleDecadeSelection = async event => {
     const venues = dataOnSelectedYear.venues;
     emptyContent();
     outputVenuesToMap(venues);
+    // decade selection currently clears genre selection
+    document.querySelector("#genres").querySelector("h2").innerText = "GENRE";
 }
 
 // Handler for user interaction with year selector
+// If a genre is selected, changing year selection
+// should display that concerts for that genre for that year
+// otherwise, it should display all venues for that year
 export const handleYearSelection = async event => {
     /*  whenever a year is selected, remove
         any markers and popups displayed on the map
@@ -80,46 +85,33 @@ export const handleYearSelection = async event => {
      */
     emptyContent();
     // Retrieve the data on the selected year
-    const dataOnSelectedYear = await fetchYear(event.target.value);
-    // Retrieve the array of venues that have concerts that year
-    const venues = dataOnSelectedYear.venues;
-    // Output venues to locations on map
-    outputVenuesToMap(venues);
-}
-
-export const handleGenreSelection = async event => {
-    emptyContent();
-    // user might click on the h3, or on the padding for the genre selector div
-    // if it's the h3, grab its text content
-    // otherwise select the h3 and get its text content
-    const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
-    const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.id) : parseInt(event.target.id);
-    const selectedYear = parseInt(document.querySelector("#year-selector").value);
-    const genreResults = await fetchGenre(selectedGenreId);
-    let genreVenuesForSelectedYear;
-    for (const year of genreResults['years']){
-        if (year['id'] === selectedYear){
-            genreVenuesForSelectedYear = year["venues"];
-        }
+    const selectedYear = event.target.value;
+    const dataOnSelectedYear = await fetchYear(selectedYear);
+    // the logic depends on whether a genre is selected
+    // so first, we determine this
+    const selectedGenre = document.getElementById("genres").querySelector("h2").innerText.toLowerCase();
+    // if there is no genre selected, the "#genres" div h2 will just read "GENRES"
+    if (selectedGenre === "genre" || !selectedGenre){
+         // Retrieve the array of venues that have concerts that year
+        const venues = dataOnSelectedYear.venues;
+        // Output venues to locations on map
+        outputVenuesToMap(venues);
+    } else {
+        const selectedGenreId = await getGenreId(selectedGenre);
+        const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(parseInt(selectedGenreId), parseInt(selectedYear));
+        outputVenuesToMap(genreVenuesForSelectedYear);
+        document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     }
-    outputVenuesToMap(genreVenuesForSelectedYear);
-    let concertsOutput = '';
-    genreVenuesForSelectedYear.forEach(venue => {
-
-        // generate the html for the concerts list
-        venue.concerts.forEach(concert => concertsOutput+= `
-            <div class="concert-info">
-                <h3>${concert.Artist_Formula}</h3>
-                <p>${concert.Venue}</p>
-                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
-            </div>
-        `);
-    });
-    document.querySelector("#concerts").innerHTML = concertsOutput;
-    document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
-    document.querySelector("#genres").click();
 }
 
+/*
+    This event handler is triggered when the user interacts
+    with the genres filter. Clicking on the genres filter
+    toggles the visibility of the genres list
+
+    In addition to toggling the list visibility,
+    it toggles the arrow icon from up to down
+ */
 export const toggleGenreListVisibility = event => {
     const icon = document.querySelector("#genres").querySelector("img:first-of-type");
     const upIconSrc = "./img/arrow-up.svg";
@@ -131,17 +123,24 @@ export const toggleGenreListVisibility = event => {
     genreList.classList.toggle('visible');
 }
 
-export const generateGenreList = async event => {
-    const genreList = document.querySelector("#genre-list");
-    const genreData = await fetchGenreData();
-    for (const genre of genreData){
-        const genreDiv = document.createElement('div');
-        genreDiv.innerHTML = `
-             <div class="genre filter-option" id="${genre['id']}">
-                 <h3>${genre['name'].toUpperCase()}</h3>
-             </div>
-            `;
-        genreDiv.addEventListener('click', handleGenreSelection);
-        genreList.appendChild(genreDiv);
-    }
+/*
+    This event handler is triggered when the user selects a genre
+*/
+export const handleGenreSelection = async event => {
+    emptyContent();
+    // user might click on the h3, or on the padding for the genre selector div
+    // if it's the h3, grab its text content
+    // otherwise select the h3 and get its text content
+    const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
+    const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
+    const selectedYear = parseInt(document.querySelector("#year-selector").value);
+    const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, selectedYear);
+    outputVenuesToMap(genreVenuesForSelectedYear);
+    document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
+    document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
+    document.querySelector("#genres").click();
 }
+
+
+
+
