@@ -97,9 +97,13 @@ export const handleYearSelection = async event => {
         // Output venues to locations on map
         outputVenuesToMap(venues);
     } else {
+        // first, we retrieve the id for the selected genre
         const selectedGenreId = await getGenreId(selectedGenre);
+        // knowing the genre id and the selected year, we can retrieve all the venues for that year and genre
         const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(parseInt(selectedGenreId), parseInt(selectedYear));
+        // output venue locations to map
         outputVenuesToMap(genreVenuesForSelectedYear);
+        // output concert info to the page
         document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     }
 }
@@ -129,15 +133,22 @@ export const toggleGenreListVisibility = event => {
 export const handleGenreSelection = async event => {
     emptyContent();
     // user might click on the h3, or on the padding for the genre selector div
-    // if it's the h3, grab its text content
-    // otherwise select the h3 and get its text content
+    // if it's the h3, grab its text content, then grab its genre id
+    // otherwise select the h3 and get its text content, then its genre id
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
     const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
+    // get the year currently selected by the user
     const selectedYear = parseInt(document.querySelector("#year-selector").value);
+    // retrieve venues for that specific year and genre
     const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, selectedYear);
+    // output venue locations to map
     outputVenuesToMap(genreVenuesForSelectedYear);
+    // output concert info to page
     document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
+    // replace current genre heading with name of selected genre
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
+    // trigger click event on genres div
+    // this hides the genre selector if it's showing
     document.querySelector("#genres").click();
 }
 
