@@ -100,6 +100,8 @@ export const generateGenreList = async event => {
     }
 }
 
+// This function outputs concert information to the page
+// This is where you would edit the html for the concert data
 export const generateConcertHTML = venuesArray => {
     let concertsOutput = '';
     venuesArray.forEach(venue => {
