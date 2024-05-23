@@ -1,6 +1,18 @@
+import { MAPBOX_API_KEY } from "./keys.js";
+import {generateMap} from "./mabpoxUtils.js";
 import { fetchYear} from "./dataAccess.js";
 import { removeMarkers, outputVenuesToMap, generateGenreList} from "./domUtils.js";
 import {handleYearSelection, handleDecadeSelection, toggleGenreListVisibility} from "./eventHandlers.js";
+
+const mapConfiguration = {
+        accessToken: MAPBOX_API_KEY,
+        containerId: 'map',
+        style: 'outdoors-v12',
+        center: [-98.48725, 29.44879],
+        zoom: 11
+    }
+
+export const map = await generateMap(mapConfiguration);
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors
@@ -30,6 +42,6 @@ genreFilter.addEventListener('click', toggleGenreListVisibility);
     let selectedYear = document.querySelector("#year-selector").value;
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
-    outputVenuesToMap(venues);
+    outputVenuesToMap(map, venues);
     await generateGenreList();
 })();

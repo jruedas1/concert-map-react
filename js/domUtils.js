@@ -53,7 +53,7 @@ export const emptyContent = () => {
 * 3. Once the markers have been added, obtain a reference to them
 * 4. Loop over the markers and add the event handlers to detect user clicks
 * */
-export const outputVenuesToMap = venuesArray => {
+export const outputVenuesToMap = (map, venuesArray) => {
     // console.log(venuesArray);
     venuesArray.forEach((venue) => {
         if (venue.longitude && venue.latitude){

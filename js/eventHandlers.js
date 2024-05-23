@@ -1,5 +1,6 @@
 import {emptyContent, generateConcertHTML, outputVenuesToMap} from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
+import { map } from './main.js';
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -69,7 +70,7 @@ export const handleDecadeSelection = async event => {
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     emptyContent();
-    outputVenuesToMap(venues);
+    outputVenuesToMap(map, venues);
     // decade selection currently clears genre selection
     document.querySelector("#genres").querySelector("h2").innerText = "GENRE";
 }
@@ -95,14 +96,14 @@ export const handleYearSelection = async event => {
          // Retrieve the array of venues that have concerts that year
         const venues = dataOnSelectedYear.venues;
         // Output venues to locations on map
-        outputVenuesToMap(venues);
+        outputVenuesToMap(map, venues);
     } else {
         // first, we retrieve the id for the selected genre
         const selectedGenreId = await getGenreId(selectedGenre);
         // knowing the genre id and the selected year, we can retrieve all the venues for that year and genre
         const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(parseInt(selectedGenreId), parseInt(selectedYear));
         // output venue locations to map
-        outputVenuesToMap(genreVenuesForSelectedYear);
+        outputVenuesToMap(map, genreVenuesForSelectedYear);
         // output concert info to the page
         document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     }
@@ -142,7 +143,7 @@ export const handleGenreSelection = async event => {
     // retrieve venues for that specific year and genre
     const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, selectedYear);
     // output venue locations to map
-    outputVenuesToMap(genreVenuesForSelectedYear);
+    outputVenuesToMap(map, genreVenuesForSelectedYear);
     // output concert info to page
     document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     // replace current genre heading with name of selected genre

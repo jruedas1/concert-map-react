@@ -1,5 +1,33 @@
 "use strict";
 
+/*
+    This is the function that will generate a map on the page.
+    It takes a map configuration object
+    The mapConfig object has the following example structure:
+    const mapConfiguration = {
+        accessToken: MAPBOX_API_KEY,
+        containerId: 'map',
+        style: 'outdoors-v12',
+        center: [-98.48725, 29.44879],
+        zoom: 11
+    }
+    Here, there is a div in index.html with the id of 'map'
+    The mapbox js library will find it and insert the map
+    Style is any of the standard mapbox styles
+    Center is [lng, lat]
+    zoom is between 1 and 15, with 15 being the narrowest focus
+*/
+
+export const generateMap = async mapConfig => {
+        mapboxgl.accessToken = mapConfig.accessToken;
+        return new mapboxgl.Map({
+            container: mapConfig.containerId, // container ID
+            style: 'mapbox://styles/mapbox/' + mapConfig.style, // style URL
+            center: mapConfig.center, // starting position [lng, lat]
+            zoom: mapConfig.zoom, // starting zoom
+        });
+}
+
 /***
  * geocode is a method to search for coordinates based on a physical address and return
  * @param {string} search is the address to search for the geocoded coordinates
