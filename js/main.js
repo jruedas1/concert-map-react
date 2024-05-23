@@ -17,9 +17,9 @@ export const map = await generateMap(mapConfiguration);
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors
 const decadeSelector = document.querySelector("#decade-selector");
-decadeSelector.addEventListener('input', handleDecadeSelection);
+decadeSelector.addEventListener('input', event => handleDecadeSelection(event, map));
 const yearSelector = document.querySelector("#year-selector");
-yearSelector.addEventListener('change', handleYearSelection);
+yearSelector.addEventListener('change', event => handleYearSelection(event, map));
 // get reference to genre filter
 // add event handler to genre selector
 const genreFilter = document.querySelector("#genres");
@@ -43,5 +43,5 @@ genreFilter.addEventListener('click', toggleGenreListVisibility);
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(map, venues);
-    await generateGenreList();
+    await generateGenreList(map);
 })();

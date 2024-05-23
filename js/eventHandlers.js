@@ -1,6 +1,5 @@
 import {emptyContent, generateConcertHTML, outputVenuesToMap} from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
-import { map } from './main.js';
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -34,7 +33,7 @@ export const handleMarkerClick =  (event, venuesArray) => {
 }
 
 // handler to respond to user interaction with decade selector
-export const handleDecadeSelection = async event => {
+export const handleDecadeSelection = async (event, map) => {
     /*
     * When the user selects a new decade, we are going to
     * modify the year selector to show a new decade
@@ -79,7 +78,7 @@ export const handleDecadeSelection = async event => {
 // If a genre is selected, changing year selection
 // should display that concerts for that genre for that year
 // otherwise, it should display all venues for that year
-export const handleYearSelection = async event => {
+export const handleYearSelection = async (event, map) => {
     /*  whenever a year is selected, remove
         any markers and popups displayed on the map
         and remove any concert info currently displayed
@@ -131,7 +130,7 @@ export const toggleGenreListVisibility = event => {
 /*
     This event handler is triggered when the user selects a genre
 */
-export const handleGenreSelection = async event => {
+export const handleGenreSelection = async (event, map) => {
     emptyContent();
     // user might click on the h3, or on the padding for the genre selector div
     // if it's the h3, grab its text content, then grab its genre id

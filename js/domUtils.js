@@ -85,7 +85,7 @@ export const detectYearAndOutputYearData = async () => {
 // Once the genres list is generated, it is output to the DOM,
 // but it remains hidden until the user interacts
 // with the genres filter
-export const generateGenreList = async event => {
+export const generateGenreList = async (map) => {
     const genreList = document.querySelector("#genre-list");
     const genreData = await fetchGenreData();
     for (const genre of genreData){
@@ -95,7 +95,7 @@ export const generateGenreList = async event => {
                  <h3>${genre['name'].toUpperCase()}</h3>
              </div>
             `;
-        genreDiv.addEventListener('click', handleGenreSelection);
+        genreDiv.addEventListener('click', event => handleGenreSelection(event, map));
         genreList.appendChild(genreDiv);
     }
 }
