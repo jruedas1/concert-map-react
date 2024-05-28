@@ -10,15 +10,14 @@
       "**/.*",
       "**/node_modules/**",
       "**/data/**",
-      "**/python_scripts/**",
       "**/src/**",
-      "**/venv/**",
-      "*.iml",
+      "**/python_scripts/**",
       "package.json",
       "package-lock.json",
+      "README.md",
       "webpack.config.js"
     ],
-      "rewrites": [
+    "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
