@@ -2,24 +2,51 @@
 * This file should contain all the code that interacts with data storage
 * */
 
+import { initializeApp } from 'firebase/app';
+import { FIREBASE_CONFIG } from './keys.js';
+import { getFirestore, collection, doc, getDoc, getDocs } from 'firebase/firestore';
+
+initializeApp(FIREBASE_CONFIG);
+const db = getFirestore();
+
 export const fetchData = async () => {
     const venues = await fetch('http://localhost:3001/years');
     return await venues.json();
 }
 
-export const fetchYear = async (year) => {
+export const fetchYearLocal = async (year) => {
     const venue = await fetch(`http://localhost:3001/years/${year}`);
     return await venue.json();
 }
 
-export const fetchGenreData = async () => {
+export const fetchYear = async (year) => {
+    const docRef = doc(db, 'years', year);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+}
+
+export const fetchGenreDataLocal = async () => {
     const genreInfo = await fetch('http://localhost:3001/genres');
     return await genreInfo.json();
 }
 
-export const fetchGenre = async (genreId) => {
+export const fetchGenreData = async () => {
+    const querySnapshot = await getDocs(collection(db, 'genres'));
+    const genres = [];
+    querySnapshot.forEach(genre => genres.push(genre.data()));
+    return genres;
+}
+
+export const fetchGenreLocal = async (genreId) => {
     const genreData = await fetch(`http://localhost:3001/genres/${genreId}`);
     return await genreData.json();
+}
+
+export const fetchGenre = async (genreId) => {
+    genreId = genreId.toString();
+    const docRef = doc(db, 'genres', genreId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
 }
 
 // genreId and selectedYear must be integers
