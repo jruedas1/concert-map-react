@@ -1,4 +1,4 @@
-import {handleGenreSelection, handleMarkerClick} from "./eventHandlers.js";
+import {handleGenreSelection, handleMarkerClick, handleYearSelection} from "./eventHandlers.js";
 import {fetchGenreData, fetchYear} from "./dataAccess.js";
 
 /*
@@ -72,19 +72,21 @@ export const outputVenuesToMap = (map, venuesArray) => {
     markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
 }
 
-export const detectYearAndOutputYearData = async () => {
-    let selectedYear = document.querySelector("#year-selector").value;
-    const dataOnSelectedYear = await fetchYear(selectedYear);
-    const venues = dataOnSelectedYear.venues;
-    outputVenuesToMap(venues);
-}
+/*
+* This method runs when the page first loads
+* It dynamically generates the genre list based on
+* the master genres in the genres data
+* Once the genres list is generated, it is output to the DOM,
+* but it remains hidden until the user interacts
+* with the genres filter
+*
+* this function needs a reference to the MapBox map object
+* this is because an event handler gets attached to each
+* genre DOM element, and when the user clicks on these elements,
+* the venues get output to the map
+*/
 
-// This method runs when the page first loads
-// It dynamically generates the genre list based on
-// the master genres in the db.json file
-// Once the genres list is generated, it is output to the DOM,
-// but it remains hidden until the user interacts
-// with the genres filter
+
 export const generateGenreList = async (map) => {
     const genreList = document.querySelector("#genre-list");
     const genreData = await fetchGenreData();
@@ -100,7 +102,7 @@ export const generateGenreList = async (map) => {
     }
 }
 
-export const generateYearList = decade => {
+export const generateYearList = (decade, map) => {
     const yearList = document.querySelector("#year-list");
     yearList.innerHTML = '';
     for (let i = decade; i < decade + 10; i++){
@@ -108,6 +110,7 @@ export const generateYearList = decade => {
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
+        yearDiv.addEventListener('click', event => handleYearSelection(event, map));
         yearList.appendChild(yearDiv);
     }
 }
@@ -115,7 +118,6 @@ export const generateYearList = decade => {
 export const getSelectedYear = refToYearsList => {
     let selectedYear;
     const yearList = refToYearsList.children;
-    console.log(yearList);
     for (const year of yearList){
         if (year.classList.contains('selected')){
             selectedYear = year.dataset.id;

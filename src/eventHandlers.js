@@ -86,7 +86,7 @@ export const handleYearSelection = async (event, map) => {
      */
     emptyContent();
     // Retrieve the data on the selected year
-    const selectedYear = event.target.value;
+    const selectedYear = event.target.localName === 'h3' ? event.target.innerText : event.target.dataset.id;
     const dataOnSelectedYear = await fetchYear(selectedYear);
     // the logic depends on whether a genre is selected
     // so first, we determine this

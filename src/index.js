@@ -43,12 +43,10 @@ genreFilter.addEventListener('click', toggleGenreListVisibility);
     */
     removeMarkers();
     document.querySelector("#decade-selector").value = 1970;
-    generateYearList(1970);
+    generateYearList(1970, map);
     const yearList = document.querySelector("#year-list");
     yearList.firstElementChild.classList.add('selected');
     const selectedYear = getSelectedYear(yearList);
-    console.log(selectedYear);
-    // let selectedYear = document.querySelector("#year-selector").value;
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(map, venues);
