@@ -100,6 +100,30 @@ export const generateGenreList = async (map) => {
     }
 }
 
+export const generateYearList = decade => {
+    const yearList = document.querySelector("#year-list");
+    yearList.innerHTML = '';
+    for (let i = decade; i < decade + 10; i++){
+        const yearDiv = document.createElement('div');
+        yearDiv.classList.add('year', 'filter-option');
+        yearDiv.dataset.id = i.toString();
+        yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
+        yearList.appendChild(yearDiv);
+    }
+}
+
+export const getSelectedYear = refToYearsList => {
+    let selectedYear;
+    const yearList = refToYearsList.children;
+    console.log(yearList);
+    for (const year of yearList){
+        if (year.classList.contains('selected')){
+            selectedYear = year.dataset.id;
+        }
+    }
+    return selectedYear;
+}
+
 // This function outputs concert information to the page
 // This is where you would edit the html for the concert data
 export const generateConcertHTML = venuesArray => {

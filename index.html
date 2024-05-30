@@ -13,7 +13,7 @@
 <body>
     <div id="page-wrapper">
         <header>
-            <h1>The Sound of San Anto</h1>
+            <h1>The Sounds of San Anto</h1>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -23,10 +23,6 @@
         </header>
         <main>
             <section id="filters">
-                <div id="artists" class="filter">
-                    <input type="text" id="artist-selector" placeholder="Artist or band">
-                    <button>Search</button>
-                </div>
                 <div id="decades" class="filter">
                     <p id="selected-decade">1970s</p>
                     <label for="decade-selector">Select a decade:</label>
@@ -40,19 +36,24 @@
 
                 </div>
                 <div id="years" class="filter">
-                    <label for="year-selector">Select a year:</label>
-                    <select name="year" id="year-selector">
-                        <option value="1970">1970</option>
-                        <option value="1971">1971</option>
-                        <option value="1972">1972</option>
-                        <option value="1973">1973</option>
-                        <option value="1974">1974</option>
-                        <option value="1975">1975</option>
-                        <option value="1976">1976</option>
-                        <option value="1977">1977</option>
-                        <option value="1978">1978</option>
-                        <option value="1979">1979</option>
-                    </select>
+                    <h2>Year</h2>
+                    <img src="./img/arrow-down.svg" alt="Arrow icon pointing down">
+<!--                    <label for="year-selector">Select a year:</label>-->
+<!--                    <select name="year" id="year-selector">-->
+<!--                        <option value="1970">1970</option>-->
+<!--                        <option value="1971">1971</option>-->
+<!--                        <option value="1972">1972</option>-->
+<!--                        <option value="1973">1973</option>-->
+<!--                        <option value="1974">1974</option>-->
+<!--                        <option value="1975">1975</option>-->
+<!--                        <option value="1976">1976</option>-->
+<!--                        <option value="1977">1977</option>-->
+<!--                        <option value="1978">1978</option>-->
+<!--                        <option value="1979">1979</option>-->
+<!--                    </select>-->
+                </div>
+                <div id="year-list" class="hidden">
+
                 </div>
 
                 <div id="genres" class="filter">
@@ -66,6 +67,19 @@
             </section>
             <section id='map'></section>
         </main>
+        <footer>
+            <div>
+                <img src="./img/utsa-lib-logo-white.svg" alt="UTSA Libraries logo">
+            </div>
+            <div>
+                <ul>
+                    <li>email@email.com</li>
+                    <li>210-458-0101</li>
+                    <li>Footer Item</li>
+                    <li>Footer Item</li>
+                </ul>
+            </div>
+        </footer>
     </div>
     <script type="module" src="./dist/main.js"></script>
 </body>

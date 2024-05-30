@@ -1,16 +1,29 @@
+/* Resets */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Fonts are set on the body. Font is imported from Google API */
 body {
     font-family: "New Nord", 'Helvetica Neue', Helvetica, sans-serif;
 }
+
+/*
+All content is wrapped in a page-wrapper
+Within the page-wrapper, main components are rows
+*/
 
 #page-wrapper {
     display: flex;
     flex-flow: column nowrap;
 }
+
+/*
+Top component is the header
+Header contains a main heading and a nav
+Nav and main heading are flex-children to header
+*/
 
 header {
     display: flex;
@@ -27,6 +40,10 @@ header h1 {
     font-weight: 900;
 }
 
+/*
+Nav set up is a elements within li elements within a ul
+*/
+
 header nav ul {
     display: flex;
     flex-flow: row nowrap;
@@ -41,6 +58,11 @@ nav a {
     color: white;
     text-decoration: none;
 }
+
+/*
+    Main element is a flex-child of page-wrapper
+    Main has two components, the filters and the map
+*/
 
 main {
     flex: 1 1 100dvh;
@@ -58,7 +80,7 @@ section#filters {
     border-right: 2px solid black;
     background-color: #EDE8E4;
 
-    max-height: 100dvh;
+    /*max-height: 100dvh;*/
 }
 
 .hidden {
@@ -84,39 +106,12 @@ section#filters {
     background: #D9CFC5;
 }
 
-#artists {
-    padding: 2rem 0.5rem 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-}
-
-#artists input {
-    width: 90%;
-    background: transparent;
-    border-width: 0 0 1px 0;
-    border-color: black;
-    padding: 3px;
-    font-size: 1rem;
-}
-
-#artists button {
-    background: #D3C4B4;
-    color: #F5F5F5;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 #selected-decade {
     font-size: 1.8rem;
     font-weight: 550;
 }
 
-#genres {
+#genres, #years {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -144,4 +139,34 @@ section#filters {
 .concert-info {
     border-bottom: 1px solid black;
     padding: 0.5rem 0;
+}
+
+/*
+    Footer has a logo area left and a contacts/links area right
+*/
+
+footer {
+    background: #231F20;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 10rem;
+}
+
+footer ul {
+    color: white;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+/*
+Adjacent sibling selector (all li elements that immediately
+follow an li element with margin-top sets the gap between
+list items without adding a top margin to the whole list
+props to https://stackoverflow.com/questions/19254411/how-do-i-set-vertical-space-between-list-items
+*/
+
+footer ul li+li {
+    margin-top: 1.5rem;
 }

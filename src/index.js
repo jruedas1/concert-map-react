@@ -1,8 +1,8 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
 import { fetchYear} from "./dataAccess.js";
-import { removeMarkers, outputVenuesToMap, generateGenreList} from "./domUtils.js";
-import {handleYearSelection, handleDecadeSelection, toggleGenreListVisibility} from "./eventHandlers.js";
+import {removeMarkers, outputVenuesToMap, generateGenreList, generateYearList, getSelectedYear} from "./domUtils.js";
+import {handleYearSelection, handleDecadeSelection, toggleGenreListVisibility, toggleYearListVisibility} from "./eventHandlers.js";
 
 const mapConfiguration = {
         accessToken: MAPBOX_API_KEY,
@@ -18,8 +18,12 @@ export const map = await generateMap(mapConfiguration);
 // add event handlers to the year and decade selectors
 const decadeSelector = document.querySelector("#decade-selector");
 decadeSelector.addEventListener('input', event => handleDecadeSelection(event, map));
-const yearSelector = document.querySelector("#year-selector");
-yearSelector.addEventListener('change', event => handleYearSelection(event, map));
+
+const yearFilter = document.querySelector("#years");
+yearFilter.addEventListener('click', toggleYearListVisibility);
+
+// const yearSelector = document.querySelector("#year-selector");
+// yearSelector.addEventListener('change', event => handleYearSelection(event, map));
 // get reference to genre filter
 // add event handler to genre selector
 const genreFilter = document.querySelector("#genres");
@@ -39,9 +43,15 @@ genreFilter.addEventListener('click', toggleGenreListVisibility);
     */
     removeMarkers();
     document.querySelector("#decade-selector").value = 1970;
-    let selectedYear = document.querySelector("#year-selector").value;
+    generateYearList(1970);
+    const yearList = document.querySelector("#year-list");
+    yearList.firstElementChild.classList.add('selected');
+    const selectedYear = getSelectedYear(yearList);
+    console.log(selectedYear);
+    // let selectedYear = document.querySelector("#year-selector").value;
     const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(map, venues);
     await generateGenreList(map);
 })();
+

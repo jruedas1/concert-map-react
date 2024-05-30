@@ -1,4 +1,4 @@
-import {emptyContent, generateConcertHTML, outputVenuesToMap} from "./domUtils.js";
+import {emptyContent, generateConcertHTML, outputVenuesToMap, generateYearList} from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
@@ -53,25 +53,26 @@ export const handleDecadeSelection = async (event, map) => {
     * 11. Remove markers and popups from map and concert data from page
     * 12. Output data for selected year to map
     * */
-    const yearSelector = document.querySelector("#year-selector");
+    // const yearSelector = document.querySelector("#year-selector");
     const selectedDecadeOutput = document.querySelector("#selected-decade");
     const selectedDecade = parseInt(event.target.value);
     selectedDecadeOutput.textContent = `${selectedDecade}s`;
-    const newOptions = [];
-    for (let i = selectedDecade; i < selectedDecade + 10; i++){
-        const option = document.createElement('option');
-        option.text = i.toString();
-        option.value = i.toString();
-        newOptions.push(option);
-    }
-    yearSelector.replaceChildren(...newOptions);
-    let selectedYear = document.querySelector("#year-selector").value;
-    const dataOnSelectedYear = await fetchYear(selectedYear);
-    const venues = dataOnSelectedYear.venues;
-    emptyContent();
-    outputVenuesToMap(map, venues);
-    // decade selection currently clears genre selection
-    document.querySelector("#genres").querySelector("h2").innerText = "GENRE";
+    generateYearList(selectedDecade);
+    // const newOptions = [];
+    // for (let i = selectedDecade; i < selectedDecade + 10; i++){
+    //     const option = document.createElement('option');
+    //     option.text = i.toString();
+    //     option.value = i.toString();
+    //     newOptions.push(option);
+    // }
+    // yearSelector.replaceChildren(...newOptions);
+    // let selectedYear = document.querySelector("#year-selector").value;
+    // const dataOnSelectedYear = await fetchYear(selectedYear);
+    // const venues = dataOnSelectedYear.venues;
+    // emptyContent();
+    // outputVenuesToMap(map, venues);
+    // // decade selection currently clears genre selection
+    // document.querySelector("#genres").querySelector("h2").innerText = "GENRE";
 }
 
 // Handler for user interaction with year selector
@@ -125,6 +126,17 @@ export const toggleGenreListVisibility = event => {
     const genreList = document.querySelector("#genre-list");
     genreList.classList.toggle('hidden');
     genreList.classList.toggle('visible');
+}
+
+export const toggleYearListVisibility = event => {
+    const icon = document.querySelector("#years").querySelector("img:first-of-type");
+    const upIconSrc = "./img/arrow-up.svg";
+    const downIconSrc = "./img/arrow-down.svg";
+    icon.src = icon.src.includes('down') ? upIconSrc : downIconSrc;
+
+    const yearList = document.querySelector("#year-list");
+    yearList.classList.toggle('hidden');
+    yearList.classList.toggle('visible');
 }
 
 /*
