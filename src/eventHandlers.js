@@ -1,4 +1,10 @@
-import {emptyContent, generateConcertHTML, outputVenuesToMap, generateYearList} from "./domUtils.js";
+import {
+    emptyContent,
+    generateConcertHTML,
+    outputVenuesToMap,
+    generateYearList,
+    markYearAsSelected
+} from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
@@ -107,6 +113,20 @@ export const handleYearSelection = async (event, map) => {
         // output concert info to the page
         document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     }
+    // To mark the year as "selected" we need to know if the h3 was clicked
+    let yearsList = null;
+    let yearEl = null;
+    if (event.target.localName === 'h3'){
+        yearsList = event.target.parentElement.parentElement;
+        yearEl = event.target.parentElement;
+    } else {
+        yearsList = event.target.parentElement;
+        yearEl = event.target;
+    }
+    markYearAsSelected(yearsList, yearEl);
+    const yearsFilter = yearsList.previousElementSibling;
+   yearsFilter.querySelector("h2").innerText = selectedYear;
+   yearsFilter.click();
 }
 
 /*
@@ -125,7 +145,6 @@ export const toggleGenreListVisibility = event => {
 
     const genreList = document.querySelector("#genre-list");
     genreList.classList.toggle('hidden');
-    genreList.classList.toggle('visible');
 }
 
 export const toggleYearListVisibility = event => {
@@ -136,7 +155,6 @@ export const toggleYearListVisibility = event => {
 
     const yearList = document.querySelector("#year-list");
     yearList.classList.toggle('hidden');
-    yearList.classList.toggle('visible');
 }
 
 /*
@@ -165,5 +183,6 @@ export const handleGenreSelection = async (event, map) => {
 }
 
 
-
+// I need to use bubbling to bypass the whole "did they click on the h3 or not"
+// issue -- attach the handlers to the div and set it to listen to any click
 

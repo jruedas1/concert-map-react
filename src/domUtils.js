@@ -126,6 +126,16 @@ export const getSelectedYear = refToYearsList => {
     return selectedYear;
 }
 
+export const markYearAsSelected = (refToYearsList, refToClickedYearEl) => {
+    const yearList = refToYearsList.children;
+    for (const year of yearList){
+        if (year.classList.contains('selected')){
+            year.classList.remove('selected');
+        }
+    }
+    refToClickedYearEl.classList.add('selected');
+}
+
 // This function outputs concert information to the page
 // This is where you would edit the html for the concert data
 export const generateConcertHTML = venuesArray => {
