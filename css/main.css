@@ -104,13 +104,17 @@ section#filters {
 /*
     Make sure all the filter options indicate clickability
 */
-.filter#decades, .filter#years, .filter#genres, .filter-option  {
+.filter, .filter-option  {
     padding: 1rem;
     cursor: pointer;
 }
 
 .filter-option {
     background: #F8F6F6;
+}
+
+#top-genre-selector {
+    border: none;
 }
 
 /*
@@ -129,7 +133,7 @@ section#filters {
     space-between
 */
 
-#genres, #years {
+#top-genre-selector, #genres, #years {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;

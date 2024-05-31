@@ -54,7 +54,6 @@ export const emptyContent = () => {
 * 4. Loop over the markers and add the event handlers to detect user clicks
 * */
 export const outputVenuesToMap = (map, venuesArray) => {
-    // console.log(venuesArray);
     venuesArray.forEach((venue) => {
         if (venue.longitude && venue.latitude){
             const el = document.createElement('div');
@@ -105,14 +104,16 @@ export const generateGenreList = async (map) => {
 export const generateYearList = (decade, map) => {
     const yearList = document.querySelector("#year-list");
     yearList.innerHTML = '';
+    const newYears = [];
     for (let i = decade; i < decade + 10; i++){
         const yearDiv = document.createElement('div');
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
         yearDiv.addEventListener('click', event => handleYearSelection(event, map));
-        yearList.appendChild(yearDiv);
+        newYears.push(yearDiv);
     }
+    yearList.replaceChildren(...newYears);
 }
 
 export const getSelectedYear = refToYearsList => {
