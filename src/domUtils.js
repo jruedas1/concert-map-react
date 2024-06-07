@@ -127,6 +127,17 @@ export const getSelectedYear = refToYearsList => {
     return selectedYear;
 }
 
+export const getSelected = refToList =>{
+    let selected;
+    const list = refToList.children;
+    for (const listEl of list){
+        if (listEl.classList.contains('selected')){
+            selected = listEl.dataset.id;
+        }
+    }
+    return selected;
+}
+
 export const markYearAsSelected = (refToYearsList, refToClickedYearEl) => {
     const yearList = refToYearsList.children;
     for (const year of yearList){
@@ -135,6 +146,16 @@ export const markYearAsSelected = (refToYearsList, refToClickedYearEl) => {
         }
     }
     refToClickedYearEl.classList.add('selected');
+}
+
+export const markAsSelected = (refToList, refToClickedEl) => {
+    const list = refToList.children;
+    for (const el of list){
+        if (el.classList.contains('selected')){
+            el.classList.remove('selected');
+        }
+    }
+    refToClickedEl.classList.add('selected');
 }
 
 // This function outputs concert information to the page

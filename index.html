@@ -24,26 +24,32 @@
         <main>
             <section id="filters">
                 <div id="top-genre-selector" class="filter">
-                    <h3>Search</h3>
-                    <h3>Explore</h3>
+                    <h3>SEARCH</h3>
+                    <h3>EXPLORE</h3>
                 </div>
                 <div id="decades" class="filter">
-                    <p id="selected-decade">1970s</p>
-                    <label for="decade-selector">Select a decade:</label>
-                    <input type="range" id="decade-selector" min="1970" max="2000" step="10" list="decade" value="1970">
-                    <datalist id="decade">
-                        <option value="1970" label="1970s"></option>
-                        <option value="1980" label="1980s"></option>
-                        <option value="1990" label="1990s"></option>
-                        <option value="2000" label="2000s"></option>
-                    </datalist>
+                   <h3>SELECT A DECADE</h3>
+                   <img src="./img/arrow-down.svg" alt="Arrow icon pointing down">
+                </div>
+                <div id="decade-list" class="hidden">
+                    <div class="decade filter-option selected">
+                        <h3 data-id="1970">1970s</h3>
+                    </div>
+                     <div class="decade filter-option">
+                        <h3 data-id="1980">1980s</h3>
+                    </div>
+                     <div class="decade filter-option">
+                        <h3 data-id="1990">1990s</h3>
+                    </div>
+                     <div class="decade filter-option">
+                        <h3 data-id="2000">2000s</h3>
+                    </div>
                 </div>
                 <div id="years" class="filter">
-                    <h3>Year</h3>
+                    <h3>SELECT A YEAR</h3>
                     <img src="./img/arrow-down.svg" alt="Arrow icon pointing down">
                 </div>
                 <div id="year-list" class="hidden">
-
                 </div>
 
                 <div id="genres" class="filter" style="display: none">

@@ -3,7 +3,7 @@ import {
     generateConcertHTML,
     outputVenuesToMap,
     generateYearList,
-    markYearAsSelected
+    markYearAsSelected, markAsSelected
 } from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
@@ -59,24 +59,28 @@ export const handleDecadeSelection = async (event, map) => {
     * 11. Remove markers and popups from map and concert data from page
     * 12. Output data for selected year to map
     * */
-    const selectedDecadeOutput = document.querySelector("#selected-decade");
-    const selectedDecade = parseInt(event.target.value);
-    selectedDecadeOutput.textContent = `${selectedDecade}s`;
-    generateYearList(selectedDecade,map);
-    const yearsList = document.querySelector("#year-list");
-    markYearAsSelected(yearsList, yearsList.firstElementChild);
+
+    const selectedDecade = parseInt(event.target.localName === 'h3' ? event.target.innerText : event.target.dataset.id);
+    generateYearList(selectedDecade, map);
+    const clickedDecadeEl = event.currentTarget;
+    const decadeList = event.currentTarget.parentElement;
+    markAsSelected(decadeList, clickedDecadeEl);
+    const decadeFilter = event.currentTarget.parentElement.previousElementSibling;
+    decadeFilter.querySelector("h3").innerText = selectedDecade.toString() + 's';
+    decadeFilter.click();
+
     const dataOnSelectedYear = await fetchYear(selectedDecade.toString());
     const venues = dataOnSelectedYear.venues;
+    const yearsList = document.querySelector("#year-list");
+    markYearAsSelected(yearsList, yearsList.firstElementChild);
+
     let currentYearOutputEl = yearsList.previousElementSibling.firstElementChild;
-    if (currentYearOutputEl.innerText.toLowerCase() !== 'year') currentYearOutputEl.innerText = selectedDecade;
+    if (currentYearOutputEl.innerText.toLowerCase() !== 'select a year') currentYearOutputEl.innerText = selectedDecade;
     emptyContent();
     outputVenuesToMap(map, venues);
 }
 
-// Handler for user interaction with year selector
-// If a genre is selected, changing year selection
-// should display that concerts for that genre for that year
-// otherwise, it should display all venues for that year
+// Handler for user interaction with year selection
 export const handleYearSelection = async (event, map) => {
     /*  whenever a year is selected, remove
         any markers and popups displayed on the map
@@ -84,40 +88,28 @@ export const handleYearSelection = async (event, map) => {
      */
     emptyContent();
     // Retrieve the data on the selected year
-    const selectedYear = event.target.localName === 'h3' ? event.target.innerText : event.target.dataset.id;
+    const clickedH3 = event.target.localName === 'h3';
+
+    const selectedYear = clickedH3 ? event.target.innerText : event.target.dataset.id;
     const dataOnSelectedYear = await fetchYear(selectedYear);
-    // the logic depends on whether a genre is selected
-    // // so first, we determine this
-    // const selectedGenre = document.getElementById("genres").querySelector("h2").innerText.toLowerCase();
-    // // if there is no genre selected, the "#genres" div h2 will just read "GENRES"
-    // if (selectedGenre === "genre" || !selectedGenre){
-         // Retrieve the array of venues that have concerts that year
-        const venues = dataOnSelectedYear.venues;
-        // Output venues to locations on map
-        outputVenuesToMap(map, venues);
-    // } else {
-    //     // first, we retrieve the id for the selected genre
-    //     const selectedGenreId = await getGenreId(selectedGenre);
-    //     // knowing the genre id and the selected year, we can retrieve all the venues for that year and genre
-    //     const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(parseInt(selectedGenreId), parseInt(selectedYear));
-    //     // output venue locations to map
-    //     outputVenuesToMap(map, genreVenuesForSelectedYear);
-    //     // output concert info to the page
-    //     document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
-    // }
-    // To mark the year as "selected" we need to know if the h3 was clicked
-    let yearsList = null;
-    let yearEl = null;
-    if (event.target.localName === 'h3'){
-        yearsList = event.target.parentElement.parentElement;
-        yearEl = event.target.parentElement;
-    } else {
-        yearsList = event.target.parentElement;
-        yearEl = event.target;
-    }
+
+    // Retrieve the array of venues that have concerts that year
+    const venues = dataOnSelectedYear.venues;
+    // Output venues to locations on map
+    outputVenuesToMap(map, venues);
+
+    // mark the clicked year as selected
+    const yearEl = clickedH3? event.target.parentElement : event.target;
+    const yearsList = yearEl.parentElement;
+    // console.log(yearsList)
     markYearAsSelected(yearsList, yearEl);
+
+    // change the text of the years filter to the selected year
     const yearsFilter = yearsList.previousElementSibling;
+    // console.log(yearsFilter)
     yearsFilter.querySelector("h3").innerText = selectedYear;
+
+    // toggle the year list closed
     yearsFilter.click();
 }
 
@@ -139,15 +131,16 @@ export const toggleGenreListVisibility = event => {
     genreList.classList.toggle('hidden');
 }
 
-export const toggleYearListVisibility = event => {
-    const icon = document.querySelector("#years").querySelector("img:first-of-type");
+export const toggleVisibility = (event, elementReference) => {
+    const icon = elementReference.previousElementSibling.querySelector("img:first-of-type");
     const upIconSrc = "./img/arrow-up.svg";
     const downIconSrc = "./img/arrow-down.svg";
     icon.src = icon.src.includes('down') ? upIconSrc : downIconSrc;
 
-    const yearList = document.querySelector("#year-list");
-    yearList.classList.toggle('hidden');
+    elementReference.classList.toggle('hidden');
 }
+
+
 
 /*
     This event handler is triggered when the user selects a genre
