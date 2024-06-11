@@ -3,10 +3,8 @@ import {generateMap} from "./mabpoxUtils.js";
 import { fetchYear} from "./dataAccess.js";
 import {removeMarkers, outputVenuesToMap, generateGenreList, generateYearList, getSelectedYear} from "./domUtils.js";
 import {
-    handleYearSelection,
     handleDecadeSelection,
     toggleGenreListVisibility,
-    toggleYearListVisibility,
     toggleVisibility
 } from "./eventHandlers.js";
 
