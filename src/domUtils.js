@@ -1,5 +1,5 @@
-import {handleGenreSelection, handleMarkerClick, handleYearHover, handleYearSelection} from "./eventHandlers.js";
-import {fetchGenreData, fetchYear} from "./dataAccess.js";
+import {handleGenreSelection, handleMarkerClick, handleYearSelection} from "./eventHandlers.js";
+import {fetchGenreData} from "./dataAccess.js";
 
 /*
     Removes markers from map
@@ -111,52 +111,9 @@ export const generateYearList = (decade, map) => {
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
         yearDiv.addEventListener('click', event => handleYearSelection(event, map));
-        yearDiv.addEventListener('mouseover', handleYearHover);
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);
-}
-
-export const getSelectedYear = refToYearsList => {
-    let selectedYear;
-    const yearList = refToYearsList.children;
-    for (const year of yearList){
-        if (year.classList.contains('selected')){
-            selectedYear = year.dataset.id;
-        }
-    }
-    return selectedYear;
-}
-
-export const getSelected = refToList =>{
-    let selected;
-    const list = refToList.children;
-    for (const listEl of list){
-        if (listEl.classList.contains('selected')){
-            selected = listEl.dataset.id;
-        }
-    }
-    return selected;
-}
-
-export const markYearAsSelected = (refToYearsList, refToClickedYearEl) => {
-    const yearList = refToYearsList.children;
-    for (const year of yearList){
-        if (year.classList.contains('selected')){
-            year.classList.remove('selected');
-        }
-    }
-    refToClickedYearEl.classList.add('selected');
-}
-
-export const markAsSelected = (refToList, refToClickedEl) => {
-    const list = refToList.children;
-    for (const el of list){
-        if (el.classList.contains('selected')){
-            el.classList.remove('selected');
-        }
-    }
-    refToClickedEl.classList.add('selected');
 }
 
 // This function outputs concert information to the page

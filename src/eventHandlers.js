@@ -3,7 +3,6 @@ import {
     generateConcertHTML,
     outputVenuesToMap,
     generateYearList,
-    markYearAsSelected, markAsSelected
 } from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
@@ -62,9 +61,7 @@ export const handleDecadeSelection = async (event, map) => {
 
     const selectedDecade = parseInt(event.target.localName === 'h3' ? event.target.innerText : event.target.dataset.id);
     generateYearList(selectedDecade, map);
-    const clickedDecadeEl = event.currentTarget;
-    const decadeList = event.currentTarget.parentElement;
-    markAsSelected(decadeList, clickedDecadeEl);
+
     const decadeFilter = event.currentTarget.parentElement.previousElementSibling;
     decadeFilter.querySelector("h3").innerText = selectedDecade.toString() + 's';
     decadeFilter.click();
@@ -72,7 +69,6 @@ export const handleDecadeSelection = async (event, map) => {
     const dataOnSelectedYear = await fetchYear(selectedDecade.toString());
     const venues = dataOnSelectedYear.venues;
     const yearsList = document.querySelector("#year-list");
-    markYearAsSelected(yearsList, yearsList.firstElementChild);
 
     let currentYearOutputEl = yearsList.previousElementSibling.firstElementChild;
     if (currentYearOutputEl.innerText.toLowerCase() !== 'select a year') currentYearOutputEl.innerText = selectedDecade;
@@ -101,8 +97,6 @@ export const handleYearSelection = async (event, map) => {
     // mark the clicked year as selected
     const yearEl = clickedH3? event.target.parentElement : event.target;
     const yearsList = yearEl.parentElement;
-    // console.log(yearsList)
-    markYearAsSelected(yearsList, yearEl);
 
     // change the text of the years filter to the selected year
     const yearsFilter = yearsList.previousElementSibling;
