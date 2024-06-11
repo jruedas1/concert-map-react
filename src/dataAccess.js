@@ -2,12 +2,10 @@
 * This file should contain all the code that interacts with data storage
 * */
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-
 // import { initializeApp } from 'firebase/app';
 import { FIREBASE_CONFIG } from './keys.js';
 // import { getFirestore, collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { getFirestore, collection, doc, getDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
-;
 
 initializeApp(FIREBASE_CONFIG);
 const db = getFirestore();

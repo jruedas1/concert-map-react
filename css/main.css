@@ -120,6 +120,10 @@ div#decades.filter {
     background: #F8F6F6;
 }
 
+.filter-option:hover {
+    background: #F7C100;
+}
+
 #top-genre-selector {
     border: none;
 }

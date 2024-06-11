@@ -1,4 +1,4 @@
-import {handleGenreSelection, handleMarkerClick, handleYearSelection} from "./eventHandlers.js";
+import {handleGenreSelection, handleMarkerClick, handleYearHover, handleYearSelection} from "./eventHandlers.js";
 import {fetchGenreData, fetchYear} from "./dataAccess.js";
 
 /*
@@ -111,6 +111,7 @@ export const generateYearList = (decade, map) => {
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
         yearDiv.addEventListener('click', event => handleYearSelection(event, map));
+        yearDiv.addEventListener('mouseover', handleYearHover);
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);
