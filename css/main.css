@@ -85,8 +85,11 @@ section#filters {
     display: flex;
     flex-flow: column nowrap;
 
-    border-right: 2px solid black;
+    border-right: 2px solid #076D83;
     background-color: #EDE8E4;
+
+    color: #076D83;
+
 }
 
 #filters h3 {
@@ -102,34 +105,53 @@ section#filters {
 }
 
 .filter, .filter-option {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #076D83;
 }
 
 div#decades.filter {
-    border-top: 1px solid black;
+    border-top: 2px solid #076D83;
 }
 /*
-    Make sure all the filter options indicate clickability
+    Make sure all the filter options have pointer cursors
+    to indicate they are clickable
 */
 .filter, .filter-option  {
     padding: 1rem;
     cursor: pointer;
 }
 
+/*
+    Filter options are choices that appear when
+    user clicks on a genre selector: decade, year, genre
+*/
 .filter-option {
     background: #F8F6F6;
 }
 
 .filter-option:hover {
-    background: #F7C100;
-}
-
-#top-genre-selector {
-    border: none;
+    background: #F96900;
 }
 
 /*
-    We don't want the decades uppercased (1970s not 1970S)
+    search-type-selector is the top selector that
+    switches between major search modes
+*/
+
+#search-type-selector {
+    border: none;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+}
+
+#search-type-selector h3 {
+    cursor: pointer;
+}
+
+#search-type-selector h3.selected {
+    border-bottom: 3px solid #4D8B31;
+}
+
+/*
+
 */
 #selected-decade {
     font-size: 1.8rem;
@@ -144,20 +166,20 @@ div#decades.filter {
     space-between
 */
 
-#top-genre-selector, #genres, #years, #decades {
+#search-type-selector, #genres, #years, #decades {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
-.selected {
-    background: #D9CFC5;
-}
-
 #map {
    flex: 1 1 75%;
 }
+
+/*
+    These are the map markers.
+ */
 
 .marker {
     background-image: url('../img/noun-musical-note-1014122.svg');
@@ -176,6 +198,9 @@ div#decades.filter {
     border-bottom: 1px solid black;
     padding: 0.5rem 0;
 }
+
+
+/*========== FOOTER ==========*/
 
 /*
     Footer has a logo area left and a contacts/links area right

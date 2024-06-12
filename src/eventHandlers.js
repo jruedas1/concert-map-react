@@ -110,31 +110,24 @@ export const handleYearSelection = async (event, map) => {
 /*
     This event handler is triggered when the user interacts
     with the genres filter. Clicking on the genres filter
-    toggles the visibility of the genres list
+    toggles the visibility of the genres list.
 
     In addition to toggling the list visibility,
     it toggles the arrow icon from up to down
  */
 export const toggleGenreListVisibility = event => {
-    const icon = document.querySelector("#genres").querySelector("img:first-of-type");
-    const upIconSrc = "./img/arrow-up.svg";
-    const downIconSrc = "./img/arrow-down.svg";
-    icon.src = icon.src.includes('down') ? upIconSrc : downIconSrc;
-
     const genreList = document.querySelector("#genre-list");
     genreList.classList.toggle('hidden');
 }
 
-export const toggleVisibility = (event, elementReference) => {
-    const icon = elementReference.previousElementSibling.querySelector("img:first-of-type");
-    const upIconSrc = "./img/arrow-up.svg";
-    const downIconSrc = "./img/arrow-down.svg";
-    icon.src = icon.src.includes('down') ? upIconSrc : downIconSrc;
+/*
+*  This handler toggles the visibility of
+*  the decade list and the year list
+* */
 
+export const toggleVisibility = (event, elementReference) => {
     elementReference.classList.toggle('hidden');
 }
-
-
 
 /*
     This event handler is triggered when the user selects a genre

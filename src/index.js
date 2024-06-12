@@ -48,12 +48,12 @@ genreFilter.addEventListener('click', toggleGenreListVisibility);
         4. Fetch the data for the selected year -- which should be 1970
         5. Output venues for selected year to the map
     */
-    removeMarkers();
+    // removeMarkers();
     // document.querySelector("#decade-selector").value = 1970;
-    generateYearList(1970, map);
-    const dataOnSelectedYear = await fetchYear('1970');
-    const venues = dataOnSelectedYear.venues;
-    outputVenuesToMap(map, venues);
+    // generateYearList(1970, map);
+    // const dataOnSelectedYear = await fetchYear('1970');
+    // const venues = dataOnSelectedYear.venues;
+    // outputVenuesToMap(map, venues);
     await generateGenreList(map);
 })();
 
