@@ -1,10 +1,12 @@
 import {
     emptyContent,
     generateConcertHTML,
+    generateOneVenuesConcerts,
+    generateVenuesList,
+    generateYearList,
     outputVenuesToMap,
-    generateYearList, generateVenuesList,
 } from "./domUtils.js";
-import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
+import {fetchYear, getVenuesForYearAndGenre} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -82,7 +84,15 @@ export const handleYearSelection = async (event, map) => {
     // Output venues to locations on map
     outputVenuesToMap(map, venues);
 
-    document.querySelector("#venues").innerHTML = generateVenuesList(venues);
+    // Output the venue names to the page
+    // First, get reference to the venues div
+    const venuesOutputDiv = document.querySelector("#venues");
+    // Generate the list of venue elements
+    const venueDOM = generateVenuesList(venues);
+    // append the venue elements to the venues div
+    for (const venue of venueDOM){
+        venuesOutputDiv.appendChild(venue);
+    }
 
     // Get references to clicked year div and to years list
     const yearEl = clickedH3? event.target.parentElement : event.target;
@@ -98,6 +108,23 @@ export const handleYearSelection = async (event, map) => {
 
     // toggle the year list closed
     yearsFilter.click();
+}
+
+export const handleVenueSelection = (event, venueId, venuesArray) => {
+    // get the venue out of the venues array
+    const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
+    // get a reference to the venues div
+    const venuesDiv = document.querySelector("#venues");
+    // empty the venues list
+    venuesDiv.innerHTML = '';
+    // display the name of the selected venue
+    venuesDiv.innerHTML = `
+        <div class="venue">
+            <h3>${venue.name}</h3>
+        </div>
+    `;
+    // output the venue's concerts to the page
+    document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
 }
 
 /*
@@ -146,10 +173,3 @@ export const handleGenreSelection = async (event, map) => {
     // this hides the genre selector if it's showing
     document.querySelector("#genres").click();
 }
-
-
-// I need to use bubbling to bypass the whole "did they click on the h3 or not"
-// issue -- attach the handlers to the div and set it to listen to any click
-
-// Next up: arrange the "selected year" flow when changing around
-// change the year shown when changing decade

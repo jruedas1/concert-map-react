@@ -176,6 +176,27 @@ div#decades.filter {
    display: none;
 }
 
+/*
+    dynamically generated venue and concert data
+    we restrict its height to the height of the
+    filters section, its parent
+    overflow-y: auto creates a scroll bar for any
+    content that overflows the max height
+*/
+#concerts, #venues {
+    max-height: 100%;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.concert-info {
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0;
+}
+
+/*========== MAP ===========*/
+
+
 #map {
    flex: 1 1 75%;
 }
@@ -192,23 +213,6 @@ div#decades.filter {
     cursor: pointer;
 }
 
-
-/*
-    dynamically generated venue and concert data
-    we restrict its height to the height of the
-    filters section, its parent
-    overflow-y: auto creates a scroll bar for any
-    content that overflows the max height
-*/
-#concerts, #venues {
-    max-height: 100%;
-    overflow-y: auto;
-}
-
-.concert-info {
-    border-bottom: 1px solid black;
-    padding: 0.5rem 0;
-}
 
 
 /*========== FOOTER ==========*/

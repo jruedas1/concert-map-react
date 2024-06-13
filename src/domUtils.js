@@ -1,4 +1,4 @@
-import {handleGenreSelection, handleMarkerClick, handleYearSelection} from "./eventHandlers.js";
+import {handleGenreSelection, handleMarkerClick, handleVenueSelection, handleYearSelection} from "./eventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 
 /*
@@ -134,12 +134,40 @@ export const generateConcertHTML = venuesArray => {
     return concertsOutput;
 }
 
-export const generateVenuesList = venuesArray => {
-    let venuesOutput = '';
-    venuesArray.forEach(venue => venuesOutput += `
-        <div class="venue">
-            <h3>${venue.name}</h3>
+export const generateOneVenuesConcerts = venue => {
+    let concertOutput = '';
+    venue.concerts.forEach(concert => concertOutput+=`
+        <div class='concert-info'>
+             <h3>${concert.Artist_Formula}</h3>
+             <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
         </div>
     `);
+    return concertOutput;
+}
+
+/*
+* The venues list that gets output to the page
+* has a click event handler attached to each venue div
+* to manage this, instead of generating text html
+* we use document.createElement and return a nodeList
+* */
+export const generateVenuesList = venuesArray => {
+    const venuesOutput = [];
+    venuesArray.forEach(venue => {
+        // create the venue div
+        const venueDiv = document.createElement('div');
+        // and the 'venue' class and the data-id attribute set to the venue id
+        venueDiv.classList.add('venue');
+        venueDiv.dataset.id = venue.id;
+        // create the h3 element with the name of the venue
+        const venueHeading = document.createElement('h3');
+        venueHeading.innerText = venue.name;
+        // put the heading in the venue div
+        venueDiv.appendChild(venueHeading);
+        // add the click handler to the venue div
+        venueDiv.addEventListener('click', event => handleVenueSelection(event, venue.id, venuesArray));
+        // add the venue div to the list
+        venuesOutput.push(venueDiv);
+    });
     return venuesOutput;
 }
