@@ -94,6 +94,10 @@ export const handleYearSelection = async (event, map) => {
         venuesOutputDiv.appendChild(venue);
     }
 
+    if (!venuesOutputDiv.classList.contains('overflow-scroll')){
+        venuesOutputDiv.classList.add('overflow-scroll');
+    }
+
     // Get references to clicked year div and to years list
     const yearEl = clickedH3? event.target.parentElement : event.target;
     const yearsList = yearEl.parentElement;
@@ -113,16 +117,20 @@ export const handleYearSelection = async (event, map) => {
 export const handleVenueSelection = (event, venueId, venuesArray) => {
     // get the venue out of the venues array
     const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
+    console.log(venue)
+    console.log(venue.name)
     // get a reference to the venues div
     const venuesDiv = document.querySelector("#venues");
     // empty the venues list
     venuesDiv.innerHTML = '';
     // display the name of the selected venue
-    venuesDiv.innerHTML = `
-        <div class="venue">
-            <h3>${venue.name}</h3>
-        </div>
-    `;
+    const venueInfo = document.createElement('div');
+    venueInfo.classList.add('venue');
+    const venueName = document.createElement('h3');
+    venueName.innerText = venue.name;
+    venueInfo.appendChild(venueName);
+    venuesDiv.appendChild(venueInfo);
+    venuesDiv.classList.remove('overflow-scroll');
     // output the venue's concerts to the page
     document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
 }

@@ -92,10 +92,8 @@ section#filters {
 
     max-height: 100dvh;
 
-    border-right: 2px solid #076D83;
+    border-right: 2px solid black;
     background-color: #EDE8E4;
-
-    color: #076D83;
 
 }
 
@@ -114,12 +112,12 @@ section#filters {
     align-items: center;
 }
 
-.filter, .filter-option, #venues div {
-    border-bottom: 2px solid #076D83;
+.filter, .filter-option, #venues div, .concert-info {
+    border-bottom: 2px solid black;
 }
 
 div#decades.filter {
-    border-top: 2px solid #076D83;
+    border-top: 2px solid black;
 }
 /*
     Make sure all the filter options have pointer cursors
@@ -157,7 +155,7 @@ div#decades.filter {
 }
 
 #search-type-selector h3.selected {
-    border-bottom: 3px solid #4D8B31;
+    border-bottom: 3px solid #D43B1A;
 }
 
 .edit {
@@ -185,13 +183,19 @@ div#decades.filter {
 */
 #concerts, #venues {
     max-height: 100%;
-    overflow-y: auto;
     text-align: left;
 }
 
+.overflow-scroll {
+    overflow-y: scroll;
+}
+
 .concert-info {
-    border-bottom: 1px solid black;
-    padding: 0.5rem 0;
+    padding: 1rem;
+}
+
+.concert-info h3 {
+    margin-bottom: 1rem;
 }
 
 /*========== MAP ===========*/
