@@ -75,6 +75,11 @@ main {
 /*
     filters column is a flex parent
     flex direction is column
+
+    max-height:100dvh is set in order to
+    prevent the filters section from growing
+    in height when dynamically generated
+    venues or concert data is created
 */
 
 section#filters {
@@ -84,6 +89,8 @@ section#filters {
 
     display: flex;
     flex-flow: column nowrap;
+
+    max-height: 100dvh;
 
     border-right: 2px solid #076D83;
     background-color: #EDE8E4;
@@ -107,7 +114,7 @@ section#filters {
     align-items: center;
 }
 
-.filter, .filter-option {
+.filter, .filter-option, #venues div {
     border-bottom: 2px solid #076D83;
 }
 
@@ -118,7 +125,7 @@ div#decades.filter {
     Make sure all the filter options have pointer cursors
     to indicate they are clickable
 */
-.filter, .filter-option  {
+.filter, .filter-option, #venues div  {
     padding: 1rem;
     cursor: pointer;
 }
@@ -131,7 +138,7 @@ div#decades.filter {
     background: #F8F6F6;
 }
 
-.filter-option:hover {
+.filter-option:hover, #venues div:hover {
     background: #F96900;
 }
 
@@ -185,9 +192,17 @@ div#decades.filter {
     cursor: pointer;
 }
 
-#concerts {
-    text-align: center;
-    overflow: scroll;
+
+/*
+    dynamically generated venue and concert data
+    we restrict its height to the height of the
+    filters section, its parent
+    overflow-y: auto creates a scroll bar for any
+    content that overflows the max height
+*/
+#concerts, #venues {
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 .concert-info {

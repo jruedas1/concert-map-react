@@ -116,7 +116,8 @@ export const generateYearList = (decade, map) => {
     yearList.replaceChildren(...newYears);
 }
 
-// This function outputs concert information to the page
+// This function generates concert information
+// for output to the page
 // This is where you would edit the html for the concert data
 export const generateConcertHTML = venuesArray => {
     let concertsOutput = '';
@@ -131,4 +132,14 @@ export const generateConcertHTML = venuesArray => {
         `);
     });
     return concertsOutput;
+}
+
+export const generateVenuesList = venuesArray => {
+    let venuesOutput = '';
+    venuesArray.forEach(venue => venuesOutput += `
+        <div class="venue">
+            <h3>${venue.name}</h3>
+        </div>
+    `);
+    return venuesOutput;
 }

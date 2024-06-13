@@ -2,7 +2,7 @@ import {
     emptyContent,
     generateConcertHTML,
     outputVenuesToMap,
-    generateYearList,
+    generateYearList, generateVenuesList,
 } from "./domUtils.js";
 import {fetchYear, getGenreId, getVenuesForYearAndGenre} from "./dataAccess.js";
 
@@ -81,6 +81,8 @@ export const handleYearSelection = async (event, map) => {
     const venues = dataOnSelectedYear.venues;
     // Output venues to locations on map
     outputVenuesToMap(map, venues);
+
+    document.querySelector("#venues").innerHTML = generateVenuesList(venues);
 
     // Get references to clicked year div and to years list
     const yearEl = clickedH3? event.target.parentElement : event.target;
