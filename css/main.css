@@ -96,12 +96,15 @@ section#filters {
     font-size: 18px;
 }
 
-.hidden {
-   display: none;
-}
-
 .genre-list-visible {
    display: block;
+}
+
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .filter, .filter-option {
@@ -150,6 +153,9 @@ div#decades.filter {
     border-bottom: 3px solid #4D8B31;
 }
 
+.edit {
+    text-decoration: underline;
+}
 /*
 
 */
@@ -159,18 +165,8 @@ div#decades.filter {
     text-transform: none;
 }
 
-/*
-    To get the arrow indicator on the right
-    and the filter name on the left, use
-    flex-flow row with justify-content
-    space-between
-*/
-
-#search-type-selector, #genres, #years, #decades {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+.hidden {
+   display: none;
 }
 
 #map {

@@ -40,40 +40,28 @@ export const handleMarkerClick =  (event, venuesArray) => {
 // handler to respond to user interaction with decade selector
 export const handleDecadeSelection = async (event, map) => {
     /*
-    * When the user selects a new decade, we are going to
-    * modify the year selector to show a new decade
-    * 1. get a reference to the year selector
-    * 2. Get a reference to the location where the selected decade
-    *    is displayed to the user
-    * 3. Obtain the decade selected by the user
-    * 4. Display the new decade selection to the user
-    * 5. Create an empty array to contain selected decade's
-    *     dropdown options
-    * 6. Generate option elements for the decade and add to array
-    * 7. Replace the old dropdown options with the new ones
-    * 8. Get the new selected year (should be the first year of
-    *    the selected decade)
-    * 9. Fetch the concert data for that year
-    * 10. Get the array of venues for that year
-    * 11. Remove markers and popups from map and concert data from page
-    * 12. Output data for selected year to map
+    * Get the decade selected by the user and generate the
+    * list of years corresponding to that decade
     * */
-
-    const selectedDecade = parseInt(event.target.localName === 'h3' ? event.target.innerText : event.target.dataset.id);
+    const selectedDecade = parseInt(event.target.dataset.id);
     generateYearList(selectedDecade, map);
 
+    /*
+    * Change the text from "select a decade"
+    * to the selected decade
+    * */
     const decadeFilter = event.currentTarget.parentElement.previousElementSibling;
     decadeFilter.querySelector("h3").innerText = selectedDecade.toString() + 's';
+
+    /*
+    * Show the edit button
+    * Show the years filter
+    * */
+    decadeFilter.querySelector(".edit").classList.remove('hidden');
+    decadeFilter.nextElementSibling.nextElementSibling.classList.remove('hidden');
+
+    /* Close the decade list by triggering the toggleVisibility event*/
     decadeFilter.click();
-
-    const dataOnSelectedYear = await fetchYear(selectedDecade.toString());
-    const venues = dataOnSelectedYear.venues;
-    const yearsList = document.querySelector("#year-list");
-
-    let currentYearOutputEl = yearsList.previousElementSibling.firstElementChild;
-    if (currentYearOutputEl.innerText.toLowerCase() !== 'select a year') currentYearOutputEl.innerText = selectedDecade;
-    emptyContent();
-    outputVenuesToMap(map, venues);
 }
 
 // Handler for user interaction with year selection
@@ -94,7 +82,7 @@ export const handleYearSelection = async (event, map) => {
     // Output venues to locations on map
     outputVenuesToMap(map, venues);
 
-    // mark the clicked year as selected
+    // Get references to clicked year div and to years list
     const yearEl = clickedH3? event.target.parentElement : event.target;
     const yearsList = yearEl.parentElement;
 
@@ -102,6 +90,9 @@ export const handleYearSelection = async (event, map) => {
     const yearsFilter = yearsList.previousElementSibling;
     // console.log(yearsFilter)
     yearsFilter.querySelector("h3").innerText = selectedYear;
+
+    // show the edit button
+    yearsFilter.querySelector(".edit").classList.remove('hidden');
 
     // toggle the year list closed
     yearsFilter.click();
