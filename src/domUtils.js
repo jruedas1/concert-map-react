@@ -23,14 +23,39 @@ export const removePopups = () => {
     popups.forEach(popup => popup.remove());
 }
 
+export const emptyConcertInfo = () => {
+    document.querySelector("#concerts").replaceChildren();
+}
+
+export const emptyVenueInfo = () => {
+    document.querySelector("#venues").replaceChildren();
+}
+
 /*
 * Utility function to combine removing markers,
-* popups, and concert data from page
+* popups, venue data, and concert data from page
 * */
 export const emptyContent = () => {
     removeMarkers();
     removePopups();
-    document.querySelector("#concerts").replaceChildren();
+    emptyConcertInfo();
+    emptyVenueInfo();
+}
+
+/*
+* When the explore search is selected,
+* the simple search filters have to be hidden
+* */
+export const hideSimpleSearchFilters = () => {
+    const simpleSearchFilters = [
+        document.querySelector("#decades"),
+        document.querySelector("#decade-list"),
+        document.querySelector("#years"),
+        document.querySelector("#year-list")
+    ];
+    simpleSearchFilters.forEach(filter => {
+       if (!filter.classList.contains('hidden')) filter.classList.add('hidden');
+    });
 }
 
 /*

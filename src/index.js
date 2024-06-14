@@ -3,7 +3,7 @@ import {generateMap} from "./mabpoxUtils.js";
 import { fetchYear} from "./dataAccess.js";
 import {removeMarkers, outputVenuesToMap, generateGenreList, generateYearList} from "./domUtils.js";
 import {
-    handleDecadeSelection,
+    handleDecadeSelection, handleSearchTypeSelection,
     toggleGenreListVisibility,
     toggleVisibility
 } from "./eventHandlers.js";
@@ -17,6 +17,11 @@ const mapConfiguration = {
     }
 
 export const map = await generateMap(mapConfiguration);
+
+// get references to the search and explore selectors
+const searchTypeSelectors = document.querySelectorAll("#search-type-selector h3");
+searchTypeSelectors.forEach(selector => selector.addEventListener('click', handleSearchTypeSelection));
+
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors

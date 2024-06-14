@@ -3,7 +3,7 @@ import {
     generateConcertHTML,
     generateOneVenuesConcerts,
     generateVenuesList,
-    generateYearList,
+    generateYearList, hideSimpleSearchFilters,
     outputVenuesToMap,
 } from "./domUtils.js";
 import {fetchYear, getVenuesForYearAndGenre} from "./dataAccess.js";
@@ -66,6 +66,7 @@ export const handleDecadeSelection = async (event, map) => {
     decadeFilter.click();
 }
 
+
 // Handler for user interaction with year selection
 export const handleYearSelection = async (event, map) => {
     /*  whenever a year is selected, remove
@@ -93,7 +94,9 @@ export const handleYearSelection = async (event, map) => {
     for (const venue of venueDOM){
         venuesOutputDiv.appendChild(venue);
     }
-
+    // The overflow-scroll property on the venues div
+    // is only applied when the full venue list is displayed
+    // and the concerts list is not
     if (!venuesOutputDiv.classList.contains('overflow-scroll')){
         venuesOutputDiv.classList.add('overflow-scroll');
     }
@@ -117,8 +120,6 @@ export const handleYearSelection = async (event, map) => {
 export const handleVenueSelection = (event, venueId, venuesArray) => {
     // get the venue out of the venues array
     const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
-    console.log(venue)
-    console.log(venue.name)
     // get a reference to the venues div
     const venuesDiv = document.querySelector("#venues");
     // empty the venues list
@@ -130,9 +131,42 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     venueName.innerText = venue.name;
     venueInfo.appendChild(venueName);
     venuesDiv.appendChild(venueInfo);
+    // This removes the overflow-scroll property from the venues div
+    // For reasons not entirely clear, that property interferes
+    // with visibility of a single venue div when the concerts div
+    // is also displayed
     venuesDiv.classList.remove('overflow-scroll');
     // output the venue's concerts to the page
     document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
+}
+
+/*
+*   On search type selection, modify the "selected" marker
+*   and trigger the appropriate search type selection
+* */
+export const handleSearchTypeSelection = event => {
+    if (event.target.innerText.toLowerCase() === 'search'){
+        if (!event.target.classList.contains('selected')){
+            event.target.classList.add('selected');
+            event.target.nextElementSibling.classList.remove('selected');
+            handleSimpleSearchSelection(event);
+        }
+    } else {
+        if (!event.target.classList.contains('selected')){
+             event.target.classList.add('selected');
+             event.target.previousElementSibling.classList.remove('selected');
+             handleExploreSelection(event);
+        }
+    }
+}
+
+export const handleSimpleSearchSelection = event => {
+    document.querySelector("#decades").classList.remove('hidden');
+}
+
+export const handleExploreSelection = event => {
+    emptyContent();
+    hideSimpleSearchFilters();
 }
 
 /*

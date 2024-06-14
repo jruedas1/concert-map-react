@@ -148,6 +148,7 @@ div#decades.filter {
 #search-type-selector {
     border: none;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
+    cursor: default;
 }
 
 #search-type-selector h3 {
@@ -158,6 +159,10 @@ div#decades.filter {
     border-bottom: 3px solid #D43B1A;
 }
 
+/*
+    The 'edit' text that appears when
+    a decade and/or year are selected
+*/
 .edit {
     text-decoration: underline;
 }
@@ -170,6 +175,12 @@ div#decades.filter {
     text-transform: none;
 }
 
+/*
+    This is applied to the decade and year
+    lists until the "select a decade" and
+    "select a year" filters are clicked
+    Then it is reapplied after a selection is made
+*/
 .hidden {
    display: none;
 }
