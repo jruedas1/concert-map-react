@@ -17,6 +17,8 @@ export const FIREBASE_CONFIG =  {
 
 Without the appropriate firebase and mapbox credentials, the map will not load and the data will not be retrieved.
 
-To deploy a project to a Firebase project account, run `firebase init` and then `firebase deploy --only hosting`.
+The following files need to be uploaded to a Firestore db for the project to work: `years_venues_events.json` (as the `/years` collection) and `genres_years_venues_concerts.json` (as the `/genres` collection). Currently, a tool called `Firefoo` is being used to upload and convert data.
+
+To deploy a project to a Firebase project account, first install the firebase node dependency. Since this is included in the `package.json` file, running `npm install` should install firebase tools. Then run `firebase init` and then `firebase deploy --only hosting`.
 
 The Firebase deployment configuration file is `firebase.json`. This determines all the files that do not need to be uploaded for deployment. Note that the JSON files and python scripts should not be deployed as they are not necessary. The node configuration files, `package.json` and `package-lock.json`, are also not needed for Firebase deployment. The `gitignore` file is unnecessary, as are any IDE configuration files such as `.iml` files.
