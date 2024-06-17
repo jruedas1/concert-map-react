@@ -163,7 +163,8 @@ export const handleSearchTypeSelection = event => {
 }
 
 export const handleSimpleSearchSelection = event => {
-    document.querySelector("#decades").classList.remove('hidden');
+    toggleVisibility(event, document.querySelector("#decades"));
+    toggleVisibility(event, document.querySelector("#range-selector"));
 }
 
 export const handleExploreSelection = event => {
