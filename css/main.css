@@ -116,7 +116,7 @@ section#filters {
     border-bottom: 2px solid black;
 }
 
-div#decades.filter {
+div#decades.filter, #range-selector {
     border-top: 2px solid black;
 }
 /*

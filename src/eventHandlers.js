@@ -152,6 +152,8 @@ export const handleSearchTypeSelection = event => {
             handleSimpleSearchSelection(event);
         }
     } else {
+        /* If it's not the search being selected, it's explore
+        * */
         if (!event.target.classList.contains('selected')){
              event.target.classList.add('selected');
              event.target.previousElementSibling.classList.remove('selected');
@@ -167,15 +169,13 @@ export const handleSimpleSearchSelection = event => {
 export const handleExploreSelection = event => {
     emptyContent();
     hideSimpleSearchFilters();
+    toggleVisibility(event, document.querySelector("#range-selector"));
 }
 
 /*
     This event handler is triggered when the user interacts
     with the genres filter. Clicking on the genres filter
     toggles the visibility of the genres list.
-
-    In addition to toggling the list visibility,
-    it toggles the arrow icon from up to down
  */
 export const toggleGenreListVisibility = event => {
     const genreList = document.querySelector("#genre-list");
