@@ -1,12 +1,22 @@
 import {
     emptyContent,
-    generateConcertHTML,
+    generateOneConcertHTML,
     generateOneVenuesConcerts,
     generateVenuesList,
-    generateYearList, hideSimpleSearchFilters,
-    outputVenuesToMap,
+    generateYearList, hideExploreSearchFilters, hideSimpleSearchFilters,
+    outputVenuesToMap, outputVenueToMap,
 } from "./domUtils.js";
 import {fetchYear, getVenuesForYearAndGenre} from "./dataAccess.js";
+
+/*
+* This is a global variable that controls the genre-concert animation
+* If it is set to true, the animation loop does not execute
+* Selecting simple search will set this to true,
+* which will stop the animation effects.
+* Selecting explore search will set it back to false,
+* which will permit the animation to run.
+* */
+let stopAnimation = false;
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -162,13 +172,28 @@ export const handleSearchTypeSelection = event => {
     }
 }
 
+/*
+* Behavior specific to the simple search selection.
+* We have to stop any animation that is happening on the map
+* We clear the map markers and any venue or concert info
+* We hide the explore filters
+* And show the decade selection filter
+* */
 export const handleSimpleSearchSelection = event => {
+    stopAnimation = true;
+    emptyContent();
+    hideExploreSearchFilters()
     toggleVisibility(event, document.querySelector("#decades"));
-    toggleVisibility(event, document.querySelector("#year-range"));
-    toggleVisibility(event, document.querySelector("#year-slider-container"));
 }
 
+/*
+* Behavior specific to the explore search selection
+* We allow animations to run again
+* We hide the simple search filters
+* We show the year range filter and the range slider
+* */
 export const handleExploreSelection = event => {
+    stopAnimation = false;
     emptyContent();
     hideSimpleSearchFilters();
     toggleVisibility(event, document.querySelector("#year-range"));
@@ -176,24 +201,19 @@ export const handleExploreSelection = event => {
 }
 
 /*
-    This event handler is triggered when the user interacts
-    with the genres filter. Clicking on the genres filter
-    toggles the visibility of the genres list.
- */
-export const toggleGenreListVisibility = event => {
-    const genreList = document.querySelector("#genre-list");
-    genreList.classList.toggle('hidden');
-}
-
-/*
 *  This handler toggles the visibility of
-*  the decade list and the year list
+*  the decade, year, and genre lists
 * */
-
 export const toggleVisibility = (event, elementReference) => {
     elementReference.classList.toggle('hidden');
 }
 
+/*
+* The year-range filter prompt "Select A 5-Year Range"
+* This handler is active only after a user has selected a 5-year range
+* and thus revealed the "Edit" prompt.
+* Once this is done, clicking this filter area will toggle the visibility of the year range slider.
+* */
 export const handleEdit5YearRange = event => {
     if (!document.querySelector("#year-range").firstElementChild.innerText.toLowerCase().startsWith('s')) {
          const yearRangeSlider = document.querySelector("#year-slider-container");
@@ -201,12 +221,21 @@ export const handleEdit5YearRange = event => {
     }
 }
 
+/*
+* Handles interaction with the year range slider
+* --Gets a reference to the location where the selected year range is output to the user
+* --Obtains a reference to the value selected by the user
+* --Outputs selected year range to user in appropriate place
+* */
 export const handleYearRangeSelection = event => {
     const resultDisplayDiv = document.querySelector("#range-selection-state");
     const baseYear = event.target.value;
     resultDisplayDiv.innerHTML = `<p>${baseYear} - ${parseInt(baseYear) + 4}`;
 }
 
+/*
+*
+* */
 export const handleConfirm5YearRangeSelection = event => {
     const yearRangeSlider = document.querySelector("#year-slider");
     const selectedBaseYear = yearRangeSlider.value;
@@ -217,12 +246,30 @@ export const handleConfirm5YearRangeSelection = event => {
     toggleVisibility(event, document.querySelector("#genres"));
 }
 
-const timer = ms => new Promise(res=>setTimeout(res, ms));
+// This is a delay function.
+// It accepts a number of milliseconds
+// It will pause program execution that number of milliseconds
+const delay = ms => new Promise(res=>setTimeout(res, ms));
 
-async function outputVenuesOnTimer(venuesArray) {
-    for (let i = 0; i < venuesArray.length; i++){
-        console.log(venuesArray[i].name);
-        await timer(1000);
+/*
+* Output concert info to sidebar and venue info to map on timer
+* This function takes a venues array and a map reference
+* It outputs each venue it encounters to the map
+* And each concert to the sidebar
+* It uses the delay function to pause execution before each output
+* */
+async function outputConcertsOnTimer(venuesArray, map) {
+    const concertOutputDiv = document.querySelector("#concerts");
+    for (let i = 0; i < venuesArray.length && !stopAnimation; i++){
+
+        outputVenueToMap(map, venuesArray[i]);
+        for (let i = 0; i < venuesArray[i].concerts.length && !stopAnimation; i++){
+            const concert = venuesArray[i].concerts[i];
+            const concertDiv = generateOneConcertHTML(concert);
+            concertOutputDiv.prepend(concertDiv);
+            await delay(1000);
+        }
+
     }
 }
 
@@ -240,17 +287,12 @@ export const handleGenreSelection = async (event, map) => {
 
     for (let i = selectedYear; i < selectedYear+5; i++){
          const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, i);
-         await outputVenuesOnTimer(genreVenuesForSelectedYear);
+         await outputConcertsOnTimer(genreVenuesForSelectedYear, map);
 
     }
-
-    // output venue locations to map
-    // outputVenuesToMap(map, genreVenuesForSelectedYear);
-    // output concert info to page
-    // document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     // replace current genre heading with name of selected genre
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
     // trigger click event on genres div
     // this hides the genre selector if it's showing
-    document.querySelector("#genres").click();
+    if (!stopAnimation) document.querySelector("#genres").click();
 }

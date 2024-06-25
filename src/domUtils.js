@@ -59,6 +59,22 @@ export const hideSimpleSearchFilters = () => {
 }
 
 /*
+* When the simple search is selected,
+* the explore search filters have to be hidden
+* */
+export const hideExploreSearchFilters = () => {
+    const exploreSearchFilters = [
+        document.querySelector("#year-range"),
+        document.querySelector("#year-slider-container"),
+        document.querySelector("#genres"),
+        document.querySelector("#genre-list")
+    ];
+    exploreSearchFilters.forEach(filter =>{
+       if (!filter.classList.contains('hidden')) filter.classList.add('hidden');
+    });
+}
+
+/*
 * Function to output venue data to map.
 * This function takes an array of venue objects
 * 1. Loop over the array of venue objects
@@ -94,6 +110,20 @@ export const outputVenuesToMap = (map, venuesArray) => {
     });
     const markers = document.querySelectorAll('.marker');
     markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
+}
+
+export const outputVenueToMap = (map, venue) => {
+        if (venue.longitude && venue.latitude){
+            const el = document.createElement('div');
+            el.className = 'marker';
+            el.setAttribute('data-id', venue.id);
+            const venueMarker = new mapboxgl.Marker(el);
+            venueMarker.setLngLat([venue.longitude, venue.latitude]);
+            venueMarker.addTo(map);
+            const popup = new mapboxgl.Popup()
+                .setHTML('<p>'+ venue.name + '</p>');
+            venueMarker.setPopup(popup);
+        }
 }
 
 /*
@@ -168,6 +198,21 @@ export const generateOneVenuesConcerts = venue => {
         </div>
     `);
     return concertOutput;
+}
+
+export const generateOneConcertHTML = concert => {
+    const concertDiv = document.createElement('div');
+    concertDiv.classList.add('concert-info');
+    const artistHeading = document.createElement('h3');
+    artistHeading.innerText = concert.Artist_Formula;
+    const venueOutput = document.createElement('p');
+    venueOutput.innerText = concert.Venue;
+    const dateOutput = document.createElement('p');
+    dateOutput.innerText = `${concert.Month} ${concert.Day} ${concert.Year}`;
+    concertDiv.appendChild(artistHeading);
+    concertDiv.appendChild(venueOutput);
+    concertDiv.appendChild(dateOutput);
+    return concertDiv;
 }
 
 /*

@@ -1,10 +1,8 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
-import { fetchYear} from "./dataAccess.js";
-import {removeMarkers, outputVenuesToMap, generateGenreList, generateYearList} from "./domUtils.js";
+import {generateGenreList} from "./domUtils.js";
 import {
-    handleDecadeSelection, handleSearchTypeSelection, handleYearSelection,
-    toggleGenreListVisibility,
+    handleDecadeSelection, handleSearchTypeSelection,
     toggleVisibility,
     handleYearRangeSelection, handleConfirm5YearRangeSelection, handleEdit5YearRange
 } from "./eventHandlers.js";
@@ -17,9 +15,17 @@ const mapConfiguration = {
         zoom: 11
     }
 
+/* Here we generate the map and define a reference to the map.
+*  The reference to the map is used in the outputVenuesToMap function.
+*  The outputVenuesToMap function is triggered by other event handlers.
+*  Any event handler that triggers interaction with the map
+* requires a reference to the map.
+* */
 export const map = await generateMap(mapConfiguration);
 
-// get references to the search and explore selectors
+/* get references to the top-level "search" and "explore" selectors
+*  and add handlers for selecting them
+*  */
 const searchTypeSelectors = document.querySelectorAll("#search-type-selector h3");
 searchTypeSelectors.forEach(selector => selector.addEventListener('click', handleSearchTypeSelection));
 
@@ -33,17 +39,30 @@ for (const decade of decadeList.children){
     decade.addEventListener('click', event => handleDecadeSelection(event, map));
 }
 
+// toggle visibility of year list when the year filter is clicked
 const yearFilter = document.querySelector("#years");
 const yearList = document.querySelector("#year-list");
 yearFilter.addEventListener('click', event => toggleVisibility(event, yearList));
 
-
+/*
+* This is the "Select a 5-year range"
+* filter. This handler is active only after the user
+* has selected and confirmed a 5-year range.
+* At that point the "Edit" prompt appears,
+* and clicking the filter shows and hides the year-range selector.
+* */
 const yearRangeFilter = document.querySelector("#year-range");
 yearRangeFilter.addEventListener('click', handleEdit5YearRange);
 
+/*
+* This handles user interaction with the actual range slider itself
+* */
 const yearRangeSelector = document.querySelector("#year-slider");
 yearRangeSelector.addEventListener('change', handleYearRangeSelection);
 
+/* This is the "Next" button that a user clicks after selecting a year range
+*  in the "Explore" tab
+*  */
 const confirmRangeSelectionButton = document.querySelector("#confirm-range-selection");
 confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSelection);
 
@@ -51,7 +70,8 @@ confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSel
 // get reference to genre filter
 // add event handler to genre selector
 const genreFilter = document.querySelector("#genres");
-genreFilter.addEventListener('click', toggleGenreListVisibility);
+const genreList = document.querySelector("#genre-list");
+genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
 
 
 
