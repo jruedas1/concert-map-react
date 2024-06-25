@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+    /* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.slider-container {
+    position: relative;
+    height: 300px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+    margin-left: -140px; /* Adjust to center the slider properly */
+}
+
+/* Chrome and Safari */
+.slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Firefox */
+.slider::-moz-range-track {
+    width: 8px;
+    height: 100%;
+    background: #ddd;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+.slider-thumb {
+    position: absolute;
+    left: 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.notches {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.notch {
+    width: 10px;
+    height: 2px;
+    background-color: #333;
+}
+  </style>
+</head>
+<body>
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="50" class="slider" id="verticalSlider">
+        <div class="slider-thumb" id="sliderThumb">50</div>
+        <div class="notches" id="sliderNotches"></div>
+    </div>
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('verticalSlider');
+    const thumb = document.getElementById('sliderThumb');
+    const notchesContainer = document.getElementById('sliderNotches');
+
+    // Function to update the thumb position and text
+    const updateThumb = () => {
+        const value = slider.value;
+        thumb.textContent = value;
+        thumb.style.top = `calc(${100 - value}% - 10px)`; // Adjusting thumb position
+    };
+
+    // Create notches
+    const createNotches = () => {
+        const numNotches = 10; // Number of notches
+        for (let i = 0; i <= numNotches; i++) {
+            const notch = document.createElement('div');
+            notch.classList.add('notch');
+            notchesContainer.appendChild(notch);
+        }
+    };
+
+    // Initial setup
+    updateThumb();
+    createNotches();
+
+    // Event listener for slider input
+    slider.addEventListener('input', updateThumb);
+});
+
+    </script>
+</body>
+</html>

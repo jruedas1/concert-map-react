@@ -52,17 +52,19 @@ export const fetchGenre = async (genreId) => {
 
 // genreId and selectedYear must be integers
 export const getVenuesForYearAndGenre = async (genreId, selectedYear) => {
+    console.log('getVenuesForYearAndGenre triggered');
     const allDataForGenre = await fetchGenre(genreId);
-    console.log(allDataForGenre);
+    // console.log(allDataForGenre);
     let venuesForSelectedYearAndGenre;
     for (const year of allDataForGenre['years']){
-        console.log('starting loop')
-        console.log(year);
+        // console.log('starting loop');
+        // console.log(year);
+        // console.log(selectedYear, typeof(selectedYear), year['id'], typeof year['id'])
         if (year['id'] === selectedYear){
             venuesForSelectedYearAndGenre = year['venues'];
         }
     }
-    console.log(venuesForSelectedYearAndGenre)
+    // console.log(venuesForSelectedYearAndGenre)
     return venuesForSelectedYearAndGenre;
 }
 

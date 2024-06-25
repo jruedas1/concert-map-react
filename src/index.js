@@ -3,9 +3,10 @@ import {generateMap} from "./mabpoxUtils.js";
 import { fetchYear} from "./dataAccess.js";
 import {removeMarkers, outputVenuesToMap, generateGenreList, generateYearList} from "./domUtils.js";
 import {
-    handleDecadeSelection, handleSearchTypeSelection,
+    handleDecadeSelection, handleSearchTypeSelection, handleYearSelection,
     toggleGenreListVisibility,
-    toggleVisibility
+    toggleVisibility,
+    handleYearRangeSelection, handleConfirm5YearRangeSelection, handleEdit5YearRange
 } from "./eventHandlers.js";
 
 const mapConfiguration = {
@@ -36,10 +37,23 @@ const yearFilter = document.querySelector("#years");
 const yearList = document.querySelector("#year-list");
 yearFilter.addEventListener('click', event => toggleVisibility(event, yearList));
 
+
+const yearRangeFilter = document.querySelector("#year-range");
+yearRangeFilter.addEventListener('click', handleEdit5YearRange);
+
+const yearRangeSelector = document.querySelector("#year-slider");
+yearRangeSelector.addEventListener('change', handleYearRangeSelection);
+
+const confirmRangeSelectionButton = document.querySelector("#confirm-range-selection");
+confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSelection);
+
+
 // get reference to genre filter
 // add event handler to genre selector
 const genreFilter = document.querySelector("#genres");
 genreFilter.addEventListener('click', toggleGenreListVisibility);
+
+
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load

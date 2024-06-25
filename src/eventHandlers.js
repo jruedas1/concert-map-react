@@ -164,13 +164,15 @@ export const handleSearchTypeSelection = event => {
 
 export const handleSimpleSearchSelection = event => {
     toggleVisibility(event, document.querySelector("#decades"));
-    toggleVisibility(event, document.querySelector("#range-selector"));
+    toggleVisibility(event, document.querySelector("#year-range"));
+    toggleVisibility(event, document.querySelector("#year-slider-container"));
 }
 
 export const handleExploreSelection = event => {
     emptyContent();
     hideSimpleSearchFilters();
-    toggleVisibility(event, document.querySelector("#range-selector"));
+    toggleVisibility(event, document.querySelector("#year-range"));
+    toggleVisibility(event, document.querySelector("#year-slider-container"));
 }
 
 /*
@@ -192,24 +194,60 @@ export const toggleVisibility = (event, elementReference) => {
     elementReference.classList.toggle('hidden');
 }
 
+export const handleEdit5YearRange = event => {
+    if (!document.querySelector("#year-range").firstElementChild.innerText.toLowerCase().startsWith('s')) {
+         const yearRangeSlider = document.querySelector("#year-slider-container");
+         toggleVisibility(event, yearRangeSlider);
+    }
+}
+
+export const handleYearRangeSelection = event => {
+    const resultDisplayDiv = document.querySelector("#range-selection-state");
+    const baseYear = event.target.value;
+    resultDisplayDiv.innerHTML = `<p>${baseYear} - ${parseInt(baseYear) + 4}`;
+}
+
+export const handleConfirm5YearRangeSelection = event => {
+    const yearRangeSlider = document.querySelector("#year-slider");
+    const selectedBaseYear = yearRangeSlider.value;
+    const yearRangeFilter = document.querySelector("#year-range");
+    yearRangeFilter.querySelector('.edit').classList.remove('hidden');
+    yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
+    toggleVisibility(event, document.querySelector("#year-slider-container"));
+    toggleVisibility(event, document.querySelector("#genres"));
+}
+
+const timer = ms => new Promise(res=>setTimeout(res, ms));
+
+async function outputVenuesOnTimer(venuesArray) {
+    for (let i = 0; i < venuesArray.length; i++){
+        console.log(venuesArray[i].name);
+        await timer(1000);
+    }
+}
+
+
 /*
     This event handler is triggered when the user selects a genre
 */
 export const handleGenreSelection = async (event, map) => {
-    emptyContent();
-    // user might click on the h3, or on the padding for the genre selector div
-    // if it's the h3, grab its text content, then grab its genre id
-    // otherwise select the h3 and get its text content, then its genre id
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
     const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
     // get the year currently selected by the user
-    const selectedYear = parseInt(document.querySelector("#year-selector").value);
+    const selectedYear = parseInt(document.querySelector("#year-slider").value);
+    console.log(selectedYear);
     // retrieve venues for that specific year and genre
-    const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, selectedYear);
+
+    for (let i = selectedYear; i < selectedYear+5; i++){
+         const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, i);
+         await outputVenuesOnTimer(genreVenuesForSelectedYear);
+
+    }
+
     // output venue locations to map
-    outputVenuesToMap(map, genreVenuesForSelectedYear);
+    // outputVenuesToMap(map, genreVenuesForSelectedYear);
     // output concert info to page
-    document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
+    // document.querySelector("#concerts").innerHTML = generateConcertHTML(genreVenuesForSelectedYear);
     // replace current genre heading with name of selected genre
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
     // trigger click event on genres div

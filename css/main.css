@@ -116,7 +116,7 @@ section#filters {
     border-bottom: 2px solid black;
 }
 
-div#decades.filter, #range-selector {
+div#decades.filter, #year-range {
     border-top: 2px solid black;
 }
 /*
@@ -209,6 +209,22 @@ div#decades.filter, #range-selector {
     margin-bottom: 1rem;
 }
 
+
+#year-slider::-moz-range-track, #year-slider::-webkit-slider-runnable-track {
+    background: #231F20;
+}
+
+.next {
+    border: 2px solid black;
+    border-radius: 5px;
+    background: #D43B1A;
+    color: #F1EEEB;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
 /*========== MAP ===========*/
 
 
@@ -221,14 +237,12 @@ div#decades.filter, #range-selector {
  */
 
 .marker {
-    background-image: url('../img/noun-musical-note-1014122.svg');
+    background-image: url('../img/marker.svg');
     background-size: cover;
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
-
-
 
 /*========== FOOTER ==========*/
 
@@ -260,4 +274,16 @@ props to https://stackoverflow.com/questions/19254411/how-do-i-set-vertical-spac
 
 footer ul li+li {
     margin-top: 1.5rem;
+}
+
+input[type="range"] {
+    margin: 2rem auto;
+    /*appearance: none;*/
+    width: 80%;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    height: 0.2rem;
+    background: #000;
+    border-radius: 1rem;
 }
