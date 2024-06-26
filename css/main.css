@@ -240,7 +240,7 @@ div#decades.filter, #year-range {
     background-image: url('../img/marker.svg');
     background-size: cover;
     width: 30px;
-    height: 30px;
+    height: 36px;
     cursor: pointer;
 }
 
