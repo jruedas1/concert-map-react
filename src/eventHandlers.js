@@ -174,8 +174,8 @@ export const handleSearchTypeSelection = event => {
 
 /*
 * Behavior specific to the simple search selection.
-* We have to stop any animation that is happening on the map
-* We clear the map markers and any venue or concert info
+* Stop any animation that is happening on the map
+* Clear map markers and venue / concert info
 * We hide the explore filters
 * And show the decade selection filter
 * */
@@ -188,9 +188,10 @@ export const handleSimpleSearchSelection = event => {
 
 /*
 * Behavior specific to the explore search selection
-* We allow animations to run again
-* We hide the simple search filters
-* We show the year range filter and the range slider
+* Allow animations to run again
+* * Clear map markers and venue / concert info
+* Hide the simple search filters
+* Show the year range filter and the range slider
 * */
 export const handleExploreSelection = event => {
     stopAnimation = false;
@@ -234,7 +235,12 @@ export const handleYearRangeSelection = event => {
 }
 
 /*
-*
+* Behavior executed when the "Next" button is clicked after year range selection
+* Gets reference to base year selected by user
+* Makes "edit" prompt visible on 5-year range selection prompt
+* Changes content of "Select 5-year range" to selected range
+* Hides the range slider
+* Shows the genres filter
 * */
 export const handleConfirm5YearRangeSelection = event => {
     const yearRangeSlider = document.querySelector("#year-slider");
@@ -257,11 +263,15 @@ const delay = ms => new Promise(res=>setTimeout(res, ms));
 * It outputs each venue it encounters to the map
 * And each concert to the sidebar
 * It uses the delay function to pause execution before each output
+* To afford the ability to stop the program execution,
+* each loop checks a global variable, `stopAnimation`.
+* This global is set to false on page load, to true when
+* switching to simple search, and to false when switching to
+* explore search.
 * */
 async function outputConcertsOnTimer(venuesArray, map) {
     const concertOutputDiv = document.querySelector("#concerts");
     for (let i = 0; i < venuesArray.length && !stopAnimation; i++){
-
         outputVenueToMap(map, venuesArray[i]);
         for (let i = 0; i < venuesArray[i].concerts.length && !stopAnimation; i++){
             const concert = venuesArray[i].concerts[i];
@@ -269,7 +279,6 @@ async function outputConcertsOnTimer(venuesArray, map) {
             concertOutputDiv.prepend(concertDiv);
             await delay(1000);
         }
-
     }
 }
 
@@ -278,21 +287,23 @@ async function outputConcertsOnTimer(venuesArray, map) {
     This event handler is triggered when the user selects a genre
 */
 export const handleGenreSelection = async (event, map) => {
+    // Get the selected genre
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
+    // Get the genre id
     const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
-    // get the year currently selected by the user
+    // get the base year currently selected by the user
     const selectedYear = parseInt(document.querySelector("#year-slider").value);
-    console.log(selectedYear);
-    // retrieve venues for that specific year and genre
-
+    // retrieve venues for the selected year range
+    // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
          const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, i);
          await outputConcertsOnTimer(genreVenuesForSelectedYear, map);
-
     }
     // replace current genre heading with name of selected genre
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
     // trigger click event on genres div
     // this hides the genre selector if it's showing
+    // this should not happen if the stopAnimation global is set to true,
+    // in other words if the user has navigated to the simple search tab
     if (!stopAnimation) document.querySelector("#genres").click();
 }
