@@ -1,9 +1,8 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
-import {generateGenreList} from "./domUtils.js";
+import {generateGenreList, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection, handleSearchTypeSelection,
-    toggleVisibility,
     handleYearRangeSelection, handleConfirm5YearRangeSelection, handleEdit5YearRange
 } from "./eventHandlers.js";
 

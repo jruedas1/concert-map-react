@@ -242,3 +242,29 @@ export const generateVenuesList = venuesArray => {
     return venuesOutput;
 }
 
+/*
+*  This function toggles the visibility of
+*  the decade, year, and genre lists
+* */
+export const toggleVisibility = (event, elementReference) => {
+    elementReference.classList.toggle('hidden');
+}
+
+/*
+* Hide an element if it's not hidden
+* */
+export const hideElement = (event, elementReference) => {
+    if (!elementReference.classList.contains('hidden')){
+        elementReference.classList.add('hidden');
+    }
+}
+
+/*
+* Show an element if it's hidden
+* */
+export const showElement = (event, elementReference) => {
+    if (elementReference.classList.contains('hidden')){
+        elementReference.classList.remove('hidden');
+    }
+}
+

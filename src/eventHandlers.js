@@ -4,7 +4,8 @@ import {
     generateOneVenuesConcerts,
     generateVenuesList,
     generateYearList, hideExploreSearchFilters, hideSimpleSearchFilters,
-    outputVenuesToMap, outputVenueToMap,
+    outputVenuesToMap, outputVenueToMap, showElement,
+    hideElement, toggleVisibility
 } from "./domUtils.js";
 import {fetchYear, getVenuesForYearAndGenre} from "./dataAccess.js";
 
@@ -180,10 +181,19 @@ export const handleSearchTypeSelection = event => {
 * And show the decade selection filter
 * */
 export const handleSimpleSearchSelection = event => {
+    const decadesFilter = document.querySelector("#decades");
+    const decadesEditPrompt = decadesFilter.querySelector('p');
+    const yearsFilter = document.querySelector("#years");
+    const yearsEditPrompt = yearsFilter.querySelector("p");
     stopAnimation = true;
     emptyContent();
-    hideExploreSearchFilters()
-    toggleVisibility(event, document.querySelector("#decades"));
+    hideExploreSearchFilters();
+    decadesFilter.querySelector("h3").innerText = "SELECT A DECADE";
+    hideElement(event, decadesEditPrompt);
+    showElement(event, decadesFilter);
+    showElement(event, document.querySelector("#decade-list"));
+    yearsFilter.querySelector('h3').innerText = 'SELECT A YEAR';
+    hideElement(event, yearsEditPrompt);
 }
 
 /*
@@ -199,14 +209,6 @@ export const handleExploreSelection = event => {
     hideSimpleSearchFilters();
     toggleVisibility(event, document.querySelector("#year-range"));
     toggleVisibility(event, document.querySelector("#year-slider-container"));
-}
-
-/*
-*  This handler toggles the visibility of
-*  the decade, year, and genre lists
-* */
-export const toggleVisibility = (event, elementReference) => {
-    elementReference.classList.toggle('hidden');
 }
 
 /*
@@ -270,10 +272,8 @@ const delay = ms => new Promise(res=>setTimeout(res, ms));
 * explore search.
 * */
 async function outputConcertsOnTimer(venuesArray, map) {
-    console.log(venuesArray);
     const concertOutputDiv = document.querySelector("#concerts");
     for (let i = 0; i < venuesArray.length && !stopAnimation; i++){
-        console.log(venuesArray[i]);
         outputVenueToMap(map, venuesArray[i]);
         for (let j = 0; j < venuesArray[i].concerts.length && !stopAnimation; j++){
             const concert = venuesArray[i].concerts[j];
