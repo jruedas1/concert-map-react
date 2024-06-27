@@ -270,11 +270,13 @@ const delay = ms => new Promise(res=>setTimeout(res, ms));
 * explore search.
 * */
 async function outputConcertsOnTimer(venuesArray, map) {
+    console.log(venuesArray);
     const concertOutputDiv = document.querySelector("#concerts");
     for (let i = 0; i < venuesArray.length && !stopAnimation; i++){
+        console.log(venuesArray[i]);
         outputVenueToMap(map, venuesArray[i]);
-        for (let i = 0; i < venuesArray[i].concerts.length && !stopAnimation; i++){
-            const concert = venuesArray[i].concerts[i];
+        for (let j = 0; j < venuesArray[i].concerts.length && !stopAnimation; j++){
+            const concert = venuesArray[i].concerts[j];
             const concertDiv = generateOneConcertHTML(concert);
             concertOutputDiv.prepend(concertDiv);
             await delay(1000);
