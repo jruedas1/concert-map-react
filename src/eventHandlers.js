@@ -79,7 +79,8 @@ export const handleDecadeSelection = async (event, map) => {
 
 
 // Handler for user interaction with year selection
-export const handleYearSelection = async (event, map) => {
+export const handleYearSelection = async (event) => {
+
     /*  whenever a year is selected, remove
         any markers and popups displayed on the map
         and remove any concert info currently displayed
@@ -89,6 +90,31 @@ export const handleYearSelection = async (event, map) => {
     const clickedH3 = event.target.localName === 'h3';
 
     const selectedYear = clickedH3 ? event.target.innerText : event.target.dataset.id;
+
+    // Get references to clicked year div and to years list
+    const yearEl = clickedH3? event.target.parentElement : event.target;
+    const yearsList = yearEl.parentElement;
+
+    // change the text of the years filter to the selected year
+    const yearsFilter = yearsList.previousElementSibling;
+    // console.log(yearsFilter)
+    yearsFilter.querySelector("h3").innerText = selectedYear;
+
+    // show the edit button
+    yearsFilter.querySelector(".edit").classList.remove('hidden');
+
+    // show the confirmation (NEXT) button
+    showElement(event, document.querySelector("#confirm-year-and-decade-parent-div"));
+
+    // toggle the year list closed
+    yearsFilter.click();
+}
+
+export const handleConfirmYearSelection = async (event, map) => {
+
+    // Retrieve the data on the selected year
+    const selectedYear = document.querySelector("#years").querySelector("h3").innerText;
+    console.log(selectedYear)
     const dataOnSelectedYear = await fetchYear(selectedYear);
 
     // Retrieve the array of venues that have concerts that year
@@ -112,20 +138,9 @@ export const handleYearSelection = async (event, map) => {
         venuesOutputDiv.classList.add('overflow-scroll');
     }
 
-    // Get references to clicked year div and to years list
-    const yearEl = clickedH3? event.target.parentElement : event.target;
-    const yearsList = yearEl.parentElement;
-
-    // change the text of the years filter to the selected year
-    const yearsFilter = yearsList.previousElementSibling;
-    // console.log(yearsFilter)
-    yearsFilter.querySelector("h3").innerText = selectedYear;
-
-    // show the edit button
-    yearsFilter.querySelector(".edit").classList.remove('hidden');
-
-    // toggle the year list closed
-    yearsFilter.click();
+    // hide the Next button
+    // actually hides its parent element
+    hideElement(event, event.target.parentElement.parentElement);
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {

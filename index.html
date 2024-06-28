@@ -52,6 +52,17 @@
                 <div id="year-list" class="hidden">
                 </div>
 
+                <!--  A bit cumbersome, but we need a div to hide everything
+                      whenever we don't want the button to be visible
+                      and a separate div to use flex positioning on the button
+                      otherwise display:flex will override the .hidden class       -->
+                <div id="confirm-year-and-decade-parent-div" class="hidden">
+                     <div id="confirm-year-and-decade-flex-parent" class="confirm">
+                        <button id="confirm-year-and-decade" class="next">NEXT</button>
+                    </div>
+                </div>
+
+
                 <div id="year-range" class="filter hidden">
                     <h3>SELECT A 5-YEAR RANGE</h3>
                     <p class="edit hidden">Edit</p>

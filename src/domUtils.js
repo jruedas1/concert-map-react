@@ -165,7 +165,7 @@ export const generateYearList = (decade, map) => {
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
-        yearDiv.addEventListener('click', event => handleYearSelection(event, map));
+        yearDiv.addEventListener('click', handleYearSelection);
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);

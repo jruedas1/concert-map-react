@@ -137,7 +137,7 @@ div#decades.filter, #year-range {
 }
 
 .filter-option:hover, #venues div:hover {
-    background: #F96900;
+    background: #F7C100;
 }
 
 /*
@@ -209,9 +209,32 @@ div#decades.filter, #year-range {
     margin-bottom: 1rem;
 }
 
+/*===== SLIDER ========*/
+
+input[type="range"] {
+    margin: 2rem auto;
+    /*appearance: none;*/
+    width: 80%;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    height: 0.2rem;
+    background: #000;
+    border-radius: 1rem;
+}
+
 
 #year-slider::-moz-range-track, #year-slider::-webkit-slider-runnable-track {
     background: #231F20;
+}
+
+/*===== NEXT BUTTONS =======*/
+
+.confirm {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .next {
@@ -276,14 +299,3 @@ footer ul li+li {
     margin-top: 1.5rem;
 }
 
-input[type="range"] {
-    margin: 2rem auto;
-    /*appearance: none;*/
-    width: 80%;
-    cursor: pointer;
-    outline: none;
-    background: none;
-    height: 0.2rem;
-    background: #000;
-    border-radius: 1rem;
-}
