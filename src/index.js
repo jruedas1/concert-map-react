@@ -2,9 +2,11 @@ import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
 import {generateGenreList, toggleVisibility} from "./domUtils.js";
 import {
-    handleDecadeSelection, handleSearchTypeSelection,
-    handleYearRangeSelection, handleConfirm5YearRangeSelection, handleEdit5YearRange, handleConfirmYearSelection
+    handleDecadeSelection, handleYearRangeSelection,
+    handleConfirm5YearRangeSelection, handleEdit5YearRange,
+    handleConfirmYearSelection
 } from "./eventHandlers.js";
+import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 
 const mapConfiguration = {
         accessToken: MAPBOX_API_KEY,

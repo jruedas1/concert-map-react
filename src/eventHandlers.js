@@ -3,21 +3,14 @@ import {
     generateOneConcertHTML,
     generateOneVenuesConcerts,
     generateVenuesList,
-    generateYearList, hideExploreSearchFilters, hideSimpleSearchFilters,
+    generateYearList,
     outputVenuesToMap, outputVenueToMap, showElement,
     hideElement, toggleVisibility
 } from "./domUtils.js";
 import {fetchYear, getVenuesForYearAndGenre} from "./dataAccess.js";
+import { stopAnimation } from "./searchTypeEventHandlers.js"
 
-/*
-* This is a global variable that controls the genre-concert animation
-* If it is set to true, the animation loop does not execute
-* Selecting simple search will set this to true,
-* which will stop the animation effects.
-* Selecting explore search will set it back to false,
-* which will permit the animation to run.
-* */
-let stopAnimation = false;
+
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
@@ -166,65 +159,6 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
 }
 
-/*
-*   On search type selection, modify the "selected" marker
-*   and trigger the appropriate search type selection
-* */
-export const handleSearchTypeSelection = event => {
-    if (event.target.innerText.toLowerCase() === 'search'){
-        if (!event.target.classList.contains('selected')){
-            event.target.classList.add('selected');
-            event.target.nextElementSibling.classList.remove('selected');
-            handleSimpleSearchSelection(event);
-        }
-    } else {
-        /* If it's not the search being selected, it's explore
-        * */
-        if (!event.target.classList.contains('selected')){
-             event.target.classList.add('selected');
-             event.target.previousElementSibling.classList.remove('selected');
-             handleExploreSelection(event);
-        }
-    }
-}
-
-/*
-* Behavior specific to the simple search selection.
-* Stop any animation that is happening on the map
-* Clear map markers and venue / concert info
-* We hide the explore filters
-* And show the decade selection filter
-* */
-export const handleSimpleSearchSelection = event => {
-    const decadesFilter = document.querySelector("#decades");
-    const decadesEditPrompt = decadesFilter.querySelector('p');
-    const yearsFilter = document.querySelector("#years");
-    const yearsEditPrompt = yearsFilter.querySelector("p");
-    stopAnimation = true;
-    emptyContent();
-    hideExploreSearchFilters();
-    decadesFilter.querySelector("h3").innerText = "SELECT A DECADE";
-    hideElement(event, decadesEditPrompt);
-    showElement(event, decadesFilter);
-    showElement(event, document.querySelector("#decade-list"));
-    yearsFilter.querySelector('h3').innerText = 'SELECT A YEAR';
-    hideElement(event, yearsEditPrompt);
-}
-
-/*
-* Behavior specific to the explore search selection
-* Allow animations to run again
-* * Clear map markers and venue / concert info
-* Hide the simple search filters
-* Show the year range filter and the range slider
-* */
-export const handleExploreSelection = event => {
-    stopAnimation = false;
-    emptyContent();
-    hideSimpleSearchFilters();
-    toggleVisibility(event, document.querySelector("#year-range"));
-    toggleVisibility(event, document.querySelector("#year-slider-container"));
-}
 
 /*
 * The year-range filter prompt "Select A 5-Year Range"
