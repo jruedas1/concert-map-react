@@ -1,4 +1,4 @@
-import { handleMarkerClick, handleVenueSelection, handleYearSelection} from "./eventHandlers.js";
+import { handleMarkerClick, handleVenueSelection, handleYearSelection} from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
 

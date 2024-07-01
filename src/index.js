@@ -4,7 +4,7 @@ import {generateGenreList, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection,
     handleConfirmYearSelection
-} from "./eventHandlers.js";
+} from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 import {  handleYearRangeSelection,
     handleConfirm5YearRangeSelection, handleEdit5YearRange
