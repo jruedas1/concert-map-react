@@ -1,5 +1,6 @@
-import {handleGenreSelection, handleMarkerClick, handleVenueSelection, handleYearSelection} from "./eventHandlers.js";
+import { handleMarkerClick, handleVenueSelection, handleYearSelection} from "./eventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
+import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
 
 /*
     Removes markers from map
