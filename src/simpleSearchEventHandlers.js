@@ -127,9 +127,21 @@ export const handleConfirmYearSelection = async (event, map) => {
         venuesOutputDiv.classList.add('overflow-scroll');
     }
 
-    // hide the Next button
-    // actually hides its parent element
+    /*
+    * We need to hide the decade and year selectors
+    * as well as the next button itself
+    * And we need to show the breadcrumb indicator
+    * */
+    // hide the decade and year filters
+    hideElement(event, document.querySelector("#decades"));
+    hideElement(event, document.querySelector("#years"))
+    // hide the Next button by hiding its parent element
     hideElement(event, event.target.parentElement.parentElement);
+    // show the breadcrumb indicator
+    showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
+
+    // add the selected year to the breadcrumb indicator
+    document.querySelector("#year-breadcrumb").innerText = selectedYear;
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
@@ -153,5 +165,13 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     venuesDiv.classList.remove('overflow-scroll');
     // output the venue's concerts to the page
     document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
+}
+
+export const handleYearToVenueBreadcrumbClick = event => {
+    emptyContent();
+    showElement(event, document.querySelector("#decades"));
+    showElement(event, document.querySelector("#years"))
+    // show the breadcrumb indicator
+    hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
 }
 

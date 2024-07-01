@@ -52,9 +52,17 @@
                 <div id="year-list" class="hidden">
                 </div>
 
+                <div id="year-to-venue-breadcrumb" class="hidden">
+                    <div id="year-venue-breadcrumb-flex-parent">
+                         <p>Venues in:</p>
+                         <h2 id="year-breadcrumb"></h2>
+                         <p class="edit">Edit</p>
+                    </div>
+                </div>
+
                 <!--  A bit cumbersome, but we need a div to hide everything
-                      whenever we don't want the button to be visible
-                      and a separate div to use flex positioning on the button
+                      whenever we don't want the button to be visible,
+                      and a *separate* div to use flex positioning on the button
                       otherwise display:flex will override the .hidden class       -->
                 <div id="confirm-year-and-decade-parent-div" class="hidden">
                      <div id="confirm-year-and-decade-flex-parent" class="confirm">

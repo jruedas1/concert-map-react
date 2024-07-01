@@ -185,6 +185,30 @@ div#decades.filter, #year-range {
    display: none;
 }
 
+#year-to-venue-breadcrumb {
+    cursor: pointer;
+}
+
+#year-venue-breadcrumb-flex-parent {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+
+    border-bottom: 2px solid black;
+    padding: 0 1rem 1rem 1rem;
+}
+
+#year-breadcrumb {
+    color: #D43B1A;
+    font-size: 3rem;
+}
+
+#year-venue-breadcrumb-flex-parent p.edit {
+    align-self: center;
+}
+
+
 /*
     dynamically generated venue and concert data
     we restrict its height to the height of the

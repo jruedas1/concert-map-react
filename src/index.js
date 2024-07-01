@@ -3,7 +3,7 @@ import {generateMap} from "./mabpoxUtils.js";
 import {generateGenreList, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection,
-    handleConfirmYearSelection
+    handleConfirmYearSelection, handleYearToVenueBreadcrumbClick
 } from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 import {  handleYearRangeSelection,
@@ -80,7 +80,8 @@ const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
 
-
+const yearToVenueBreadcrumb = document.querySelector("#year-to-venue-breadcrumb");
+yearToVenueBreadcrumb.addEventListener('click', handleYearToVenueBreadcrumbClick);
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load
