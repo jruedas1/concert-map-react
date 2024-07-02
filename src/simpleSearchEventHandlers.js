@@ -185,3 +185,7 @@ export const handleYearToVenueBreadcrumbClick = event => {
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
 }
 
+export const handleConcertsToVenuesBreadcrumbClick = event => {
+    handleConfirmYearSelection(event, map);
+}
+
