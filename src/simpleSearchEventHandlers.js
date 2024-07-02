@@ -145,6 +145,15 @@ export const handleConfirmYearSelection = async (event, map) => {
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
+    // we need the currently selected year
+    const yearToVenueBreadcrumbDiv = document.querySelector("#year-to-venue-breadcrumb");
+    const selectedYear = yearToVenueBreadcrumbDiv.querySelector('div h2').innerText;
+    // hide the venues-to-years breadcrumb
+    hideElement(event, yearToVenueBreadcrumbDiv);
+    // show the concerts-to-venues breadcrumb
+    const concertToVenueBreadcrumbDiv = document.querySelector("#concert-to-venue-breadcrumb");
+    concertToVenueBreadcrumbDiv.querySelector('div h2').innerText = selectedYear;
+    showElement(event, concertToVenueBreadcrumbDiv);
     // get the venue out of the venues array
     const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
     // get a reference to the venues div
@@ -154,6 +163,7 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     // display the name of the selected venue
     const venueInfo = document.createElement('div');
     venueInfo.classList.add('venue');
+    venueInfo.dataset.id = venueId;
     const venueName = document.createElement('h3');
     venueName.innerText = venue.name;
     venueInfo.appendChild(venueName);

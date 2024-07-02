@@ -208,6 +208,23 @@ div#decades.filter, #year-range {
     align-self: center;
 }
 
+#concert-to-venue-breadcrumb {
+    cursor: pointer;
+}
+
+#concert-to-venue-breadcrumb-flex-parent {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+#concert-to-venue-breadcrumb-flex-parent h2 {
+    font-size: 2.25rem;
+    color: #D43B1A;
+}
+
 
 /*
     dynamically generated venue and concert data
