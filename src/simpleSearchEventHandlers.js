@@ -190,3 +190,16 @@ export const handleConcertsToVenuesBreadcrumbClick = async(event, map) => {
     await handleConfirmYearSelection(event, map);
 }
 
+export const handleVenueMouseEnter = (event, venueId) => {
+    console.log(venueId);
+    const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
+    matchingMarker.classList.remove('marker');
+    matchingMarker.classList.add('y-marker');
+}
+
+export const handleVenueMouseOut = (event, venueId) => {
+   const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
+   matchingMarker.classList.remove('y-marker');
+   matchingMarker.classList.add('marker');
+}
+

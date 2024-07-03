@@ -289,6 +289,19 @@ input[type="range"] {
     cursor: pointer;
 }
 
+/*==== VENUE DISPLAYS ====*/
+/*  The venues have a hover event on them
+    This prevents the inner element, the h3
+    from triggering the event, which would
+    result in duplicated hover behavior
+*/
+
+
+
+.venue > h3 {
+    pointer-events: none;
+}
+
 /*========== MAP ===========*/
 
 
@@ -302,6 +315,14 @@ input[type="range"] {
 
 .marker {
     background-image: url('../img/marker.svg');
+    background-size: cover;
+    width: 30px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.y-marker {
+    background-image: url('../img/marker-yellow-small.svg');
     background-size: cover;
     width: 30px;
     height: 36px;

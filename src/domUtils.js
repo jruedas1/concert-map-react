@@ -1,4 +1,9 @@
-import { handleMarkerClick, handleVenueSelection, handleYearSelection} from "./simpleSearchEventHandlers.js";
+import {
+    handleMarkerClick,
+    handleVenueMouseEnter, handleVenueMouseOut,
+    handleVenueSelection,
+    handleYearSelection
+} from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
 
@@ -229,6 +234,8 @@ export const generateVenuesList = venuesArray => {
         venueDiv.appendChild(venueHeading);
         // add the click handler to the venue div
         venueDiv.addEventListener('click', event => handleVenueSelection(event, venue.id, venuesArray));
+        venueDiv.addEventListener('mouseover', event => handleVenueMouseEnter(event, venue.id));
+        venueDiv.addEventListener('mouseout', event => handleVenueMouseOut(event, venue.id));
         // add the venue div to the list
         venuesOutput.push(venueDiv);
     });
