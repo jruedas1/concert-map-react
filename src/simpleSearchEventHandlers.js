@@ -1,5 +1,5 @@
 import {
-    emptyContent,
+    emptyContent, emptyConcertInfo,
     generateOneVenuesConcerts,
     generateVenuesList,
     generateYearList,
@@ -185,7 +185,8 @@ export const handleYearToVenueBreadcrumbClick = event => {
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
 }
 
-export const handleConcertsToVenuesBreadcrumbClick = event => {
-    handleConfirmYearSelection(event, map);
+export const handleConcertsToVenuesBreadcrumbClick = async(event, map) => {
+    emptyConcertInfo();
+    await handleConfirmYearSelection(event, map);
 }
 

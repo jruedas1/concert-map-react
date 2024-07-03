@@ -84,7 +84,7 @@ const yearToVenueBreadcrumb = document.querySelector("#year-to-venue-breadcrumb"
 yearToVenueBreadcrumb.addEventListener('click', handleYearToVenueBreadcrumbClick);
 
 const concertsToVenuesBreadcrumb = document.querySelector("#concert-to-venue-breadcrumb");
-concertsToVenuesBreadcrumb.addEventListener('click', handleConcertsToVenuesBreadcrumbClick);
+concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load
