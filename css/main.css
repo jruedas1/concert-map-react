@@ -319,14 +319,16 @@ input[type="range"] {
     width: 30px;
     height: 36px;
     cursor: pointer;
+    z-index: 0;
 }
 
 .y-marker {
     background-image: url('../img/marker-yellow-small.svg');
     background-size: cover;
-    width: 30px;
-    height: 36px;
+    width: 37px;
+    height: 45px;
     cursor: pointer;
+    z-index: 1;
 }
 
 /*========== FOOTER ==========*/

@@ -188,14 +188,26 @@ export const generateConcertHTML = venuesArray => {
 }
 
 export const generateOneVenuesConcerts = venue => {
-    let concertOutput = '';
-    venue.concerts.forEach(concert => concertOutput+=`
-        <div class='concert-info'>
-             <h3>${concert.Artist_Formula}</h3>
-             <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
-        </div>
-    `);
-    return concertOutput;
+    // let concertOutput = '';
+    const concertList = [];
+    venue.concerts.forEach(concert => {
+        // concertOutput+=`
+        //     <div class='concert-info'>
+        //          <h3>${concert.Artist_Formula}</h3>
+        //          <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
+        //     </div>
+        // `
+        const concertDiv = document.createElement('div');
+        concertDiv.classList.add('concert-info');
+        const concertArtistHeading = document.createElement('h3');
+        concertArtistHeading.innerText = concert.Artist_Formula;
+        const concertDateOutput = document.createElement('p');
+        concertDateOutput.innerText = `${concert.Month} ${concert.Day} ${concert.Year}`;
+        concertDiv.appendChild(concertArtistHeading);
+        concertDiv.appendChild(concertDateOutput);
+        concertList.push(concertDiv);
+    });
+    return concertList;
 }
 
 export const generateOneConcertHTML = concert => {

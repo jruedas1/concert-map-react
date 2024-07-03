@@ -159,7 +159,7 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     // get a reference to the venues div
     const venuesDiv = document.querySelector("#venues");
     // empty the venues list
-    venuesDiv.innerHTML = '';
+    hideElement(event, venuesDiv);
     // display the name of the selected venue
     const venueInfo = document.createElement('div');
     venueInfo.classList.add('venue');
@@ -167,14 +167,19 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     const venueName = document.createElement('h3');
     venueName.innerText = venue.name;
     venueInfo.appendChild(venueName);
-    venuesDiv.appendChild(venueInfo);
+    const concertsDiv = document.querySelector("#concerts");
+    concertsDiv.appendChild(venueInfo);
     // This removes the overflow-scroll property from the venues div
     // For reasons not entirely clear, that property interferes
     // with visibility of a single venue div when the concerts div
     // is also displayed
-    venuesDiv.classList.remove('overflow-scroll');
+    // venuesDiv.classList.remove('overflow-scroll');
     // output the venue's concerts to the page
-    document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
+    // document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
+    const concertList = generateOneVenuesConcerts(venue);
+    for (const concert of concertList){
+        concertsDiv.appendChild(concert);
+    }
 }
 
 export const handleYearToVenueBreadcrumbClick = event => {
@@ -187,11 +192,12 @@ export const handleYearToVenueBreadcrumbClick = event => {
 
 export const handleConcertsToVenuesBreadcrumbClick = async(event, map) => {
     emptyConcertInfo();
-    await handleConfirmYearSelection(event, map);
+    showElement(event, document.querySelector("#venues"));
+    showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
+    hideElement(event, document.querySelector("#concert-to-venue-breadcrumb"));
 }
 
 export const handleVenueMouseEnter = (event, venueId) => {
-    console.log(venueId);
     const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
     matchingMarker.classList.remove('marker');
     matchingMarker.classList.add('y-marker');
