@@ -189,23 +189,32 @@ div#decades.filter, #year-range {
     cursor: pointer;
 }
 
+#back-to-year-edit-div {
+    display: flex;
+    flex-flow: nowrap;
+}
+
 #year-venue-breadcrumb-flex-parent {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: baseline;
+    justify-content: left;
+    align-items: center;
 
     border-bottom: 2px solid black;
-    padding: 0 1rem 1rem 1rem;
+    border-top: 2px solid black;
+    background:  #0075E4;
+    color: #F1EEEB;
 }
 
-#year-breadcrumb {
-    color: #D43B1A;
-    font-size: 3rem;
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb {
+    border-right: 2px solid black;
+    padding: 0.5rem 1rem;
 }
 
-#year-venue-breadcrumb-flex-parent p.edit {
-    align-self: center;
+#year-venue-breadcrumb-flex-parent p {
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 #concert-to-venue-breadcrumb {
