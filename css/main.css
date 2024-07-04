@@ -185,13 +185,18 @@ div#decades.filter, #year-range {
    display: none;
 }
 
-#year-to-venue-breadcrumb {
-    cursor: pointer;
-}
-
 #back-to-year-edit-div {
     display: flex;
     flex-flow: nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+#back-to-year-edit-div p.edit {
+    text-decoration: none;
 }
 
 #year-venue-breadcrumb-flex-parent {

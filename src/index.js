@@ -80,7 +80,7 @@ const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
 
-const yearToVenueBreadcrumb = document.querySelector("#year-to-venue-breadcrumb");
+const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div");
 yearToVenueBreadcrumb.addEventListener('click', handleYearToVenueBreadcrumbClick);
 
 const concertsToVenuesBreadcrumb = document.querySelector("#concert-to-venue-breadcrumb");
