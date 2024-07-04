@@ -152,31 +152,28 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     hideElement(event, yearToVenueBreadcrumbDiv);
     // show the concerts-to-venues breadcrumb
     const concertToVenueBreadcrumbDiv = document.querySelector("#concert-to-venue-breadcrumb");
-    concertToVenueBreadcrumbDiv.querySelector('div h2').innerText = selectedYear;
-    showElement(event, concertToVenueBreadcrumbDiv);
-    // get the venue out of the venues array
+    concertToVenueBreadcrumbDiv.querySelector("#concert-to-venue-breadcrumb-flex-parent").querySelector('h2').innerText = selectedYear;
+     // get the venue out of the venues array
     const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
+    // display the name of the venue
+    concertToVenueBreadcrumbDiv.querySelector("#concert-to-venue-breadcrumb-flex-parent").querySelector('p').innerText = venue.name;
+    showElement(event, concertToVenueBreadcrumbDiv);
+
     // get a reference to the venues div
     const venuesDiv = document.querySelector("#venues");
-    // empty the venues list
+    // hide the venues list
     hideElement(event, venuesDiv);
-    // display the name of the selected venue
-    const venueInfo = document.createElement('div');
-    venueInfo.classList.add('venue');
-    venueInfo.dataset.id = venueId;
-    const venueName = document.createElement('h3');
-    venueName.innerText = venue.name;
-    venueInfo.appendChild(venueName);
-    const concertsDiv = document.querySelector("#concerts");
-    concertsDiv.appendChild(venueInfo);
+
     // This removes the overflow-scroll property from the venues div
     // For reasons not entirely clear, that property interferes
     // with visibility of a single venue div when the concerts div
     // is also displayed
     // venuesDiv.classList.remove('overflow-scroll');
+
     // output the venue's concerts to the page
     // document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
     const concertList = generateOneVenuesConcerts(venue);
+    const concertsDiv = document.querySelector("#concerts");
     for (const concert of concertList){
         concertsDiv.appendChild(concert);
     }

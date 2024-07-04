@@ -185,7 +185,14 @@ div#decades.filter, #year-range {
    display: none;
 }
 
-#back-to-year-edit-div {
+/*========= BREADCRUMBS ==========*/
+/*
+    Navigation from venues list back
+    to decade-year selection
+    Navigation from concert list back
+    to venue list / selector
+*/
+#back-to-year-edit-div, #back-to-venues {
     display: flex;
     flex-flow: nowrap;
     gap: 0.5rem;
@@ -199,7 +206,7 @@ div#decades.filter, #year-range {
     text-decoration: none;
 }
 
-#year-venue-breadcrumb-flex-parent {
+#year-venue-breadcrumb-flex-parent, #concert-to-venue-breadcrumb-flex-parent {
     display: flex;
     flex-flow: row nowrap;
     justify-content: left;
@@ -211,32 +218,19 @@ div#decades.filter, #year-range {
     color: #F1EEEB;
 }
 
-#year-venue-breadcrumb-flex-parent h2#year-breadcrumb {
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #concert-to-venue-breadcrumb-flex-parent h2 {
     border-right: 2px solid black;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 }
 
-#year-venue-breadcrumb-flex-parent p {
+#year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p {
     padding-left: 0.5rem;
     font-size: 1.3rem;
     font-weight: 700;
 }
 
-#concert-to-venue-breadcrumb {
+#concert-to-venue-breadcrumb, #back-to-venues {
     cursor: pointer;
-}
-
-#concert-to-venue-breadcrumb-flex-parent {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: left;
-    gap: 1rem;
-    padding-left: 1rem;
-}
-
-#concert-to-venue-breadcrumb-flex-parent h2 {
-    font-size: 2.25rem;
-    color: #D43B1A;
 }
 
 
