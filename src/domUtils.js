@@ -106,8 +106,8 @@ export const outputVenuesToMap = (map, venuesArray) => {
     venuesArray.forEach((venue) => {
         outputVenueToMap(map, venue);
     });
-    const markers = document.querySelectorAll('.marker');
-    markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
+    // const markers = document.querySelectorAll('.marker');
+    // markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
 }
 
 export const outputVenueToMap = (map, venue) => {
