@@ -89,7 +89,6 @@ export const handleYearSelection = async (event, map) => {
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(map, venues);
 
-
     // Output the venue names to the page
     // First, get reference to the venues div
     const venuesOutputDiv = document.querySelector("#venues");
@@ -123,8 +122,7 @@ export const handleYearSelection = async (event, map) => {
     // hide the decade and year filters
     hideElement(event, document.querySelector("#decades"));
     hideElement(event, document.querySelector("#years"))
-    // hide the Next button by hiding its parent element
-    hideElement(event, event.target.parentElement.parentElement);
+    hideElement(event, yearsList);
     // show the breadcrumb indicator
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
 
