@@ -170,6 +170,9 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     // is also displayed
     // venuesDiv.classList.remove('overflow-scroll');
 
+    // get reference to venue marker on map
+    const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
+
     // output the venue's concerts to the page
     // document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
     const concertList = generateOneVenuesConcerts(venue);
@@ -177,17 +180,28 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     for (const concert of concertList){
         concertsDiv.appendChild(concert);
     }
+
+    // changes to DOM visibility will trigger a mouse out event,
+    // which will automatically de-highlight a venue
+    // to avoid this problem, set the highlight on a 1ms timer
+    // it will highlight the marker after the DOM changes
+    setTimeout(() => {
+        matchingMarker.classList.remove('marker');
+        matchingMarker.classList.add('y-marker');
+    }, 1)
 }
 
 export const handleYearToVenueBreadcrumbClick = event => {
     emptyContent();
     showElement(event, document.querySelector("#decades"));
     showElement(event, document.querySelector("#years"))
-    // show the breadcrumb indicator
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
 }
 
-export const handleConcertsToVenuesBreadcrumbClick = async(event, map) => {
+export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
+    const highlightedMarker = document.querySelector(".y-marker");
+    highlightedMarker.classList.remove('y-marker');
+    highlightedMarker.classList.add('marker');
     emptyConcertInfo();
     showElement(event, document.querySelector("#venues"));
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
@@ -205,4 +219,5 @@ export const handleVenueMouseOut = (event, venueId) => {
    matchingMarker.classList.remove('y-marker');
    matchingMarker.classList.add('marker');
 }
+
 
