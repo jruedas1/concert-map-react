@@ -3,7 +3,7 @@ import {generateMap} from "./mabpoxUtils.js";
 import {generateGenreList, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection,
-    handleConfirmYearSelection, handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick
+    handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick
 } from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 import {  handleYearRangeSelection,
@@ -46,10 +46,6 @@ for (const decade of decadeList.children){
 const yearFilter = document.querySelector("#years");
 const yearList = document.querySelector("#year-list");
 yearFilter.addEventListener('click', event => toggleVisibility(event, yearList));
-
-// "Next" button in simple search
-const confirmYearSelection = document.querySelector("#confirm-year-and-decade");
-confirmYearSelection.addEventListener('click', event => handleConfirmYearSelection(event, map));
 
 /*
 * This is the "Select a 5-year range"

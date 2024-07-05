@@ -68,7 +68,7 @@ export const handleDecadeSelection = async (event, map) => {
 
 
 // Handler for user interaction with year selection
-export const handleYearSelection = async (event) => {
+export const handleYearSelection = async (event, map) => {
 
     /*  whenever a year is selected, remove
         any markers and popups displayed on the map
@@ -79,37 +79,16 @@ export const handleYearSelection = async (event) => {
     const clickedH3 = event.target.localName === 'h3';
 
     const selectedYear = clickedH3 ? event.target.innerText : event.target.dataset.id;
-
-    // Get references to clicked year div and to years list
-    const yearEl = clickedH3? event.target.parentElement : event.target;
-    const yearsList = yearEl.parentElement;
-
-    // change the text of the years filter to the selected year
-    const yearsFilter = yearsList.previousElementSibling;
-    // console.log(yearsFilter)
-    yearsFilter.querySelector("h3").innerText = selectedYear;
-
-    // show the edit button
-    yearsFilter.querySelector(".edit").classList.remove('hidden');
-
-    // show the confirmation (NEXT) button
-    showElement(event, document.querySelector("#confirm-year-and-decade-parent-div"));
-
-    // toggle the year list closed
-    yearsFilter.click();
-}
-
-export const handleConfirmYearSelection = async (event, map) => {
-
-    // Retrieve the data on the selected year
-    const selectedYear = document.querySelector("#years").querySelector("h3").innerText;
-    console.log(selectedYear)
     const dataOnSelectedYear = await fetchYear(selectedYear);
 
-    // Retrieve the array of venues that have concerts that year
+    // Get references to clicked year div and to years list
+    // Get the venues info from the db
+    // output markers on map
+    const yearEl = clickedH3? event.target.parentElement : event.target;
+    const yearsList = yearEl.parentElement;
     const venues = dataOnSelectedYear.venues;
-    // Output venues to locations on map
     outputVenuesToMap(map, venues);
+
 
     // Output the venue names to the page
     // First, get reference to the venues div
@@ -120,12 +99,21 @@ export const handleConfirmYearSelection = async (event, map) => {
     for (const venue of venueDOM){
         venuesOutputDiv.appendChild(venue);
     }
+
     // The overflow-scroll property on the venues div
     // is only applied when the full venue list is displayed
     // and the concerts list is not
     if (!venuesOutputDiv.classList.contains('overflow-scroll')){
         venuesOutputDiv.classList.add('overflow-scroll');
     }
+
+    // change the text of the years filter to the selected year
+    const yearsFilter = yearsList.previousElementSibling;
+    // console.log(yearsFilter)
+    yearsFilter.querySelector("h3").innerText = selectedYear;
+
+    // show the edit button
+    yearsFilter.querySelector(".edit").classList.remove('hidden');
 
     /*
     * We need to hide the decade and year selectors
@@ -142,6 +130,7 @@ export const handleConfirmYearSelection = async (event, map) => {
 
     // add the selected year to the breadcrumb indicator
     document.querySelector("#year-breadcrumb").innerText = selectedYear;
+
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
@@ -163,12 +152,6 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     const venuesDiv = document.querySelector("#venues");
     // hide the venues list
     hideElement(event, venuesDiv);
-
-    // This removes the overflow-scroll property from the venues div
-    // For reasons not entirely clear, that property interferes
-    // with visibility of a single venue div when the concerts div
-    // is also displayed
-    // venuesDiv.classList.remove('overflow-scroll');
 
     // get reference to venue marker on map
     const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);

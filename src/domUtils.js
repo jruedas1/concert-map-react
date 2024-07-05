@@ -163,7 +163,7 @@ export const generateYearList = (decade, map) => {
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
-        yearDiv.addEventListener('click', handleYearSelection);
+        yearDiv.addEventListener('click', event => handleYearSelection(event, map));
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);
@@ -191,12 +191,6 @@ export const generateOneVenuesConcerts = venue => {
     // let concertOutput = '';
     const concertList = [];
     venue.concerts.forEach(concert => {
-        // concertOutput+=`
-        //     <div class='concert-info'>
-        //          <h3>${concert.Artist_Formula}</h3>
-        //          <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
-        //     </div>
-        // `
         const concertDiv = document.createElement('div');
         concertDiv.classList.add('concert-info');
         const concertArtistHeading = document.createElement('h3');
