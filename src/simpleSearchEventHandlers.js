@@ -183,8 +183,10 @@ export const handleYearToVenueBreadcrumbClick = event => {
 
 export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
     const highlightedMarker = document.querySelector(".y-marker");
-    highlightedMarker.classList.remove('y-marker');
-    highlightedMarker.classList.add('marker');
+    if (highlightedMarker){
+        highlightedMarker.classList.remove('y-marker');
+        highlightedMarker.classList.add('marker');
+    }
     emptyConcertInfo();
     showElement(event, document.querySelector("#venues"));
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
