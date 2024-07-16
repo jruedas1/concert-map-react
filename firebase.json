@@ -13,7 +13,8 @@
       "package.json",
       "package-lock.json",
       "README.md",
-      "webpack.config.js"
+      "webpack.config.js",
+      "sliderTest.html"
     ],
     "rewrites": [
       {
