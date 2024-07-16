@@ -280,10 +280,7 @@ input[type="range"] {
 /*===== NEXT BUTTONS =======*/
 
 .confirm {
-    display: flex;
-    flex-flow: row-reverse nowrap;
     margin-top: 1.5rem;
-    margin-right: 1.5rem;
 }
 
 .next {

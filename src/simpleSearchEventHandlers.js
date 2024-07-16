@@ -75,17 +75,29 @@ export const handleYearSelection = async (event, map) => {
         and remove any concert info currently displayed
      */
     emptyContent();
-    // Retrieve the data on the selected year
-    const clickedH3 = event.target.localName === 'h3';
-
-    const selectedYear = clickedH3 ? event.target.innerText : event.target.dataset.id;
-    const dataOnSelectedYear = await fetchYear(selectedYear);
 
     // Get references to clicked year div and to years list
     // Get the venues info from the db
     // output markers on map
+    const clickedH3 = event.target.localName === 'h3';
     const yearEl = clickedH3? event.target.parentElement : event.target;
     const yearsList = yearEl.parentElement;
+
+    // change the text of the years filter to the selected year
+    const selectedYear = clickedH3 ? event.target.innerText : event.target.dataset.id;
+    const yearsFilter = yearsList.previousElementSibling;
+    yearsFilter.querySelector("h3").innerText = selectedYear;
+    // show the edit button
+    yearsFilter.querySelector(".edit").classList.remove('hidden');
+    // hide the year list
+    hideElement(event, document.querySelector("#year-list"));
+    // show the confirm button
+    showElement(event, document.querySelector("#confirm-year-parent"));
+}
+
+export const handleConfirmYearSelection = async (event, map) => {
+    const selectedYear = document.querySelector("#years").querySelector("h3").innerText;
+    const dataOnSelectedYear = await fetchYear(selectedYear);
     const venues = dataOnSelectedYear.venues;
     outputVenuesToMap(map, venues);
 
@@ -106,14 +118,6 @@ export const handleYearSelection = async (event, map) => {
         venuesOutputDiv.classList.add('overflow-scroll');
     }
 
-    // change the text of the years filter to the selected year
-    const yearsFilter = yearsList.previousElementSibling;
-    // console.log(yearsFilter)
-    yearsFilter.querySelector("h3").innerText = selectedYear;
-
-    // show the edit button
-    yearsFilter.querySelector(".edit").classList.remove('hidden');
-
     /*
     * We need to hide the decade and year selectors
     * as well as the next button itself
@@ -122,13 +126,11 @@ export const handleYearSelection = async (event, map) => {
     // hide the decade and year filters
     hideElement(event, document.querySelector("#decades"));
     hideElement(event, document.querySelector("#years"))
-    hideElement(event, yearsList);
+    hideElement(event, event.target.parentElement);
     // show the breadcrumb indicator
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
-
     // add the selected year to the breadcrumb indicator
     document.querySelector("#year-breadcrumb").innerText = selectedYear;
-
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
