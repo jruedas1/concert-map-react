@@ -1,6 +1,6 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
-import {generateGenreList, toggleVisibility} from "./domUtils.js";
+import {generateGenreList, handleWindowResize, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection, handleConfirmYearSelection,
     handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick
@@ -25,6 +25,9 @@ const mapConfiguration = {
 * requires a reference to the map.
 * */
 export const map = await generateMap(mapConfiguration);
+
+window.crossedBreakPoint = window.innerWidth > 768;
+window.addEventListener('resize', event => handleWindowResize(event, 768));
 
 /* get references to the top-level "search" and "explore" selectors
 *  and add handlers for selecting them

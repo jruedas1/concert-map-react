@@ -1,5 +1,5 @@
 import {
-    handleMarkerClick,
+    handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
     handleVenueMouseEnter, handleVenueMouseOut,
     handleVenueSelection,
     handleYearSelection
@@ -106,8 +106,13 @@ export const outputVenuesToMap = (map, venuesArray) => {
     venuesArray.forEach((venue) => {
         outputVenueToMap(map, venue);
     });
-    // const markers = document.querySelectorAll('.marker');
+    const markers = document.querySelectorAll('.marker');
     // markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
+    markers.forEach(marker => {
+        const venueId = marker.dataset.id;
+        marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
+        marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
+    });
 }
 
 export const outputVenueToMap = (map, venue) => {
@@ -121,6 +126,8 @@ export const outputVenueToMap = (map, venue) => {
             const popup = new mapboxgl.Popup()
                 .setHTML('<p>'+ venue.name + '</p>');
             venueMarker.setPopup(popup);
+
+            // venueMarker.addEventListener('mouseover', event=> handleMarkerMouseEnter(event, venue.id));
         }
 }
 
@@ -274,5 +281,28 @@ export const showElement = (event, elementReference) => {
     }
 }
 
+export const showElementMobile = (event, elementReference) => {
+    if (elementReference.classList.contains('mobile-hidden')) {
+        elementReference.classList.remove('mobile-hidden');
+    }
+}
+
+export const hideElementMobile = (event, elementReference) => {
+    if (!elementReference.classList.contains('mobile-hidden')){
+        elementReference.classList.add('mobile-hidden');
+    }
+}
+
+export const handleWindowResize = (event, breakpoint) => {
+    const currentWidth = window.innerWidth;
+     const venuesEl = document.querySelector("#venues");
+    if (currentWidth > breakpoint && !window.crossedBreakPoint){
+        window.crossedBreakPoint = true;
+        showElementMobile(event, venuesEl);
+    } else if (currentWidth <= breakpoint && window.crossedBreakPoint){
+        window.crossedBreakPoint = false;
+        hideElementMobile(event, venuesEl);
+    }
+}
 
 

@@ -4,7 +4,7 @@ import {
     generateVenuesList,
     generateYearList,
     outputVenuesToMap, showElement,
-    hideElement
+    hideElement, showElementMobile, hideElementMobile
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -129,8 +129,18 @@ export const handleConfirmYearSelection = async (event, map) => {
     hideElement(event, event.target.parentElement);
     // show the breadcrumb indicator
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
+
+    if (window.innerWidth < 768){
+        mobileUIChangesAfterConfirmYear(event);
+    }
+
     // add the selected year to the breadcrumb indicator
     document.querySelector("#year-breadcrumb").innerText = selectedYear;
+}
+
+const mobileUIChangesAfterConfirmYear = event => {
+    hideElementMobile(event, document.querySelector("#venues"));
+    showElementMobile(event, document.querySelector("#map"));
 }
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
@@ -179,6 +189,7 @@ export const handleYearToVenueBreadcrumbClick = event => {
     showElement(event, document.querySelector("#decades"));
     showElement(event, document.querySelector("#years"))
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
+    if (window.innerWidth < 768) hideElementMobile(event, document.querySelector("#map"));
 }
 
 export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
@@ -205,4 +216,17 @@ export const handleVenueMouseOut = (event, venueId) => {
    matchingMarker.classList.add('marker');
 }
 
+export const handleMarkerMouseEnter = (event, venueId) => {
+    const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
+    matchingVenue.classList.add('venue-hover');
+    event.target.classList.remove('marker');
+    event.target.classList.add('y-marker');
+}
+
+export const handleMarkerMouseOut = (event, venueId) => {
+     const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
+     matchingVenue.classList.remove("venue-hover");
+     event.target.classList.remove('y-marker');
+     event.target.classList.add('marker');
+}
 

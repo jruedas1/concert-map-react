@@ -93,8 +93,7 @@ section#filters {
     max-height: 100dvh;
 
     border-right: 2px solid black;
-    background-color: #EDE8E4;
-
+    background-color: #F1EEEB;
 }
 
 #filters h3 {
@@ -132,11 +131,11 @@ div#decades.filter, #year-range {
     Filter options are choices that appear when
     user clicks on a genre selector: decade, year, genre
 */
-.filter-option {
-    background: #F8F6F6;
-}
+/*.filter-option {*/
+/*    background: #F1EEEB;*/
+/*}*/
 
-.filter-option:hover, #venues div:hover {
+.filter-option:hover, #venues div:hover, .venue-hover {
     background: #F7C100;
 }
 
@@ -371,5 +370,18 @@ footer ul li+li {
 @media screen and (max-width: 768px) {
     .mobile-hidden, header {
         display: none;
+    }
+
+    .mobile-visible {
+        display: initial;
+    }
+
+    main {
+        flex-flow: column nowrap;
+    }
+
+    #map {
+        height: 100dvh;
+        flex: 1 1 100%;
     }
 }
