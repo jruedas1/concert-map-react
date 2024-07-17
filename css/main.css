@@ -335,6 +335,16 @@ input[type="range"] {
     z-index: 1;
 }
 
+/*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
+
+.single-concert {
+    position: fixed;
+    bottom: 0;
+    width: 100dvw;
+    background: #F1EEEB;
+    padding: 1.5rem;
+}
+
 /*========== FOOTER ==========*/
 
 /*

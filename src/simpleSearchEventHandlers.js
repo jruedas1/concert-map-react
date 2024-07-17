@@ -18,25 +18,27 @@ import {fetchYear} from "./dataAccess.js";
  markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
  NOT like this: addEventListener('click', handleMarkerClick)
  */
-export const handleMarkerClick =  (event, venuesArray) => {
-    // The venue id is stored as a data-id attribute value in the marker element
-    const venueId = parseInt(event.target.dataset.id);
-    // Loop over the filters to find the id match
-    const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
-    // obtain a reference to that venue's concerts for the year displayed
-    const concerts = venue.concerts;
-    // empty out the div in which the concert data is displayed
-    let concertsOutput = '';
-    // generate the html for the concerts list
-    concerts.forEach(concert => concertsOutput+= `
-            <div class="concert-info">
-                <h3>${concert.Artist_Formula}</h3>
-                <p>${concert.Venue}</p>
-                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
-            </div>
-        `);
-    // output concerts info to the page
-    document.querySelector("#concerts").innerHTML = concertsOutput;
+export const handleMarkerClick =  (event, venueId, venuesArray) => {
+    // This behavior applies only in mobile view
+    if (window.innerWidth <= 768){
+        // Loop over the filters to find the id match
+        const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
+        console.log(venue);
+        const venueName = venue.name;
+        const venueAddressLine1 = venue.address;
+        const venueAddressLine2 =  `${venue.city}, TX ${venue.zip}`;
+        const venueDiv = document.createElement('div');
+        const nameP = document.createElement('p');
+        const addrP = document.createElement('p');
+        nameP.innerText = venueName;
+        addrP.innerHTML = `${venueAddressLine1}<br>${venueAddressLine2}`;
+        venueDiv.appendChild(nameP);
+        venueDiv.appendChild(addrP);
+        venueDiv.classList.add('single-concert');
+        document.querySelector("main").appendChild(venueDiv);
+    }
+
+
 }
 
 // handler to respond to user interaction with decade selector

@@ -112,6 +112,7 @@ export const outputVenuesToMap = (map, venuesArray) => {
         const venueId = marker.dataset.id;
         marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
         marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
+        marker.addEventListener('click', event => handleMarkerClick(event, parseInt(venueId), venuesArray));
     });
 }
 
@@ -295,7 +296,7 @@ export const hideElementMobile = (event, elementReference) => {
 
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;
-     const venuesEl = document.querySelector("#venues");
+    const venuesEl = document.querySelector("#venues");
     if (currentWidth > breakpoint && !window.crossedBreakPoint){
         window.crossedBreakPoint = true;
         showElementMobile(event, venuesEl);
