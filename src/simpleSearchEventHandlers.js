@@ -4,7 +4,7 @@ import {
     generateVenuesList,
     generateYearList,
     outputVenuesToMap, showElement,
-    hideElement, showElementMobile, hideElementMobile
+    hideElement, showElementMobile, hideElementMobile, outputOneVenuesConcertsToPage, removeSingleConcertDivs
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -23,22 +23,32 @@ export const handleMarkerClick =  (event, venueId, venuesArray) => {
     if (window.innerWidth <= 768){
         // Loop over the filters to find the id match
         const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
-        console.log(venue);
+        // extract the name and address
         const venueName = venue.name;
         const venueAddressLine1 = venue.address;
         const venueAddressLine2 =  `${venue.city}, TX ${venue.zip}`;
+        // create the div to contain the information
         const venueDiv = document.createElement('div');
-        const nameP = document.createElement('p');
+        const nameH = document.createElement('h3');
         const addrP = document.createElement('p');
-        nameP.innerText = venueName;
+        nameH.innerText = venueName;
         addrP.innerHTML = `${venueAddressLine1}<br>${venueAddressLine2}`;
-        venueDiv.appendChild(nameP);
+        venueDiv.appendChild(nameH);
         venueDiv.appendChild(addrP);
         venueDiv.classList.add('single-concert');
+        // Handle a click on the div
+        venueDiv.addEventListener('click', event => handleSingleConcertDivClick(event, venue, venuesArray));
+        // Remove any existing single-concert output divs
+        removeSingleConcertDivs();
+        // Insert the div into the DOM
         document.querySelector("main").appendChild(venueDiv);
     }
+}
 
-
+const handleSingleConcertDivClick = (event, venue, venuesArray) => {
+    handleVenueSelection(event, venue.id, venuesArray);
+    removeSingleConcertDivs();
+    hideElementMobile(event, document.querySelector("#map"));
 }
 
 // handler to respond to user interaction with decade selector
@@ -136,6 +146,15 @@ export const handleConfirmYearSelection = async (event, map) => {
         mobileUIChangesAfterConfirmYear(event);
     }
 
+    /* This is to solve a bug in Mapbox where the map does not display at
+    *  correct dimensions when first loaded in mobile view, until it is resized
+    *  To solve it, force a resize event
+    * Note that this requires a reference to the map element
+    * If this is not available, use window.dispatchEvent(new Event('resize'));
+    * Note that this needs to happen **after** the map visibility is changed
+    * */
+    map.resize();
+
     // add the selected year to the breadcrumb indicator
     document.querySelector("#year-breadcrumb").innerText = selectedYear;
 }
@@ -144,6 +163,7 @@ const mobileUIChangesAfterConfirmYear = event => {
     hideElementMobile(event, document.querySelector("#venues"));
     showElementMobile(event, document.querySelector("#map"));
 }
+
 
 export const handleVenueSelection = (event, venueId, venuesArray) => {
     // we need the currently selected year
@@ -169,12 +189,7 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
 
     // output the venue's concerts to the page
-    // document.querySelector("#concerts").innerHTML = generateOneVenuesConcerts(venue);
-    const concertList = generateOneVenuesConcerts(venue);
-    const concertsDiv = document.querySelector("#concerts");
-    for (const concert of concertList){
-        concertsDiv.appendChild(concert);
-    }
+    outputOneVenuesConcertsToPage(venue);
 
     // changes to DOM visibility will trigger a mouse out event,
     // which will automatically de-highlight a venue
@@ -183,7 +198,7 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     setTimeout(() => {
         matchingMarker.classList.remove('marker');
         matchingMarker.classList.add('y-marker');
-    }, 1)
+    }, 1);
 }
 
 export const handleYearToVenueBreadcrumbClick = event => {
@@ -204,6 +219,10 @@ export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
     showElement(event, document.querySelector("#venues"));
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     hideElement(event, document.querySelector("#concert-to-venue-breadcrumb"));
+
+    if (window.innerWidth <= 768){
+        showElementMobile(event, document.querySelector("#venues"));
+    }
 }
 
 export const handleVenueMouseEnter = (event, venueId) => {

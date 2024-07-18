@@ -37,6 +37,11 @@ export const emptyVenueInfo = () => {
     document.querySelector("#venues").replaceChildren();
 }
 
+
+export const removeSingleConcertDivs = () => {
+     document.querySelectorAll('.single-concert').forEach(div=> div.remove());
+}
+
 /*
 * Utility function to combine removing markers,
 * popups, venue data, and concert data from page
@@ -124,11 +129,9 @@ export const outputVenueToMap = (map, venue) => {
             const venueMarker = new mapboxgl.Marker(el);
             venueMarker.setLngLat([venue.longitude, venue.latitude]);
             venueMarker.addTo(map);
-            const popup = new mapboxgl.Popup()
-                .setHTML('<p>'+ venue.name + '</p>');
-            venueMarker.setPopup(popup);
-
-            // venueMarker.addEventListener('mouseover', event=> handleMarkerMouseEnter(event, venue.id));
+            // const popup = new mapboxgl.Popup()
+            //     .setHTML('<p>'+ venue.name + '</p>');
+            // venueMarker.setPopup(popup);
         }
 }
 
@@ -195,22 +198,24 @@ export const generateConcertHTML = venuesArray => {
     return concertsOutput;
 }
 
+export const outputOneVenuesConcertsToPage = venue => {
+    const concertList = generateOneVenuesConcerts(venue);
+    const concertsDiv = document.querySelector("#concerts");
+    emptyConcertInfo();
+    for (const concert of concertList){
+        concertsDiv.appendChild(concert);
+    }
+}
+
 export const generateOneVenuesConcerts = venue => {
-    // let concertOutput = '';
     const concertList = [];
     venue.concerts.forEach(concert => {
-        const concertDiv = document.createElement('div');
-        concertDiv.classList.add('concert-info');
-        const concertArtistHeading = document.createElement('h3');
-        concertArtistHeading.innerText = concert.Artist_Formula;
-        const concertDateOutput = document.createElement('p');
-        concertDateOutput.innerText = `${concert.Month} ${concert.Day} ${concert.Year}`;
-        concertDiv.appendChild(concertArtistHeading);
-        concertDiv.appendChild(concertDateOutput);
+        const concertDiv = generateOneConcertHTML(concert);
         concertList.push(concertDiv);
     });
     return concertList;
 }
+
 
 export const generateOneConcertHTML = concert => {
     const concertDiv = document.createElement('div');
@@ -272,7 +277,6 @@ export const hideElement = (event, elementReference) => {
         elementReference.classList.add('hidden');
     }
 }
-
 /*
 * Show an element if it's hidden
 * */
@@ -297,11 +301,12 @@ export const hideElementMobile = (event, elementReference) => {
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;
     const venuesEl = document.querySelector("#venues");
-    if (currentWidth > breakpoint && !window.crossedBreakPoint){
-        window.crossedBreakPoint = true;
+    if (currentWidth > breakpoint && !window.aboveBreakPoint){
+        window.aboveBreakPoint = true;
         showElementMobile(event, venuesEl);
-    } else if (currentWidth <= breakpoint && window.crossedBreakPoint){
-        window.crossedBreakPoint = false;
+        removeSingleConcertDivs();
+    } else if (currentWidth <= breakpoint && window.aboveBreakPoint){
+        window.aboveBreakPoint = false;
         hideElementMobile(event, venuesEl);
     }
 }

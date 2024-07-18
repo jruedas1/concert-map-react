@@ -343,6 +343,7 @@ input[type="range"] {
     width: 100dvw;
     background: #F1EEEB;
     padding: 1.5rem;
+    cursor: pointer;
 }
 
 /*========== FOOTER ==========*/
