@@ -186,24 +186,53 @@ div#decades.filter, #year-range {
 
 /*========= BREADCRUMBS ==========*/
 /*
-    Navigation from venues list back
-    to decade-year selection
-    Navigation from concert list back
-    to venue list / selector
+    Back-to-year-edit-div is to go back
+    to year selection from the venues view.
+    Its direct child contains the arrow and the
+    "change selections" prompt.
+    Back-to-venues is to go from the concerts
+    list to the venues list or view.
 */
-#back-to-year-edit-div, #back-to-venues {
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #back-to-venues > div {
     display: flex;
-    flex-flow: nowrap;
+    flex-flow: row nowrap;
     gap: 0.5rem;
     align-items: center;
     padding: 0.5rem;
     font-size: 1.3rem;
+}
+
+/*
+    The arrow + "Change Selections"
+    The arrow + "Back to venues"
+*/
+#back-to-year-edit-div > div, #back-to-venues > div {
     cursor: pointer;
 }
 
+/*
+    We use this to separate the "change selections"
+    and "Back to venues" prompts
+    from the "List View / Map View" button.
+*/
+#back-to-year-edit-div, #back-to-venues {
+    justify-content: space-between;
+}
+
+/*
+    Some of the "edit" prompts had underlines
+    This may be removed if not needed in future designs.
+    We specify that this one has no underline.
+*/
 #back-to-year-edit-div p.edit {
     text-decoration: none;
 }
+
+/*
+    Created to arrange the blue breadcrumb indicators
+    Side by side rather than stacking, and to apply
+    correct colors.
+*/
 
 #year-venue-breadcrumb-flex-parent, #concert-to-venue-breadcrumb-flex-parent {
     display: flex;
@@ -217,21 +246,41 @@ div#decades.filter, #year-range {
     color: #F1EEEB;
 }
 
+/*
+   In the back-to-venues and back-to-year breadcrumbs,
+   This contains the year.
+*/
 #year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #concert-to-venue-breadcrumb-flex-parent h2 {
     border-right: 2px solid black;
     padding: 1rem;
 }
 
+/*
+     In the concerts view, this contains the name of the venue.
+     In the venues view, it says "Venues"
+
+*/
 #year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p {
     padding-left: 0.5rem;
     font-size: 1.3rem;
     font-weight: 700;
 }
 
-#concert-to-venue-breadcrumb, #back-to-venues {
+#concert-to-venue-breadcrumb {
     cursor: pointer;
 }
 
+.list-view {
+    background: #232323;
+    color: #F1EEEB;
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/*===== CONCERT AND VENUE LISTS =============*/
 
 /*
     dynamically generated venue and concert data
