@@ -193,7 +193,7 @@ div#decades.filter, #year-range {
     Back-to-venues is to go from the concerts
     list to the venues list or view.
 */
-#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #back-to-venues > div {
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues {
     display: flex;
     flex-flow: row nowrap;
     gap: 0.5rem;
@@ -206,16 +206,15 @@ div#decades.filter, #year-range {
     The arrow + "Change Selections"
     The arrow + "Back to venues"
 */
-#back-to-year-edit-div > div, #back-to-venues > div {
+#back-to-year-edit-div > div, #back-to-venues {
     cursor: pointer;
 }
 
 /*
     We use this to separate the "change selections"
-    and "Back to venues" prompts
-    from the "List View / Map View" button.
+    prompt from the "List View / Map View" button.
 */
-#back-to-year-edit-div, #back-to-venues {
+#back-to-year-edit-div {
     justify-content: space-between;
 }
 
@@ -266,11 +265,7 @@ div#decades.filter, #year-range {
     font-weight: 700;
 }
 
-#concert-to-venue-breadcrumb {
-    cursor: pointer;
-}
-
-.list-view {
+#list-view {
     background: #232323;
     color: #F1EEEB;
     padding: 0.5rem 1rem;

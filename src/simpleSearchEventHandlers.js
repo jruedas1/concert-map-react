@@ -251,3 +251,16 @@ export const handleMarkerMouseOut = (event, venueId) => {
      event.target.classList.add('marker');
 }
 
+export const handleListMapViewClick = event => {
+    const destination = event.target.innerText.toLowerCase();
+    if (destination.includes('list')) {
+        showElementMobile(event, document.querySelector("#venues"));
+        hideElementMobile(event, document.querySelector("#map"));
+        event.target.innerText = 'Map View';
+    } else {
+        hideElementMobile(event, document.querySelector("#venues"));
+        showElementMobile(event, document.querySelector("#map"));
+        event.target.innerText = 'List View';
+    }
+}
+

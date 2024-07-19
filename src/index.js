@@ -3,7 +3,7 @@ import {generateMap} from "./mabpoxUtils.js";
 import {generateGenreList, handleWindowResize, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection, handleConfirmYearSelection,
-    handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick
+    handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick, handleListMapViewClick
 } from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 import {  handleYearRangeSelection,
@@ -82,11 +82,21 @@ const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
 
-const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div");
+const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div > div");
 yearToVenueBreadcrumb.addEventListener('click', handleYearToVenueBreadcrumbClick);
 
-const concertsToVenuesBreadcrumb = document.querySelector("#concert-to-venue-breadcrumb");
+const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
 concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
+
+/*  I don't actually understand why the list-view button is sometimes not detected
+    at this stage in the code flow when every other element I reference is;
+    I'll have to come back and investigate. For now, adding the listener
+    only after the DOM loads is solving the problem.
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const listViewButton = document.querySelector("#list-view");
+    listViewButton.addEventListener('click', handleListMapViewClick)
+});
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load
