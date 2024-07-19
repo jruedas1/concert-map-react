@@ -222,6 +222,7 @@ export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
 
     if (window.innerWidth <= 768){
         showElementMobile(event, document.querySelector("#venues"));
+        document.querySelector("#list-view").innerText = "Map View";
     }
 }
 
