@@ -95,7 +95,8 @@ concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVe
 */
 document.addEventListener('DOMContentLoaded', () => {
     const listViewButton = document.querySelector("#list-view");
-    listViewButton.addEventListener('click', handleListMapViewClick)
+    listViewButton.addEventListener('click', handleListMapViewClick);
+    listViewButton.addEventListener('touch', handleListMapViewClick);
 });
 
 /* main line of code is an async IIFE
