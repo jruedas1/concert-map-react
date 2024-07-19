@@ -93,11 +93,9 @@ concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVe
     I'll have to come back and investigate. For now, adding the listener
     only after the DOM loads is solving the problem.
 */
-document.addEventListener('DOMContentLoaded', () => {
+
     const listViewButton = document.querySelector("#list-view");
     listViewButton.addEventListener('click', handleListMapViewClick);
-    listViewButton.addEventListener('touch', handleListMapViewClick);
-});
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load
