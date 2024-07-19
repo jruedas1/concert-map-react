@@ -436,8 +436,12 @@ footer ul li+li {
         flex-flow: column nowrap;
     }
 
+    section#filters {
+        border-right: none;
+    }
+
     #map {
-        flex-grow: max(100);
+        flex-grow: 100;
         height: 100dvh;
     }
 
