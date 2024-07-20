@@ -1,3 +1,7 @@
+:root {
+    --main-background: #F1EEEB;
+}
+
 /* Resets */
 * {
     margin: 0;
@@ -17,6 +21,8 @@ Within the page-wrapper, main components are rows
 #page-wrapper {
     display: flex;
     flex-flow: column nowrap;
+    height: 100dvh;
+    background: var(--main-background);
 }
 
 /*
@@ -93,7 +99,7 @@ section#filters {
     max-height: 100dvh;
 
     border-right: 2px solid black;
-    background-color: #F1EEEB;
+    background-color: var(--main-background);
 }
 
 #filters h3 {
@@ -132,7 +138,7 @@ div#decades.filter, #year-range {
     user clicks on a genre selector: decade, year, genre
 */
 /*.filter-option {*/
-/*    background: #F1EEEB;*/
+/*    background: var(--main-background);*/
 /*}*/
 
 .filter-option:hover, #venues div:hover, .venue-hover {
@@ -242,7 +248,7 @@ div#decades.filter, #year-range {
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     background:  #0075E4;
-    color: #F1EEEB;
+    color: var(--main-background);
 }
 
 /*
@@ -267,7 +273,7 @@ div#decades.filter, #year-range {
 
 #list-view {
     background: #232323;
-    color: #F1EEEB;
+    color: var(--main-background);
     padding: 0.5rem 1rem;
     border: 2px solid black;
     border-radius: 5px;
@@ -330,7 +336,7 @@ input[type="range"] {
     border: 2px solid black;
     border-radius: 5px;
     background: #078A14;
-    color: #F1EEEB;
+    color: var(--main-background);
     font-size: 1.1rem;
     font-weight: 700;
     padding: 0.5rem 1.5rem;
@@ -384,7 +390,7 @@ input[type="range"] {
     position: fixed;
     bottom: 0;
     width: 100dvw;
-    background: #F1EEEB;
+    background: var(--main-background);
     padding: 1.5rem;
     cursor: pointer;
 }
