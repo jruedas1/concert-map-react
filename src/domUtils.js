@@ -37,7 +37,10 @@ export const emptyVenueInfo = () => {
     document.querySelector("#venues").replaceChildren();
 }
 
-
+/*
+* The boxes that appear on the map when a marker is clicked
+* in mobile view
+* */
 export const removeSingleConcertDivs = () => {
      document.querySelectorAll('.single-concert').forEach(div=> div.remove());
 }

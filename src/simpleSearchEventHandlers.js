@@ -49,6 +49,14 @@ const handleSingleConcertDivClick = (event, venue, venuesArray) => {
     handleVenueSelection(event, venue.id, venuesArray);
     removeSingleConcertDivs();
     hideElementMobile(event, document.querySelector("#map"));
+    /*
+    * We would like to be able to return to the same view
+    * Therefore we need to know that
+    * (1) We came from the single concert view, not the list view
+    * (2) What venue is selected when we navigate back
+    * */
+    document.querySelector("#back-to-venues").dataset.origin = "map";
+    document.querySelector("#concert-to-venue-breadcrumb-flex-parent").querySelector("p").dataset.id = venue.id;
 }
 
 // handler to respond to user interaction with decade selector
@@ -210,19 +218,33 @@ export const handleYearToVenueBreadcrumbClick = event => {
 }
 
 export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
-    const highlightedMarker = document.querySelector(".y-marker");
-    if (highlightedMarker){
-        highlightedMarker.classList.remove('y-marker');
-        highlightedMarker.classList.add('marker');
-    }
+
     emptyConcertInfo();
-    showElement(event, document.querySelector("#venues"));
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     hideElement(event, document.querySelector("#concert-to-venue-breadcrumb"));
 
     if (window.innerWidth <= 768){
-        showElementMobile(event, document.querySelector("#venues"));
-        document.querySelector("#list-view").innerText = "Map View";
+        if (document.querySelector("#back-to-venues").dataset.origin==="map"){
+            const venueAndYearInfo = document.querySelector("#concert-to-venue-breadcrumb-flex-parent");
+            const selectedYear = venueAndYearInfo.querySelector("h2").innerText;
+            const selectedVenueId = parseInt(venueAndYearInfo.querySelector("p").dataset.id);
+            // from here we need to reproduce the venue div
+            // which means get the venue object from the data
+            const yearData = await fetchYear(selectedYear);
+            const venues = yearData.venues;
+            const venue = venues.filter((venue) => venue.id == selectedVenueId)[0];
+            showElementMobile(event, document.querySelector("#map"));
+            // then run outputSingleVenue
+        } else {
+            showElement(event, document.querySelector("#venues"));
+            showElementMobile(event, document.querySelector("#venues"));
+            document.querySelector("#list-view").innerText = "Map View";
+            const highlightedMarker = document.querySelector(".y-marker");
+            if (highlightedMarker){
+                highlightedMarker.classList.remove('y-marker');
+                highlightedMarker.classList.add('marker');
+            }
+        }
     }
 }
 
