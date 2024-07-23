@@ -1,8 +1,8 @@
 import {
     handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
     handleVenueMouseEnter, handleVenueMouseOut,
-    handleVenueSelection,
-    handleYearSelection
+    handleVenueSelection, handleSingleConcertDivClick,
+    handleYearSelection, markerMouseEnterHandler, markerMouseOutHandler
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
@@ -115,14 +115,24 @@ export const outputVenuesToMap = (map, venuesArray) => {
         outputVenueToMap(map, venue);
     });
     const markers = document.querySelectorAll('.marker');
-    // markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
     markers.forEach(marker => {
         const venueId = marker.dataset.id;
-        marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
-        marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
+        markerMouseOutHandler = markerMouseOutHandler(marker, 'mouseout', handleMarkerMouseOut, venueId);
+        markerMouseEnterHandler = markerMouseEnterHandler(marker, 'mouseover', handleMarkerMouseEnter, venueId);
+        marker.addEventListener('mouseover', markerMouseEnterHandler);
+        marker.addEventListener('mouseout', markerMouseOutHandler);
         marker.addEventListener('click', event => handleMarkerClick(event, parseInt(venueId), venuesArray));
     });
 }
+
+// function to use closure to generate a named listener with multiple params
+export function createListenerWithArgs(elemRef, eventType, func, ...args){
+    const handler = (...eventArgs) => func(...eventArgs, ...args);
+    elemRef.addEventListener(eventType, handler);
+    return handler;
+}
+
+
 
 export const outputVenueToMap = (map, venue) => {
         if (venue.longitude && venue.latitude){
@@ -183,24 +193,6 @@ export const generateYearList = (decade, map) => {
     yearList.replaceChildren(...newYears);
 }
 
-// This function generates concert information
-// for output to the page
-// This is where you would edit the html for the concert data
-export const generateConcertHTML = venuesArray => {
-    let concertsOutput = '';
-    venuesArray.forEach(venue => {
-        // generate the html for the concerts list
-        venue.concerts.forEach(concert => concertsOutput+= `
-            <div class="concert-info">
-                <h3>${concert.Artist_Formula}</h3>
-                <p>${concert.Venue}</p>
-                <p>${concert.Month} ${concert.Day} ${concert.Year}</p>
-            </div>
-        `);
-    });
-    return concertsOutput;
-}
-
 export const outputOneVenuesConcertsToPage = venue => {
     const concertList = generateOneVenuesConcerts(venue);
     const concertsDiv = document.querySelector("#concerts");
@@ -218,7 +210,6 @@ export const generateOneVenuesConcerts = venue => {
     });
     return concertList;
 }
-
 
 export const generateOneConcertHTML = concert => {
     const concertDiv = document.createElement('div');
@@ -262,6 +253,24 @@ export const generateVenuesList = venuesArray => {
         venuesOutput.push(venueDiv);
     });
     return venuesOutput;
+}
+
+export const generateSingleVenueDiv = (venue, venuesArray) => {
+        const venueName = venue.name;
+        const venueAddressLine1 = venue.address;
+        const venueAddressLine2 =  `${venue.city}, TX ${venue.zip}`;
+        // create the div to contain the information
+        const venueDiv = document.createElement('div');
+        const nameH = document.createElement('h3');
+        const addrP = document.createElement('p');
+        nameH.innerText = venueName;
+        addrP.innerHTML = `${venueAddressLine1}<br>${venueAddressLine2}`;
+        venueDiv.appendChild(nameH);
+        venueDiv.appendChild(addrP);
+        venueDiv.classList.add('single-concert');
+        // Handle a click on the div
+        venueDiv.addEventListener('click', event => handleSingleConcertDivClick(event, venue, venuesArray));
+        return venueDiv;
 }
 
 /*

@@ -1,10 +1,17 @@
 import {
-    emptyContent, emptyConcertInfo,
-    generateOneVenuesConcerts,
+    emptyContent,
+    emptyConcertInfo,
     generateVenuesList,
     generateYearList,
-    outputVenuesToMap, showElement,
-    hideElement, showElementMobile, hideElementMobile, outputOneVenuesConcertsToPage, removeSingleConcertDivs
+    outputVenuesToMap,
+    showElement,
+    hideElement,
+    showElementMobile,
+    hideElementMobile,
+    outputOneVenuesConcertsToPage,
+    removeSingleConcertDivs,
+    generateSingleVenueDiv,
+    createListenerWithArgs
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -24,20 +31,7 @@ export const handleMarkerClick =  (event, venueId, venuesArray) => {
         // Loop over the filters to find the id match
         const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
         // extract the name and address
-        const venueName = venue.name;
-        const venueAddressLine1 = venue.address;
-        const venueAddressLine2 =  `${venue.city}, TX ${venue.zip}`;
-        // create the div to contain the information
-        const venueDiv = document.createElement('div');
-        const nameH = document.createElement('h3');
-        const addrP = document.createElement('p');
-        nameH.innerText = venueName;
-        addrP.innerHTML = `${venueAddressLine1}<br>${venueAddressLine2}`;
-        venueDiv.appendChild(nameH);
-        venueDiv.appendChild(addrP);
-        venueDiv.classList.add('single-concert');
-        // Handle a click on the div
-        venueDiv.addEventListener('click', event => handleSingleConcertDivClick(event, venue, venuesArray));
+        const venueDiv = generateSingleVenueDiv(venue, venuesArray);
         // Remove any existing single-concert output divs
         removeSingleConcertDivs();
         // Insert the div into the DOM
@@ -45,7 +39,7 @@ export const handleMarkerClick =  (event, venueId, venuesArray) => {
     }
 }
 
-const handleSingleConcertDivClick = (event, venue, venuesArray) => {
+export const handleSingleConcertDivClick = (event, venue, venuesArray) => {
     handleVenueSelection(event, venue.id, venuesArray);
     removeSingleConcertDivs();
     hideElementMobile(event, document.querySelector("#map"));
@@ -199,14 +193,20 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     // output the venue's concerts to the page
     outputOneVenuesConcertsToPage(venue);
 
+    matchingMarker.removeEventListener(markerMouseEnterHandler);
+    matchingMarker.removeEventListener(markerMouseOutHandler);
+
+     matchingMarker.classList.remove('marker');
+     matchingMarker.classList.add('y-marker');
+
     // changes to DOM visibility will trigger a mouse out event,
     // which will automatically de-highlight a venue
     // to avoid this problem, set the highlight on a 1ms timer
     // it will highlight the marker after the DOM changes
-    setTimeout(() => {
-        matchingMarker.classList.remove('marker');
-        matchingMarker.classList.add('y-marker');
-    }, 1);
+    // setTimeout(() => {
+    //     matchingMarker.classList.remove('marker');
+    //     matchingMarker.classList.add('y-marker');
+    // }, 1);
 }
 
 export const handleYearToVenueBreadcrumbClick = event => {
@@ -215,10 +215,10 @@ export const handleYearToVenueBreadcrumbClick = event => {
     showElement(event, document.querySelector("#years"))
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     if (window.innerWidth < 768) hideElementMobile(event, document.querySelector("#map"));
+    removeSingleConcertDivs();
 }
 
 export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
-
     emptyConcertInfo();
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     hideElement(event, document.querySelector("#concert-to-venue-breadcrumb"));
@@ -232,9 +232,14 @@ export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
             // which means get the venue object from the data
             const yearData = await fetchYear(selectedYear);
             const venues = yearData.venues;
-            const venue = venues.filter((venue) => venue.id == selectedVenueId)[0];
+            const venue = venues.filter((venue) => venue.id === selectedVenueId)[0];
             showElementMobile(event, document.querySelector("#map"));
             // then run outputSingleVenue
+            const venueDiv = generateSingleVenueDiv(venue, venues);
+            // make sure there are no other concert divs in the DOM
+            removeSingleConcertDivs();
+            // Insert the div into the DOM
+            document.querySelector("main").appendChild(venueDiv);
         } else {
             showElement(event, document.querySelector("#venues"));
             showElementMobile(event, document.querySelector("#venues"));
@@ -260,6 +265,7 @@ export const handleVenueMouseOut = (event, venueId) => {
    matchingMarker.classList.add('marker');
 }
 
+// handler for marker mouse enter
 export const handleMarkerMouseEnter = (event, venueId) => {
     const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
     matchingVenue.classList.add('venue-hover');
@@ -267,6 +273,7 @@ export const handleMarkerMouseEnter = (event, venueId) => {
     event.target.classList.add('y-marker');
 }
 
+// handler for marker mouse out
 export const handleMarkerMouseOut = (event, venueId) => {
      const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
      matchingVenue.classList.remove("venue-hover");
@@ -274,15 +281,39 @@ export const handleMarkerMouseOut = (event, venueId) => {
      event.target.classList.add('marker');
 }
 
+// closure function to pass a named function to addEventListener
+export let markerMouseEnterHandler = (elemRef, evtType, fcnName, venueId) => {
+    createListenerWithArgs(elemRef, evtType, fcnName, venueId)
+    {
+        const handler = (event) => fcnName(event, venueId);
+        elemRef.addEventListener(evtType, handler);
+        return handler;
+    }
+}
+
+// closure function to pass a named function to addEventListener
+export let markerMouseOutHandler = (elemRef, evtType, fcnName, venueId) => {
+    createListenerWithArgs(elemRef, evtType, fcnName, venueId)
+    {
+        const handler = (event) => fcnName(event, venueId);
+        elemRef.addEventListener(evtType, handler);
+        return handler;
+    }
+}
+
 export const handleListMapViewClick = event => {
     const destination = event.target.innerText.toLowerCase();
+    const singleConcertDiv = document.querySelector(".single-concert");
     if (destination.includes('list')) {
+        if (singleConcertDiv) hideElement(event, document.querySelector(".single-concert"));
         showElementMobile(event, document.querySelector("#venues"));
+        showElement(event, document.querySelector("#venues"));
         hideElementMobile(event, document.querySelector("#map"));
         event.target.innerText = 'Map View';
     } else {
         hideElementMobile(event, document.querySelector("#venues"));
         showElementMobile(event, document.querySelector("#map"));
+        if (singleConcertDiv) showElement(event, document.querySelector(".single-concert"));
         event.target.innerText = 'List View';
     }
 }
