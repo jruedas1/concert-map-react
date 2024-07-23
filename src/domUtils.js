@@ -2,7 +2,7 @@ import {
     handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
     handleVenueMouseEnter, handleVenueMouseOut,
     handleVenueSelection, handleSingleConcertDivClick,
-    handleYearSelection, markerMouseEnterHandler, markerMouseOutHandler
+    handleYearSelection
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
@@ -117,22 +117,11 @@ export const outputVenuesToMap = (map, venuesArray) => {
     const markers = document.querySelectorAll('.marker');
     markers.forEach(marker => {
         const venueId = marker.dataset.id;
-        markerMouseOutHandler = markerMouseOutHandler(marker, 'mouseout', handleMarkerMouseOut, venueId);
-        markerMouseEnterHandler = markerMouseEnterHandler(marker, 'mouseover', handleMarkerMouseEnter, venueId);
-        marker.addEventListener('mouseover', markerMouseEnterHandler);
-        marker.addEventListener('mouseout', markerMouseOutHandler);
+        marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
+        marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
         marker.addEventListener('click', event => handleMarkerClick(event, parseInt(venueId), venuesArray));
     });
 }
-
-// function to use closure to generate a named listener with multiple params
-export function createListenerWithArgs(elemRef, eventType, func, ...args){
-    const handler = (...eventArgs) => func(...eventArgs, ...args);
-    elemRef.addEventListener(eventType, handler);
-    return handler;
-}
-
-
 
 export const outputVenueToMap = (map, venue) => {
         if (venue.longitude && venue.latitude){
@@ -321,6 +310,21 @@ export const handleWindowResize = (event, breakpoint) => {
         window.aboveBreakPoint = false;
         hideElementMobile(event, venuesEl);
     }
+}
+
+/*
+* This function searches for the
+* */
+export const returnMarkerToNormalCondition = (event, venuesArray) => {
+    const selectedMarkers = document.querySelectorAll('.y-marker');
+    selectedMarkers.forEach(marker => {
+            marker.classList.remove('y-marker');
+            marker.classList.add('marker');
+            const id = marker.dataset.id;
+            marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, id));
+            marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, id));
+            marker.addEventListener('click', event => handleMarkerClick(event, id, venuesArray));
+        });
 }
 
 

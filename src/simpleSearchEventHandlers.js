@@ -11,7 +11,7 @@ import {
     outputOneVenuesConcertsToPage,
     removeSingleConcertDivs,
     generateSingleVenueDiv,
-    createListenerWithArgs
+    returnMarkerToNormalCondition
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -26,6 +26,7 @@ import {fetchYear} from "./dataAccess.js";
  NOT like this: addEventListener('click', handleMarkerClick)
  */
 export const handleMarkerClick =  (event, venueId, venuesArray) => {
+    venueId = parseInt(venueId);
     // This behavior applies only in mobile view
     if (window.innerWidth <= 768){
         // Loop over the filters to find the id match
@@ -36,6 +37,23 @@ export const handleMarkerClick =  (event, venueId, venuesArray) => {
         removeSingleConcertDivs();
         // Insert the div into the DOM
         document.querySelector("main").appendChild(venueDiv);
+        /*
+        * In order to ensure that the clicked marker turns color
+        * and remains that color, we need to remove its
+        * mouseenter and mouseout event listeners.
+        * To accomplish this we clone it and then
+        * add the y-marker class.
+        * We also need to find if there are any other
+        * markers currently marked as selected.
+        * To these we must add the corresponding
+        * mouseout and mouseenter listeners again
+        * as well as setting the normal marker class
+        * */
+        returnMarkerToNormalCondition(event, venuesArray);
+        const newMarker = event.target.cloneNode(true);
+        event.target.replaceWith(newMarker);
+        newMarker.classList.remove('marker');
+        newMarker.classList.add('y-marker');
     }
 }
 
@@ -193,45 +211,62 @@ export const handleVenueSelection = (event, venueId, venuesArray) => {
     // output the venue's concerts to the page
     outputOneVenuesConcertsToPage(venue);
 
-    matchingMarker.removeEventListener(markerMouseEnterHandler);
-    matchingMarker.removeEventListener(markerMouseOutHandler);
+    if (window.innerWidth <= 768){
+        document.querySelector("#back-to-venues").dataset.origin = "list";
+        document.querySelector("#concert-to-venue-breadcrumb-flex-parent").querySelector("p").dataset.id = venue.id;
+    }
 
-     matchingMarker.classList.remove('marker');
-     matchingMarker.classList.add('y-marker');
-
+    // highlight the selected marker
     // changes to DOM visibility will trigger a mouse out event,
-    // which will automatically de-highlight a venue
     // to avoid this problem, set the highlight on a 1ms timer
     // it will highlight the marker after the DOM changes
-    // setTimeout(() => {
-    //     matchingMarker.classList.remove('marker');
-    //     matchingMarker.classList.add('y-marker');
-    // }, 1);
+    setTimeout(() => {
+        matchingMarker.classList.remove('marker');
+        matchingMarker.classList.add('y-marker');
+    }, 1);
 }
 
-export const handleYearToVenueBreadcrumbClick = event => {
+export const handleYearToVenueBreadcrumbClick = async (event) => {
     emptyContent();
     showElement(event, document.querySelector("#decades"));
     showElement(event, document.querySelector("#years"))
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
-    if (window.innerWidth < 768) hideElementMobile(event, document.querySelector("#map"));
-    removeSingleConcertDivs();
+    if (window.innerWidth < 768) {
+        hideElementMobile(event, document.querySelector("#map"));
+        /* a venue has been turned yellow (selected) and had its
+        * mouseout and mouseenter events removed, we have to
+        * add the event handlers again and turn it back to blue
+        * */
+        removeSingleConcertDivs();
+        const selectedYear = document.querySelector("#year-breadcrumb").innerText;
+        const yearData = await fetchYear(selectedYear);
+        const venues = yearData.venues;
+        returnMarkerToNormalCondition(event, venues);
+    }
 }
 
-export const handleConcertsToVenuesBreadcrumbClick = async(event) => {
+export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
     emptyConcertInfo();
     showElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     hideElement(event, document.querySelector("#concert-to-venue-breadcrumb"));
 
+     const venueAndYearInfo = document.querySelector("#concert-to-venue-breadcrumb-flex-parent");
+     const selectedYear = venueAndYearInfo.querySelector("h2").innerText;
+     const yearData = await fetchYear(selectedYear);
+     const venues = yearData.venues;
+
+    if (window.innerWidth > 768) {
+        showElement(event, document.querySelector("#venues"));
+        returnMarkerToNormalCondition(event, venues);
+    }
+
     if (window.innerWidth <= 768){
         if (document.querySelector("#back-to-venues").dataset.origin==="map"){
-            const venueAndYearInfo = document.querySelector("#concert-to-venue-breadcrumb-flex-parent");
-            const selectedYear = venueAndYearInfo.querySelector("h2").innerText;
+
             const selectedVenueId = parseInt(venueAndYearInfo.querySelector("p").dataset.id);
             // from here we need to reproduce the venue div
             // which means get the venue object from the data
-            const yearData = await fetchYear(selectedYear);
-            const venues = yearData.venues;
+
             const venue = venues.filter((venue) => venue.id === selectedVenueId)[0];
             showElementMobile(event, document.querySelector("#map"));
             // then run outputSingleVenue
@@ -279,26 +314,6 @@ export const handleMarkerMouseOut = (event, venueId) => {
      matchingVenue.classList.remove("venue-hover");
      event.target.classList.remove('y-marker');
      event.target.classList.add('marker');
-}
-
-// closure function to pass a named function to addEventListener
-export let markerMouseEnterHandler = (elemRef, evtType, fcnName, venueId) => {
-    createListenerWithArgs(elemRef, evtType, fcnName, venueId)
-    {
-        const handler = (event) => fcnName(event, venueId);
-        elemRef.addEventListener(evtType, handler);
-        return handler;
-    }
-}
-
-// closure function to pass a named function to addEventListener
-export let markerMouseOutHandler = (elemRef, evtType, fcnName, venueId) => {
-    createListenerWithArgs(elemRef, evtType, fcnName, venueId)
-    {
-        const handler = (event) => fcnName(event, venueId);
-        elemRef.addEventListener(evtType, handler);
-        return handler;
-    }
 }
 
 export const handleListMapViewClick = event => {
