@@ -62,6 +62,13 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         // change the marker to appear selected
         newMarker.classList.remove('marker');
         newMarker.classList.add('y-marker');
+
+        // because we had a mouseenter for the click, and
+        // then no mouse-out, the corresponding venue in the list
+        // retains the venue-hover class, which was imposed
+        // on mouseenter and never removed. Remove it
+        const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
+        matchingVenue.classList.remove('venue-hover');
     }
 }
 
@@ -138,9 +145,7 @@ export const handleYearSelection = async (event, map) => {
 export const handleConfirmYearSelection = async (event, map) => {
     const selectedYear = document.querySelector("#years").querySelector("h3").innerText;
     const dataOnSelectedYear = await fetchYear(selectedYear);
-    console.log(dataOnSelectedYear);
     const venues = dataOnSelectedYear.venues;
-    console.log(venues);
     outputVenuesToMap(map, venues);
 
     // Output the venue names to the page
