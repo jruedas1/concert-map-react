@@ -257,6 +257,11 @@ export const handleYearToVenueBreadcrumbClick = async (event) => {
         const yearData = await fetchYear(selectedYear);
         const venues = yearData.venues;
         returnMarkerToNormalCondition(map, event, venues);
+
+        // Reset the text of the "List View" / "Map View" button to make
+        // sure that it always says "List View" when the user first comes
+        // to the venue selection view
+        document.querySelector("#list-view").innerText = "List View";
     }
 }
 
