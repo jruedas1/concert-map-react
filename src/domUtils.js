@@ -119,7 +119,7 @@ export const outputVenuesToMap = (map, venuesArray) => {
         const venueId = marker.dataset.id;
         marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
         marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
-        marker.addEventListener('click', event => handleMarkerClick(event, parseInt(venueId), venuesArray));
+        marker.addEventListener('click', event => handleMarkerClick(map, event, parseInt(venueId), venuesArray));
     });
 }
 
@@ -131,11 +131,14 @@ export const outputVenueToMap = (map, venue) => {
             const venueMarker = new mapboxgl.Marker(el);
             venueMarker.setLngLat([venue.longitude, venue.latitude]);
             venueMarker.addTo(map);
+            // return venueMarker;
             // const popup = new mapboxgl.Popup()
             //     .setHTML('<p>'+ venue.name + '</p>');
             // venueMarker.setPopup(popup);
         }
 }
+
+
 
 /*
 * This method runs when the page first loads
@@ -315,7 +318,7 @@ export const handleWindowResize = (event, breakpoint) => {
 /*
 * This function searches for the
 * */
-export const returnMarkerToNormalCondition = (event, venuesArray) => {
+export const returnMarkerToNormalCondition = (map, event, venuesArray) => {
     const selectedMarkers = document.querySelectorAll('.y-marker');
     selectedMarkers.forEach(marker => {
             marker.classList.remove('y-marker');
@@ -327,4 +330,7 @@ export const returnMarkerToNormalCondition = (event, venuesArray) => {
         });
 }
 
+export const findMarkerById = (map, id) => {
+    return map.querySelector(`[data-id='${id.toString()}']`);
+}
 

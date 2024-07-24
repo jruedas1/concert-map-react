@@ -11,7 +11,7 @@ import {
     outputOneVenuesConcertsToPage,
     removeSingleConcertDivs,
     generateSingleVenueDiv,
-    returnMarkerToNormalCondition
+    returnMarkerToNormalCondition, outputVenueToMap, findMarkerById
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -25,7 +25,7 @@ import {fetchYear} from "./dataAccess.js";
  markers.forEach(marker => marker.addEventListener('click', event => handleMarkerClick(event, venuesArray)));
  NOT like this: addEventListener('click', handleMarkerClick)
  */
-export const handleMarkerClick =  (event, venueId, venuesArray) => {
+export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
     venueId = parseInt(venueId);
     // This behavior applies only in mobile view
     if (window.innerWidth <= 768){
@@ -41,17 +41,25 @@ export const handleMarkerClick =  (event, venueId, venuesArray) => {
         * In order to ensure that the clicked marker turns color
         * and remains that color, we need to remove its
         * mouseenter and mouseout event listeners.
-        * To accomplish this we clone it and then
-        * add the y-marker class.
+        * To accomplish this we remove it,
+        * add a new one in its place, and
+        * give the new one the y-marker class.
         * We also need to find if there are any other
         * markers currently marked as selected.
         * To these we must add the corresponding
         * mouseout and mouseenter listeners again
         * as well as setting the normal marker class
         * */
-        returnMarkerToNormalCondition(event, venuesArray);
-        const newMarker = event.target.cloneNode(true);
-        event.target.replaceWith(newMarker);
+        // this searches the map for y-markers
+        // then changes their marker class
+        // and adds the event listeners
+        returnMarkerToNormalCondition(map, event, venuesArray);
+        // remove the clicked marker
+        event.target.remove();
+        // replace it with a new marker that has no listeners
+        outputVenueToMap(map, venue);
+        const newMarker = findMarkerById(document.querySelector("#map"), venueId);
+        // change the marker to appear selected
         newMarker.classList.remove('marker');
         newMarker.classList.add('y-marker');
     }
@@ -130,7 +138,9 @@ export const handleYearSelection = async (event, map) => {
 export const handleConfirmYearSelection = async (event, map) => {
     const selectedYear = document.querySelector("#years").querySelector("h3").innerText;
     const dataOnSelectedYear = await fetchYear(selectedYear);
+    console.log(dataOnSelectedYear);
     const venues = dataOnSelectedYear.venues;
+    console.log(venues);
     outputVenuesToMap(map, venues);
 
     // Output the venue names to the page
@@ -241,7 +251,7 @@ export const handleYearToVenueBreadcrumbClick = async (event) => {
         const selectedYear = document.querySelector("#year-breadcrumb").innerText;
         const yearData = await fetchYear(selectedYear);
         const venues = yearData.venues;
-        returnMarkerToNormalCondition(event, venues);
+        returnMarkerToNormalCondition(map, event, venues);
     }
 }
 
@@ -257,33 +267,43 @@ export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
 
     if (window.innerWidth > 768) {
         showElement(event, document.querySelector("#venues"));
-        returnMarkerToNormalCondition(event, venues);
+        returnMarkerToNormalCondition(map, event, venues);
     }
 
     if (window.innerWidth <= 768){
-        if (document.querySelector("#back-to-venues").dataset.origin==="map"){
-
+            // Regardless of where the user came from, we want the single concert output
+            // on the map
+            // get the venue id
             const selectedVenueId = parseInt(venueAndYearInfo.querySelector("p").dataset.id);
             // from here we need to reproduce the venue div
             // which means get the venue object from the data
-
             const venue = venues.filter((venue) => venue.id === selectedVenueId)[0];
-            showElementMobile(event, document.querySelector("#map"));
             // then run outputSingleVenue
             const venueDiv = generateSingleVenueDiv(venue, venues);
             // make sure there are no other concert divs in the DOM
             removeSingleConcertDivs();
             // Insert the div into the DOM
             document.querySelector("main").appendChild(venueDiv);
+        // if the user navigated to the concerts view from the map view
+        if (document.querySelector("#back-to-venues").dataset.origin==="map"){
+            // show the map
+            showElementMobile(event, document.querySelector("#map"));
+            document.querySelector("#list-view").innerText = "List View";
         } else {
+            // otherwise show the venues list
             showElement(event, document.querySelector("#venues"));
             showElementMobile(event, document.querySelector("#venues"));
             document.querySelector("#list-view").innerText = "Map View";
+
             const highlightedMarker = document.querySelector(".y-marker");
             if (highlightedMarker){
                 highlightedMarker.classList.remove('y-marker');
                 highlightedMarker.classList.add('marker');
             }
+            // hide any single concert divs, we don't want to see these in
+            // list view
+            const singleConcertDiv = document.querySelector(".single-concert");
+            if (singleConcertDiv) hideElement(event, document.querySelector(".single-concert"));
         }
     }
 }
