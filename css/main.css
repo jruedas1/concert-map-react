@@ -65,6 +65,20 @@ nav a {
     text-decoration: none;
 }
 
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 2rem;
+    height: 0.25rem;
+    margin: 0.35rem auto;
+    border-radius: 25%;
+    transition: all 0.3s ease-in-out;
+    background: var(--main-background);
+}
+
 /*
     Main element is a flex-child of page-wrapper
     Main has two components, the filters and the map
@@ -429,12 +443,25 @@ footer ul li+li {
 }
 
 @media screen and (max-width: 768px) {
-    .mobile-hidden, header {
+    .mobile-hidden {
         display: none;
     }
 
     .mobile-visible {
         display: initial;
+    }
+
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
     }
 
     main {

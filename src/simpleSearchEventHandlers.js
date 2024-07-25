@@ -197,6 +197,7 @@ export const handleConfirmYearSelection = async (event, map) => {
 const mobileUIChangesAfterConfirmYear = event => {
     hideElementMobile(event, document.querySelector("#venues"));
     showElementMobile(event, document.querySelector("#map"));
+    showElementMobile(event, document.querySelector("header"));
 }
 
 
@@ -246,6 +247,7 @@ export const handleYearToVenueBreadcrumbClick = async (event) => {
     showElement(event, document.querySelector("#decades"));
     showElement(event, document.querySelector("#years"))
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
+    hideElementMobile(event, document.querySelector("header"));
     if (window.innerWidth < 768) {
         hideElementMobile(event, document.querySelector("#map"));
         /* a venue has been turned yellow (selected) and had its
