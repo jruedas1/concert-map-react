@@ -74,7 +74,7 @@ nav a {
     width: 2rem;
     height: 0.25rem;
     margin: 0.35rem auto;
-    border-radius: 25%;
+    border-radius: 2px;
     transition: all 0.3s ease-in-out;
     background: var(--main-background);
 }
