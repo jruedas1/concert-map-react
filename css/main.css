@@ -105,7 +105,7 @@ main {
 section#filters {
     text-align: center;
 
-    flex: 1 1 20%;
+    flex: 0 0 20%;
 
     display: flex;
     flex-flow: column nowrap;
@@ -372,7 +372,7 @@ input[type="range"] {
 
 
 #map {
-   flex: 1 1 75%;
+   flex: 1 0 auto;
     height: 100dvh;
 }
 
@@ -442,6 +442,13 @@ footer ul li+li {
     margin-top: 1.5rem;
 }
 
+@media screen and (max-width: 1144px) {
+    section#filters {
+        flex: 0 0 30%;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .mobile-hidden {
         display: none;
@@ -470,13 +477,11 @@ footer ul li+li {
 
     section#filters {
         border-right: none;
-        flex-grow: 1;
-        flex-shrink: 2;
+        flex: 0 0 auto;
     }
 
     #map {
-        flex-grow: 2;
-        flex-shrink: 1;
+        flex: 2 0 auto;
         height: 100dvh;
     }
 

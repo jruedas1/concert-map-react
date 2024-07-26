@@ -198,6 +198,7 @@ const mobileUIChangesAfterConfirmYear = event => {
     hideElementMobile(event, document.querySelector("#venues"));
     showElementMobile(event, document.querySelector("#map"));
     showElementMobile(event, document.querySelector("header"));
+    hideElementMobile(event, document.querySelector("#search-type-selector"));
 }
 
 const mobileUIChangesReturningToYearSelection = event => {
@@ -205,6 +206,7 @@ const mobileUIChangesReturningToYearSelection = event => {
     showElement(event, document.querySelector("#years"))
     hideElement(event, document.querySelector("#year-to-venue-breadcrumb"));
     hideElementMobile(event, document.querySelector("header"));
+    showElementMobile(event, document.querySelector("#search-type-selector"));
 }
 
 
