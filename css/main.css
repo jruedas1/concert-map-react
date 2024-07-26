@@ -496,15 +496,16 @@ footer ul li+li {
     }
 
     .hamburger.active .bar:nth-child(1){
-        opacity: 0;
+        transform: translateY(0.6rem) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(2){
-        transform: translateY(0.33rem) rotate(45deg);
+        opacity: 0;
     }
 
     .hamburger.active .bar:nth-child(3){
-        transform: translateY(-0.33rem) rotate(-45deg);
+         transform: translateY(-0.6rem) rotate(-45deg);
+
     }
 
     main {
