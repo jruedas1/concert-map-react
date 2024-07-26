@@ -58,6 +58,7 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         event.target.remove();
         // replace it with a new marker that has no listeners
         outputVenueToMap(map, venue);
+        // get a reference to the new marker
         const newMarker = findMarkerById(document.querySelector("#map"), venueId);
         // change the marker to appear selected
         newMarker.classList.remove('marker');
