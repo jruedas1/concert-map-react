@@ -1,6 +1,6 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
-import {generateGenreList, handleWindowResize, toggleVisibility} from "./domUtils.js";
+import {generateGenreList, handleWindowResize, mobileMenu, toggleVisibility} from "./domUtils.js";
 import {
     handleDecadeSelection, handleConfirmYearSelection,
     handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick, handleListMapViewClick
@@ -88,14 +88,11 @@ yearToVenueBreadcrumb.addEventListener('click', event => handleYearToVenueBreadc
 const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
 concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
 
-/*  I don't actually understand why the list-view button is sometimes not detected
-    at this stage in the code flow when every other element I reference is;
-    I'll have to come back and investigate. For now, adding the listener
-    only after the DOM loads is solving the problem.
-*/
+const listViewButton = document.querySelector("#list-view");
+listViewButton.addEventListener('click', handleListMapViewClick);
 
-    const listViewButton = document.querySelector("#list-view");
-    listViewButton.addEventListener('click', handleListMapViewClick);
+const hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener('click', mobileMenu);
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load

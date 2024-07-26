@@ -334,3 +334,7 @@ export const findMarkerById = (map, id) => {
     return map.querySelector(`[data-id='${id.toString()}']`);
 }
 
+export const mobileMenu = () => {
+    document.querySelector(".hamburger").classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('active');
+}

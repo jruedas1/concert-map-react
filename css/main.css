@@ -1,5 +1,6 @@
 :root {
     --main-background: #F1EEEB;
+    --header-dark: #231F20;
 }
 
 /* Resets */
@@ -36,7 +37,7 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #231F20;
+    background-color: var(--header-dark);
     color: #F5F5F5;
     padding: 1rem 4dvh;
 }
@@ -338,7 +339,7 @@ input[type="range"] {
 
 
 #year-slider::-moz-range-track, #year-slider::-webkit-slider-runnable-track {
-    background: #231F20;
+    background: var(--header-dark);
 }
 
 /*===== NEXT BUTTONS =======*/
@@ -418,7 +419,7 @@ input[type="range"] {
 */
 
 footer {
-    background: #231F20;
+    background: var(--header-dark);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -465,6 +466,28 @@ footer ul li+li {
 
     header h1 {
         font-size: 1.2rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        width: auto;
+        transition: 0.3s;
+        z-index: 2;
+        background: var(--header-dark);
+        text-align: right;
+        padding: 1rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        right: 0;
     }
 
     .hamburger {
