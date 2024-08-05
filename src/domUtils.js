@@ -305,11 +305,13 @@ export const hideElementMobile = (event, elementReference) => {
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;
     const venuesEl = document.querySelector("#venues");
+    // if the window goes above 768
     if (currentWidth > breakpoint && !window.aboveBreakPoint){
         window.aboveBreakPoint = true;
         showElementMobile(event, venuesEl);
         removeSingleConcertDivs();
     } else if (currentWidth <= breakpoint && window.aboveBreakPoint){
+        // if the window goes below 768
         window.aboveBreakPoint = false;
         hideElementMobile(event, venuesEl);
     }
