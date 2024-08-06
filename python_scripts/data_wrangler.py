@@ -1,5 +1,7 @@
 import json
 import csv
+from collections import defaultdict
+from datetime import datetime
 
 
 class DataWrangler:
@@ -375,3 +377,67 @@ class DataWrangler:
 
         with open(output_file, 'w') as f:
             json.dump(db_json, f, indent=4)
+
+    @classmethod
+    def generate_genres_years_concerts(cls, genre_hierarchy, artists_and_genres, year_venues, output_file):
+        # Loading data from files
+        with open(genre_hierarchy) as f:
+            genre_hierarchy = json.load(f)
+
+        with open(artists_and_genres) as f:
+            artists_and_genres = json.load(f)
+
+        with open(year_venues) as f:
+            years_venues = json.load(f)
+
+        # Step 1: Create a map of genres to subgenres
+        genre_map = {}
+        genre_id_map = {}
+        for genre_info in genre_hierarchy["genres_and_subgenres"]:
+            genre_map[genre_info["genre"]] = genre_info["subgenres"]
+            genre_id_map[genre_info["genre"]] = genre_info["id"]
+
+        # Step 2: Create a map of artists to their subgenres
+        artist_genre_map = {}
+        for artist in artists_and_genres:
+            artist_genre_map[artist["artist"]] = artist["genres"]
+
+        # Step 3: Process each year's venues and concerts
+        concert_map = defaultdict(lambda: defaultdict(list))
+
+        for year_data in years_venues["years"]:
+            year_id = year_data["id"]
+            for venue in year_data["venues"]:
+                for concert in venue["concerts"]:
+                    artist = concert["Artist_Formula"]
+                    concert_genres = artist_genre_map.get(artist, [])
+                    for genre in genre_map:
+                        if any(subgenre in genre_map[genre] for subgenre in concert_genres):
+                            concert_map[genre][year_id].append({
+                                "Month": concert["Month"],
+                                "Day": concert["Day"],
+                                "Year": concert["Year"],
+                                "Venue": concert["Venue"],
+                                "venue_id": venue["id"],
+                                "coords": [venue["longitude"], venue["latitude"]],
+                                "Event_Artists": concert["Event_Artists"],
+                                "Artist_Formula": concert["Artist_Formula"],
+                                "Event_Formulas": concert["Event_Formulas"],
+                                "Index": concert["Index"],
+                                "id": concert["id"]
+                            })
+
+        # Step 4: Convert the concert map to the desired output format
+        output = []
+
+        for genre, years in concert_map.items():
+            genre_entry = {"id": genre_id_map[genre], "name": genre, "years": []}
+            for year, concerts in sorted(years.items()):
+                year_entry = {"id": int(year), "concerts": sorted(concerts, key=lambda x: datetime.strptime(
+                    f"{x['Month']} {x['Day']} {x['Year']}", "%B %d %Y"))}
+                genre_entry["years"].append(year_entry)
+            output.append(genre_entry)
+
+        # Output the final JSON
+        with open(output_file, 'w') as f:
+            json.dump(output, f, indent=4)
