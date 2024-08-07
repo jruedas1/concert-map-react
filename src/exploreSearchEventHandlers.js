@@ -1,6 +1,6 @@
 import {generateOneConcertHTML, outputVenueToMap, toggleVisibility} from "./domUtils.js";
 import {stopAnimation} from "./searchTypeEventHandlers.js";
-import {getVenuesForYearAndGenre} from "./dataAccess.js";
+import {getConcertsForYearAndGenreLocal, getVenuesForYearAndGenre} from "./dataAccess.js";
 
 
 /*
@@ -90,8 +90,10 @@ export const handleGenreSelection = async (event, map) => {
     // retrieve venues for the selected year range
     // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
-         const genreVenuesForSelectedYear = await getVenuesForYearAndGenre(selectedGenreId, i);
-         await outputConcertsOnTimer(genreVenuesForSelectedYear, map);
+         console.log(selectedGenreId, i)
+         const genreVenuesForSelectedYear = await getConcertsForYearAndGenreLocal(selectedGenreId, i);
+         console.log(genreVenuesForSelectedYear);
+         // await outputConcertsOnTimer(genreVenuesForSelectedYear, map);
     }
     // replace current genre heading with name of selected genre
     document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
@@ -99,5 +101,6 @@ export const handleGenreSelection = async (event, map) => {
     // this hides the genre selector if it's showing
     // this should not happen if the stopAnimation global is set to true,
     // in other words if the user has navigated to the simple search tab
+    // !!!ALERT!!! this is glitchy
     if (!stopAnimation) document.querySelector("#genres").click();
 }

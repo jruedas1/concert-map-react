@@ -4,7 +4,7 @@ import {
     handleVenueSelection, handleSingleConcertDivClick,
     handleYearSelection
 } from "./simpleSearchEventHandlers.js";
-import {fetchGenreData} from "./dataAccess.js";
+import {fetchGenreData, fetchGenreDataLocal} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
 
 /*
@@ -157,7 +157,7 @@ export const outputVenueToMap = (map, venue) => {
 
 export const generateGenreList = async (map) => {
     const genreList = document.querySelector("#genre-list");
-    const genreData = await fetchGenreData();
+    const genreData = await fetchGenreDataLocal();
     for (const genre of genreData){
         const genreDiv = document.createElement('div');
         genreDiv.innerHTML = `

@@ -10,7 +10,14 @@ import { getFirestore, collection, doc, getDoc, getDocs } from 'https://www.gsta
 initializeApp(FIREBASE_CONFIG);
 const db = getFirestore();
 
-export const fetchData = async () => {
+/*=== JSON SERVER METHODS ===*/
+/*
+* These methods are for retrieving data from
+* a db.json file stored locally
+* using the json-server dependency
+* */
+
+export const fetchYearsDataLocal = async () => {
     const venues = await fetch('http://localhost:3001/years');
     return await venues.json();
 }
@@ -20,15 +27,34 @@ export const fetchYearLocal = async (year) => {
     return await venue.json();
 }
 
+export const fetchGenreDataLocal = async () => {
+    const genreInfo = await fetch('http://localhost:3001/genres');
+    return await genreInfo.json();
+}
+
+export const fetchGenreLocal = async (genreId) => {
+    const genreData = await fetch(`http://localhost:3001/genres/${genreId}`);
+    return await genreData.json();
+}
+
+// genreId and selectedYear must be integers
+export const getConcertsForYearAndGenreLocal = async (genreId, selectedYear) => {
+    const allDataForGenre = await fetchGenreLocal(genreId);
+    let concertsForSelectedYearAndGenre;
+    for (const year of allDataForGenre['years']){
+        if (year['id'] === selectedYear){
+            concertsForSelectedYearAndGenre = year['concerts'];
+        }
+    }
+    return concertsForSelectedYearAndGenre;
+}
+
+/*====  FIRESTORE METHODS ==========*/
+
 export const fetchYear = async (year) => {
     const docRef = doc(db, 'years', year);
     const docSnap = await getDoc(docRef);
     return docSnap.data();
-}
-
-export const fetchGenreDataLocal = async () => {
-    const genreInfo = await fetch('http://localhost:3001/genres');
-    return await genreInfo.json();
 }
 
 export const fetchGenreData = async () => {
@@ -36,11 +62,6 @@ export const fetchGenreData = async () => {
     const genres = [];
     querySnapshot.forEach(genre => genres.push(genre.data()));
     return genres;
-}
-
-export const fetchGenreLocal = async (genreId) => {
-    const genreData = await fetch(`http://localhost:3001/genres/${genreId}`);
-    return await genreData.json();
 }
 
 export const fetchGenre = async (genreId) => {
