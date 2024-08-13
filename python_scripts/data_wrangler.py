@@ -298,69 +298,6 @@ class DataWrangler:
         with open(output_file, 'w') as of:
             json.dump(genres_and_subgenres, of, indent=4)
 
-    # generates the genres JSON.
-    # Inputs are:
-    # 1. the JSON file of years with their venues and concerts
-    # 2. the JSON file of artists with their genres
-    # 3. the JSON file of genres with their subgenres
-    # 4. the list of master genres
-    # 5. the name of the output file
-    @classmethod
-    def generate_genres_years_json(cls, year_venue_concert_json, artists_genres_json,
-                                   genres_subgenres_json, master_genres_list, output_file):
-
-        with open(year_venue_concert_json) as yvcjson:
-            year_venue_concert_data = json.load(yvcjson)
-
-        with open(artists_genres_json) as agjson:
-            artists_genres = json.load(agjson)
-
-        with open(genres_subgenres_json) as gsjson:
-            genres_subgenres = json.load(gsjson)
-
-        genres_and_artists = {}
-
-        for genre in master_genres_list:
-            genres_and_artists[genre] = []
-
-        for artist in artists_genres:
-            for genre in artist['genres']:
-                genre_lower = genre.lower().strip()
-                # search for the genre in the genres/subgenres
-                for master_genre in genres_subgenres["genres_and_subgenres"]:
-                    for subgenre in master_genre["subgenres"]:
-                        if genre_lower == subgenre:
-                            if artist["artist"] not in genres_and_artists[master_genre["genre"]]:
-                                genres_and_artists[master_genre["genre"]].append(artist["artist"])
-
-        genre_json = []
-        genre_id = 1
-        for genre, artists in genres_and_artists.items():
-            this_genre = {
-                "id": genre_id,
-                "name": genre,
-                "years": []
-            }
-            for year_data in year_venue_concert_data["years"]:
-                year = year_data["id"]
-                venues = []
-                for venue_data in year_data["venues"]:
-                    venue_concerts = []
-                    for concert in venue_data["concerts"]:
-                        if concert["Artist_Formula"] in artists:
-                            venue_concerts.append(concert)
-                    if venue_concerts:
-                        venue_data_copy = venue_data.copy()
-                        venue_data_copy["concerts"] = venue_concerts
-                        venues.append(venue_data_copy)
-                if venues:
-                    this_genre["years"].append({"id": year, "venues": venues})
-            genre_json.append(this_genre)
-            genre_id += 1
-
-        with open(output_file, 'w') as f:
-            json.dump(genre_json, f, indent=4)
-
     @classmethod
     def generate_db_json(cls, years_json, genres_json, output_file):
 
@@ -379,64 +316,70 @@ class DataWrangler:
             json.dump(db_json, f, indent=4)
 
     @classmethod
-    def generate_genres_years_concerts(cls, genre_hierarchy, artists_and_genres, year_venues, output_file):
+    def generate_genres_years_concerts(cls, genre_hierarchy_file, artists_and_genres_file, year_venues_file,
+                                       output_file):
+        # We are going to use this function when we sort concerts chronologically
+        # It's specific to this particular context, so we are defining it in this method
+        def convert_to_datetime(concert_dict):
+            date_str = f"{concert_dict['Year']}-{concert_dict['Month']}-{concert_dict['Day']}"
+            return datetime.strptime(date_str, "%Y-%B-%d")
+
         # Loading data from files
-        with open(genre_hierarchy) as f:
+        with open(genre_hierarchy_file) as f:
             genre_hierarchy = json.load(f)
 
-        with open(artists_and_genres) as f:
+        with open(artists_and_genres_file) as f:
             artists_and_genres = json.load(f)
 
-        with open(year_venues) as f:
+        with open(year_venues_file) as f:
             years_venues = json.load(f)
 
-        # Step 1: Create a map of genres to subgenres
-        genre_map = {}
-        genre_id_map = {}
-        for genre_info in genre_hierarchy["genres_and_subgenres"]:
-            genre_map[genre_info["genre"]] = genre_info["subgenres"]
-            genre_id_map[genre_info["genre"]] = genre_info["id"]
-
-        # Step 2: Create a map of artists to their subgenres
-        artist_genre_map = {}
-        for artist in artists_and_genres:
-            artist_genre_map[artist["artist"]] = artist["genres"]
-
-        # Step 3: Process each year's venues and concerts
-        concert_map = defaultdict(lambda: defaultdict(list))
-
-        for year_data in years_venues["years"]:
-            year_id = year_data["id"]
-            for venue in year_data["venues"]:
-                for concert in venue["concerts"]:
-                    artist = concert["Artist_Formula"]
-                    concert_genres = artist_genre_map.get(artist, [])
-                    for genre in genre_map:
-                        if any(subgenre in genre_map[genre] for subgenre in concert_genres):
-                            concert_map[genre][year_id].append({
-                                "Month": concert["Month"],
-                                "Day": concert["Day"],
-                                "Year": concert["Year"],
-                                "Venue": concert["Venue"],
-                                "venue_id": venue["id"],
-                                "coords": [venue["longitude"], venue["latitude"]],
-                                "Event_Artists": concert["Event_Artists"],
-                                "Artist_Formula": concert["Artist_Formula"],
-                                "Event_Formulas": concert["Event_Formulas"],
-                                "Index": concert["Index"],
-                                "id": concert["id"]
-                            })
-
-        # Step 4: Convert the concert map to the desired output format
         output = []
 
-        for genre, years in concert_map.items():
-            genre_entry = {"id": genre_id_map[genre], "name": genre, "years": []}
-            for year, concerts in sorted(years.items()):
-                year_entry = {"id": int(year), "concerts": sorted(concerts, key=lambda x: datetime.strptime(
-                    f"{x['Month']} {x['Day']} {x['Year']}", "%B %d %Y"))}
-                genre_entry["years"].append(year_entry)
-            output.append(genre_entry)
+        for genre in genre_hierarchy["genres_and_subgenres"]:
+            print(genre)
+            genre_info = {
+                "id": genre["id"],
+                "name": genre["genre"],
+                "years": []
+            }
+            # lower-case all the subgenres for comparison with the artist genres
+            subgenres_lc = [subgenre.lower() for subgenre in genre["subgenres"]]
+
+            # loop over the years
+            for year in years_venues["years"]:
+                # in each year, loop over the venues
+                year_info = {"id": year["id"], "concerts": []}
+                for venue in year["venues"]:
+                    # in each venue, loop over the concerts
+                    for concert in venue['concerts']:
+                        # extract and save the concert artist name
+                        concert_artist_name = concert['Artist_Formula']
+                        # now loop over the artists listed in the artists and genres list
+                        for artist in artists_and_genres:
+                            # find the artist in the list of artists with their genres
+                            if artist["artist"].lower() == concert_artist_name.lower():
+                                # loop over the artist's genres
+                                for artist_genre in artist["genres"]:
+                                    # if the genre in question is one of the subgenres
+                                    # that pertains to the genre we are currently examining
+                                    if artist_genre.lower() in subgenres_lc:
+                                        # we need to tack on some info about the venue:
+                                        # the venue id will be used to find the map marker
+                                        concert["venue_id"] = venue["id"]
+                                        # the venue coords may be useful for output purposes
+                                        concert["venue_coords"] = [venue["longitude"], venue["latitude"]]
+                                        # add it to the genre's concert list for that year
+                                        year_info["concerts"].append(concert)
+                # Before proceeding we have to sort the concerts chronologically
+                sorted_concerts = sorted(year_info["concerts"], key=convert_to_datetime)
+                year_info["concerts"] = sorted_concerts
+                # when you're done building up the list of concerts for that year
+                # attach the year to that genre's info
+                genre_info["years"].append(year_info)
+                genre_info["years"].sort(key=lambda year_data: year_data["id"])
+            # tack the whole genre with its concerts onto the output list
+            output.append(genre_info)
 
         # Output the final JSON
         with open(output_file, 'w') as f:
