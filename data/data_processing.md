@@ -42,4 +42,8 @@ As of 2024-08-06, the following changes have been made. A revised genre hierarch
 
 In addition, the `artists_genres` list has been updated and expanded to include 4152 artists associated with genres.
 
+The `db.json` file, used for development purposes and served locally through the JSON-server dependency, has been updated to reflect the new genre data.
+
+
+
 
