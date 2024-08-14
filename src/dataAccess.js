@@ -40,13 +40,18 @@ export const fetchGenreLocal = async (genreId) => {
 // genreId and selectedYear must be integers
 export const getConcertsForYearAndGenreLocal = async (genreId, selectedYear) => {
     const allDataForGenre = await fetchGenreLocal(genreId);
-    let concertsForSelectedYearAndGenre;
-    for (const year of allDataForGenre['years']){
-        if (year['id'] === selectedYear){
-            concertsForSelectedYearAndGenre = year['concerts'];
-        }
-    }
-    return concertsForSelectedYearAndGenre;
+    /*
+    * There are always 40 elements in the years array for any given genre
+    * They are always 1970-2009, starting at index 0
+    * Therefore, for any given year, the index is the year minus 1970
+    * */
+    const selectedYearIndex = selectedYear - 1970;
+    return allDataForGenre['years'][selectedYearIndex];
+}
+
+export const getVenue = async venueId => {
+    const venueInfo = await fetch(`http://localhost:3001/venues/${venueId}`);
+    return await venueInfo.json();
 }
 
 /*====  FIRESTORE METHODS ==========*/

@@ -131,10 +131,10 @@ export const outputVenueToMap = (map, venue) => {
             const venueMarker = new mapboxgl.Marker(el);
             venueMarker.setLngLat([venue.longitude, venue.latitude]);
             venueMarker.addTo(map);
-            // return venueMarker;
-            // const popup = new mapboxgl.Popup()
-            //     .setHTML('<p>'+ venue.name + '</p>');
-            // venueMarker.setPopup(popup);
+            const popup = new mapboxgl.Popup()
+                .setHTML('<p>'+ venue.name + '</p>');
+            venueMarker.setPopup(popup);
+            return venueMarker;
         }
 }
 
@@ -333,7 +333,7 @@ export const returnMarkerToNormalCondition = (map, event, venuesArray) => {
 }
 
 export const findMarkerById = (map, id) => {
-    return map.querySelector(`[data-id='${id.toString()}']`);
+    return map._container.querySelector(`[data-id='${id.toString()}']`);
 }
 
 export const mobileMenu = () => {

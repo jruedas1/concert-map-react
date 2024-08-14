@@ -299,7 +299,7 @@ class DataWrangler:
             json.dump(genres_and_subgenres, of, indent=4)
 
     @classmethod
-    def generate_db_json(cls, years_json, genres_json, output_file):
+    def generate_db_json(cls, years_json, genres_json, venues_json, output_file):
 
         with open(years_json) as years:
             years_data = json.load(years)
@@ -307,9 +307,13 @@ class DataWrangler:
         with open(genres_json) as genres:
             genres_data = json.load(genres)
 
+        with open(venues_json) as venues:
+            venues_data = json.load(venues)
+
         db_json = {
             "years": years_data["years"],
-            "genres": genres_data
+            "genres": genres_data,
+            "venues": venues_data
         }
 
         with open(output_file, 'w') as f:
