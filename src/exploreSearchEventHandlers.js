@@ -1,6 +1,6 @@
 import {findMarkerById, generateOneConcertHTML, outputVenueToMap, toggleVisibility} from "./domUtils.js";
 import {stopAnimation} from "./searchTypeEventHandlers.js";
-import {getConcertsForYearAndGenreLocal, getVenue} from "./dataAccess.js";
+import {getConcertsForYearAndGenre, getVenue} from "./dataAccess.js";
 
 
 /*
@@ -65,6 +65,17 @@ const delay = ms => new Promise(res=>setTimeout(res, ms));
 * */
 async function outputConcertsOnTimer(concertsArray, map) {
     const concertOutputDiv = document.querySelector("#concerts");
+    /* For improved efficiency and fewer queries,
+    *  we will first loop over the concerts to determine each unique venue id
+    *  Then we query the db for each unique venue
+    *  Finally, we create a map of venue ids to venue objects
+    *  */
+    const uniqueVenueIds = [... new Set(concertsArray.map(concert => concert['venue_id']))];
+    const uniqueVenues = await Promise.all(uniqueVenueIds.map(venueId => getVenue(venueId)));
+    const uniqueVenueMap = uniqueVenues.reduce((acc, venue) => {
+       acc[venue.id] = venue;
+       return acc;
+    }, {});
     /* As long as there is no stopAnimation signal,
     *  loop over the concerts array
     * */
@@ -79,7 +90,10 @@ async function outputConcertsOnTimer(concertsArray, map) {
         * Wait 0.3 seconds
         * */
         const concertVenueId = concertsArray[i]['venue_id'];
-        const venue = await getVenue(concertVenueId);
+        /* Here, rather than querying the db for each venue,
+        *  we query our unique venues map. This reduces the
+        *  db queries */
+        const venue = uniqueVenueMap[concertVenueId];
         const venueMarkerOnMap = findMarkerById(map, concertVenueId);
         if (!venueMarkerOnMap) outputVenueToMap(map, venue);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
@@ -107,7 +121,7 @@ export const handleGenreSelection = async (event, map) => {
     // retrieve venues for the selected year range
     // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
-         const genreConcertsForSelectedYear = await getConcertsForYearAndGenreLocal(selectedGenreId, i);
+         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
          await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
 }

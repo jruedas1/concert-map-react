@@ -1,11 +1,17 @@
 /*
 * This file should contain all the code that interacts with data storage
 * */
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 // import { initializeApp } from 'firebase/app';
-import { FIREBASE_CONFIG } from './keys.js';
+import {FIREBASE_CONFIG} from './keys.js';
 // import { getFirestore, collection, doc, getDoc, getDocs } from 'firebase/firestore';
-import { getFirestore, collection, doc, getDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+import {
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    getFirestore
+} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 initializeApp(FIREBASE_CONFIG);
 const db = getFirestore();
@@ -49,7 +55,7 @@ export const getConcertsForYearAndGenreLocal = async (genreId, selectedYear) => 
     return allDataForGenre['years'][selectedYearIndex];
 }
 
-export const getVenue = async venueId => {
+export const getVenueLocal = async venueId => {
     const venueInfo = await fetch(`http://localhost:3001/venues/${venueId}`);
     return await venueInfo.json();
 }
@@ -71,21 +77,37 @@ export const fetchGenreData = async () => {
 
 export const fetchGenre = async (genreId) => {
     genreId = genreId.toString();
-    const docRef = doc(db, 'genres', genreId);
+    const querySnapshot = await getDocs(collection(db, 'genres', genreId, "years"));
+    const years = [];
+    querySnapshot.forEach(year => years.push(year.data()));
+    return years;
+}
+
+export const fetchGenreYear = async (genreId, year) => {
+    genreId = genreId.toString();
+    year = year.toString();
+    const docRef = doc(db, 'genres', genreId, 'years', year);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+}
+
+export const getVenueData = async () => {
+    const querySnapshot = await getDocs(collection(db, 'venues'));
+    const venues = [];
+    querySnapshot.forEach(venue => venues.push(venue.data()));
+    return venues;
+}
+
+export const getVenue = async venueId => {
+    venueId = venueId.toString();
+    const docRef = doc(db, 'venues', venueId);
     const docSnap = await getDoc(docRef);
     return docSnap.data();
 }
 
 // genreId and selectedYear must be integers
-export const getVenuesForYearAndGenre = async (genreId, selectedYear) => {
-    const allDataForGenre = await fetchGenre(genreId);
-    let venuesForSelectedYearAndGenre;
-    for (const year of allDataForGenre['years']){
-        if (year['id'] === selectedYear){
-            venuesForSelectedYearAndGenre = year['venues'];
-        }
-    }
-    return venuesForSelectedYearAndGenre;
+export const getConcertsForYearAndGenre = async (genreId, selectedYear) => {
+    return await fetchGenreYear(genreId, selectedYear);
 }
 
 export const getGenreId = async genreName => {
@@ -97,3 +119,4 @@ export const getGenreId = async genreName => {
     }
     return undefined;
 }
+
