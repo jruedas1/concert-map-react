@@ -379,15 +379,40 @@ input[type="range"] {
 
 /*===========EXPLORE TAB =============*/
 
-#year-slider-container select {
-    appearance: none;
+#custom-selector-wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
     background: transparent;
-    border: 2px solid black;
-    padding: 1rem;
-    margin: 1rem 0;
     font-size: 1.3rem;
     font-weight: 700;
+    padding: 2rem 1rem;
 }
+
+.select-selected {
+    position: relative;
+    border: 2px solid black;
+    padding: 0.8rem 1rem 0.5rem 1rem;
+    width: 40%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.3rem);
+    right: 0.5rem;
+    width: 0;
+    height: 0;
+    border-left-width: 0.6rem;
+    border-right-width: 0.6rem;
+    border-top-width: 0.9rem;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+
 
 /*========== MAP ===========*/
 
