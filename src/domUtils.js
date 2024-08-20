@@ -81,7 +81,7 @@ export const hideSimpleSearchFilters = () => {
 export const hideExploreSearchFilters = () => {
     const exploreSearchFilters = [
         document.querySelector("#year-range"),
-        document.querySelector("#year-slider-container"),
+        document.querySelector("#range-selection-container"),
         document.querySelector("#genres"),
         document.querySelector("#genre-list")
     ];
@@ -183,6 +183,30 @@ export const generateYearList = (decade, map) => {
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);
+}
+
+export const generateYearDropDown = () => {
+    const selectionInput = document.querySelector("#default-range-selector");
+    const yearOptions = [];
+    for (let i = 1970; i < 2010; i++){
+        let option = document.createElement('option');
+        option.value = i.toString();
+        option.textContent = i.toString();
+        yearOptions.push(option);
+    }
+    selectionInput.replaceChildren(...yearOptions);
+}
+
+export const generateCustomDropdownOptions = () => {
+    const defaultDropdownSelect = document.querySelector("#default-range-selector");
+    const customOptionsContainer = document.querySelector("#custom-select-option-wrapper");
+    const customOptions = [];
+    for (let i = 1; i < defaultDropdownSelect.length; i++){
+        const customOption = document.createElement("div");
+        customOption.innerText = defaultDropdownSelect.options[i].innerText;
+        customOptions.push(customOption);
+    }
+    customOptionsContainer.append(...customOptions);
 }
 
 export const outputOneVenuesConcertsToPage = venue => {

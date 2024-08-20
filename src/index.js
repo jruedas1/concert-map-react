@@ -1,13 +1,21 @@
 import { MAPBOX_API_KEY } from "./keys.js";
 import {generateMap} from "./mabpoxUtils.js";
-import {generateGenreList, handleWindowResize, mobileMenu, toggleVisibility} from "./domUtils.js";
+import {
+    generateCustomDropdownOptions,
+    generateGenreList,
+    generateYearDropDown,
+    handleWindowResize,
+    mobileMenu,
+    toggleVisibility
+} from "./domUtils.js";
 import {
     handleDecadeSelection, handleConfirmYearSelection,
     handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick, handleListMapViewClick
 } from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
-import {  handleYearRangeSelection,
-    handleConfirm5YearRangeSelection, handleEdit5YearRange
+import {
+    handleYearRangeSelection,
+    handleConfirm5YearRangeSelection, handleEdit5YearRange, handleYearRangeStartYearSelection
 } from "./exploreSearchEventHandlers.js"
 
 const mapConfiguration = {
@@ -53,6 +61,18 @@ yearFilter.addEventListener('click', event => toggleVisibility(event, yearList))
 const confirmYearButton = document.querySelector("#confirm-year");
 confirmYearButton.addEventListener('click', event => handleConfirmYearSelection(event, map))
 
+const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div > div");
+yearToVenueBreadcrumb.addEventListener('click', event => handleYearToVenueBreadcrumbClick(event, map));
+
+const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
+concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
+
+const listViewButton = document.querySelector("#list-view");
+listViewButton.addEventListener('click', handleListMapViewClick);
+
+const hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener('click', mobileMenu);
+
 /*
 * This is the "Select a 5-year range"
 * filter. This handler is active only after the user
@@ -66,8 +86,11 @@ yearRangeFilter.addEventListener('click', handleEdit5YearRange);
 /*
 * This handles user interaction with the actual range slider itself
 * */
-const yearRangeSelector = document.querySelector("#year-slider");
-yearRangeSelector.addEventListener('change', handleYearRangeSelection);
+const defaultYearRangeSelector = document.querySelector("#default-range-selector");
+defaultYearRangeSelector.addEventListener('change', handleYearRangeSelection);
+
+const customYearRangeSelector = document.querySelector("#custom-selector");
+customYearRangeSelector.addEventListener('click', handleYearRangeStartYearSelection);
 
 /* This is the "Next" button that a user clicks after selecting a year range
 *  in the "Explore" tab
@@ -75,24 +98,11 @@ yearRangeSelector.addEventListener('change', handleYearRangeSelection);
 const confirmRangeSelectionButton = document.querySelector("#confirm-range-selection");
 confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSelection);
 
-
 // get reference to genre filter
 // add event handler to genre selector
 const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
-
-const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div > div");
-yearToVenueBreadcrumb.addEventListener('click', event => handleYearToVenueBreadcrumbClick(event, map));
-
-const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
-concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
-
-const listViewButton = document.querySelector("#list-view");
-listViewButton.addEventListener('click', handleListMapViewClick);
-
-const hamburger = document.querySelector(".hamburger");
-hamburger.addEventListener('click', mobileMenu);
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load
@@ -112,6 +122,8 @@ hamburger.addEventListener('click', mobileMenu);
     // const dataOnSelectedYear = await fetchYear('1970');
     // const venues = dataOnSelectedYear.venues;
     // outputVenuesToMap(map, venues);
+    generateYearDropDown();
+    generateCustomDropdownOptions();
     await generateGenreList(map);
 })();
 

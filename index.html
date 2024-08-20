@@ -95,22 +95,17 @@
                     <h3>SELECT A 5-YEAR RANGE</h3>
                     <p class="edit hidden">Edit</p>
                 </div>
-                <div id="year-slider-container" class="hidden">
-                    <label for="year-slider" class="hidden">Year Range</label>
-                    <input
-                            type="range"
-                            id="year-slider"
-                            list="fiveYears"
-                            min="1970"
-                            max="2010"
-                    >
-                    <datalist id="fiveYears">
-                        <option value="1970" label="1970"></option>
-                        <option value="2010" label="2010"></option>
-                    </datalist>
-                    <div id="range-selection-state"></div>
-                    <button id="confirm-range-selection" class="next">NEXT</button>
+                <div id="range-selection-container" class="hidden">
+                    <label for="default-range-selector" class="hidden">Select a starting year for the 5-year range</label>
+                    <select id="default-range-selector" class="hidden"></select>
+                    <div id="custom-selector-wrapper">
+                        <div id="custom-selector" class="select-selected">1970</div>
+                        <div id="range-selection-state"></div>
+                    </div>
+                    <div id="custom-select-option-wrapper" class="select-items hidden"></div>
                 </div>
+
+                <button id="confirm-range-selection" class="next">SELECT GENRE</button>
 
                 <div id="genres" class="filter hidden">
                     <h2>Genre</h2>

@@ -125,3 +125,8 @@ export const handleGenreSelection = async (event, map) => {
          await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
 }
+
+export const handleYearRangeStartYearSelection = event => {
+    event.stopPropagation();
+    event.target.parentElement.nextElementSibling.classList.toggle('hidden');
+}

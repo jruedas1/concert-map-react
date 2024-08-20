@@ -69,5 +69,5 @@ export const handleExploreSelection = event => {
     emptyContent();
     hideSimpleSearchFilters();
     toggleVisibility(event, document.querySelector("#year-range"));
-    toggleVisibility(event, document.querySelector("#year-slider-container"));
+    toggleVisibility(event, document.querySelector("#range-selection-container"));
 }

@@ -206,6 +206,7 @@ div#decades.filter, #year-range {
 }
 
 /*========= BREADCRUMBS ==========*/
+/*======= IN SEARCH MODE ==========*/
 /*
     Back-to-year-edit-div is to go back
     to year selection from the venues view.
@@ -254,7 +255,9 @@ div#decades.filter, #year-range {
     correct colors.
 */
 
-#year-venue-breadcrumb-flex-parent, #concert-to-venue-breadcrumb-flex-parent {
+#year-venue-breadcrumb-flex-parent,
+#concert-to-venue-breadcrumb-flex-parent
+{
     display: flex;
     flex-flow: row nowrap;
     justify-content: left;
@@ -262,10 +265,14 @@ div#decades.filter, #year-range {
 
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-    background:  #0075E4;
-    color: var(--main-background);
 }
 
+#year-venue-breadcrumb-flex-parent,
+#concert-to-venue-breadcrumb-flex-parent,
+#year-range {
+    background: #0075E4;
+    color: var(--main-background);
+}
 /*
    In the back-to-venues and back-to-year breadcrumbs,
    This contains the year.
@@ -368,6 +375,18 @@ input[type="range"] {
 
 .venue > h3 {
     pointer-events: none;
+}
+
+/*===========EXPLORE TAB =============*/
+
+#year-slider-container select {
+    appearance: none;
+    background: transparent;
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 /*========== MAP ===========*/
