@@ -148,6 +148,10 @@ div#decades.filter, #year-range {
     cursor: pointer;
 }
 
+#year-range {
+    cursor: default;
+}
+
 /*
     Filter options are choices that appear when
     user clicks on a genre selector: decade, year, genre
@@ -270,8 +274,8 @@ div#decades.filter, #year-range {
 #year-venue-breadcrumb-flex-parent,
 #concert-to-venue-breadcrumb-flex-parent,
 #year-range {
-    background: #0075E4;
-    color: var(--main-background);
+    /*background: #0075E4;*/
+    /*color: var(--main-background);*/
 }
 /*
    In the back-to-venues and back-to-year breadcrumbs,
@@ -330,25 +334,6 @@ div#decades.filter, #year-range {
     color: #D43B1A;
 }
 
-/*===== SLIDER ========*/
-
-input[type="range"] {
-    margin: 2rem auto;
-    /*appearance: none;*/
-    width: 80%;
-    cursor: pointer;
-    outline: none;
-    background: none;
-    height: 0.2rem;
-    background: #000;
-    border-radius: 1rem;
-}
-
-
-#year-slider::-moz-range-track, #year-slider::-webkit-slider-runnable-track {
-    background: var(--header-dark);
-}
-
 /*===== NEXT BUTTONS =======*/
 
 .confirm {
@@ -387,7 +372,7 @@ input[type="range"] {
 #custom-selector-wrapper {
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: baseline;
     gap: 1.2rem;
     padding: 2rem 1rem;
     font-size: 1.3rem;
@@ -442,7 +427,6 @@ input[type="range"] {
 
 #range-selection-state {
     color: #124E78;
-;
 }
 
 #confirm-range-selection {
