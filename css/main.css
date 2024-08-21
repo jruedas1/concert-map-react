@@ -379,26 +379,45 @@ input[type="range"] {
 
 /*===========EXPLORE TAB =============*/
 
+#range-selection-container {
+    max-height: 100dvh;
+    overflow-y: scroll;
+}
+
 #custom-selector-wrapper {
-    position: relative;
     display: flex;
     flex-flow: row nowrap;
-    background: transparent;
-    font-size: 1.3rem;
-    font-weight: 700;
     padding: 2rem 1rem;
 }
 
-.select-selected {
+#selected-and-options-flex-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
     position: relative;
+    background: transparent;
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 50%;
+}
+
+.select-selected {
     border: 2px solid black;
+}
+
+.select-items div {
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.select-selected, .select-items div {
+    position: relative;
     padding: 0.8rem 1rem 0.5rem 1rem;
-    width: 40%;
     text-align: left;
     cursor: pointer;
 }
 
-.select-selected:after {
+.select-selected::after {
     position: absolute;
     content: "";
     top: calc(50% - 0.3rem);
@@ -407,12 +426,14 @@ input[type="range"] {
     height: 0;
     border-left-width: 0.6rem;
     border-right-width: 0.6rem;
-    border-top-width: 0.9rem;
+    border-top-width: 0.8rem;
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
 
-
+#confirm-range-selection {
+    margin-bottom: 0.6rem;
+}
 
 /*========== MAP ===========*/
 

@@ -128,5 +128,5 @@ export const handleGenreSelection = async (event, map) => {
 
 export const handleYearRangeStartYearSelection = event => {
     event.stopPropagation();
-    event.target.parentElement.nextElementSibling.classList.toggle('hidden');
+    event.target.nextElementSibling.classList.toggle('hidden');
 }

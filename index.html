@@ -99,13 +99,14 @@
                     <label for="default-range-selector" class="hidden">Select a starting year for the 5-year range</label>
                     <select id="default-range-selector" class="hidden"></select>
                     <div id="custom-selector-wrapper">
-                        <div id="custom-selector" class="select-selected">1970</div>
+                        <div id="selected-and-options-flex-wrapper">
+                            <div id="custom-selector" class="select-selected">1970</div>
+                            <div id="custom-select-option-wrapper" class="select-items hidden"></div>
+                        </div>
                         <div id="range-selection-state"></div>
                     </div>
-                    <div id="custom-select-option-wrapper" class="select-items hidden"></div>
+                    <button id="confirm-range-selection" class="next">SELECT GENRE</button>
                 </div>
-
-                <button id="confirm-range-selection" class="next">SELECT GENRE</button>
 
                 <div id="genres" class="filter hidden">
                     <h2>Genre</h2>
