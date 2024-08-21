@@ -197,32 +197,52 @@ export const generateYearDropDown = () => {
     selectionInput.replaceChildren(...yearOptions);
 }
 
+/*
+* Generates the custom dropdown for selecting a five year range
+* Happens on page load
+* */
 export const generateCustomDropdownOptions = () => {
     const defaultDropdownSelect = document.querySelector("#default-range-selector");
     const customOptionsContainer = document.querySelector("#custom-select-option-wrapper");
     const customSelectorSelectedDiv = document.querySelector("#custom-selector");
     const endOfRangeOutput = document.querySelector("#range-selection-state");
     const customOptions = [];
-    for (let i = 1; i < defaultDropdownSelect.length; i++){
+    // loops over the hidden default select menu options
+    for (let i = 0; i < defaultDropdownSelect.length; i++){
+        // Create a div for each option
         const customOption = document.createElement("div");
+        // Match the content of the custom option to the corresponding hidden default
         customOption.innerText = defaultDropdownSelect.options[i].innerText;
+        // Each option needs a click handler
         customOption.addEventListener("click", e => {
+            // Loop over the hidden dropdown options to find the match
             for (let j = 0; j < defaultDropdownSelect.length; j++){
                 if (defaultDropdownSelect.options[j].innerText === e.target.innerText){
+                    // We change the selected index on the hidden / default dropdown options
                     defaultDropdownSelect.selectedIndex = j;
+                    // change the text in the always-visible select dropdown
                     customSelectorSelectedDiv.innerText = e.target.innerText;
+                    // 'same-as-selected' is a class used to add a background color to the
+                    // currently selected option in the dropdown
                     const selectedOption = e.target.parentElement.getElementsByClassName('same-as-selected');
+                    // In case there is more than one, find all of them and remove the class
                     [...selectedOption].forEach(option => option.classList.remove('same-as-selected'));
+                    // Add the class to the current selection
                     e.target.classList.add('same-as-selected');
                     break;
                 }
             }
+            // Add the end of range (start year + 4) to the corresponding
+            // div next to the dropdown selection
             const endOfRange = parseInt(e.target.innerText) + 4;
             endOfRangeOutput.innerText = `to ${endOfRange.toString()}`;
+            // Initiate a click on the dropdown selection to close the dropdown
             customSelectorSelectedDiv.click();
         });
+        // Once the option div has been created, add it to the array
         customOptions.push(customOption);
     }
+    // Once the array is complete, append all the divs to the correct place in the DOM
     customOptionsContainer.append(...customOptions);
 }
 

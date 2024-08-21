@@ -376,6 +376,9 @@ div#decades.filter, #year-range {
     gap: 1.2rem;
     padding: 2rem 1rem;
     font-size: 1.3rem;
+}
+
+#custom-selector, .same-as-selected, #range-selection-state {
     font-weight: 700;
 }
 
@@ -423,6 +426,11 @@ div#decades.filter, #year-range {
     border-bottom-width: 0.8rem;
     border-color: transparent transparent black transparent;
     top: calc(50% - 0.4rem);
+}
+
+.double-border {
+    border-bottom-width: 5px;
+    border-bottom-style: double;
 }
 
 #range-selection-state {

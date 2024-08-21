@@ -37,12 +37,12 @@ export const handleYearRangeSelection = event => {
 * Shows the genres filter
 * */
 export const handleConfirm5YearRangeSelection = event => {
-    const yearRangeSlider = document.querySelector("#year-slider");
-    const selectedBaseYear = yearRangeSlider.value;
+    const yearRangeStartSelector = document.querySelector("#default-range-selector");
+    const selectedBaseYear = yearRangeStartSelector.value;
     const yearRangeFilter = document.querySelector("#year-range");
     yearRangeFilter.querySelector('.edit').classList.remove('hidden');
     yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
-    toggleVisibility(event, document.querySelector("#year-slider-container"));
+    toggleVisibility(event, document.querySelector("#range-selection-container"));
     toggleVisibility(event, document.querySelector("#genres"));
 }
 
@@ -109,14 +109,14 @@ export const handleGenreSelection = async (event, map) => {
     // Get the selected genre
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
     // replace current genre heading with name of selected genre
-    document.querySelector("#genres").querySelector("h2").innerText = selectedGenre;
+    document.querySelector("#genres").querySelector("h3").innerText = selectedGenre;
     // trigger click event on genres div
     // this hides the genre list if it's showing
     document.querySelector("#genres").click();
     // Get the genre id
     const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
     // get the base year currently selected by the user
-    const selectedYear = parseInt(document.querySelector("#year-slider").value);
+    const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
     // retrieve venues for the selected year range
     // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
@@ -125,8 +125,16 @@ export const handleGenreSelection = async (event, map) => {
     }
 }
 
+/*
+* Clicking on the explore tab year dropdown selection
+* -- toggles visibility of the dropdown options
+* -- toggles the up and down arrow
+* -- toggles visibility of the select genre menu
+* */
 export const handleYearRangeStartYearSelection = event => {
     event.stopPropagation();
     event.target.nextElementSibling.classList.toggle('hidden');
     event.target.classList.toggle("select-arrow-active");
+    event.target.classList.toggle("double-border");
+    document.querySelector("#confirm-range-selection").classList.toggle('hidden');
 }
