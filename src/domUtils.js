@@ -200,10 +200,27 @@ export const generateYearDropDown = () => {
 export const generateCustomDropdownOptions = () => {
     const defaultDropdownSelect = document.querySelector("#default-range-selector");
     const customOptionsContainer = document.querySelector("#custom-select-option-wrapper");
+    const customSelectorSelectedDiv = document.querySelector("#custom-selector");
+    const endOfRangeOutput = document.querySelector("#range-selection-state");
     const customOptions = [];
     for (let i = 1; i < defaultDropdownSelect.length; i++){
         const customOption = document.createElement("div");
         customOption.innerText = defaultDropdownSelect.options[i].innerText;
+        customOption.addEventListener("click", e => {
+            for (let j = 0; j < defaultDropdownSelect.length; j++){
+                if (defaultDropdownSelect.options[j].innerText === e.target.innerText){
+                    defaultDropdownSelect.selectedIndex = j;
+                    customSelectorSelectedDiv.innerText = e.target.innerText;
+                    const selectedOption = e.target.parentElement.getElementsByClassName('same-as-selected');
+                    [...selectedOption].forEach(option => option.classList.remove('same-as-selected'));
+                    e.target.classList.add('same-as-selected');
+                    break;
+                }
+            }
+            const endOfRange = parseInt(e.target.innerText) + 4;
+            endOfRangeOutput.innerText = `to ${endOfRange.toString()}`;
+            customSelectorSelectedDiv.click();
+        });
         customOptions.push(customOption);
     }
     customOptionsContainer.append(...customOptions);

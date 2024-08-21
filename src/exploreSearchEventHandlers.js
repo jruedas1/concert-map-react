@@ -102,7 +102,6 @@ async function outputConcertsOnTimer(concertsArray, map) {
     }
 }
 
-
 /*
     This event handler is triggered when the user selects a genre
 */
@@ -129,4 +128,5 @@ export const handleGenreSelection = async (event, map) => {
 export const handleYearRangeStartYearSelection = event => {
     event.stopPropagation();
     event.target.nextElementSibling.classList.toggle('hidden');
+    event.target.classList.toggle("select-arrow-active");
 }
