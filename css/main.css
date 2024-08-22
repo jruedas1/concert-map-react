@@ -160,7 +160,7 @@ div#decades.filter, #year-range {
 /*    background: var(--main-background);*/
 /*}*/
 
-.filter-option:hover, #venues div:hover, .venue-hover {
+.filter-option:hover, #venues div:hover, .venue-hover, .select-items div:hover {
     background: #F7C100;
 }
 
@@ -439,6 +439,22 @@ div#decades.filter, #year-range {
 
 #confirm-range-selection {
     margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+#confirm-range-selection::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.6rem);
+    right: 0.3rem;
+    width: 0;
+    height: 0;
+    border-left-width: 0.5rem;
+    border-bottom-width: 0.6rem;
+    border-top-width: 0.6rem;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
 }
 
 /*========== MAP ===========*/
