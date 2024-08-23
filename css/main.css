@@ -143,13 +143,9 @@ div#decades.filter, #year-range {
     Make sure all the filter options have pointer cursors
     to indicate they are clickable
 */
-.filter, .filter-option, #venues div  {
+.filter, .filter-option, #venues div, #year-range  {
     padding: 1rem;
     cursor: pointer;
-}
-
-#year-range {
-    cursor: default;
 }
 
 /*

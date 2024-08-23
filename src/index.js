@@ -15,7 +15,10 @@ import {
 import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
 import {
     handleYearRangeSelection,
-    handleConfirm5YearRangeSelection, handleEdit5YearRange, handleYearRangeStartYearSelection
+    handleConfirm5YearRangeSelection,
+    handleEdit5YearRange,
+    handleYearRangeStartYearSelection,
+    handleConfirmGenreSelection
 } from "./exploreSearchEventHandlers.js"
 
 const mapConfiguration = {
@@ -103,6 +106,9 @@ confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSel
 const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
+
+const confirmGenreSelectionButton = document.querySelector("#confirm-genre-selection");
+confirmGenreSelectionButton.addEventListener('click', event => handleConfirmGenreSelection(event, map));
 
 /* main line of code is an async IIFE
    This is necessary in order to load the default data on page load

@@ -1,23 +1,48 @@
-import {findMarkerById, generateOneConcertHTML, outputVenueToMap, toggleVisibility} from "./domUtils.js";
+import {
+    emptyConcertInfo,
+    findMarkerById,
+    generateOneConcertHTML,
+    hideElement,
+    outputVenueToMap, showElement,
+    toggleVisibility
+} from "./domUtils.js";
 import {stopAnimation} from "./searchTypeEventHandlers.js";
 import {getConcertsForYearAndGenre, getVenue} from "./dataAccess.js";
+import {capitalizeWords} from "./utils.js";
+
+
+/*
+* Clicking on the explore tab year dropdown selection
+* -- toggles visibility of the dropdown options
+* -- toggles the up and down arrow
+* -- toggles a change to the topmost border-style
+* -- toggles visibility of the select genre button
+* */
+export const handleYearRangeStartYearSelection = event => {
+    event.stopPropagation();
+    event.target.nextElementSibling.classList.toggle('hidden');
+    event.target.classList.toggle("select-arrow-active");
+    event.target.classList.toggle("double-border");
+    document.querySelector("#confirm-range-selection").classList.toggle('hidden');
+}
 
 
 /*
 * The year-range filter prompt "Select A 5-Year Range"
-* This handler is active only after a user has selected a 5-year range
-* and thus revealed the "Edit" prompt.
-* Once this is done, clicking this filter area will toggle the visibility of the year range slider.
+* Clicking this filter area will toggle the visibility of the year range selector.
 * */
 export const handleEdit5YearRange = event => {
-    if (!document.querySelector("#year-range").firstElementChild.innerText.toLowerCase().startsWith('s')) {
-         const yearRangeSlider = document.querySelector("#year-slider-container");
-         toggleVisibility(event, yearRangeSlider);
-    }
+    emptyConcertInfo();
+    const yearRangeSelector = document.querySelector("#range-selection-container");
+    const genreSelector = document.querySelector("#genres");
+    const genreList = document.querySelector("#genre-list");
+    toggleVisibility(event, yearRangeSelector);
+    hideElement(event, genreSelector);
+    hideElement(event, genreList);
 }
 
 /*
-* Handles interaction with the year range slider
+* Handles interaction with the year range selector
 * --Gets a reference to the location where the selected year range is output to the user
 * --Obtains a reference to the value selected by the user
 * --Outputs selected year range to user in appropriate place
@@ -109,32 +134,23 @@ export const handleGenreSelection = async (event, map) => {
     // Get the selected genre
     const selectedGenre = event.target.localName === 'h3' ? event.target.textContent.toLowerCase() : event.target.querySelector("h3").textContent.toLowerCase();
     // replace current genre heading with name of selected genre
-    document.querySelector("#genres").querySelector("h3").innerText = selectedGenre;
+    const selectedGenreOutputHeading = document.querySelector("#genres").querySelector("h3");
+    selectedGenreOutputHeading.innerText = capitalizeWords(selectedGenre);
+    selectedGenreOutputHeading.dataset.id = event.target.localName === 'h3' ? event.target.parentElement.dataset.id : event.target.dataset.id;
     // trigger click event on genres div
     // this hides the genre list if it's showing
     document.querySelector("#genres").click();
-    // Get the genre id
-    const selectedGenreId = event.target.localName === 'h3' ? parseInt(event.target.parentElement.dataset.id) : parseInt(event.target.dataset.id);
-    // get the base year currently selected by the user
-    const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
-    // retrieve venues for the selected year range
+    showElement(event, document.querySelector("#confirm-genre-parent"));
+}
+
+export const handleConfirmGenreSelection = async (event, map) => {
+    hideElement(event, event.target.parentElement);
+    const selectedGenreId = parseInt(document.querySelector("#genres").querySelector("h3").dataset.id);
+     const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
+     // retrieve venues for the selected year range
     // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
          const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
          await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
-}
-
-/*
-* Clicking on the explore tab year dropdown selection
-* -- toggles visibility of the dropdown options
-* -- toggles the up and down arrow
-* -- toggles visibility of the select genre menu
-* */
-export const handleYearRangeStartYearSelection = event => {
-    event.stopPropagation();
-    event.target.nextElementSibling.classList.toggle('hidden');
-    event.target.classList.toggle("select-arrow-active");
-    event.target.classList.toggle("double-border");
-    document.querySelector("#confirm-range-selection").classList.toggle('hidden');
 }
