@@ -459,6 +459,10 @@ div#decades.filter, #year-range {
     font-size: 1.3rem;
 }
 
+#genre-list .genre h3 {
+    font-weight: 500;
+}
+
 /*========== MAP ===========*/
 
 #map {

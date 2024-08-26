@@ -70,6 +70,7 @@ export const handleConfirm5YearRangeSelection = event => {
     yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
     toggleVisibility(event, document.querySelector("#range-selection-container"));
     toggleVisibility(event, document.querySelector("#genres"));
+    showElement(event, document.querySelector("#genre-list"));
     // If a genre is already selected, it means the user is coming from "Change Selections"
     // or is returning from the simple search after already having done a visualization
     // In this case show the "show my results" button
