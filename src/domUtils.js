@@ -187,6 +187,12 @@ export const generateYearList = (decade, map) => {
     yearList.replaceChildren(...newYears);
 }
 
+/*
+* This generates the default browser dropdown
+* This is hidden from the user but serves as the
+* source for the visible custom dropdown. The custom dropdown
+* in turn modifies this, so that JS can read its value.
+* */
 export const generateYearDropDown = () => {
     const selectionInput = document.querySelector("#default-range-selector");
     const yearOptions = [];
@@ -205,7 +211,7 @@ export const generateYearDropDown = () => {
 * */
 export const generateCustomDropdownOptions = () => {
     const defaultDropdownSelect = document.querySelector("#default-range-selector");
-    const customOptionsContainer = document.querySelector("#custom-select-option-wrapper");
+    const customOptionsContainer = document.querySelector("#custom-options");
     const customSelectorSelectedDiv = document.querySelector("#custom-selector");
     const endOfRangeOutput = document.querySelector("#range-selection-state");
     const customOptions = [];

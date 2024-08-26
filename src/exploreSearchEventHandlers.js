@@ -22,7 +22,7 @@ export const handleYearRangeStartYearSelection = event => {
     event.stopPropagation();
     event.target.nextElementSibling.classList.toggle('hidden');
     event.target.classList.toggle("select-arrow-active");
-    event.target.classList.toggle("double-border");
+    // event.target.classList.toggle("double-border");
     document.querySelector("#confirm-range-selection").classList.toggle('hidden');
 }
 

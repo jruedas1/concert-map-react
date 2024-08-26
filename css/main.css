@@ -362,8 +362,8 @@ div#decades.filter, #year-range {
 
 /*===========EXPLORE TAB =============*/
 
-#range-selection-container {
-    max-height: 100dvh;
+#custom-options {
+    max-height: 50dvh;
     overflow-y: scroll;
 }
 
@@ -392,10 +392,18 @@ div#decades.filter, #year-range {
     border: 2px solid black;
 }
 
+.select-items {
+    border-bottom: 2px solid black;
+}
+
 .select-items div {
     border-width: 0 2px 2px 2px;
     border-style: solid;
     border-color: black;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
 }
 
 .select-selected, .select-items div {
