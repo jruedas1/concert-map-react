@@ -12,7 +12,7 @@ import { emptyContent, hideExploreSearchFilters,
 * */
 export let stopAnimation = false;
 
-export const modifyStopAnimation = val => stopAnimation = val;
+export const setStopAnimation = val => stopAnimation = val;
 
 /*
 *   On search type selection, modify the "selected" marker
