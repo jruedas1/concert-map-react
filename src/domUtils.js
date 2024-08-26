@@ -83,7 +83,8 @@ export const hideExploreSearchFilters = () => {
         document.querySelector("#year-range"),
         document.querySelector("#range-selection-container"),
         document.querySelector("#genres"),
-        document.querySelector("#genre-list")
+        document.querySelector("#genre-list"),
+        document.querySelector("#range-genre-breadcrumb-container")
     ];
     exploreSearchFilters.forEach(filter =>{
        if (!filter.classList.contains('hidden')) filter.classList.add('hidden');

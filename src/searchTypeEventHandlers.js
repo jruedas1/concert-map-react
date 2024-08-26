@@ -61,13 +61,11 @@ export const handleSimpleSearchSelection = event => {
 
 /*
 * Behavior specific to the explore search selection
-* Allow animations to run again
 * * Clear map markers and venue / concert info
 * Hide the simple search filters
 * Show the year range filter and the range slider
 * */
 export const handleExploreSelection = event => {
-    stopAnimation = false;
     emptyContent();
     hideSimpleSearchFilters();
     toggleVisibility(event, document.querySelector("#year-range"));

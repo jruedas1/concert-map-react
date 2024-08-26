@@ -145,11 +145,29 @@ export const handleGenreSelection = async (event, map) => {
 }
 
 export const handleConfirmGenreSelection = async (event, map) => {
+    // Ensure that the stop animation global is set to false
+    // So the animation can run
     modifyStopAnimation(false);
+    // Hide the "SHOW MY RESULTS" button
     hideElement(event, event.target.parentElement);
-    const selectedGenreId = parseInt(document.querySelector("#genres").querySelector("h3").dataset.id);
-     const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
-     // retrieve venues for the selected year range
+    // Hide the year range and genres filters
+    hideElement(event, document.querySelector("#year-range"));
+    hideElement(event, document.querySelector("#genres"));
+    // Obtain the selected year and genre
+    const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
+    const selectedGenreHeading = document.querySelector("#genres").querySelector("h3");
+    const selectedGenre = selectedGenreHeading.innerText
+    const selectedGenreId = parseInt(selectedGenreHeading.dataset.id);
+    // Output selected year range and genre to the breadcrumb
+    const changeSelectionDiv = document.querySelector("#range-genre-breadcrumb-container");
+    const yearRangeBreadcrumb = document.querySelector("#year-range-breadcrumb");
+    yearRangeBreadcrumb.innerHTML = `${selectedYear}&ndash;${selectedYear + 4}`;
+    const genreBreadcrumb = document.querySelector("#genre-breadcrumb");
+    genreBreadcrumb.innerText = selectedGenre;
+    // Reveal the change selection div
+    showElement(event, changeSelectionDiv);
+
+    // retrieve venues for the selected year range
     // do animation for each year
     for (let i = selectedYear; i < selectedYear+5; i++){
          const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);

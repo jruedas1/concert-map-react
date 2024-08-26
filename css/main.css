@@ -215,7 +215,7 @@ div#decades.filter, #year-range {
     Back-to-venues is to go from the concerts
     list to the venues list or view.
 */
-#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues {
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div>div {
     display: flex;
     flex-flow: row nowrap;
     gap: 0.5rem;
@@ -228,7 +228,7 @@ div#decades.filter, #year-range {
     The arrow + "Change Selections"
     The arrow + "Back to venues"
 */
-#back-to-year-edit-div > div, #back-to-venues {
+#back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
     cursor: pointer;
 }
 
@@ -243,20 +243,22 @@ div#decades.filter, #year-range {
 /*
     Some of the "edit" prompts had underlines
     This may be removed if not needed in future designs.
-    We specify that this one has no underline.
+    We specify that these have no underline.
 */
-#back-to-year-edit-div p.edit {
+#back-to-year-edit-div p.edit, #change-range-genre-div p.edit {
     text-decoration: none;
 }
 
 /*
-    Created to arrange the blue breadcrumb indicators
+    Created to arrange the breadcrumb indicators
     Side by side rather than stacking, and to apply
     correct colors.
 */
 
 #year-venue-breadcrumb-flex-parent,
-#concert-to-venue-breadcrumb-flex-parent
+#concert-to-venue-breadcrumb-flex-parent,
+#range-genre-breadcrumb-flex-parent
+
 {
     display: flex;
     flex-flow: row nowrap;
@@ -277,7 +279,7 @@ div#decades.filter, #year-range {
    In the back-to-venues and back-to-year breadcrumbs,
    This contains the year.
 */
-#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #concert-to-venue-breadcrumb-flex-parent h2 {
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #concert-to-venue-breadcrumb-flex-parent h2, #range-genre-breadcrumb-flex-parent h2 {
     border-right: 2px solid black;
     padding: 1rem;
 }
@@ -287,7 +289,7 @@ div#decades.filter, #year-range {
      In the venues view, it says "Venues"
 
 */
-#year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p {
+#year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p, #range-genre-breadcrumb-flex-parent p {
     padding-left: 0.5rem;
     font-size: 1.3rem;
     font-weight: 700;
@@ -451,6 +453,10 @@ div#decades.filter, #year-range {
     border-top-width: 0.6rem;
     border-style: solid;
     border-color: transparent transparent transparent white;
+}
+
+#year-range-breadcrumb {
+    font-size: 1.3rem;
 }
 
 /*========== MAP ===========*/
