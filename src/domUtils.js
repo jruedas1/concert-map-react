@@ -84,7 +84,8 @@ export const hideExploreSearchFilters = () => {
         document.querySelector("#range-selection-container"),
         document.querySelector("#genres"),
         document.querySelector("#genre-list"),
-        document.querySelector("#range-genre-breadcrumb-container")
+        document.querySelector("#range-genre-breadcrumb-container"),
+        document.querySelector("#confirm-genre-parent")
     ];
     exploreSearchFilters.forEach(filter =>{
        if (!filter.classList.contains('hidden')) filter.classList.add('hidden');
