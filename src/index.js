@@ -12,7 +12,7 @@ import {
     handleDecadeSelection, handleConfirmYearSelection,
     handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick, handleListMapViewClick
 } from "./simpleSearchEventHandlers.js";
-import { handleSearchTypeSelection } from "./searchTypeEventHandlers.js";
+import { handleSearchTypeSelection} from "./searchTypeEventHandlers.js";
 import {
     handleYearRangeSelection,
     handleConfirm5YearRangeSelection,

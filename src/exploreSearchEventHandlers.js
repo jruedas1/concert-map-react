@@ -6,7 +6,7 @@ import {
     outputVenueToMap, showElement,
     toggleVisibility
 } from "./domUtils.js";
-import {stopAnimation} from "./searchTypeEventHandlers.js";
+import {stopAnimation, modifyStopAnimation} from "./searchTypeEventHandlers.js";
 import {getConcertsForYearAndGenre, getVenue} from "./dataAccess.js";
 import {capitalizeWords} from "./utils.js";
 
@@ -32,6 +32,7 @@ export const handleYearRangeStartYearSelection = event => {
 * Clicking this filter area will toggle the visibility of the year range selector.
 * */
 export const handleEdit5YearRange = event => {
+    modifyStopAnimation(true);
     emptyConcertInfo();
     const yearRangeSelector = document.querySelector("#range-selection-container");
     const genreSelector = document.querySelector("#genres");
@@ -144,6 +145,7 @@ export const handleGenreSelection = async (event, map) => {
 }
 
 export const handleConfirmGenreSelection = async (event, map) => {
+    modifyStopAnimation(false);
     hideElement(event, event.target.parentElement);
     const selectedGenreId = parseInt(document.querySelector("#genres").querySelector("h3").dataset.id);
      const selectedYear = parseInt(document.querySelector("#default-range-selector").value);

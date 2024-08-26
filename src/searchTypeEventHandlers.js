@@ -12,6 +12,8 @@ import { emptyContent, hideExploreSearchFilters,
 * */
 export let stopAnimation = false;
 
+export const modifyStopAnimation = val => stopAnimation = val;
+
 /*
 *   On search type selection, modify the "selected" marker
 *   and trigger the appropriate search type selection
