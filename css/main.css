@@ -514,7 +514,7 @@ div#decades.filter, #year-range {
 
 /*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
 
-.single-concert {
+.single-venue {
     position: fixed;
     bottom: 0;
     width: 100dvw;
@@ -633,6 +633,8 @@ footer ul li+li {
         height: 100dvh;
     }
 
-
+    #animation-year-output {
+        font-size: 3.7rem;
+    }
 
 }

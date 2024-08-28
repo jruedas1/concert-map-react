@@ -9,9 +9,9 @@ import {
     showElementMobile,
     hideElementMobile,
     outputOneVenuesConcertsToPage,
-    removeSingleConcertDivs,
     generateSingleVenueDiv,
-    returnMarkerToNormalCondition, outputVenueToMap, findMarkerById
+    returnMarkerToNormalCondition, outputVenueToMap,
+    findMarkerById, removeSingleVenueDivs
 } from "./domUtils.js";
 import {fetchYear} from "./dataAccess.js";
 
@@ -33,8 +33,8 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         const venue = venuesArray.filter((venue) => venue.id === venueId)[0];
         // extract the name and address
         const venueDiv = generateSingleVenueDiv(venue, venuesArray);
-        // Remove any existing single-concert output divs
-        removeSingleConcertDivs();
+        // Remove any existing single-venue output divs
+        removeSingleVenueDivs();
         // Insert the div into the DOM
         document.querySelector("main").appendChild(venueDiv);
         /*
@@ -59,7 +59,7 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         // replace it with a new marker that has no listeners
         outputVenueToMap(map, venue);
         // get a reference to the new marker
-        const newMarker = findMarkerById(document.querySelector("#map"), venueId);
+        const newMarker = findMarkerById(map, venueId);
         // change the marker to appear selected
         newMarker.classList.remove('marker');
         newMarker.classList.add('y-marker');
@@ -73,14 +73,14 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
     }
 }
 
-export const handleSingleConcertDivClick = (event, venue, venuesArray) => {
+export const handleSingleVenueDivClick = (event, venue, venuesArray) => {
     handleVenueSelection(event, venue.id, venuesArray);
-    removeSingleConcertDivs();
+    removeSingleVenueDivs();
     hideElementMobile(event, document.querySelector("#map"));
     /*
     * We would like to be able to return to the same view
     * Therefore we need to know that
-    * (1) We came from the single concert view, not the list view
+    * (1) We came from the single venue view, not the list view
     * (2) What venue is selected when we navigate back
     * */
     document.querySelector("#back-to-venues").dataset.origin = "map";
@@ -261,7 +261,7 @@ export const handleYearToVenueBreadcrumbClick = async (event) => {
         * mouseout and mouseenter events removed, we have to
         * add the event handlers again and turn it back to blue
         * */
-        removeSingleConcertDivs();
+        removeSingleVenueDivs();
         const selectedYear = document.querySelector("#year-breadcrumb").innerText;
         const yearData = await fetchYear(selectedYear);
         const venues = yearData.venues;
@@ -290,7 +290,7 @@ export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
     }
 
     if (window.innerWidth <= 768){
-            // Regardless of where the user came from, we want the single concert output
+            // Regardless of where the user came from, we want the single venue output
             // on the map
             // get the venue id
             const selectedVenueId = parseInt(venueAndYearInfo.querySelector("p").dataset.id);
@@ -300,7 +300,7 @@ export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
             // then run outputSingleVenue
             const venueDiv = generateSingleVenueDiv(venue, venues);
             // make sure there are no other concert divs in the DOM
-            removeSingleConcertDivs();
+            removeSingleVenueDivs();
             // Insert the div into the DOM
             document.querySelector("main").appendChild(venueDiv);
         // if the user navigated to the concerts view from the map view
@@ -319,10 +319,10 @@ export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
                 highlightedMarker.classList.remove('y-marker');
                 highlightedMarker.classList.add('marker');
             }
-            // hide any single concert divs, we don't want to see these in
+            // hide any single venue divs, we don't want to see these in
             // list view
-            const singleConcertDiv = document.querySelector(".single-concert");
-            if (singleConcertDiv) hideElement(event, document.querySelector(".single-concert"));
+            const singleVenueDiv = document.querySelector(".single-venue");
+            if (singleVenueDiv) hideElement(event, document.querySelector(".single-venue"));
         }
     }
 }
@@ -357,9 +357,9 @@ export const handleMarkerMouseOut = (event, venueId) => {
 
 export const handleListMapViewClick = event => {
     const destination = event.target.innerText.toLowerCase();
-    const singleConcertDiv = document.querySelector(".single-concert");
+    const singleVenueDiv = document.querySelector(".single-venue");
     if (destination.includes('list')) {
-        if (singleConcertDiv) hideElement(event, document.querySelector(".single-concert"));
+        if (singleVenueDiv) hideElement(event, document.querySelector(".single-venue"));
         showElementMobile(event, document.querySelector("#venues"));
         showElement(event, document.querySelector("#venues"));
         hideElementMobile(event, document.querySelector("#map"));
@@ -367,7 +367,7 @@ export const handleListMapViewClick = event => {
     } else {
         hideElementMobile(event, document.querySelector("#venues"));
         showElementMobile(event, document.querySelector("#map"));
-        if (singleConcertDiv) showElement(event, document.querySelector(".single-concert"));
+        if (singleVenueDiv) showElement(event, document.querySelector(".single-venue"));
         event.target.innerText = 'List View';
     }
 }

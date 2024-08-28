@@ -1,8 +1,8 @@
 import {
     handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
     handleVenueMouseEnter, handleVenueMouseOut,
-    handleVenueSelection, handleSingleConcertDivClick,
-    handleYearSelection
+    handleVenueSelection,
+    handleYearSelection, handleSingleVenueDivClick
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
@@ -45,8 +45,8 @@ export const emptyVenueInfo = () => {
 * The boxes that appear on the map when a marker is clicked
 * in mobile view
 * */
-export const removeSingleConcertDivs = () => {
-     document.querySelectorAll('.single-concert').forEach(div=> div.remove());
+export const removeSingleVenueDivs = () => {
+     document.querySelectorAll('.single-venue').forEach(div=> div.remove());
 }
 
 /*
@@ -330,9 +330,9 @@ export const generateSingleVenueDiv = (venue, venuesArray) => {
         addrP.innerHTML = `${venueAddressLine1}<br>${venueAddressLine2}`;
         venueDiv.appendChild(nameH);
         venueDiv.appendChild(addrP);
-        venueDiv.classList.add('single-concert');
+        venueDiv.classList.add('single-venue');
         // Handle a click on the div
-        venueDiv.addEventListener('click', event => handleSingleConcertDivClick(event, venue, venuesArray));
+        venueDiv.addEventListener('click', event => handleSingleVenueDivClick(event, venue, venuesArray));
         return venueDiv;
 }
 
@@ -383,7 +383,7 @@ export const handleWindowResize = (event, breakpoint) => {
     if (currentWidth > breakpoint && !window.aboveBreakPoint){
         window.aboveBreakPoint = true;
         showElementMobile(event, venuesEl);
-        removeSingleConcertDivs();
+        removeSingleVenueDivs();
     } else if (currentWidth <= breakpoint && window.aboveBreakPoint){
         // if the window goes below 768
         window.aboveBreakPoint = false;
@@ -402,12 +402,16 @@ export const returnMarkerToNormalCondition = (map, event, venuesArray) => {
             const id = marker.dataset.id;
             marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, id));
             marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, id));
-            marker.addEventListener('click', event => handleMarkerClick(event, id, venuesArray));
+            marker.addEventListener('click', event => handleMarkerClick(map, event, id, venuesArray));
         });
 }
 
+/*
+* Please note this requires a Mapbox map object
+* NOT a DOM selection of a node containing a map
+* */
 export const findMarkerById = (map, id) => {
-    return map._container.querySelector(`[data-id='${id.toString()}']`);
+    return map['_container'].querySelector(`[data-id='${id.toString()}']`);
 }
 
 export const highlightMarker = marker => {

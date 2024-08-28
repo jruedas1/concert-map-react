@@ -3,7 +3,7 @@ import {
     findMarkerById,
     generateOneConcertHTML,
     hideElement,
-    outputVenueToMap, removeMarkers, removePopups, showElement,
+    outputVenueToMap, removeMarkers, removePopups, showElement, showElementMobile,
     toggleVisibility
 } from "./domUtils.js";
 import {stopAnimation, setStopAnimation} from "./searchTypeEventHandlers.js";
@@ -178,6 +178,21 @@ export const handleConfirmGenreSelection = async (event, map) => {
     genreBreadcrumb.innerText = selectedGenre;
     // Reveal the change selection div
     showElement(event, changeSelectionDiv);
+
+    // If we are on mobile, we must additionally show the map
+    if (window.innerWidth <= 768) {
+        hideElement(event, document.querySelector("#concerts"));
+        showElementMobile(event, document.querySelector("#map"));
+        /*
+        * Strange bug, Mapbox map does not change shape on mobile
+        * until resized.
+        * https://github.com/mapbox/mapbox.js/issues/488
+        * You have to manually trigger a resize.
+        * This needs to happen after the map visibility changes
+        * Otherwise you have to do it on a timeout 0 or 1
+        * */
+        map.resize();
+    }
 
     // retrieve venues for the selected year range
     // do animation for each year

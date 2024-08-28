@@ -1,6 +1,8 @@
-import { emptyContent, hideExploreSearchFilters,
-            hideSimpleSearchFilters, hideElement,
-            showElement, toggleVisibility}  from "./domUtils.js";
+import {
+    emptyContent, hideExploreSearchFilters,
+    hideSimpleSearchFilters, hideElement,
+    showElement, toggleVisibility, hideElementMobile
+} from "./domUtils.js";
 
 /*
 * This is a global variable that controls the genre-concert animation
@@ -51,12 +53,14 @@ export const handleSimpleSearchSelection = event => {
     stopAnimation = true;
     emptyContent();
     hideExploreSearchFilters();
+    document.querySelector("#animation-year-output").innerText = '';
     decadesFilter.querySelector("h3").innerText = "SELECT A DECADE";
     hideElement(event, decadesEditPrompt);
     showElement(event, decadesFilter);
     showElement(event, document.querySelector("#decade-list"));
     yearsFilter.querySelector('h3').innerText = 'SELECT A YEAR';
     hideElement(event, yearsEditPrompt);
+    hideElementMobile(event, document.querySelector("#map"));
 }
 
 /*
