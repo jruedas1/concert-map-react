@@ -26,7 +26,7 @@ const mapConfiguration = {
         containerId: 'map',
         style: 'outdoors-v12',
         center: [-98.48725, 29.44879],
-        zoom: 11
+        zoom: 10
     }
 
 /* Here we generate the map and define a reference to the map.

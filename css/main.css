@@ -1,6 +1,7 @@
 :root {
     --main-background: #F1EEEB;
     --header-dark: #231F20;
+    --various-red: #AD343E;
 }
 
 /* Resets */
@@ -176,7 +177,7 @@ div#decades.filter, #year-range {
 }
 
 #search-type-selector h3.selected {
-    border-bottom: 3px solid #D43B1A;
+    border-bottom: 3px solid var(--various-red);
 }
 
 /*
@@ -329,7 +330,7 @@ div#decades.filter, #year-range {
 
 .concert-info h3 {
     margin-bottom: 1rem;
-    color: #D43B1A;
+    color: var(--various-red);
 }
 
 /*===== NEXT BUTTONS =======*/
@@ -474,7 +475,8 @@ div#decades.filter, #year-range {
 /*========== MAP ===========*/
 
 #map {
-   flex: 1 0 auto;
+    position: relative;
+    flex: 1 0 auto;
     height: 100dvh;
 }
 
@@ -493,12 +495,21 @@ div#decades.filter, #year-range {
 }
 
 .y-marker {
-    background-image: url('../img/marker-yellow-small.svg');
+    background-image: url('../img/marker-yellow-large.svg');
     background-size: cover;
     width: 60px;
     height: 70px;
     cursor: pointer;
     z-index: 1;
+}
+
+#animation-year-output {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    z-index: 4;
+    color: var(--various-red);
+    font-size: 5rem;
 }
 
 /*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/

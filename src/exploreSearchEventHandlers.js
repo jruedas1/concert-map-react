@@ -181,9 +181,11 @@ export const handleConfirmGenreSelection = async (event, map) => {
 
     // retrieve venues for the selected year range
     // do animation for each year
+    const yearOutputDiv = document.querySelector("#animation-year-output h2");
     for (let i = selectedYear; i < selectedYear+5; i++){
-         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
-         await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
+        yearOutputDiv.innerText = i.toString();
+        const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
+        await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
 }
 
