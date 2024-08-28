@@ -13,11 +13,15 @@ import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
     The map uses custom markers and the .marker class
     is added when the markers are created. It is
     NOT a default Mapbox class
+    We also remove any highlighted markers,
+    which receive a different class
  */
 //
 export const removeMarkers = () => {
     const markers = document.querySelectorAll(".marker");
-    markers.forEach(marker => marker.remove());
+    if (markers) markers.forEach(marker => marker.remove());
+    const highlightedMarkers = document.querySelectorAll(".y-marker");
+    if (highlightedMarkers) highlightedMarkers.forEach(marker => marker.remove());
 }
 
 /*
@@ -155,8 +159,6 @@ export const outputVenueToMap = (map, venue) => {
 * genre DOM element, and when the user clicks on these elements,
 * the venues get output to the map
 */
-
-
 export const generateGenreList = async (map) => {
     const genreList = document.querySelector("#genre-list");
     const genreData = await fetchGenreData();
@@ -206,7 +208,7 @@ export const generateYearDropDown = () => {
 }
 
 /*
-* Generates the custom dropdown for selecting a five year range
+* Generates the custom dropdown for selecting a five-year range
 * Happens on page load
 * */
 export const generateCustomDropdownOptions = () => {
@@ -371,6 +373,9 @@ export const hideElementMobile = (event, elementReference) => {
     }
 }
 
+/*
+* THIS NEEDS WORK!!!!!
+* */
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;
     const venuesEl = document.querySelector("#venues");
@@ -403,6 +408,30 @@ export const returnMarkerToNormalCondition = (map, event, venuesArray) => {
 
 export const findMarkerById = (map, id) => {
     return map._container.querySelector(`[data-id='${id.toString()}']`);
+}
+
+export const highlightMarker = marker => {
+    marker.classList.remove('marker');
+    marker.classList.add('y-marker');
+}
+
+export const deHighlightMarker = marker => {
+    marker.classList.remove('y-marker');
+    marker.classList.add('marker');
+}
+
+export const findHighlightedMarkers = () => {
+    return document.querySelectorAll('.y-marker');
+}
+
+export const findAndDeHighlightMarkers = () => {
+    const highlightedMarkers = findHighlightedMarkers();
+    if (highlightedMarkers.length !== 0) highlightedMarkers.forEach(marker => deHighlightMarker(marker));
+}
+
+export const findAndHighlightMarker = (map, venueId) => {
+    const marker = findMarkerById(map, venueId);
+    if (marker) highlightMarker(marker);
 }
 
 export const mobileMenu = () => {

@@ -495,8 +495,8 @@ div#decades.filter, #year-range {
 .y-marker {
     background-image: url('../img/marker-yellow-small.svg');
     background-size: cover;
-    width: 37px;
-    height: 45px;
+    width: 60px;
+    height: 70px;
     cursor: pointer;
     z-index: 1;
 }

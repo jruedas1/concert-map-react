@@ -1,9 +1,9 @@
 import {
-    emptyConcertInfo,
+    emptyConcertInfo, findAndDeHighlightMarkers, findAndHighlightMarker,
     findMarkerById,
     generateOneConcertHTML,
     hideElement,
-    outputVenueToMap, showElement,
+    outputVenueToMap, removeMarkers, removePopups, showElement,
     toggleVisibility
 } from "./domUtils.js";
 import {stopAnimation, setStopAnimation} from "./searchTypeEventHandlers.js";
@@ -128,6 +128,8 @@ async function outputConcertsOnTimer(concertsArray, map) {
         const venue = uniqueVenueMap[concertVenueId];
         const venueMarkerOnMap = findMarkerById(map, concertVenueId);
         if (!venueMarkerOnMap) outputVenueToMap(map, venue);
+        findAndDeHighlightMarkers();
+        findAndHighlightMarker(map, venue.id);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
         concertOutputDiv.prepend(concertDiv);
         await delay(300);
@@ -151,6 +153,9 @@ export const handleGenreSelection = async (event, map) => {
     showElement(event, document.querySelector("#genres .edit"));
 }
 
+/*
+* Event handler triggered in explore mode when user clicks "Show My Results"
+* */
 export const handleConfirmGenreSelection = async (event, map) => {
     // Ensure that the stop animation global is set to false
     // So the animation can run
@@ -182,9 +187,21 @@ export const handleConfirmGenreSelection = async (event, map) => {
     }
 }
 
+/*
+* Triggered when user clicks "Change Selections" in explore mode
+* */
 export const handleChangeYearAndGenreSelections = event => {
+    // Stop current animation
     setStopAnimation(true);
+    // Hide the "Change selections option and current selection output
     hideElement(event, document.querySelector("#range-genre-breadcrumb-container"));
+    // Show the currently selected dates
     showElement(event, document.querySelector("#year-range"));
+    // Show the interface for selecting a year
+    showElement(event, document.querySelector("#range-selection-container"));
+    // Wipe out the previously output concert list
     emptyConcertInfo();
+    // Empty the map
+    removePopups();
+    removeMarkers();
 }
