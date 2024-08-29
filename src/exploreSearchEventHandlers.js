@@ -182,6 +182,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
     showElement(event, changeSelectionDiv);
 
     // If we are on mobile, we must additionally show the map
+    // And also hide the search/explore selection and show the header
     if (window.innerWidth <= 768) {
         hideElement(event, document.querySelector("#concerts"));
         showElementMobile(event, document.querySelector("#map"));
@@ -194,6 +195,8 @@ export const handleConfirmGenreSelection = async (event, map) => {
         * Otherwise you have to do it on a timeout 0 or 1
         * */
         map.resize();
+        hideElement(event, document.querySelector("#search-type-selector"));
+        showElementMobile(event, document.querySelector("header"));
     }
 
     // retrieve venues for the selected year range
@@ -227,8 +230,13 @@ export const handleChangeYearAndGenreSelections = event => {
     // Empty the map
     removePopups();
     removeMarkers();
-    // In mobile, remove the animation year output
+    /* In mobile, remove the animation year output
+    *  Hide the mobile header
+    *  Show the search type selector
+    *  */
     document.querySelector("#animation-year-output h2").innerText = '';
+    hideElementMobile(event, document.querySelector("header"));
+    showElement(event, document.querySelector("#search-type-selector"));
     // Wipe out the previously output concert list
     emptyConcertInfo();
     // On mobile, remove any single-concert data
