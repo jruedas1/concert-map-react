@@ -630,11 +630,15 @@ footer ul li+li {
 
     #map {
         flex: 2 0 auto;
-        height: 100dvh;
+        height: calc(100dvh - 18.1rem);
     }
 
     #animation-year-output {
         font-size: 3.7rem;
+    }
+
+    #single-concert-div.concert-info {
+        z-index: 2;
     }
 
 }

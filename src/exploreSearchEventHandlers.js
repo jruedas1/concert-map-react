@@ -2,7 +2,7 @@ import {
     emptyConcertInfo, findAndDeHighlightMarkers, findAndHighlightMarker,
     findMarkerById,
     generateOneConcertHTML,
-    hideElement,
+    hideElement, hideElementMobile,
     outputVenueToMap, removeMarkers, removePopups, showElement, showElementMobile,
     toggleVisibility
 } from "./domUtils.js";
@@ -97,6 +97,7 @@ const delay = ms => new Promise(res=>setTimeout(res, ms));
 * */
 async function outputConcertsOnTimer(concertsArray, map) {
     const concertOutputDiv = document.querySelector("#concerts");
+    const singleConcertDiv = document.querySelector("#single-concert-div");
     /* For improved efficiency and fewer queries,
     *  we will first loop over the concerts to determine each unique venue id
     *  Then we query the db for each unique venue
@@ -132,6 +133,7 @@ async function outputConcertsOnTimer(concertsArray, map) {
         findAndHighlightMarker(map, venue.id);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
         concertOutputDiv.prepend(concertDiv);
+        if (window.innerWidth <= 768) singleConcertDiv.replaceChildren(concertDiv);
         await delay(300);
     }
 }
@@ -197,7 +199,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
     // retrieve venues for the selected year range
     // do animation for each year
     const yearOutputDiv = document.querySelector("#animation-year-output h2");
-    for (let i = selectedYear; i < selectedYear+5; i++){
+    for (let i = selectedYear; i < selectedYear+5 && !stopAnimation; i++){
         yearOutputDiv.innerText = i.toString();
         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
         await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
@@ -214,11 +216,21 @@ export const handleChangeYearAndGenreSelections = event => {
     hideElement(event, document.querySelector("#range-genre-breadcrumb-container"));
     // Show the currently selected dates
     showElement(event, document.querySelector("#year-range"));
-    // Show the interface for selecting a year
+    // show the year selection menu
     showElement(event, document.querySelector("#range-selection-container"));
-    // Wipe out the previously output concert list
-    emptyConcertInfo();
+    // Hide the genre selection process
+    hideElement(event, document.querySelector("#genres"));
+    hideElement(event, document.querySelector("#genre-list"));
+    hideElement(event, document.querySelector("#confirm-genre-parent"));
+    // In mobile, hide the map
+    hideElementMobile(event, document.querySelector("#map"));
     // Empty the map
     removePopups();
     removeMarkers();
+    // In mobile, remove the animation year output
+    document.querySelector("#animation-year-output h2").innerText = '';
+    // Wipe out the previously output concert list
+    emptyConcertInfo();
+    // On mobile, remove any single-concert data
+    document.querySelector("#single-concert-div").innerHTML = '';
 }

@@ -53,7 +53,7 @@ export const handleSimpleSearchSelection = event => {
     stopAnimation = true;
     emptyContent();
     hideExploreSearchFilters();
-    document.querySelector("#animation-year-output").innerText = '';
+    document.querySelector("#animation-year-output h2").innerText = '';
     decadesFilter.querySelector("h3").innerText = "SELECT A DECADE";
     hideElement(event, decadesEditPrompt);
     showElement(event, decadesFilter);
