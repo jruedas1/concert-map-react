@@ -630,7 +630,7 @@ footer ul li+li {
 
     #map {
         flex: 2 0 auto;
-        height: calc(100dvh - 18.1rem);
+        height: calc(100dvh - 21.1rem);
     }
 
     #animation-year-output {
