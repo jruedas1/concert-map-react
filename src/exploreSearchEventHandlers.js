@@ -133,7 +133,9 @@ async function outputConcertsOnTimer(concertsArray, map) {
         findAndHighlightMarker(map, venue.id);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
         concertOutputDiv.prepend(concertDiv);
-        if (window.innerWidth <= 768) singleConcertDiv.replaceChildren(concertDiv);
+        if (window.innerWidth <= 768) {
+            singleConcertDiv.replaceChildren(concertDiv);
+        }
         await delay(300);
     }
 }
@@ -184,8 +186,14 @@ export const handleConfirmGenreSelection = async (event, map) => {
     // If we are on mobile, we must additionally show the map
     // And also hide the search/explore selection and show the header
     if (window.innerWidth <= 768) {
+        // on mobile the single-concert output div is fixed positioned,
+        // the map overlaps at and venues are hidden. Moving the map center south
+        // pushes up the map center, which helps keep the venue markers on screen
+        map.setCenter([-98.48725, 29.37879]);
         hideElement(event, document.querySelector("#concerts"));
         showElementMobile(event, document.querySelector("#map"));
+        const concertOutputDiv = document.querySelector("#single-concert-div");
+        showElement(event, concertOutputDiv);
         /*
         * Strange bug, Mapbox map does not change shape on mobile
         * until resized.
@@ -207,6 +215,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
         await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
+
 }
 
 /*
@@ -226,7 +235,9 @@ export const handleChangeYearAndGenreSelections = event => {
     hideElement(event, document.querySelector("#genre-list"));
     hideElement(event, document.querySelector("#confirm-genre-parent"));
     // In mobile, hide the map
+    // and the single-concert output
     hideElementMobile(event, document.querySelector("#map"));
+    hideElement(event, document.querySelector("#single-concert-div"));
     // Empty the map
     removePopups();
     removeMarkers();
@@ -241,4 +252,6 @@ export const handleChangeYearAndGenreSelections = event => {
     emptyConcertInfo();
     // On mobile, remove any single-concert data
     document.querySelector("#single-concert-div").innerHTML = '';
+    // On mobile, the map is shifted when viewing the data visualization. This moves it back
+    map.setCenter([-98.48725, 29.44879]);
 }

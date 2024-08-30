@@ -514,13 +514,13 @@ div#decades.filter, #year-range {
 
 /*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
 
-.single-venue {
+.single-venue, #single-concert-div {
     position: fixed;
     bottom: 0;
     width: 100dvw;
     background: var(--main-background);
-    padding: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem 1.5rem;
 }
 
 /*========== FOOTER ==========*/
@@ -630,15 +630,16 @@ footer ul li+li {
 
     #map {
         flex: 2 0 auto;
-        height: calc(100dvh - 21.1rem);
+        max-height: calc(100dvh);
     }
 
     #animation-year-output {
         font-size: 3.7rem;
+        top: 2rem;
     }
 
-    #single-concert-div.concert-info {
-        z-index: 2;
+    #single-concert-div .concert-info {
+        border-bottom: none;
     }
 
 }

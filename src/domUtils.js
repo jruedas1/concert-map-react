@@ -71,7 +71,8 @@ export const hideSimpleSearchFilters = () => {
         document.querySelector("#years"),
         document.querySelector("#year-list"),
         document.querySelector("#year-to-venue-breadcrumb"),
-        document.querySelector("#concert-to-venue-breadcrumb")
+        document.querySelector("#concert-to-venue-breadcrumb"),
+        document.querySelector("#confirm-year-parent")
     ];
     simpleSearchFilters.forEach(filter => {
        if (!filter.classList.contains('hidden')) filter.classList.add('hidden');
