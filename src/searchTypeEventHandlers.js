@@ -50,6 +50,7 @@ export const handleSimpleSearchSelection = event => {
     const decadesEditPrompt = decadesFilter.querySelector('p');
     const yearsFilter = document.querySelector("#years");
     const yearsEditPrompt = yearsFilter.querySelector("p");
+    const concertList = document.querySelector("#concerts");
     stopAnimation = true;
     emptyContent();
     hideExploreSearchFilters();
@@ -58,6 +59,7 @@ export const handleSimpleSearchSelection = event => {
     hideElement(event, decadesEditPrompt);
     showElement(event, decadesFilter);
     showElement(event, document.querySelector("#decade-list"));
+    showElement(event, concertList);
     yearsFilter.querySelector('h3').innerText = 'SELECT A YEAR';
     hideElement(event, yearsEditPrompt);
     hideElementMobile(event, document.querySelector("#map"));
