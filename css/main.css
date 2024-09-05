@@ -207,7 +207,6 @@ div#decades.filter, #year-range {
 }
 
 /*========= BREADCRUMBS ==========*/
-/*======= IN SEARCH MODE ==========*/
 /*
     Back-to-year-edit-div is to go back
     to year selection from the venues view.
@@ -216,7 +215,7 @@ div#decades.filter, #year-range {
     Back-to-venues is to go from the concerts
     list to the venues list or view.
 */
-#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div>div {
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
     display: flex;
     flex-flow: row nowrap;
     gap: 0.5rem;
@@ -237,7 +236,7 @@ div#decades.filter, #year-range {
     We use this to separate the "change selections"
     prompt from the "List View / Map View" button.
 */
-#back-to-year-edit-div {
+#back-to-year-edit-div, #change-range-genre-div {
     justify-content: space-between;
 }
 
@@ -296,7 +295,7 @@ div#decades.filter, #year-range {
     font-weight: 700;
 }
 
-#list-view {
+.list-map-button {
     background: #232323;
     color: var(--main-background);
     padding: 0.5rem 1rem;

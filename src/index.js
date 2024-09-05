@@ -18,7 +18,7 @@ import {
     handleConfirm5YearRangeSelection,
     handleEdit5YearRange,
     handleYearRangeStartYearSelection,
-    handleConfirmGenreSelection, handleChangeYearAndGenreSelections
+    handleConfirmGenreSelection, handleChangeYearAndGenreSelections, handleExploreListViewClick
 } from "./exploreSearchEventHandlers.js"
 
 const mapConfiguration = {
@@ -71,10 +71,13 @@ const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
 concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
 
 const yearRangeAndGenreChangeSelections = document.querySelector("#change-range-genre-div");
-yearRangeAndGenreChangeSelections.addEventListener('click', handleChangeYearAndGenreSelections);
+yearRangeAndGenreChangeSelections.addEventListener('click', event => handleChangeYearAndGenreSelections(event, map));
 
 const listViewButton = document.querySelector("#list-view");
 listViewButton.addEventListener('click', handleListMapViewClick);
+
+const exploreListViewButton = document.querySelector("#explore-list-view");
+exploreListViewButton.addEventListener('click', handleExploreListViewClick);
 
 const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener('click', mobileMenu);

@@ -133,8 +133,12 @@ async function outputConcertsOnTimer(concertsArray, map) {
         findAndHighlightMarker(map, venue.id);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
         concertOutputDiv.prepend(concertDiv);
+        // On mobile, we generate the single concert output
         if (window.innerWidth <= 768) {
-            singleConcertDiv.replaceChildren(concertDiv);
+            // we are putting the same node in two places in the DOM
+            // that's not actually possible so we have to clone it first
+            const concertDivClone = concertDiv.cloneNode(true);
+            singleConcertDiv.replaceChildren(concertDivClone);
         }
         await delay(300);
     }
@@ -221,7 +225,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
 /*
 * Triggered when user clicks "Change Selections" in explore mode
 * */
-export const handleChangeYearAndGenreSelections = event => {
+export const handleChangeYearAndGenreSelections = (event, map) => {
     // Stop current animation
     setStopAnimation(true);
     // Hide the "Change selections option and current selection output
@@ -254,4 +258,25 @@ export const handleChangeYearAndGenreSelections = event => {
     document.querySelector("#single-concert-div").innerHTML = '';
     // On mobile, the map is shifted when viewing the data visualization. This moves it back
     map.setCenter([-98.48725, 29.44879]);
+}
+
+export const handleExploreListViewClick = event => {
+    /*
+    * We need stopPropagation in order to prevent the "change selections"
+    * from triggering
+    * */
+    event.stopPropagation();
+    const destination = event.target.innerText.toLowerCase();
+    if (destination.includes('list')) {
+        hideElementMobile(event, document.querySelector("#map"));
+        hideElementMobile(event, document.querySelector("#single-concert-div"));
+        showElement(event, document.querySelector("#concerts"));
+        event.target.innerText = 'Map View';
+    } else {
+        showElementMobile(event, document.querySelector("#map"));
+        showElementMobile(event, document.querySelector("#single-concert-div"));
+        hideElement(event, document.querySelector("#concerts"));
+        event.target.innerText = 'List View';
+    }
+
 }
