@@ -37,7 +37,7 @@ const mapConfiguration = {
 * */
 export const map = await generateMap(mapConfiguration);
 
-window.crossedBreakPoint = window.innerWidth > 768;
+window.aboveBreakPoint = window.innerWidth > 768;
 window.addEventListener('resize', event => handleWindowResize(event, 768));
 
 /* get references to the top-level "search" and "explore" selectors
@@ -77,7 +77,7 @@ const listViewButton = document.querySelector("#list-view");
 listViewButton.addEventListener('click', handleListMapViewClick);
 
 const exploreListViewButton = document.querySelector("#explore-list-view");
-exploreListViewButton.addEventListener('click', handleExploreListViewClick);
+exploreListViewButton.addEventListener('click', event => handleExploreListViewClick(event, map));
 
 const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener('click', mobileMenu);

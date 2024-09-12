@@ -134,12 +134,14 @@ async function outputConcertsOnTimer(concertsArray, map) {
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
         concertOutputDiv.prepend(concertDiv);
         // On mobile, we generate the single concert output
-        if (window.innerWidth <= 768) {
-            // we are putting the same node in two places in the DOM
-            // that's not actually possible so we have to clone it first
-            const concertDivClone = concertDiv.cloneNode(true);
-            singleConcertDiv.replaceChildren(concertDivClone);
-        }
+        // We need it to exist on the page even in desktop,
+        // In case the user narrows the browser window, but it's
+        // usually hidden in desktop.
+        // We are putting the same node in two places in the DOM
+        // that's not actually possible so we have to clone it first
+        const concertDivClone = concertDiv.cloneNode(true);
+        singleConcertDiv.replaceChildren(concertDivClone);
+        // here's where the delay length is set
         await delay(300);
     }
 }
@@ -173,6 +175,8 @@ export const handleConfirmGenreSelection = async (event, map) => {
     // Hide the year range and genres filters
     hideElement(event, document.querySelector("#year-range"));
     hideElement(event, document.querySelector("#genres"));
+    hideElement(event, document.querySelector("#genre-list"));
+    hideElement(event, document.querySelector("#range-selection-container"));
     // Obtain the selected year and genre
     const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
     const selectedGenreHeading = document.querySelector("#genres").querySelector("h3");
@@ -260,7 +264,7 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     map.setCenter([-98.48725, 29.44879]);
 }
 
-export const handleExploreListViewClick = event => {
+export const handleExploreListViewClick = (event, map) => {
     /*
     * We need stopPropagation in order to prevent the "change selections"
     * from triggering
@@ -270,11 +274,14 @@ export const handleExploreListViewClick = event => {
     if (destination.includes('list')) {
         hideElementMobile(event, document.querySelector("#map"));
         hideElementMobile(event, document.querySelector("#single-concert-div"));
+        hideElement(event, document.querySelector("#single-concert-div"));
         showElement(event, document.querySelector("#concerts"));
         event.target.innerText = 'Map View';
     } else {
         showElementMobile(event, document.querySelector("#map"));
+        map.resize();
         showElementMobile(event, document.querySelector("#single-concert-div"));
+        showElement(event, document.querySelector("#single-concert-div"));
         hideElement(event, document.querySelector("#concerts"));
         event.target.innerText = 'List View';
     }

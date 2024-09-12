@@ -49,6 +49,14 @@ export const removeSingleVenueDivs = () => {
      document.querySelectorAll('.single-venue').forEach(div=> div.remove());
 }
 
+export const hideSingleVenueDivs = () => {
+     document.querySelectorAll('.single-venue').forEach(div=> div.classList.add('hidden'));
+}
+
+export const showSingleVenueDivs = () => {
+     document.querySelectorAll('.single-venue').forEach(div=> div.classList.remove('hidden'));
+}
+
 /*
 * Utility function to combine removing markers,
 * popups, venue data, and concert data from page
@@ -138,9 +146,9 @@ export const outputVenueToMap = (map, venue) => {
             const venueMarker = new mapboxgl.Marker(el);
             venueMarker.setLngLat([venue.longitude, venue.latitude]);
             venueMarker.addTo(map);
-            const popup = new mapboxgl.Popup()
-                .setHTML('<p>'+ venue.name + '</p>');
-            venueMarker.setPopup(popup);
+            // const popup = new mapboxgl.Popup()
+            //     .setHTML('<p>'+ venue.name + '</p>');
+            // venueMarker.setPopup(popup);
             return venueMarker;
         }
 }
@@ -379,16 +387,26 @@ export const hideElementMobile = (event, elementReference) => {
 * */
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;
+    const exploreModeSelectionMade = !document.querySelector("#range-genre-breadcrumb-container").classList.contains('hidden');
+    const exploreModeListMapViewButton = document.querySelector("#explore-list-view");
     const venuesEl = document.querySelector("#venues");
     // if the window goes above 768
     if (currentWidth > breakpoint && !window.aboveBreakPoint){
         window.aboveBreakPoint = true;
-        showElementMobile(event, venuesEl);
-        removeSingleVenueDivs();
+        hideSingleVenueDivs();
+        if (exploreModeSelectionMade){
+            if (exploreModeListMapViewButton.innerText === "List View"){
+               showElement(event, document.querySelector("#concerts"));
+               hideElement(event, document.querySelector("#single-concert-div"));
+            }
+        }
     } else if (currentWidth <= breakpoint && window.aboveBreakPoint){
         // if the window goes below 768
         window.aboveBreakPoint = false;
-        hideElementMobile(event, venuesEl);
+        showSingleVenueDivs();
+        if (exploreModeSelectionMade){
+            exploreModeListMapViewButton.innerText = "Map View";
+        }
     }
 }
 
