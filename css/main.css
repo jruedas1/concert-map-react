@@ -718,4 +718,14 @@ footer ul li+li {
         border-bottom: none;
     }
 
+    #modalOptionDescriptions {
+        flex-flow: column nowrap;
+        gap: 2rem;
+        margin-top: 25%;
+    }
+
+    #modalOptionDescriptions > div {
+        gap: 0.6rem;
+    }
+
 }
