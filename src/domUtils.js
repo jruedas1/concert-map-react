@@ -461,3 +461,17 @@ export const mobileMenu = () => {
     document.querySelector(".hamburger").classList.toggle('active');
     document.querySelector('.nav-menu').classList.toggle('active');
 }
+
+// Utility function to determine if an element
+// is a descendant of another element
+export const isDescendant = (descendant, parent) => {
+    return parent.contains(descendant);
+}
+
+export const handleModalWindowClick = event => {
+    const modalWrapper = document.querySelector("#modalWrapper");
+    if (event.target === modalWrapper || isDescendant(modalWrapper, event.target)) {
+        modalWrapper.classList.remove('showModal');
+        modalWrapper.classList.add('hideModal');
+    }
+}

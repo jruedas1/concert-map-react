@@ -39,12 +39,11 @@ export const map = await generateMap(mapConfiguration);
 
 window.aboveBreakPoint = window.innerWidth > 768;
 window.addEventListener('resize', event => handleWindowResize(event, 768));
-window.addEventListener('click', event => {
+
+document.querySelector("main").addEventListener('click', event => {
     const modalWrapper = document.querySelector("#modalWrapper");
-    if (event.target === modalWrapper){
-        modalWrapper.classList.remove('showModal');
-        modalWrapper.classList.add('hideModal');
-    }
+    modalWrapper.classList.remove('showModal');
+    modalWrapper.classList.add('hideModal');
 });
 
 /* get references to the top-level "search" and "explore" selectors
@@ -53,6 +52,8 @@ window.addEventListener('click', event => {
 const searchTypeSelectors = document.querySelectorAll("#search-type-selector h3");
 searchTypeSelectors.forEach(selector => selector.addEventListener('click', handleSearchTypeSelection));
 
+const modalExploreSelector = document.querySelector("#modalOptionDescriptions button.explore-mode-selector");
+modalExploreSelector.addEventListener('click', handleSearchTypeSelection);
 
 // get references to the year and decade filters
 // add event handlers to the year and decade selectors

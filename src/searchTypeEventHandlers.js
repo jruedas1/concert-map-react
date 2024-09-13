@@ -1,7 +1,7 @@
 import {
     emptyContent, hideExploreSearchFilters,
     hideSimpleSearchFilters, hideElement,
-    showElement, toggleVisibility, hideElementMobile
+    showElement, toggleVisibility, hideElementMobile, handleModalWindowClick
 } from "./domUtils.js";
 
 /*
@@ -21,18 +21,22 @@ export const setStopAnimation = val => stopAnimation = val;
 *   and trigger the appropriate search type selection
 * */
 export const handleSearchTypeSelection = event => {
-    if (event.target.innerText.toLowerCase() === 'search'){
-        if (!event.target.classList.contains('selected')){
-            event.target.classList.add('selected');
-            event.target.nextElementSibling.classList.remove('selected');
+    const searchModeSelector = document.querySelector("#search-type-selector h3.search-mode-selector");
+    const exploreModeSelector = document.querySelector("#search-type-selector h3.explore-mode-selector");
+    if (event.target.classList.contains('search-mode-selector')){
+        if (!searchModeSelector.classList.contains('selected')){
+            searchModeSelector.classList.add('selected');
+            exploreModeSelector.classList.remove('selected');
             handleSimpleSearchSelection(event);
         }
     } else {
         /* If it's not the search being selected, it's explore
+            This happens either through the EXPLORE h3
+            or the splash page START EXPLORING button
         * */
-        if (!event.target.classList.contains('selected')){
-             event.target.classList.add('selected');
-             event.target.previousElementSibling.classList.remove('selected');
+        if (!exploreModeSelector.classList.contains('selected')){
+             exploreModeSelector.classList.add('selected');
+            searchModeSelector.classList.remove('selected');
              handleExploreSelection(event);
         }
     }
@@ -76,4 +80,9 @@ export const handleExploreSelection = event => {
     hideSimpleSearchFilters();
     toggleVisibility(event, document.querySelector("#year-range"));
     toggleVisibility(event, document.querySelector("#range-selection-container"));
+}
+
+export const handleModalExploreSelection = event => {
+    handleModalWindowClick(event);
+    console.log(event.target);
 }
