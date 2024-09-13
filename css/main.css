@@ -557,7 +557,7 @@ footer ul li+li {
 /*======= MODAL =========*/
 
 #modalWrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 100%;
