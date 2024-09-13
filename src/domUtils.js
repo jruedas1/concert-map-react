@@ -383,7 +383,7 @@ export const hideElementMobile = (event, elementReference) => {
 }
 
 /*
-* THIS NEEDS WORK!!!!!
+* handle transitions from desktop to mobile width
 * */
 export const handleWindowResize = (event, breakpoint) => {
     const currentWidth = window.innerWidth;

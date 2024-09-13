@@ -39,6 +39,13 @@ export const map = await generateMap(mapConfiguration);
 
 window.aboveBreakPoint = window.innerWidth > 768;
 window.addEventListener('resize', event => handleWindowResize(event, 768));
+window.addEventListener('click', event => {
+    const modalWrapper = document.querySelector("#modalWrapper");
+    if (event.target === modalWrapper){
+        modalWrapper.classList.remove('showModal');
+        modalWrapper.classList.add('hideModal');
+    }
+});
 
 /* get references to the top-level "search" and "explore" selectors
 *  and add handlers for selecting them
