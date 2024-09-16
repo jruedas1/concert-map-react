@@ -470,9 +470,7 @@ export const isDescendant = (descendant, parent) => {
 
 export const handleModalWindowClick = event => {
     const modalWrapper = document.querySelector("#modalWrapper");
-    if (event.target === modalWrapper || isDescendant(modalWrapper, event.target)) {
-        modalWrapper.classList.remove('showModal');
-        modalWrapper.classList.add('hideModal');
-        document.querySelector("header").classList.add("mobile-hidden");
-    }
+    modalWrapper.classList.remove('showModal');
+    modalWrapper.classList.add('hideModal');
+    document.querySelector("header").classList.add("mobile-hidden");
 }
