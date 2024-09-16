@@ -666,8 +666,9 @@ footer ul li+li {
         flex-direction: column;
         width: auto;
         transition: 0.3s;
-        z-index: 2;
+        z-index: 4;
         background: var(--header-dark);
+        opacity: 0.9;
         text-align: right;
         padding: 1rem;
     }

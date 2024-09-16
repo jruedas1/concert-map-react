@@ -3,7 +3,7 @@ import {generateMap} from "./mabpoxUtils.js";
 import {
     generateCustomDropdownOptions,
     generateGenreList,
-    generateYearDropDown,
+    generateYearDropDown, handleModalWindowClick,
     handleWindowResize,
     mobileMenu,
     toggleVisibility
@@ -40,11 +40,7 @@ export const map = await generateMap(mapConfiguration);
 window.aboveBreakPoint = window.innerWidth > 768;
 window.addEventListener('resize', event => handleWindowResize(event, 768));
 
-document.querySelector("main").addEventListener('click', event => {
-    const modalWrapper = document.querySelector("#modalWrapper");
-    modalWrapper.classList.remove('showModal');
-    modalWrapper.classList.add('hideModal');
-});
+document.querySelector("main").addEventListener('click', handleModalWindowClick);
 
 /* get references to the top-level "search" and "explore" selectors
 *  and add handlers for selecting them

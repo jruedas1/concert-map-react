@@ -473,5 +473,6 @@ export const handleModalWindowClick = event => {
     if (event.target === modalWrapper || isDescendant(modalWrapper, event.target)) {
         modalWrapper.classList.remove('showModal');
         modalWrapper.classList.add('hideModal');
+        document.querySelector("header").classList.add("mobile-hidden");
     }
 }
