@@ -719,14 +719,22 @@ footer ul li+li {
         border-bottom: none;
     }
 
+    #modalContent {
+        max-height: 100dvh;
+    }
+
+    #modalContent h2 {
+        font-size: 1.3rem;
+    }
+
     #modalOptionDescriptions {
         flex-flow: column nowrap;
-        gap: 2rem;
-        margin-top: 25%;
+        gap: 0.5rem;
+        margin-top: 4%;
     }
 
     #modalOptionDescriptions > div {
-        gap: 0.6rem;
+        gap: 0.5rem;
     }
 
 }
