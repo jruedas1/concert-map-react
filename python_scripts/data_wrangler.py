@@ -354,6 +354,8 @@ class DataWrangler:
             for year in years_venues["years"]:
                 # in each year, loop over the venues
                 year_info = {"id": year["id"], "concerts": []}
+                # Create a set to track concert ids to avoid duplicates
+                added_concert_ids = set()
                 for venue in year["venues"]:
                     # in each venue, loop over the concerts
                     for concert in venue['concerts']:
@@ -368,13 +370,18 @@ class DataWrangler:
                                     # if the genre in question is one of the subgenres
                                     # that pertains to the genre we are currently examining
                                     if artist_genre.lower() in subgenres_lc:
-                                        # we need to tack on some info about the venue:
-                                        # the venue id will be used to find the map marker
-                                        concert["venue_id"] = venue["id"]
-                                        # the venue coords may be useful for output purposes
-                                        concert["venue_coords"] = [venue["longitude"], venue["latitude"]]
-                                        # add it to the genre's concert list for that year
-                                        year_info["concerts"].append(concert)
+                                        # check if the concert ID has already been added
+                                        concert_id = concert["id"]
+                                        if concert_id not in added_concert_ids:
+                                            # mark the concert as added
+                                            added_concert_ids.add(concert_id)
+                                            # we need to tack on some info about the venue:
+                                            # the venue id will be used to find the map marker
+                                            concert["venue_id"] = venue["id"]
+                                            # the venue coords may be useful for output purposes
+                                            concert["venue_coords"] = [venue["longitude"], venue["latitude"]]
+                                            # add it to the genre's concert list for that year
+                                            year_info["concerts"].append(concert)
                 # Before proceeding we have to sort the concerts chronologically
                 sorted_concerts = sorted(year_info["concerts"], key=convert_to_datetime)
                 year_info["concerts"] = sorted_concerts
