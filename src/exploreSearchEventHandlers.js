@@ -22,7 +22,6 @@ export const handleYearRangeStartYearSelection = event => {
     event.stopPropagation();
     event.target.nextElementSibling.classList.toggle('hidden');
     event.target.classList.toggle("select-arrow-active");
-    // event.target.classList.toggle("double-border");
     document.querySelector("#confirm-range-selection").classList.toggle('hidden');
 }
 
@@ -32,14 +31,21 @@ export const handleYearRangeStartYearSelection = event => {
 * Clicking this filter area will toggle the visibility of the year range selector.
 * */
 export const handleEdit5YearRange = event => {
+    console.log('handleEdit5YearRange fired')
     setStopAnimation(true);
     emptyConcertInfo();
     const yearRangeSelector = document.querySelector("#range-selection-container");
+    const yearRangeEditor = document.querySelector("#year-range");
     const genreSelector = document.querySelector("#genres");
     const genreList = document.querySelector("#genre-list");
-    toggleVisibility(event, yearRangeSelector);
+    const showMyResultsButton = document.querySelector("#confirm-genre-parent");
+    if (!yearRangeEditor.querySelector("h3").innerText.toLowerCase().startsWith("s")){
+        showElement(event, yearRangeSelector);
+        // hideElement(event.target.querySelector('.edit'));
+    }
     hideElement(event, genreSelector);
     hideElement(event, genreList);
+    hideElement(event, showMyResultsButton);
 }
 
 /*

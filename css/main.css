@@ -439,6 +439,10 @@ div#decades.filter, #year-range {
     border-bottom-style: double;
 }
 
+.filter-border-top {
+    border-top: 2px solid black;
+}
+
 #range-selection-state {
     color: #124E78;
 }
