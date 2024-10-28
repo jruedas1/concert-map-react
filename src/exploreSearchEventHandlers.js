@@ -43,6 +43,7 @@ export const handleEdit5YearRange = event => {
     if (!yearRangeEditorText.innerText.toLowerCase().startsWith("s")){
         showElement(event, yearRangeSelector);
         yearRangeEditorText.innerText = "SELECT A 5-YEAR RANGE";
+        if ('cursor' in yearRangeEditor.style) yearRangeEditor.style.removeProperty('cursor');
         hideElement(event, yearRangeEditor.querySelector('.edit'));
     }
     hideElement(event, genreSelector);
@@ -58,6 +59,7 @@ export const handleEdit5YearRange = event => {
 * */
 export const handleYearRangeSelection = event => {
     const resultDisplayDiv = document.querySelector("#range-selection-state");
+    const yearRangeEditor = document.querySelector("#year-range");
     const baseYear = event.target.value;
     resultDisplayDiv.innerHTML = `<p>${baseYear} - ${parseInt(baseYear) + 4}`;
 }
@@ -76,6 +78,7 @@ export const handleConfirm5YearRangeSelection = event => {
     const yearRangeFilter = document.querySelector("#year-range");
     yearRangeFilter.querySelector('.edit').classList.remove('hidden');
     yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
+    yearRangeFilter.style.cursor = "pointer";
     toggleVisibility(event, document.querySelector("#range-selection-container"));
     toggleVisibility(event, document.querySelector("#genres"));
     showElement(event, document.querySelector("#genre-list"));

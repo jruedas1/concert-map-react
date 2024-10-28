@@ -144,9 +144,19 @@ div#decades.filter, #year-range {
     Make sure all the filter options have pointer cursors
     to indicate they are clickable
 */
-.filter, .filter-option, #venues div, #year-range  {
+.filter, .filter-option, #venues div  {
     padding: 1rem;
     cursor: pointer;
+}
+
+/*
+Year-range filter is by default non-clickable
+But changes to clickable via JS when it has the "Edit" prompt showing
+*/
+
+#year-range {
+    padding: 1rem;
+    cursor: default;
 }
 
 /*
