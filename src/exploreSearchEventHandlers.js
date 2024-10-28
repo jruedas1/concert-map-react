@@ -76,6 +76,11 @@ export const handleConfirm5YearRangeSelection = event => {
     const yearRangeStartSelector = document.querySelector("#default-range-selector");
     const selectedBaseYear = yearRangeStartSelector.value;
     const yearRangeFilter = document.querySelector("#year-range");
+    /* Once a year is selected, the text "SELECT A 5-YEAR RANGE"
+    *  is replaced by feedback about the year-range selected,
+    *  the "Edit" prompt is revealed,
+    *  and the cursor changes to pointer to indicate it is clickable
+    * */
     yearRangeFilter.querySelector('.edit').classList.remove('hidden');
     yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
     yearRangeFilter.style.cursor = "pointer";
