@@ -31,7 +31,6 @@ export const handleYearRangeStartYearSelection = event => {
 * Clicking this filter area will toggle the visibility of the year range selector.
 * */
 export const handleEdit5YearRange = event => {
-    console.log('handleEdit5YearRange fired')
     setStopAnimation(true);
     emptyConcertInfo();
     const yearRangeSelector = document.querySelector("#range-selection-container");
