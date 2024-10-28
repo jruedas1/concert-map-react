@@ -36,12 +36,14 @@ export const handleEdit5YearRange = event => {
     emptyConcertInfo();
     const yearRangeSelector = document.querySelector("#range-selection-container");
     const yearRangeEditor = document.querySelector("#year-range");
+    const yearRangeEditorText = yearRangeEditor.querySelector("h3");
     const genreSelector = document.querySelector("#genres");
     const genreList = document.querySelector("#genre-list");
     const showMyResultsButton = document.querySelector("#confirm-genre-parent");
-    if (!yearRangeEditor.querySelector("h3").innerText.toLowerCase().startsWith("s")){
+    if (!yearRangeEditorText.innerText.toLowerCase().startsWith("s")){
         showElement(event, yearRangeSelector);
-        // hideElement(event.target.querySelector('.edit'));
+        yearRangeEditorText.innerText = "SELECT A 5-YEAR RANGE";
+        hideElement(event, yearRangeEditor.querySelector('.edit'));
     }
     hideElement(event, genreSelector);
     hideElement(event, genreList);
