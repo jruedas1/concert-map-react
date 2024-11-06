@@ -251,8 +251,11 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     setStopAnimation(true);
     // Hide the "Change selections option and current selection output
     hideElement(event, document.querySelector("#range-genre-breadcrumb-container"));
-    // Show the currently selected dates
-    showElement(event, document.querySelector("#year-range"));
+    // Show the "SELECT A 5-YEAR RANGE" PROMPT and hide edit prompt
+    const yearRangeSelector = document.querySelector("#year-range");
+    showElement(event, yearRangeSelector);
+    yearRangeSelector.querySelector("h3").innerText = "SELECT A 5-YEAR RANGE";
+    hideElement(event, yearRangeSelector.querySelector('p.edit'));
     // show the year selection menu
     showElement(event, document.querySelector("#range-selection-container"));
     // Hide the genre selection process
