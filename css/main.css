@@ -525,6 +525,22 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     font-size: 5rem;
 }
 
+/*==========PROGRESS BAR =========================*/
+
+#progress-bar {
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    height: 12px;
+    width: 100%;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background-color: rgba(242, 187, 5, 1);
+}
+
 /*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
 
 .single-venue, #single-concert-div {

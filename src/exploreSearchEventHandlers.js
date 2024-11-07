@@ -236,7 +236,6 @@ export const handleConfirmGenreSelection = async (event, map) => {
     for (let i = selectedYear; i < selectedYear+5 && !stopAnimation; i++){
         yearOutputDiv.innerText = i.toString();
         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
-        console.log(genreConcertsForSelectedYear);
         await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], map);
     }
 
