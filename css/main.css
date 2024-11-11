@@ -738,13 +738,19 @@ footer ul li+li {
     }
 
     #map {
-        flex: 2 0 auto;
-        max-height: calc(100dvh);
+        flex: 1;
+        max-height: unset;
     }
 
     #animation-year-output {
         font-size: 3.7rem;
         top: 2rem;
+    }
+
+    #single-concert-div {
+        position: unset;
+        bottom: unset;
+        cursor: default;
     }
 
     #single-concert-div .concert-info {
@@ -768,9 +774,4 @@ footer ul li+li {
     #modalOptionDescriptions > div {
         gap: 0.5rem;
     }
-
-    #progress-bar {
-        bottom: 172px;
-    }
-
 }
