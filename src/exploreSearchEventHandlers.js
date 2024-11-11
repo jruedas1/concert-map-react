@@ -292,6 +292,9 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     document.querySelector("#single-concert-div").innerHTML = '';
     // On mobile, the map is shifted when viewing the data visualization. This moves it back
     map.setCenter([-98.48725, 29.44879]);
+    // reset the progress bar to zero
+    const progressBar = document.querySelector("#progress");
+    progressBar.style.width = "0%";
 }
 
 export const handleExploreListViewClick = (event, map) => {
