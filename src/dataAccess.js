@@ -110,6 +110,15 @@ export const getConcertsForYearAndGenre = async (genreId, selectedYear) => {
     return await fetchGenreYear(genreId, selectedYear);
 }
 
+export const fetchGenreConcertsInYearRange = async (genreId, startYear, endYear) => {
+    const concerts = [];
+    for (let i = startYear; i <= endYear; i++){
+        const yearConcerts = await fetchGenreYear(genreId, i);
+        concerts.push(...yearConcerts.concerts);
+    }
+    return concerts;
+}
+
 export const getGenreId = async genreName => {
     const genreData = await fetchGenreData();
     for (const genre of genreData){

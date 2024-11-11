@@ -23,7 +23,8 @@ Within the page-wrapper, main components are rows
 #page-wrapper {
     display: flex;
     flex-flow: column nowrap;
-    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
     background: var(--main-background);
 }
 
@@ -87,7 +88,7 @@ nav a {
 */
 
 main {
-    flex: 1 1 100dvh;
+    flex: 1;
     position: relative;
     display: flex;
     flex-flow: row nowrap;
