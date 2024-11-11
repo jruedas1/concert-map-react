@@ -734,6 +734,7 @@ footer ul li+li {
     section#filters {
         border-right: none;
         flex: 0 0 auto;
+        max-height: 100dvh;
     }
 
     #map {
@@ -766,6 +767,10 @@ footer ul li+li {
 
     #modalOptionDescriptions > div {
         gap: 0.5rem;
+    }
+
+    #progress-bar {
+        bottom: 172px;
     }
 
 }
