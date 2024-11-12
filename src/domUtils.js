@@ -395,10 +395,8 @@ export const handleWindowResize = (event, breakpoint) => {
         window.aboveBreakPoint = true;
         hideSingleVenueDivs();
         if (exploreModeSelectionMade){
-            if (exploreModeListMapViewButton.innerText === "List View"){
-               showElement(event, document.querySelector("#concerts"));
-               hideElement(event, document.querySelector("#single-concert-div"));
-            }
+            showElement(event, document.querySelector("#concerts"));
+            hideElement(event, document.querySelector("#single-concert-div"));
         }
     } else if (currentWidth <= breakpoint && window.aboveBreakPoint){
         // if the window goes below 768
