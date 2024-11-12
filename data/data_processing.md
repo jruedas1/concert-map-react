@@ -44,6 +44,15 @@ In addition, the `artists_genres` list has been updated and expanded to include 
 
 The `db.json` file, used for development purposes and served locally through the JSON-server dependency, has been updated to reflect the new genre data. The method for generating the `db.json` file was further modified to include venues data.
 
+## Revised JSON structures for Redis DB
 
+As of 2024-10-21, preparations are underway to move away from hosting our data on Firebase and shifting to our own hosted Redis DB. Tests show Redis is extremely picky about JSON syntax. The main issues to note when inserting JSON to Redis are as follows:
+
+1. RedisJSON data retrieval does not work on prettified JSON as the newline characters interfere. Therefore it is necessary to process the JSON to be compacted and on one line before insertion to Redis.
+2. The JSON.SET syntax requires the JSON value to be sent between single quotes. Therefore, the any single quotes inside the JSON structure need to be escaped. The correct escape for Redis JSON is a single backslash. Therefore the JSON needs to be further processed to insert a single backslash before every single quote.
+
+The script for processing JSON for Redis has been added to a python file called `redis_python.py`. The prepared JSON files for years, genres, and venues have been added to the data directory.
+
+Note that from a JSON perspective, the code with the single escape backslash is no longer valid JSON. However, on insertion to the Redis DB, the escape backslash is removed, and what is left is valid JSON. Since the resulting files are not valid JSON, they are included here as plain text files and not given the `.json` file ending.
 
 
