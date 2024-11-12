@@ -540,6 +540,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     height: 100%;
     width: 0%;
     background-color: rgba(242, 187, 5, 1);
+    transition: width 0.3s ease;
 }
 
 /*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
