@@ -312,11 +312,11 @@ export const handleExploreListViewClick = (event, map) => {
         event.target.innerText = 'Map View';
     } else {
         showElementMobile(event, document.querySelector("#map"));
-        map.resize();
         showElementMobile(event, document.querySelector("#single-concert-div"));
         showElement(event, document.querySelector("#single-concert-div"));
         hideElement(event, document.querySelector("#concerts"));
         event.target.innerText = 'List View';
+        map.resize();
     }
 
 }
