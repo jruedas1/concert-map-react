@@ -164,7 +164,7 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         const concertDivClone = concertDiv.cloneNode(true);
         singleConcertDiv.replaceChildren(concertDivClone);
         // here's where the delay length is set
-        await delay(300);
+        await delay(500);
     }
 }
 
