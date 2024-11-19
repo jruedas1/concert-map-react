@@ -4,7 +4,7 @@ import {
     handleVenueSelection,
     handleYearSelection, handleSingleVenueDivClick
 } from "./simpleSearchEventHandlers.js";
-import {fetchGenreData} from "./dataAccess.js";
+import {fetchGenreData} from "./redisDataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
 
 /*

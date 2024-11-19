@@ -62,156 +62,72 @@ export const getVenueLocal = async venueId => {
 
 /*====  FIRESTORE METHODS ==========*/
 
-export const fetchYear = async (year) => {
-    const docRef = doc(db, 'years', year);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
-}
+ export const fetchYear = async (year) => {
+     const docRef = doc(db, 'years', year);
+     const docSnap = await getDoc(docRef);
+     return docSnap.data();
+ }
 
-export const fetchGenreData = async () => {
-    const querySnapshot = await getDocs(collection(db, 'genres'));
-    const genres = [];
-    querySnapshot.forEach(genre => genres.push(genre.data()));
-    return genres;
-}
+ export const fetchGenreData = async () => {
+     const querySnapshot = await getDocs(collection(db, 'genres'));
+     const genres = [];
+     querySnapshot.forEach(genre => genres.push(genre.data()));
+     return genres;
+ }
 
-export const fetchGenre = async (genreId) => {
-    genreId = genreId.toString();
-    const querySnapshot = await getDocs(collection(db, 'genres', genreId, "years"));
-    const years = [];
-    querySnapshot.forEach(year => years.push(year.data()));
-    return years;
-}
+ export const fetchGenre = async (genreId) => {
+     genreId = genreId.toString();
+     const querySnapshot = await getDocs(collection(db, 'genres', genreId, "years"));
+     const years = [];
+     querySnapshot.forEach(year => years.push(year.data()));
+     return years;
+ }
 
-export const fetchGenreYear = async (genreId, year) => {
-    genreId = genreId.toString();
-    year = year.toString();
-    const docRef = doc(db, 'genres', genreId, 'years', year);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
-}
+ export const fetchGenreYear = async (genreId, year) => {
+     genreId = genreId.toString();
+     year = year.toString();
+     const docRef = doc(db, 'genres', genreId, 'years', year);
+     const docSnap = await getDoc(docRef);
+     return docSnap.data();
+ }
 
-export const getVenueData = async () => {
-    const querySnapshot = await getDocs(collection(db, 'venues'));
-    const venues = [];
-    querySnapshot.forEach(venue => venues.push(venue.data()));
-    return venues;
-}
+ export const getVenueData = async () => {
+     const querySnapshot = await getDocs(collection(db, 'venues'));
+     const venues = [];
+     querySnapshot.forEach(venue => venues.push(venue.data()));
+     return venues;
+ }
 
-export const getVenue = async venueId => {
-    venueId = venueId.toString();
-    const docRef = doc(db, 'venues', venueId);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
-}
+ export const getVenue = async venueId => {
+     venueId = venueId.toString();
+     const docRef = doc(db, 'venues', venueId);
+     const docSnap = await getDoc(docRef);
+     return docSnap.data();
+ }
 
-// genreId and selectedYear must be integers
-export const getConcertsForYearAndGenre = async (genreId, selectedYear) => {
-    return await fetchGenreYear(genreId, selectedYear);
-}
+ // genreId and selectedYear must be integers
+ export const getConcertsForYearAndGenre = async (genreId, selectedYear) => {
+     return await fetchGenreYear(genreId, selectedYear);
+ }
 
-export const fetchGenreConcertsInYearRange = async (genreId, startYear, endYear) => {
-    const concerts = [];
-    for (let i = startYear; i <= endYear; i++){
-        const yearConcerts = await fetchGenreYear(genreId, i);
-        concerts.push(...yearConcerts.concerts);
-    }
-    return concerts;
-}
+ export const fetchGenreConcertsInYearRange = async (genreId, startYear, endYear) => {
+     const concerts = [];
+     for (let i = startYear; i <= endYear; i++){
+         const yearConcerts = await fetchGenreYear(genreId, i);
+         concerts.push(...yearConcerts.concerts);
+     }
+     return concerts;
+ }
 
-export const getGenreId = async genreName => {
-    const genreData = await fetchGenreData();
-    for (const genre of genreData){
-        if (genre['name'] === genreName){
-            return genre['id'];
-        }
-    }
-    return undefined;
-}
+ export const getGenreId = async genreName => {
+     const genreData = await fetchGenreData();
+     for (const genre of genreData){
+         if (genre['name'] === genreName){
+             return genre['id'];
+         }
+     }
+     return undefined;
+ }
 
-/*============= REDIS METHODS ===================*/
 
-// Requests go to an Express JS API
-const expressAddress = "localhost";
-const expressPort = 3600;
-const protocol = 'http';
-const API_ADDRESS = `${protocol}://${expressAddress}:${expressPort}`;
-
-/*
-* General method for retrieving all the data at any given key
-* Use for years data as follows: fetchData('years')
-* Can be used for genres data as follows: fetchData('genres')
-* May also be used to retrieve all venues
-* */
-export const fetchData = async key => {
-    try {
-        const response = await fetch(`${API_ADDRESS}/json/${key}`);
-        const data = await response.json();
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.error("Problem with fetch operation:", error);
-    }
-}
-
-// Function to retrieve data for a specific year
-// This accepts a numeric value
-// Usage: fetchYearRedis(1978)
-// export const fetchYear = async year => {
-//     try {
-//         const response = await fetch(`${API_ADDRESS}/years/${year}`);
-//         const data = await response.json();
-//         console.log(data);
-//         return data[0];
-//     } catch (error) {
-//         console.error("Problem with fetch operation:", error);
-//     }
-// }
-
-// Function to retrieve all genre data at once
-// Duplicates fetchData('genres')
-// export const fetchGenreData = async () => {
-//     try {
-//         const response = await fetch(`${API_ADDRESS}/json/genres`);
-//         const genres = await response.json();
-//         console.log(genres);
-//         return genres['genres'];
-//     } catch (error) {
-//         console.error("Problem fetching genres:", error);
-//     }
-// }
-
-// Get data for a specific year for a specific genre
-// Accepts a string and a number
-// export const fetchGenreYear = async (genreId, year) =>{
-//     try {
-//         const response = await fetch(`${API_ADDRESS}/genres/${genreId}/${year}`);
-//         const genreYear = await response.json();
-//         console.log(genreYear);
-//         return genreYear[0];
-//     } catch (error) {
-//         console.error("Problem fetching genre-year:", error);
-//     }
-// }
-
-// Get concert data for a range of years all at once
-// export const fetchGenreConcertsInYearRange = async (genreId, startYear, endYear) => {
-//     try {
-//         const response = await fetch(`${API_ADDRESS}/genres/${genreId}/from/${startYear}/to/${endYear}`);
-//         return await response.json();
-//     } catch (error){
-//         console.error("Problem fetching concerts in year range", error);
-//     }
-// }
-
-// Function to get data for a specific venue by its id
-// export const getVenue = async venueId => {
-//     try {
-//         const response = await fetch(`${API_ADDRESS}/venues/${venueId}`);
-//         const venue = await response.json();
-//         return venue[0];
-//     } catch (error) {
-//         console.error("Problem fetching venue:", error);
-//     }
-// }
 

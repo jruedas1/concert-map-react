@@ -7,7 +7,7 @@ import {
     toggleVisibility
 } from "./domUtils.js";
 import {stopAnimation, setStopAnimation} from "./searchTypeEventHandlers.js";
-import {fetchGenreConcertsInYearRange, getConcertsForYearAndGenre, getVenue} from "./dataAccess.js";
+import {fetchGenreConcertsInYearRange, getConcertsForYearAndGenre, getVenue} from "./redisDataAccess.js";
 import {capitalizeWords} from "./utils.js";
 
 
