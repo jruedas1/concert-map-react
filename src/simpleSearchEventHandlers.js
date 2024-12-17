@@ -13,7 +13,7 @@ import {
     returnMarkerToNormalCondition, outputVenueToMap,
     findMarkerById, removeSingleVenueDivs
 } from "./domUtils.js";
-import {fetchYear} from "./redisDataAccess.js";
+import {fetchYear} from "./dataAccess.js";
 
 /* technique for setting up callback with extra parameters from:
  https://stackoverflow.com/questions/10000083/javascript-event-handler-with-parameters
