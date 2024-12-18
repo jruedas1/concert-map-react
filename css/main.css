@@ -373,7 +373,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 
 /*===========EXPLORE TAB =============*/
 
-#custom-options {
+.custom-options {
     max-height: 50dvh;
     overflow-y: scroll;
 }
@@ -387,11 +387,11 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     font-size: 1.3rem;
 }
 
-#custom-selector, .same-as-selected, #range-selection-state {
+.custom-selector, .same-as-selected, #range-selection-state {
     font-weight: 700;
 }
 
-#selected-and-options-flex-wrapper {
+.selected-and-options-flex-wrapper {
     display: flex;
     flex-flow: column nowrap;
     position: relative;

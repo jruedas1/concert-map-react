@@ -18,14 +18,12 @@ import {capitalizeWords} from "./utils.js";
 * -- toggles a change to the topmost border-style
 * -- toggles visibility of the select genre button
 * */
-export const handleYearRangeStartYearSelection = event => {
+export const handleYearRangeYearSelection = event => {
     event.stopPropagation();
     event.target.nextElementSibling.classList.toggle('hidden');
     event.target.classList.toggle("select-arrow-active");
     document.querySelector("#confirm-range-selection").classList.toggle('hidden');
 }
-
-
 /*
 * The year-range filter prompt "Select A 5-Year Range"
 * Clicking this filter area will toggle the visibility of the year range selector.

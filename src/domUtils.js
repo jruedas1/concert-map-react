@@ -198,51 +198,52 @@ export const generateYearList = (decade, map) => {
     yearList.replaceChildren(...newYears);
 }
 
+
 /*
-* This generates the default browser dropdown
+* Utility function, generates option elements
+* in numeric order from 'start' to 'end'
+* */
+const createYearOptions = (start, end) => {
+    const yearOptions = [];
+        for (let i = start; i <= end; i++){
+            let option = document.createElement('option');
+            option.value = i.toString();
+            option.textContent = i.toString();
+            yearOptions.push(option);
+        }
+        return yearOptions;
+}
+
+/*
+* This generates the default browser dropdowns
 * This is hidden from the user but serves as the
-* source for the visible custom dropdown. The custom dropdown
+* source for the visible custom dropdowns. The custom dropdowns
 * in turn modifies this, so that JS can read its value.
 * */
 export const generateYearDropDown = () => {
     const selectionInput = document.querySelector("#default-range-selector");
     const endRangeInput = document.querySelector("#default-end-range-selector");
-    const yearOptions = [];
-    for (let i = 1970; i <= 2005; i++){
-        let option = document.createElement('option');
-        option.value = i.toString();
-        option.textContent = i.toString();
-        yearOptions.push(option);
-    }
-    selectionInput.replaceChildren(...yearOptions);
-    endRangeInput.replaceChildren(...yearOptions);
+    selectionInput.replaceChildren(...createYearOptions(1970, 2005));
+    endRangeInput.replaceChildren(...createYearOptions(1970, 2009));
 }
 
-/*
-* Generates the custom dropdown for selecting a five-year range
-* Happens on page load
-* */
-export const generateCustomDropdownOptions = () => {
-    const defaultDropdownSelect = document.querySelector("#default-range-selector");
-    const customOptionsContainer = document.querySelector("#custom-options");
-    const customSelectorSelectedDiv = document.querySelector("#custom-selector");
-    const endOfRangeOutput = document.querySelector("#range-selection-state");
+const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
     const customOptions = [];
     // loops over the hidden default select menu options
-    for (let i = 0; i < defaultDropdownSelect.length; i++){
+    for (let i = 0; i < sourceDropdown.length; i++){
         // Create a div for each option
         const customOption = document.createElement("div");
         // Match the content of the custom option to the corresponding hidden default
-        customOption.innerText = defaultDropdownSelect.options[i].innerText;
+        customOption.innerText = sourceDropdown.options[i].innerText;
         // Each option needs a click handler
         customOption.addEventListener("click", e => {
             // Loop over the hidden dropdown options to find the match
-            for (let j = 0; j < defaultDropdownSelect.length; j++){
-                if (defaultDropdownSelect.options[j].innerText === e.target.innerText){
+            for (let j = 0; j < sourceDropdown.length; j++){
+                if (sourceDropdown.options[j].innerText === e.target.innerText){
                     // We change the selected index on the hidden / default dropdown options
-                    defaultDropdownSelect.selectedIndex = j;
+                    sourceDropdown.selectedIndex = j;
                     // change the text in the always-visible select dropdown
-                    customSelectorSelectedDiv.innerText = e.target.innerText;
+                    customSelector.innerText = e.target.innerText;
                     // 'same-as-selected' is a class used to add a background color to the
                     // currently selected option in the dropdown
                     const selectedOption = e.target.parentElement.getElementsByClassName('same-as-selected');
@@ -253,18 +254,29 @@ export const generateCustomDropdownOptions = () => {
                     break;
                 }
             }
-            // Add the end of range (start year + 4) to the corresponding
-            // div next to the dropdown selection
-            const endOfRange = parseInt(e.target.innerText) + 4;
-            endOfRangeOutput.innerText = `to ${endOfRange.toString()}`;
             // Initiate a click on the dropdown selection to close the dropdown
-            customSelectorSelectedDiv.click();
+            customSelector.click();
         });
         // Once the option div has been created, add it to the array
         customOptions.push(customOption);
     }
-    // Once the array is complete, append all the divs to the correct place in the DOM
-    customOptionsContainer.append(...customOptions);
+    return customOptions;
+}
+
+/*
+* Generates the custom dropdown for selecting a five-year range
+* Happens on page load
+* */
+export const generateCustomDropdownOptions = () => {
+    const defaultDropdownSelect = document.querySelector("#default-range-selector");
+    const defaultEndRangeSelect = document.querySelector("#default-end-range-selector");
+    const customOptionsContainer = document.querySelector("#custom-start-range-options");
+    const customEndRangeOptionsContainer = document.querySelector("#custom-end-range-options");
+    const customSelectorSelectedDiv = document.querySelector("#custom-start-range-selector");
+    const customEndRangeSelectorSelectedDiv = document.querySelector("#custom-end-range-selector");
+    // Generate options and append to the correct place in the DOM
+    customOptionsContainer.append(...createCustomDropdownOptions(defaultDropdownSelect, customSelectorSelectedDiv));
+    customEndRangeOptionsContainer.append(...createCustomDropdownOptions(defaultEndRangeSelect, customEndRangeSelectorSelectedDiv));
 }
 
 export const outputOneVenuesConcertsToPage = venue => {

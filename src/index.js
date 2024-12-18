@@ -17,7 +17,7 @@ import {
     handleYearRangeSelection,
     handleConfirm5YearRangeSelection,
     handleEdit5YearRange,
-    handleYearRangeStartYearSelection,
+    handleYearRangeYearSelection,
     handleConfirmGenreSelection, handleChangeYearAndGenreSelections, handleExploreListViewClick
 } from "./exploreSearchEventHandlers.js"
 
@@ -102,8 +102,10 @@ yearRangeFilter.addEventListener('click', handleEdit5YearRange);
 const defaultYearRangeSelector = document.querySelector("#default-range-selector");
 defaultYearRangeSelector.addEventListener('change', handleYearRangeSelection);
 
-const customYearRangeSelector = document.querySelector("#custom-selector");
-customYearRangeSelector.addEventListener('click', handleYearRangeStartYearSelection);
+const customYearRangeSelector = document.querySelector("#custom-start-range-selector");
+const customEndYearRangeSelector = document.querySelector("#custom-end-range-selector");
+customYearRangeSelector.addEventListener('click', handleYearRangeYearSelection);
+customEndYearRangeSelector.addEventListener('click', handleYearRangeYearSelection);
 
 /* This is the "Next" button that a user clicks after selecting a year range
 *  in the "Explore" tab

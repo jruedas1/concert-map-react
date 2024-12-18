@@ -116,13 +116,19 @@
                     <label for="default-end-range-selector" class="hidden">Select an end year</label>
                     <select id="default-end-range-selector" class="hidden"></select>
                     <div id="custom-selector-wrapper">
-                        <div id="selected-and-options-flex-wrapper">
-                            <div id="custom-selector" class="select-selected">1970</div>
-                            <div id="custom-select-option-wrapper" class="hidden">
-                                <div id="custom-options" class="select-items"></div>
+                        <div class="selected-and-options-flex-wrapper">
+                            <div id="custom-start-range-selector" class="custom-selector select-selected">1970</div>
+                            <div class="custom-select-option-wrapper hidden">
+                                <div id="custom-start-range-options" class="custom-options select-items"></div>
                             </div>
                         </div>
-                        <div id="range-selection-state">to 1974</div>
+                        <div id="range-selection-state">to</div>
+                        <div class="selected-and-options-flex-wrapper">
+                            <div id="custom-end-range-selector" class="custom-selector select-selected">1970</div>
+                            <div class="custom-select-option-wrapper hidden">
+                                <div id="custom-end-range-options" class="custom-options select-items"></div>
+                            </div>
+                        </div>
                     </div>
                     <button id="confirm-range-selection" class="next">SELECT GENRE</button>
                 </div>
