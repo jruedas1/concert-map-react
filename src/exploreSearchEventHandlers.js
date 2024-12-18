@@ -58,7 +58,6 @@ export const handleEdit5YearRange = event => {
 * */
 export const handleYearRangeSelection = event => {
     const resultDisplayDiv = document.querySelector("#range-selection-state");
-    const yearRangeEditor = document.querySelector("#year-range");
     const baseYear = event.target.value;
     resultDisplayDiv.innerHTML = `<p>${baseYear} - ${parseInt(baseYear) + 4}`;
 }

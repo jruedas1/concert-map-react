@@ -206,6 +206,7 @@ export const generateYearList = (decade, map) => {
 * */
 export const generateYearDropDown = () => {
     const selectionInput = document.querySelector("#default-range-selector");
+    const endRangeInput = document.querySelector("#default-end-range-selector");
     const yearOptions = [];
     for (let i = 1970; i <= 2005; i++){
         let option = document.createElement('option');
@@ -214,6 +215,7 @@ export const generateYearDropDown = () => {
         yearOptions.push(option);
     }
     selectionInput.replaceChildren(...yearOptions);
+    endRangeInput.replaceChildren(...yearOptions);
 }
 
 /*
