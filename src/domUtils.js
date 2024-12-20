@@ -254,6 +254,7 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
                     break;
                 }
             }
+            sourceDropdown.dispatchEvent(new Event('change'));
             // Initiate a click on the dropdown selection to close the dropdown
             customSelector.click();
         });

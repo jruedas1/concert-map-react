@@ -49,15 +49,58 @@ export const handleEdit5YearRange = event => {
 }
 
 /*
-* Handles interaction with the year range selector
-* --Gets a reference to the location where the selected year range is output to the user
-* --Obtains a reference to the value selected by the user
-* --Outputs selected year range to user in appropriate place
+* Handles interaction with the year start-of-range selector
+* --Gets a reference to the end-of-range dropdown
+* --Checks the currently selected end-range
+* --Obtains a reference to the start-range value selected by the user
+* --Checks if it is necessary to make any changes to the end-range
 * */
 export const handleYearRangeSelection = event => {
-    const resultDisplayDiv = document.querySelector("#range-selection-state");
-    const baseYear = event.target.value;
-    resultDisplayDiv.innerHTML = `<p>${baseYear} - ${parseInt(baseYear) + 4}`;
+
+    const endYearSelector = document.querySelector("#default-end-range-selector");
+    const selectedEndYear = endYearSelector.value;
+
+    const startYearSelector = document.querySelector("#default-range-selector");
+    const selectedStartYear = startYearSelector.value;
+
+    const displayedEndYearEl = document.querySelector("#custom-end-range-selector");
+    const visibleEndYearDropdown = document.querySelector("#custom-end-range-options");
+
+    const displayedStartYearEl = document.querySelector("#custom-start-range-selector");
+    const visibleStartYearDropdown = document.querySelector("#custom-start-range-options");
+
+    const endYearSelectorClicked = event.target.id.includes("end");
+
+    const activeHiddenDropdown = endYearSelectorClicked ? endYearSelector : startYearSelector;
+    const activeVisibleDropdown = endYearSelectorClicked ? visibleEndYearDropdown : visibleStartYearDropdown;
+    const activeDisplayedDateEl = endYearSelectorClicked ? displayedEndYearEl : displayedStartYearEl;
+
+    const inactiveHiddenDropdown = endYearSelectorClicked ? startYearSelector : endYearSelector;
+    const inactiveDisplayedDateEl = endYearSelectorClicked ? displayedStartYearEl : displayedEndYearEl;
+    const inactiveVisibleDropdown = endYearSelectorClicked ? visibleStartYearDropdown : visibleEndYearDropdown;
+
+
+    if (!endYearSelectorClicked && selectedStartYear > selectedEndYear) {
+        inactiveHiddenDropdown.value = selectedStartYear.toString();
+        inactiveDisplayedDateEl.innerText = selectedStartYear.toString();
+    }
+    if (endYearSelectorClicked && selectedEndYear < selectedStartYear) {
+        inactiveHiddenDropdown.value = selectedEndYear.toString();
+        inactiveDisplayedDateEl.innerText = selectedEndYear.toString();
+    }
+
+
+    let matchingInactiveOption = null;
+    // Find the matching option div in the inactive dropdown
+    for (let i = 0; i < inactiveVisibleDropdown.children.length; i++){
+        if (inactiveVisibleDropdown.children[i].innerText === selectedStartYear.toString()) {
+            matchingInactiveOption = inactiveVisibleDropdown.children[i];
+            break;
+        }
+    }
+    const currentlySelected = inactiveVisibleDropdown.getElementsByClassName('same-as-selected');
+    [...currentlySelected].forEach(option => option.classList.remove('same-as-selected'));
+    if (matchingInactiveOption) matchingInactiveOption.classList.add('same-as-selected');
 }
 
 /*

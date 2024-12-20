@@ -100,7 +100,9 @@ yearRangeFilter.addEventListener('click', handleEdit5YearRange);
 * This handles user interaction with the actual range slider itself
 * */
 const defaultYearRangeSelector = document.querySelector("#default-range-selector");
+const defaultEndYearSelector = document.querySelector("#default-end-range-selector");
 defaultYearRangeSelector.addEventListener('change', handleYearRangeSelection);
+defaultEndYearSelector.addEventListener('change', handleYearRangeSelection);
 
 const customYearRangeSelector = document.querySelector("#custom-start-range-selector");
 const customEndYearRangeSelector = document.querySelector("#custom-end-range-selector");
@@ -122,26 +124,14 @@ genreFilter.addEventListener('click', event => toggleVisibility(event, genreList
 const confirmGenreSelectionButton = document.querySelector("#confirm-genre-selection");
 confirmGenreSelectionButton.addEventListener('click', event => handleConfirmGenreSelection(event, map));
 
-/* main line of code is an async IIFE
-   This is necessary in order to load the default data on page load
+ generateYearDropDown();
+ generateCustomDropdownOptions();
+
+/* async IIFE
+   This is necessary in order to load the remote data on page load
    since the data is stored remotely and obtained via async API call
    */
 (async () => {
-    /* On page load,
-        1. Remove any existing map markers
-        2. Reset the decade selector to the 1970s
-        3. Reset the year selector to 1970
-        4. Fetch the data for the selected year -- which should be 1970
-        5. Output venues for selected year to the map
-    */
-    // removeMarkers();
-    // document.querySelector("#decade-selector").value = 1970;
-    // generateYearList(1970, map);
-    // const dataOnSelectedYear = await fetchYear('1970');
-    // const venues = dataOnSelectedYear.venues;
-    // outputVenuesToMap(map, venues);
-    generateYearDropDown();
-    generateCustomDropdownOptions();
     await generateGenreList(map);
 })();
 
