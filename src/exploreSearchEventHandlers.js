@@ -15,15 +15,47 @@ import {capitalizeWords} from "./utils.js";
 * Clicking on the explore tab year dropdown selection
 * -- toggles visibility of the dropdown options
 * -- toggles the up and down arrow
-* -- toggles a change to the topmost border-style
 * -- toggles visibility of the select genre button
 * */
 export const handleYearRangeYearSelection = event => {
     event.stopPropagation();
-    event.target.nextElementSibling.classList.toggle('hidden');
-    event.target.classList.toggle("select-arrow-active");
-    document.querySelector("#confirm-range-selection").classList.toggle('hidden');
+
+    const isStartYearClicked = event.target.id === "custom-start-range-selector";
+
+    const startDropdown = document.querySelector("#custom-start-range-selector").nextElementSibling;
+    const endDropdown = document.querySelector("#custom-end-range-selector").nextElementSibling;
+
+    // Close the other dropdown first
+    if (isStartYearClicked) {
+        endDropdown.classList.add('hidden');
+        document.querySelector("#custom-end-range-selector").classList.remove("select-arrow-active");
+    } else {
+        startDropdown.classList.add('hidden');
+        document.querySelector("#custom-start-range-selector").classList.remove("select-arrow-active");
+    }
+
+    // Toggle the clicked dropdown
+    const currentDropdown = isStartYearClicked ? startDropdown : endDropdown;
+    const currentSelector = event.target;
+
+    const isCurrentlyOpen = !currentDropdown.classList.contains('hidden');
+    if (isCurrentlyOpen) {
+        currentDropdown.classList.add('hidden');
+        currentSelector.classList.remove("select-arrow-active");
+    } else {
+        currentDropdown.classList.remove('hidden');
+        currentSelector.classList.add("select-arrow-active");
+    }
+
+    const confirmButton = document.querySelector("#confirm-range-selection");
+    if (startDropdown.classList.contains('hidden') && endDropdown.classList.contains('hidden')) {
+        confirmButton.classList.remove('hidden');
+    } else {
+        confirmButton.classList.add('hidden');
+    }
 }
+
+//With this code, if I click the start year, and the dropdown is open, and I then click the end year, the start year dropdown closes, but the end year dropdown doesn't open, and now neither of them open at all. The arrow toggles up and down and the
 /*
 * The year-range filter prompt "Select A 5-Year Range"
 * Clicking this filter area will toggle the visibility of the year range selector.
@@ -49,11 +81,18 @@ export const handleEdit5YearRange = event => {
 }
 
 /*
-* Handles interaction with the year start-of-range selector
-* --Gets a reference to the end-of-range dropdown
-* --Checks the currently selected end-range
-* --Obtains a reference to the start-range value selected by the user
-* --Checks if it is necessary to make any changes to the end-range
+* Handles interaction with the year-range selectors
+* -- Gets references to selected start and end years
+* -- Gets references to the displayed end selection and the corresponding custom dropdown
+* -- Gets references to the displayed start selection and the corresponding custom dropdown
+* -- Figures out whether the start or end dropdown has been clicked
+* -- Based on this, sets variables to refer to the alt-dropdown to the one selected
+* -- If the selected start year is greater than the selected end year,
+*   the end year is adjusted
+* -- if the selected end year is less than the selected start year,
+*   the start year is adjusted
+* -- A function, adjusted for either option, changes the 'same-as-selected'
+*   class assignment on the alt-dropdown, so the altered selection is bolded correctly
 * */
 export const handleYearRangeSelection = event => {
 
@@ -70,10 +109,6 @@ export const handleYearRangeSelection = event => {
     const visibleStartYearDropdown = document.querySelector("#custom-start-range-options");
 
     const endYearSelectorClicked = event.target.id.includes("end");
-
-    const activeHiddenDropdown = endYearSelectorClicked ? endYearSelector : startYearSelector;
-    const activeVisibleDropdown = endYearSelectorClicked ? visibleEndYearDropdown : visibleStartYearDropdown;
-    const activeDisplayedDateEl = endYearSelectorClicked ? displayedEndYearEl : displayedStartYearEl;
 
     const inactiveHiddenDropdown = endYearSelectorClicked ? startYearSelector : endYearSelector;
     const inactiveDisplayedDateEl = endYearSelectorClicked ? displayedStartYearEl : displayedEndYearEl;
@@ -105,7 +140,6 @@ export const handleYearRangeSelection = event => {
         [...currentlySelected].forEach(option => option.classList.remove('same-as-selected'));
         if (matchingInactiveOption) matchingInactiveOption.classList.add('same-as-selected');
     }
-
 
 }
 
