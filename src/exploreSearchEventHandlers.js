@@ -83,24 +83,30 @@ export const handleYearRangeSelection = event => {
     if (!endYearSelectorClicked && selectedStartYear > selectedEndYear) {
         inactiveHiddenDropdown.value = selectedStartYear.toString();
         inactiveDisplayedDateEl.innerText = selectedStartYear.toString();
+        boldMatchingOption('start');
     }
     if (endYearSelectorClicked && selectedEndYear < selectedStartYear) {
         inactiveHiddenDropdown.value = selectedEndYear.toString();
         inactiveDisplayedDateEl.innerText = selectedEndYear.toString();
+        boldMatchingOption('end');
     }
 
-
-    let matchingInactiveOption = null;
-    // Find the matching option div in the inactive dropdown
-    for (let i = 0; i < inactiveVisibleDropdown.children.length; i++){
-        if (inactiveVisibleDropdown.children[i].innerText === selectedStartYear.toString()) {
-            matchingInactiveOption = inactiveVisibleDropdown.children[i];
-            break;
+    function boldMatchingOption(startOrEnd){
+        const year = startOrEnd === 'start' ? selectedStartYear : selectedEndYear;
+        let matchingInactiveOption = null;
+        // Find the matching option div in the inactive dropdown
+        for (let i = 0; i < inactiveVisibleDropdown.children.length; i++){
+            if (inactiveVisibleDropdown.children[i].innerText === year.toString()) {
+                matchingInactiveOption = inactiveVisibleDropdown.children[i];
+                break;
+            }
         }
+        const currentlySelected = inactiveVisibleDropdown.getElementsByClassName('same-as-selected');
+        [...currentlySelected].forEach(option => option.classList.remove('same-as-selected'));
+        if (matchingInactiveOption) matchingInactiveOption.classList.add('same-as-selected');
     }
-    const currentlySelected = inactiveVisibleDropdown.getElementsByClassName('same-as-selected');
-    [...currentlySelected].forEach(option => option.classList.remove('same-as-selected'));
-    if (matchingInactiveOption) matchingInactiveOption.classList.add('same-as-selected');
+
+
 }
 
 /*
