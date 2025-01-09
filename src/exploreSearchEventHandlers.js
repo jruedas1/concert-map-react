@@ -208,10 +208,18 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
        acc[venue.id] = venue;
        return acc;
     }, {});
+
+    const yearOutputDiv = document.querySelector("#animation-year-output h2");
+    let currYear = parseInt(concertsArray[0]["Year"]);
+    yearOutputDiv.innerText = currYear.toString();
     /* As long as there is no stopAnimation signal,
     *  loop over the concerts array
     * */
     for (let i = 0; i < concertsArray.length && !stopAnimation; i++){
+        if (parseInt(concertsArray[i]["Year"]) > currYear){
+            currYear = parseInt(concertsArray[i]["Year"]);
+            yearOutputDiv.innerText = currYear.toString();
+        }
         /*
         * For each concert, obtain its id
         * Retrieve the venue data
@@ -219,7 +227,7 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         * If it's not on the map, put it on the map
         * Generate the concert info html
         * Add the concert html to the concert list
-        * Wait 0.3 seconds
+        * Wait some milliseconds before going to the next one
         * */
         const concertVenueId = concertsArray[i]['venue_id'];
         /* Here, rather than querying the db for each venue,
@@ -234,7 +242,6 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         concertOutputDiv.prepend(concertDiv);
         // Move the progress bar
         currWidth += percentPerConcert;
-        console.log(currWidth);
         if (currWidth > 100) currWidth = 100;
         progressBar.style.width = currWidth + "%";
         // On mobile, we generate the single concert output
@@ -320,20 +327,17 @@ export const handleConfirmGenreSelection = async (event, map) => {
         showElementMobile(event, document.querySelector("header"));
     }
 
+    /* Get all the concerts in the selected year range
+        Calculate how many there are
+        Calculate what percentage each concert represents
+        This is for the progress bar
+   */
     const concertsForYearRange = await fetchGenreConcertsInYearRange(selectedGenreId, selectedYear, selectedEndYear);
-    console.log(concertsForYearRange);
     const numConcerts = concertsForYearRange.length;
     const percentPerConcert = 100/numConcerts;
-
-    // retrieve venues for the selected year range
-    // do animation for each year
-    const yearOutputDiv = document.querySelector("#animation-year-output h2");
-    for (let i = selectedYear; i <= selectedEndYear && !stopAnimation; i++){
-        yearOutputDiv.innerText = i.toString();
-        const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
-        await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], percentPerConcert , map);
-    }
-
+    // Output concert data to the page
+    // This includes markers on map, concert info in list, and year on map, plus progress bar
+    await outputConcertsOnTimer(concertsForYearRange, percentPerConcert , map);
 }
 
 /*
