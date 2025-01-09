@@ -55,9 +55,9 @@ export const handleYearRangeYearSelection = event => {
     }
 }
 
-//With this code, if I click the start year, and the dropdown is open, and I then click the end year, the start year dropdown closes, but the end year dropdown doesn't open, and now neither of them open at all. The arrow toggles up and down and the
+
 /*
-* The year-range filter prompt "Select A 5-Year Range"
+* The year-range filter prompt "Select A Date Range"
 * Clicking this filter area will toggle the visibility of the year range selector.
 * */
 export const handleEdit5YearRange = event => {
@@ -71,7 +71,7 @@ export const handleEdit5YearRange = event => {
     const showMyResultsButton = document.querySelector("#confirm-genre-parent");
     if (!yearRangeEditorText.innerText.toLowerCase().startsWith("s")){
         showElement(event, yearRangeSelector);
-        yearRangeEditorText.innerText = "SELECT A 5-YEAR RANGE";
+        yearRangeEditorText.innerText = "SELECT A DATE RANGE";
         if ('cursor' in yearRangeEditor.style) yearRangeEditor.style.removeProperty('cursor');
         hideElement(event, yearRangeEditor.querySelector('.edit'));
     }
@@ -146,22 +146,24 @@ export const handleYearRangeSelection = event => {
 /*
 * Behavior executed when the "Next" button is clicked after year range selection
 * Gets reference to base year selected by user
-* Makes "edit" prompt visible on 5-year range selection prompt
-* Changes content of "Select 5-year range" to selected range
+* Makes "edit" prompt visible on date range selection prompt
+* Changes content of "Select a date range" to selected range
 * Hides the range slider
 * Shows the genres filter
 * */
 export const handleConfirm5YearRangeSelection = event => {
     const yearRangeStartSelector = document.querySelector("#default-range-selector");
     const selectedBaseYear = yearRangeStartSelector.value;
+    const yearRangeEndSelector = document.querySelector("#default-end-range-selector");
+    const selectedEndYear = yearRangeEndSelector.value;
     const yearRangeFilter = document.querySelector("#year-range");
-    /* Once a year is selected, the text "SELECT A 5-YEAR RANGE"
+    /* Once a year is selected, the text "SELECT A DATE RANGE"
     *  is replaced by feedback about the year-range selected,
     *  the "Edit" prompt is revealed,
     *  and the cursor changes to pointer to indicate it is clickable
     * */
     yearRangeFilter.querySelector('.edit').classList.remove('hidden');
-    yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${parseInt(selectedBaseYear) + 4}`;
+    yearRangeFilter.querySelector('h3').innerText = `${selectedBaseYear} - ${selectedEndYear}`;
     yearRangeFilter.style.cursor = "pointer";
     toggleVisibility(event, document.querySelector("#range-selection-container"));
     toggleVisibility(event, document.querySelector("#genres"));
@@ -281,13 +283,14 @@ export const handleConfirmGenreSelection = async (event, map) => {
     hideElement(event, document.querySelector("#range-selection-container"));
     // Obtain the selected year and genre
     const selectedYear = parseInt(document.querySelector("#default-range-selector").value);
+    const selectedEndYear = parseInt(document.querySelector("#default-end-range-selector").value);
     const selectedGenreHeading = document.querySelector("#genres").querySelector("h3");
     const selectedGenre = selectedGenreHeading.innerText
     const selectedGenreId = parseInt(selectedGenreHeading.dataset.id);
     // Output selected year range and genre to the breadcrumb
     const changeSelectionDiv = document.querySelector("#range-genre-breadcrumb-container");
     const yearRangeBreadcrumb = document.querySelector("#year-range-breadcrumb");
-    yearRangeBreadcrumb.innerHTML = `${selectedYear}&ndash;${selectedYear + 4}`;
+    yearRangeBreadcrumb.innerHTML = `${selectedYear}&ndash;${selectedEndYear}`;
     const genreBreadcrumb = document.querySelector("#genre-breadcrumb");
     genreBreadcrumb.innerText = selectedGenre;
     // Reveal the change selection div
@@ -317,7 +320,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
         showElementMobile(event, document.querySelector("header"));
     }
 
-    const concertsForYearRange = await fetchGenreConcertsInYearRange(selectedGenreId, selectedYear, selectedYear + 4);
+    const concertsForYearRange = await fetchGenreConcertsInYearRange(selectedGenreId, selectedYear, selectedEndYear);
     console.log(concertsForYearRange);
     const numConcerts = concertsForYearRange.length;
     const percentPerConcert = 100/numConcerts;
@@ -325,7 +328,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
     // retrieve venues for the selected year range
     // do animation for each year
     const yearOutputDiv = document.querySelector("#animation-year-output h2");
-    for (let i = selectedYear; i < selectedYear+5 && !stopAnimation; i++){
+    for (let i = selectedYear; i <= selectedEndYear && !stopAnimation; i++){
         yearOutputDiv.innerText = i.toString();
         const genreConcertsForSelectedYear = await getConcertsForYearAndGenre(selectedGenreId, i);
         await outputConcertsOnTimer(genreConcertsForSelectedYear['concerts'], percentPerConcert , map);
@@ -341,10 +344,10 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     setStopAnimation(true);
     // Hide the "Change selections option and current selection output
     hideElement(event, document.querySelector("#range-genre-breadcrumb-container"));
-    // Show the "SELECT A 5-YEAR RANGE" PROMPT and hide edit prompt
+    // Show the "SELECT A DATE RANGE" PROMPT and hide edit prompt
     const yearRangeSelector = document.querySelector("#year-range");
     showElement(event, yearRangeSelector);
-    yearRangeSelector.querySelector("h3").innerText = "SELECT A 5-YEAR RANGE";
+    yearRangeSelector.querySelector("h3").innerText = "SELECT A DATE RANGE";
     hideElement(event, yearRangeSelector.querySelector('p.edit'));
     // show the year selection menu
     showElement(event, document.querySelector("#range-selection-container"));
