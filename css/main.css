@@ -2,6 +2,8 @@
     --main-background: #F1EEEB;
     --header-dark: #231F20;
     --various-red: #AD343E;
+    --off-white: #F4F4F4;
+    --filter-option: #C1DFE9;
 }
 
 /* Resets */
@@ -141,6 +143,7 @@ section#filters {
 div#decades.filter, #year-range {
     border-top: 2px solid black;
 }
+
 /*
     Make sure all the filter options have pointer cursors
     to indicate they are clickable
@@ -181,6 +184,8 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     border: none;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
     cursor: default;
+    background-color: rgba(6, 115, 114, 1);
+    color: var(--off-white);
 }
 
 #search-type-selector h3 {
@@ -188,7 +193,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 #search-type-selector h3.selected {
-    border-bottom: 3px solid var(--various-red);
+    border-bottom: 3px solid var(--off-white);
 }
 
 /*
@@ -215,6 +220,14 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 */
 .hidden {
    display: none;
+}
+
+/*
+    After a selection has been made,
+    some filters change color
+*/
+.selected-filter {
+    background-color: var(--filter-option);
 }
 
 /*========= BREADCRUMBS ==========*/
@@ -251,6 +264,10 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     justify-content: space-between;
 }
 
+#back-to-year-edit-div, #back-to-venues {
+    background-color: var(--filter-option);
+}
+
 /*
     Some of the "edit" prompts had underlines
     This may be removed if not needed in future designs.
@@ -258,6 +275,10 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 */
 #back-to-year-edit-div p.edit, #change-range-genre-div p.edit {
     text-decoration: none;
+}
+
+#back-to-year-edit-div p.edit, #back-to-venues p {
+    font-weight: 500;
 }
 
 /*

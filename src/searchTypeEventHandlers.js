@@ -62,9 +62,11 @@ export const handleSimpleSearchSelection = event => {
     decadesFilter.querySelector("h3").innerText = "SELECT A DECADE";
     hideElement(event, decadesEditPrompt);
     showElement(event, decadesFilter);
+    if (decadesFilter.classList.contains('selected-filter')) decadesFilter.classList.remove('selected-filter');
     showElement(event, document.querySelector("#decade-list"));
     showElement(event, concertList);
     yearsFilter.querySelector('h3').innerText = 'SELECT A YEAR';
+     if (yearsFilter.classList.contains('selected-filter')) yearsFilter.classList.remove('selected-filter');
     hideElement(event, yearsEditPrompt);
     hideElementMobile(event, document.querySelector("#map"));
 }
@@ -73,6 +75,7 @@ export const handleSimpleSearchSelection = event => {
 * Behavior specific to the explore search selection
 * * Clear map markers and venue / concert info
 * Hide the simple search filters
+* Return simple search selected filters to base state
 * Show the year range filter and the range slider
 * */
 export const handleExploreSelection = event => {

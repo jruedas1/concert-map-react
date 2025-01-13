@@ -102,6 +102,7 @@ export const handleDecadeSelection = async (event, map) => {
     * */
     const decadeFilter = event.currentTarget.parentElement.previousElementSibling;
     decadeFilter.querySelector("h3").innerText = selectedDecade.toString() + 's';
+    decadeFilter.classList.add('selected-filter');
 
     /*
     * Show the edit button
@@ -137,6 +138,7 @@ export const handleYearSelection = async (event, map) => {
     yearsFilter.querySelector("h3").innerText = selectedYear;
     // show the edit button
     yearsFilter.querySelector(".edit").classList.remove('hidden');
+    yearsFilter.classList.add('selected-filter');
     // hide the year list
     hideElement(event, document.querySelector("#year-list"));
     // show the confirm button
