@@ -2,6 +2,7 @@
     --main-background: #F1EEEB;
     --header-dark: #231F20;
     --various-red: #AD343E;
+    --button-red: #F45B69;
     --off-white: #F4F4F4;
     --filter-option: #C1DFE9;
 }
@@ -371,11 +372,10 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 .next {
-    border: 2px solid black;
-    border-radius: 5px;
-    background: #078A14;
-    color: var(--main-background);
-    font-size: 1.1rem;
+    border: none;
+    background: var(--button-red);
+    color: black;
+    font-size: 0.9rem;
     font-weight: 700;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
@@ -496,7 +496,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     border-bottom-width: 0.6rem;
     border-top-width: 0.6rem;
     border-style: solid;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent black;
 }
 
 #year-range-breadcrumb {
