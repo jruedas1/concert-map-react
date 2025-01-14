@@ -521,7 +521,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
  */
 
 .marker {
-    background-image: url('../img/marker.svg');
+    background-image: url('../img/marker-red-small.svg');
     background-size: cover;
     width: 30px;
     height: 36px;
@@ -530,7 +530,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 .y-marker {
-    background-image: url('../img/marker-yellow-large.svg');
+    background-image: url('../img/marker-red-large.svg');
     background-size: cover;
     width: 60px;
     height: 70px;
