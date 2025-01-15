@@ -5,7 +5,9 @@
     --button-red: #F45B69;
     --off-white: #F4F4F4;
     --filter-option: #C1DFE9;
+    --explore-filter-option: #C1DFDF;
     --concert-heading: #027d7c;
+    --genre-year-output: #067372;
 }
 
 /* Resets */
@@ -230,6 +232,10 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 */
 .selected-filter {
     background-color: var(--filter-option);
+}
+
+.explore-selected-filter, #change-range-genre-div {
+    background-color: var(--explore-filter-option);
 }
 
 /*========= BREADCRUMBS ==========*/
@@ -555,7 +561,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     top: 5rem;
     left: 1rem;
     z-index: 4;
-    color: var(--various-red);
+    color: var(--genre-year-output);
     font-size: 5rem;
 }
 
@@ -572,7 +578,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 #progress {
     height: 100%;
     width: 0%;
-    background-color: rgba(242, 187, 5, 1);
+    background-color: var(--button-red);
     transition: width 0.3s ease;
 }
 

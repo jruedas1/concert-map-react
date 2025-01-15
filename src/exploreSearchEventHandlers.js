@@ -75,6 +75,8 @@ export const handleEdit5YearRange = event => {
         if ('cursor' in yearRangeEditor.style) yearRangeEditor.style.removeProperty('cursor');
         hideElement(event, yearRangeEditor.querySelector('.edit'));
     }
+    yearRangeEditor.classList.toggle('explore-selected-filter', false);
+    genreSelector.classList.toggle('explore-selected-filter', false);
     hideElement(event, genreSelector);
     hideElement(event, genreList);
     hideElement(event, showMyResultsButton);
@@ -168,6 +170,7 @@ export const handleConfirm5YearRangeSelection = event => {
     toggleVisibility(event, document.querySelector("#range-selection-container"));
     toggleVisibility(event, document.querySelector("#genres"));
     showElement(event, document.querySelector("#genre-list"));
+    yearRangeFilter.classList.toggle('explore-selected-filter', true);
     // If a genre is already selected, it means the user is coming from "Change Selections"
     // or is returning from the simple search after already having done a visualization
     // In this case show the "show my results" button
@@ -269,7 +272,9 @@ export const handleGenreSelection = async (event, map) => {
     selectedGenreOutputHeading.dataset.id = event.target.localName === 'h3' ? event.target.parentElement.dataset.id : event.target.dataset.id;
     // trigger click event on genres div
     // this hides the genre list if it's showing
-    document.querySelector("#genres").click();
+    const genresFilter = document.querySelector("#genres");
+    genresFilter.click();
+    if (!genresFilter.classList.contains('explore-selected-filter')) genresFilter.classList.add('explore-selected-filter');
     showElement(event, document.querySelector("#confirm-genre-parent"));
     showElement(event, document.querySelector("#genres .edit"));
 }
@@ -350,13 +355,14 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     hideElement(event, document.querySelector("#range-genre-breadcrumb-container"));
     // Show the "SELECT A DATE RANGE" PROMPT and hide edit prompt
     const yearRangeSelector = document.querySelector("#year-range");
+    const genreSelector = document.querySelector("#genres");
     showElement(event, yearRangeSelector);
     yearRangeSelector.querySelector("h3").innerText = "SELECT A DATE RANGE";
     hideElement(event, yearRangeSelector.querySelector('p.edit'));
     // show the year selection menu
     showElement(event, document.querySelector("#range-selection-container"));
     // Hide the genre selection process
-    hideElement(event, document.querySelector("#genres"));
+    hideElement(event, genreSelector);
     hideElement(event, document.querySelector("#genre-list"));
     hideElement(event, document.querySelector("#confirm-genre-parent"));
     // In mobile, hide the map
@@ -379,6 +385,8 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     document.querySelector("#single-concert-div").innerHTML = '';
     // On mobile, the map is shifted when viewing the data visualization. This moves it back
     map.setCenter([-98.48725, 29.44879]);
+    // Remove color from year-range and genre filter selection areas
+    yearRangeSelector.classList.toggle('explore-selected-filter', false);
     // reset the progress bar to zero
     const progressBar = document.querySelector("#progress");
     progressBar.style.width = "0%";

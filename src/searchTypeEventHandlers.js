@@ -69,6 +69,9 @@ export const handleSimpleSearchSelection = event => {
      if (yearsFilter.classList.contains('selected-filter')) yearsFilter.classList.remove('selected-filter');
     hideElement(event, yearsEditPrompt);
     hideElementMobile(event, document.querySelector("#map"));
+     // reset the progress bar to zero
+    const progressBar = document.querySelector("#progress");
+    progressBar.style.width = "0%";
 }
 
 /*
