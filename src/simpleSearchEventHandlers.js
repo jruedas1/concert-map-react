@@ -26,6 +26,7 @@ import {fetchYear} from "./dataAccess.js";
  NOT like this: addEventListener('click', handleMarkerClick)
  */
 export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
+    console.log("marker clicked")
     venueId = parseInt(venueId);
     // This behavior applies only in mobile view
     if (window.innerWidth <= 768){
@@ -70,6 +71,10 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         // on mouseenter and never removed. Remove it
         const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
         matchingVenue.classList.remove('venue-hover');
+    }
+    if (window.innerWidth > 768){
+        //export const handleVenueSelection = (event, venueId, venuesArray)
+        handleVenueSelection(event, venueId, venuesArray);
     }
 }
 
