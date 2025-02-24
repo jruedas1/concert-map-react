@@ -419,6 +419,8 @@ export const handleWindowResize = (event, breakpoint) => {
         showSingleVenueDivs();
         if (exploreModeSelectionMade){
             exploreModeListMapViewButton.innerText = "Map View";
+        } else {
+            document.querySelector("#list-view").innerText = "Map View";
         }
     }
 }

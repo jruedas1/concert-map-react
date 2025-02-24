@@ -26,7 +26,6 @@ import {fetchYear} from "./dataAccess.js";
  NOT like this: addEventListener('click', handleMarkerClick)
  */
 export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
-    console.log("marker clicked")
     venueId = parseInt(venueId);
 
     // This behavior applies only in mobile view
@@ -73,8 +72,11 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
         matchingVenue.classList.remove('venue-hover');
     }
+    // Only in desktop view, if the marker is clicked show the concerts for that venue
+    if (window.innerWidth > 768){
+        handleVenueSelection(event, venueId, venuesArray);
+    }
 
-    handleVenueSelection(event, venueId, venuesArray);
 }
 
 export const handleSingleVenueDivClick = (event, venue, venuesArray) => {
