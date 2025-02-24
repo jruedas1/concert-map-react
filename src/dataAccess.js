@@ -6,6 +6,7 @@
 // const protocol = 'https';
 // const API_ADDRESS = `${protocol}://${expressAddress}`;
 
+// local
 const expressAddress = "localhost";
 const expressPort = 7860;
 const protocol = 'http';

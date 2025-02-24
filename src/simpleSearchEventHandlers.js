@@ -28,6 +28,7 @@ import {fetchYear} from "./dataAccess.js";
 export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
     console.log("marker clicked")
     venueId = parseInt(venueId);
+
     // This behavior applies only in mobile view
     if (window.innerWidth <= 768){
         // Loop over the filters to find the id match
@@ -72,10 +73,8 @@ export const handleMarkerClick =  (map, event, venueId, venuesArray) => {
         const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
         matchingVenue.classList.remove('venue-hover');
     }
-    if (window.innerWidth > 768){
-        //export const handleVenueSelection = (event, venueId, venuesArray)
-        handleVenueSelection(event, venueId, venuesArray);
-    }
+
+    handleVenueSelection(event, venueId, venuesArray);
 }
 
 export const handleSingleVenueDivClick = (event, venue, venuesArray) => {
@@ -377,5 +376,6 @@ export const handleListMapViewClick = event => {
         if (singleVenueDiv) showElement(event, document.querySelector(".single-venue"));
         event.target.innerText = 'List View';
     }
+    window.dispatchEvent(new Event('resize'));
 }
 
