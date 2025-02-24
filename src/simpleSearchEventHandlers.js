@@ -349,10 +349,26 @@ export const handleVenueMouseOut = (event, venueId) => {
 
 // handler for marker mouse enter
 export const handleMarkerMouseEnter = (event, venueId) => {
-    const matchingVenue = document.querySelector("#venues").querySelector(`[data-id='${venueId.toString()}']`);
+    const venuesList = document.querySelector("#venues");
+    const matchingVenue = venuesList.querySelector(`[data-id='${venueId.toString()}']`);
     matchingVenue.classList.add('venue-hover');
     event.target.classList.remove('marker');
     event.target.classList.add('y-marker');
+    // cause corresponding venue to rise to top of list
+    if (matchingVenue){
+        // simple solution
+        // venuesList.prepend(matchingVenue);
+        // solution with animation
+        matchingVenue.style.transition = "transform 0.3s ease-in-out, opacity 0.2s";
+                matchingVenue.style.opacity = "0";
+                matchingVenue.style.transform = "scale(0.95)";
+                setTimeout(() => {
+                    venuesList.prepend(matchingVenue);
+                    matchingVenue.style.opacity = "1";
+                    matchingVenue.style.transform = "scale(1)";
+                }, 200);
+
+    }
 }
 
 // handler for marker mouse out

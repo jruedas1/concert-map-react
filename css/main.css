@@ -441,6 +441,15 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     pointer-events: none;
 }
 
+/*
+    This goes with the JS-triggered
+    animation on venue marker hover
+*/
+
+.venue {
+    transition: transform 0.3s ease-in-out, opacity 0.2s;
+}
+
 /*===========EXPLORE TAB =============*/
 
 .custom-options {
