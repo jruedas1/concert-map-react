@@ -40,19 +40,19 @@ Header contains a main heading and a nav
 Nav and main heading are flex-children to header
 */
 
-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--header-dark);
-    color: #F5F5F5;
-    padding: 0 4dvh;
-}
+/*header {*/
+/*    display: flex;*/
+/*    flex-flow: row nowrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background-color: var(--header-dark);*/
+/*    color: #F5F5F5;*/
+/*    padding: 0 4dvh;*/
+/*}*/
 
-header h1 {
-   margin: auto;
-}
+/*header h1 {*/
+/*   margin: auto;*/
+/*}*/
 
 /*
 Nav set up is a elements within li elements within a ul
@@ -150,7 +150,8 @@ section#filters {
     display: flex;
     flex-flow: column nowrap;
 
-    max-height: calc(100dvh - 70px);
+    /*max-height: calc(100dvh - 70px);*/
+    max-height: 100dvh;
 
     border-right: 2px solid black;
     background-color: var(--main-background);
@@ -570,7 +571,8 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 #map {
     position: relative;
     flex: 1 0 auto;
-    height: calc(100dvh - 70px);
+    /*height: calc(100dvh - 70px);*/
+    height: 100dvh;
 }
 
 
@@ -772,17 +774,17 @@ footer ul li+li {
         display: initial;
     }
 
-    header {
-        padding: 1rem 1.5rem;
-    }
+    /*header {*/
+    /*    padding: 1rem 1.5rem;*/
+    /*}*/
 
-    header h1 {
-        font-size: 1.2rem;
-    }
+    /*header h1 {*/
+    /*    font-size: 1.2rem;*/
+    /*}*/
 
-    header nav ul {
-        gap: 1rem;
-    }
+    /*header nav ul {*/
+    /*    gap: 1rem;*/
+    /*}*/
 
 
 
