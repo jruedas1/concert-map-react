@@ -329,7 +329,7 @@ export const handleConfirmGenreSelection = async (event, map) => {
         * */
         map.resize();
         hideElement(event, document.querySelector("#search-type-selector"));
-        showElementMobile(event, document.querySelector("header"));
+        showElementMobile(event, document.querySelector(".header"));
     }
 
     /* Get all the concerts in the selected year range
@@ -377,7 +377,7 @@ export const handleChangeYearAndGenreSelections = (event, map) => {
     *  Show the search type selector
     *  */
     document.querySelector("#animation-year-output h2").innerText = '';
-    hideElementMobile(event, document.querySelector("header"));
+    hideElementMobile(event, document.querySelector(".header"));
     showElement(event, document.querySelector("#search-type-selector"));
     // Wipe out the previously output concert list
     emptyConcertInfo();

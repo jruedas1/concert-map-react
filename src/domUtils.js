@@ -487,5 +487,5 @@ export const handleModalWindowClick = event => {
     const modalWrapper = document.querySelector("#modalWrapper");
     modalWrapper.classList.remove('showModal');
     modalWrapper.classList.add('hideModal');
-    document.querySelector("header").classList.add("mobile-hidden");
+    document.querySelector(".header").classList.add("mobile-hidden");
 }
