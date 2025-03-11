@@ -83,8 +83,8 @@ listViewButton.addEventListener('click', handleListMapViewClick);
 const exploreListViewButton = document.querySelector("#explore-list-view");
 exploreListViewButton.addEventListener('click', event => handleExploreListViewClick(event, map));
 
-// const hamburger = document.querySelector(".hamburger");
-// hamburger.addEventListener('click', mobileMenu);
+const hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener('click', mobileMenu);
 
 /*
 * This is the "Select a 5-year range"
