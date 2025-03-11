@@ -150,7 +150,8 @@ section#filters {
     display: flex;
     flex-flow: column nowrap;
 
-    max-height: calc(100dvh - 70px);
+    /*max-height: calc(100dvh - 1px);*/
+    height: 100dvh;
 
     border-right: 2px solid black;
     background-color: var(--main-background);
@@ -570,7 +571,8 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 #map {
     position: relative;
     flex: 1 0 auto;
-    height: calc(100dvh - 70px);
+    /*height: calc(100dvh - 70px);*/
+    height: 100dvh;
 }
 
 
