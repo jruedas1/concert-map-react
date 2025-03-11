@@ -774,17 +774,17 @@ footer ul li+li {
         display: initial;
     }
 
-    header {
-        padding: 1rem 1.5rem;
-    }
+    /*header {*/
+    /*    padding: 1rem 1.5rem;*/
+    /*}*/
 
-    header h1 {
-        font-size: 1.2rem;
-    }
+    /*header h1 {*/
+    /*    font-size: 1.2rem;*/
+    /*}*/
 
-    header nav ul {
-        gap: 1rem;
-    }
+    /*header nav ul {*/
+    /*    gap: 1rem;*/
+    /*}*/
 
 
 
