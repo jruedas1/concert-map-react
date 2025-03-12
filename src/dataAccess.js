@@ -1,16 +1,16 @@
 // Requests go to an Express JS API
 
 // Remote:
-// const expressAddress = "dev.cedish.utsa.edu/devconcerts-api";
-// const expressPort = 7860;
-// const protocol = 'https';
-// const API_ADDRESS = `${protocol}://${expressAddress}`;
+const expressAddress = "dev.cedish.utsa.edu/devconcerts-api";
+const expressPort = 7860;
+const protocol = 'https';
+const API_ADDRESS = `${protocol}://${expressAddress}`;
 
 // local
-const expressAddress = "localhost";
-const expressPort = 7860;
-const protocol = 'http';
-const API_ADDRESS = `${protocol}://${expressAddress}:${expressPort}`;
+// const expressAddress = "localhost";
+// const expressPort = 7860;
+// const protocol = 'http';
+// const API_ADDRESS = `${protocol}://${expressAddress}:${expressPort}`;
 
 /*
 * General method for retrieving all the data at any given key
