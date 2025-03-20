@@ -208,6 +208,7 @@ const mobileUIChangesAfterConfirmYear = event => {
     showElementMobile(event, document.querySelector("#map"));
     // showElementMobile(event, document.querySelector("header"));
     hideElementMobile(event, document.querySelector("#search-type-selector"));
+    document.querySelector("#list-view").innerText = "List View";
 }
 
 const mobileUIChangesReturningToYearSelection = event => {

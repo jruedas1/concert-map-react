@@ -420,7 +420,7 @@ export const handleWindowResize = (event, breakpoint) => {
         if (exploreModeSelectionMade){
             exploreModeListMapViewButton.innerText = "Map View";
         }
-        document.querySelector("#list-view").innerText = "List View";
+        document.querySelector("#list-view").innerText = "Map View";
 
     }
 }
