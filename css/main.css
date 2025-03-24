@@ -180,6 +180,10 @@ div#decades.filter, #year-range {
     border-top: 2px solid black;
 }
 
+#decades {
+
+}
+
 /*
     Make sure all the filter options have pointer cursors
     to indicate they are clickable
@@ -218,10 +222,12 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 
 #search-type-selector {
     border: none;
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    padding: 1.5rem;
     cursor: default;
     background-color: rgba(6, 115, 114, 1);
     color: var(--off-white);
+    justify-content: center;
+    gap: 3.5rem;
 }
 
 #search-type-selector h3 {
@@ -429,6 +435,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     font-weight: 700;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
+    font-family: "newnord", sans-serif;
 }
 
 /*==== VENUE DISPLAYS ====*/
@@ -774,20 +781,6 @@ footer ul li+li {
         display: initial;
     }
 
-    /*header {*/
-    /*    padding: 1rem 1.5rem;*/
-    /*}*/
-
-    /*header h1 {*/
-    /*    font-size: 1.2rem;*/
-    /*}*/
-
-    /*header nav ul {*/
-    /*    gap: 1rem;*/
-    /*}*/
-
-
-
     main {
         flex-flow: column nowrap;
     }
@@ -820,6 +813,8 @@ footer ul li+li {
 
     #modalContent {
         max-height: 100dvh;
+        max-width: 75%;
+        padding: 1rem 0;
     }
 
     #modalContent h2 {
@@ -828,11 +823,15 @@ footer ul li+li {
 
     #modalOptionDescriptions {
         flex-flow: column nowrap;
-        gap: 0.5rem;
+        gap: 1rem;
         margin-top: 4%;
     }
 
     #modalOptionDescriptions > div {
         gap: 0.5rem;
     }
+
+    /*#modalOptionDescriptions > div:nth-of-type(2) {*/
+    /*   padding-top: 0.5rem;*/
+    /*}*/
 }
