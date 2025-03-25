@@ -180,8 +180,8 @@ div#decades.filter, #year-range {
     border-top: 2px solid black;
 }
 
-#decades {
-
+#year-list {
+    overflow-y: scroll;
 }
 
 /*
@@ -212,7 +212,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 /*}*/
 
 .filter-option:hover, #venues div:hover, .venue-hover, .select-items div:hover {
-    background: #F7C100;
+    background: #C1DFDF;
 }
 
 /*
@@ -428,12 +428,12 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 .next {
-    border: none;
+    border: 1px solid black;
     background: var(--button-red);
     color: black;
     font-size: 0.9rem;
     font-weight: 700;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 2rem;
     cursor: pointer;
     font-family: "newnord", sans-serif;
 }
@@ -542,20 +542,20 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 #range-selection-state {
-    color: #124E78;
+    color: #067372;
 }
 
 #confirm-range-selection {
     margin-bottom: 0.6rem;
     position: relative;
-    padding-left: 0.5rem;
+    padding: 1.2rem 2.5rem 1.2em 1.2rem;
 }
 
 #confirm-range-selection::after {
     position: absolute;
     content: "";
     top: calc(50% - 0.6rem);
-    right: 0.3rem;
+    right: 0.7rem;
     width: 0;
     height: 0;
     border-left-width: 0.5rem;
@@ -612,6 +612,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     z-index: 4;
     color: var(--genre-year-output);
     font-size: 5rem;
+    font-family: "newnord", sans-serif;
 }
 
 /*==========PROGRESS BAR =========================*/
