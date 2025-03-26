@@ -290,8 +290,15 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     flex-flow: row nowrap;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.5rem;
     font-size: 1.3rem;
+}
+
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
+    padding: 0.5rem;
+}
+
+#back-to-venues {
+    padding: 1rem;
 }
 
 /*
