@@ -393,6 +393,10 @@ the padding here requires special treatment
     border-left: 2px solid black;
 }
 
+/*
+Button that toggles list and map view
+*/
+
 .list-map-button {
     background: #232323;
     color: var(--main-background);
@@ -634,6 +638,12 @@ the padding here requires special treatment
     font-size: 5rem;
     font-family: "newnord", sans-serif;
 }
+
+/*
+Popups
+*/
+
+
 
 /*==========PROGRESS BAR =========================*/
 

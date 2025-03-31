@@ -139,6 +139,9 @@ export const outputVenuesToMap = (map, venuesArray) => {
 }
 
 export const outputVenueToMap = (map, venue) => {
+        console.log(venue);
+        const address = `${venue.address}, ${venue.city}, TX ${venue.zip}`;
+        console.log(address);
         if (venue.longitude && venue.latitude){
             const el = document.createElement('div');
             el.className = 'marker';
@@ -146,9 +149,13 @@ export const outputVenueToMap = (map, venue) => {
             const venueMarker = new mapboxgl.Marker(el);
             venueMarker.setLngLat([venue.longitude, venue.latitude]);
             venueMarker.addTo(map);
-            // const popup = new mapboxgl.Popup()
-            //     .setHTML('<p>'+ venue.name + '</p>');
-            // venueMarker.setPopup(popup);
+            const popup = new mapboxgl.Popup()
+                // .setHTML('<h2>'+ venue.name + '</h2>');
+                 .setHTML(`
+                            <h2>${venue.name}</h2>
+                            <p>${address}</p>
+                          `);
+            venueMarker.setPopup(popup);
             return venueMarker;
         }
 }
