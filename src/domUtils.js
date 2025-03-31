@@ -152,7 +152,7 @@ export const outputVenueToMap = (map, venue) => {
             venueMarker.addTo(map);
             const popup = new mapboxgl.Popup({
                 closeButton: false,
-                offset: [15, 0],
+                offset: [30, 0],
                 anchor: 'left'
             })
                 // .setHTML('<h2>'+ venue.name + '</h2>');
