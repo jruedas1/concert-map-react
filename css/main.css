@@ -346,25 +346,17 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 
 {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: left;
     align-items: center;
-
+    gap: 1rem;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
 
-#year-venue-breadcrumb-flex-parent,
-#concert-to-venue-breadcrumb-flex-parent,
-#year-range {
-    /*background: #0075E4;*/
-    /*color: var(--main-background);*/
-}
 /*
    In the back-to-venues and back-to-year breadcrumbs,
    This contains the year.
 */
-#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #concert-to-venue-breadcrumb-flex-parent h2, #range-genre-breadcrumb-flex-parent h2 {
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #range-genre-breadcrumb-flex-parent h2 {
     border-right: 2px solid black;
     padding: 1rem;
 }
@@ -378,6 +370,27 @@ But changes to clickable via JS when it has the "Edit" prompt showing
     padding-left: 0.5rem;
     font-size: 1.3rem;
     font-weight: 700;
+}
+
+/*
+Where the venue names are displayed, long venue names can get cramped, so
+the padding here requires special treatment
+*/
+
+#concert-to-venue-breadcrumb-flex-parent h2 {
+    padding: 1rem 0 1rem 1rem;
+}
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+/* Border between the year and the venue name */
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    border-left: 2px solid black;
 }
 
 .list-map-button {
