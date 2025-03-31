@@ -162,6 +162,19 @@ export const outputVenueToMap = (map, venue) => {
                             <p>${cityStateZip}</p>
                           `);
             venueMarker.setPopup(popup);
+
+            // Show popup on hover
+            el.addEventListener('mouseenter', () => {
+                popup.addTo(map);
+                popup.setLngLat([venue.longitude, venue.latitude]);
+            });
+
+            // Hide popup when leaving the marker
+            el.addEventListener('mouseleave', () => {
+                popup.remove();
+            });
+
+
             return venueMarker;
         }
 }
