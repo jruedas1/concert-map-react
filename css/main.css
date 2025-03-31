@@ -639,11 +639,27 @@ Button that toggles list and map view
     font-family: "newnord", sans-serif;
 }
 
-/*
-Popups
-*/
+/* Popups */
 
+.mapboxgl-popup {
+    border: 2px solid black;
+}
 
+.mapboxgl-popup-content {
+     padding-bottom: 0.5rem;
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+.mapboxgl-popup-content h2 {
+    margin-bottom: 1rem;
+}
+
+.mapboxgl-popup-content p:first-of-type{
+    margin-bottom: -0.3rem;
+}
 
 /*==========PROGRESS BAR =========================*/
 
@@ -785,6 +801,12 @@ footer ul li+li {
 @media screen and (min-width: 1144px) {
     section#filters {
         flex: 0 0 30%;
+    }
+}
+
+@media screen and (min-width: 996px) {
+    .mapboxgl-popup {
+        max-width: 339px;
     }
 }
 
