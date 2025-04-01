@@ -84,9 +84,6 @@ listViewButton.addEventListener('click', handleListMapViewClick);
 const exploreListViewButton = document.querySelector("#explore-list-view");
 exploreListViewButton.addEventListener('click', event => handleExploreListViewClick(event, map));
 
-// const hamburger = document.querySelector(".hamburger");
-// hamburger.addEventListener('click', mobileMenu);
-
 /*
 * This is the "Select a 5-year range"
 * filter. This handler is active only after the user
@@ -108,7 +105,9 @@ defaultEndYearSelector.addEventListener('change', handleYearRangeSelection);
 const customYearRangeSelector = document.querySelector("#custom-start-range-selector");
 const customEndYearRangeSelector = document.querySelector("#custom-end-range-selector");
 customYearRangeSelector.addEventListener('click', handleYearRangeYearSelection);
+customYearRangeSelector.addEventListener('keypress', e => e.key==='Enter' && handleYearRangeYearSelection(e));
 customEndYearRangeSelector.addEventListener('click', handleYearRangeYearSelection);
+customEndYearRangeSelector.addEventListener('keypress', e => e.key==='Enter' && handleYearRangeYearSelection(e));
 
 /* This is the "Next" button that a user clicks after selecting a year range
 *  in the "Explore" tab
