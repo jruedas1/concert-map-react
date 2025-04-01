@@ -274,10 +274,6 @@ div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
     cursor: not-allowed;
 }
 
-div.mapboxgl-marker.pointer {
-    pointer-events: none !important;
-}
-
 /*
     After a selection has been made,
     some filters change color
