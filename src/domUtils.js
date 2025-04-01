@@ -139,10 +139,8 @@ export const outputVenuesToMap = (map, venuesArray) => {
 }
 
 export const outputVenueToMap = (map, venue) => {
-        console.log(venue);
         const address = venue.address;
         const cityStateZip = `${venue.city}, TX ${venue.zip}`;
-        console.log(address);
         if (venue.longitude && venue.latitude){
             const el = document.createElement('div');
             el.className = 'marker';

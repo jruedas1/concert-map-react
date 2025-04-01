@@ -265,6 +265,16 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 /*
+    To disable click and hover on map markers
+    during explore animation
+*/
+
+.disabled {
+    pointer-events: none; /* Disable all mouse events */
+    cursor: not-allowed; /* Change cursor to indicate unavailability */
+}
+
+/*
     After a selection has been made,
     some filters change color
 */

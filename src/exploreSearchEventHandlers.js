@@ -215,10 +215,17 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
     const yearOutputDiv = document.querySelector("#animation-year-output h2");
     let currYear = parseInt(concertsArray[0]["Year"]);
     yearOutputDiv.innerText = currYear.toString();
+
+    // we need references to the markers
+    // so we can make them visible after the animation is done
+    // this is to hold the references
+    const markers = [];
+
     /* As long as there is no stopAnimation signal,
     *  loop over the concerts array
     * */
     for (let i = 0; i < concertsArray.length && !stopAnimation; i++){
+
         if (parseInt(concertsArray[i]["Year"]) > currYear){
             currYear = parseInt(concertsArray[i]["Year"]);
             yearOutputDiv.innerText = currYear.toString();
@@ -238,7 +245,16 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         *  db queries */
         const venue = uniqueVenueMap[concertVenueId];
         const venueMarkerOnMap = findMarkerById(map, concertVenueId);
-        if (!venueMarkerOnMap) outputVenueToMap(map, venue);
+        if (!venueMarkerOnMap) {
+            const marker = outputVenueToMap(map, venue);
+            // in explore mode we don't want to see popups
+            // during the animation
+            if (marker){
+                marker._popup._classList.add('hidden');
+                // add reference to marker to our markers array
+                markers.push(marker);
+            }
+        }
         findAndDeHighlightMarkers();
         findAndHighlightMarker(map, venue.id);
         const concertDiv = generateOneConcertHTML(concertsArray[i]);
@@ -258,6 +274,8 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         // here's where the delay length is set
         await delay(500);
     }
+    // loop through the map markers and make them visible again
+    markers.forEach(marker => marker._popup._classList.delete('hidden'));
 }
 
 /*
