@@ -653,6 +653,7 @@ Button that toggles list and map view
 
 .mapboxgl-popup {
     border: 2px solid black;
+     z-index: 2;
 }
 
 .mapboxgl-popup-content {
