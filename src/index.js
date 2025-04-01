@@ -47,6 +47,7 @@ document.querySelector("main").addEventListener('click', handleModalWindowClick)
 *  */
 const searchTypeSelectors = document.querySelectorAll("#search-type-selector h3");
 searchTypeSelectors.forEach(selector => selector.addEventListener('click', handleSearchTypeSelection));
+searchTypeSelectors.forEach(selector => selector.addEventListener('keypress', e => e.key==='Enter' && handleSearchTypeSelection(e)));
 
 const modalExploreSelector = document.querySelector("#modalOptionDescriptions button.explore-mode-selector");
 modalExploreSelector.addEventListener('click', handleSearchTypeSelection);
