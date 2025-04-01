@@ -265,13 +265,17 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 }
 
 /*
-    To disable click and hover on map markers
-    during explore animation
+    To show that the popups will not display
+    during explore mode animation.
+    Using very high-specificity selection
+    to override mapbox default.
 */
+div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
+    cursor: not-allowed;
+}
 
-.disabled {
-    pointer-events: none; /* Disable all mouse events */
-    cursor: not-allowed; /* Change cursor to indicate unavailability */
+div.mapboxgl-marker.pointer {
+    pointer-events: none !important;
 }
 
 /*

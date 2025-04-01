@@ -251,7 +251,7 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
             // during the animation
             if (marker){
                 marker._popup._classList.add('hidden');
-                // add reference to marker to our markers array
+                marker._element.classList.add('disabled');
                 markers.push(marker);
             }
         }
@@ -275,7 +275,10 @@ async function outputConcertsOnTimer(concertsArray, percentPerConcert, map) {
         await delay(500);
     }
     // loop through the map markers and make them visible again
-    markers.forEach(marker => marker._popup._classList.delete('hidden'));
+    markers.forEach(marker => {
+        marker._popup._classList.delete('hidden');
+        marker._element.classList.remove('disabled');
+    });
 }
 
 /*
