@@ -82,6 +82,10 @@ export const handleEdit5YearRange = event => {
     hideElement(event, showMyResultsButton);
 }
 
+export const selectFirstYearOnArrowPress = event => {
+    console.log(event);
+}
+
 /*
 * Handles interaction with the year-range selectors
 * -- Gets references to selected start and end years

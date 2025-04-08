@@ -126,6 +126,12 @@ confirmGenreSelectionButton.addEventListener('click', event => handleConfirmGenr
 
  generateYearDropDown();
  generateCustomDropdownOptions();
+ document.querySelectorAll('.custom-selector').forEach(selector => selector.addEventListener('keydown', e => {
+     if (e.keyCode === 40) {
+         e.preventDefault();
+         e.target.nextElementSibling.firstElementChild.firstChild.focus();
+     }
+ }));
 
 /* async IIFE
    This is necessary in order to load the remote data on page load

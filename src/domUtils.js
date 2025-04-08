@@ -259,6 +259,8 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
         const customOption = document.createElement("div");
         // Match the content of the custom option to the corresponding hidden default
         customOption.innerText = sourceDropdown.options[i].innerText;
+        // for keyboard accessibility
+        customOption.tabIndex = -1;
         // Each option needs a click handler
         customOption.addEventListener("click", e => {
             // Loop over the hidden dropdown options to find the match
@@ -282,6 +284,27 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
             // Initiate a click on the dropdown selection to close the dropdown
             customSelector.click();
         });
+
+        customOption.addEventListener('keydown', e => {
+            e.preventDefault();
+            if (e.key === 'ArrowDown'){
+                const next = customOption.nextElementSibling;
+                if (next) next.focus();
+            }
+            if (e.key === 'ArrowUp'){
+                const prev = customOption.nextElementSibling;
+                if (prev) prev.focus();
+            }
+            if (e.key === 'Enter'){
+                customOption.click();
+                e.target.parentElement.parentElement.previousElementSibling.focus();
+            }
+            if (e.key === 'Escape'){
+                e.target.parentElement.parentElement.previousElementSibling.click();
+                e.target.parentElement.parentElement.previousElementSibling.focus();
+            }
+        })
+
         // Once the option div has been created, add it to the array
         customOptions.push(customOption);
     }
