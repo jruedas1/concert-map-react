@@ -93,6 +93,9 @@ exploreListViewButton.addEventListener('click', event => handleExploreListViewCl
 * */
 const yearRangeFilter = document.querySelector("#year-range");
 yearRangeFilter.addEventListener('click', handleEdit5YearRange);
+yearRangeFilter.addEventListener('keydown', e => {
+   if (e.key === "Enter") handleEdit5YearRange(e);
+});
 
 /*
 * This handles user interaction with the actual range slider itself
