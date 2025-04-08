@@ -284,26 +284,35 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
             // Initiate a click on the dropdown selection to close the dropdown
             customSelector.click();
         });
-
+        // add events for keyboard accessibility
+        // use preventDefault in each rather than one at the top --
+        // so as not to interfere with other key events
         customOption.addEventListener('keydown', e => {
-            e.preventDefault();
             if (e.key === 'ArrowDown'){
+                e.preventDefault();
                 const next = customOption.nextElementSibling;
                 if (next) next.focus();
             }
             if (e.key === 'ArrowUp'){
-                const prev = customOption.nextElementSibling;
+                e.preventDefault();
+                const prev = customOption.previousElementSibling;
                 if (prev) prev.focus();
             }
-            if (e.key === 'Enter'){
-                customOption.click();
-                e.target.parentElement.parentElement.previousElementSibling.focus();
-            }
+            let selector = null;
+            if (e.key === 'Enter' || e.key === 'Escape'){
+                selector = customOption.closest('.selected-and-options-flex-wrapper').querySelector('.custom-selector');
+                if (e.key === 'Enter'){
+                    e.preventDefault();
+                    customOption.click();
+                    selector.focus();
+                }
             if (e.key === 'Escape'){
-                e.target.parentElement.parentElement.previousElementSibling.click();
-                e.target.parentElement.parentElement.previousElementSibling.focus();
+                    e.preventDefault();
+                    selector.click();
+                    selector.focus();
+                }
             }
-        })
+        });
 
         // Once the option div has been created, add it to the array
         customOptions.push(customOption);
