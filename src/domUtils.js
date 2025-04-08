@@ -198,7 +198,7 @@ export const generateGenreList = async (map) => {
     for (const genre of genreData){
         const genreDiv = document.createElement('div');
         genreDiv.innerHTML = `
-             <div class="genre filter-option" data-id="${genre['id']}">
+             <div class="genre filter-option" data-id="${genre['id']}" tabindex="-1">
                  <h3>${genre['name'].toUpperCase()}</h3>
              </div>
             `;
