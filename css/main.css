@@ -492,6 +492,32 @@ Button that toggles list and map view
     transition: transform 0.3s ease-in-out, opacity 0.2s;
 }
 
+/*====== SUBMISSION LINK =====*/
+
+.submission-link {
+    background-color: #C1DFDF;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1.7rem 1rem;
+    gap: 1rem;
+    border-bottom: 2px solid black;
+}
+
+.submission-link h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.link-btn {
+    color: #FFFFFF;
+    background-color: #231F20;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 1.1rem 1.5rem 1rem 1.5rem;
+    width: fit-content;
+    text-decoration: none;
+}
+
 /*===========EXPLORE TAB =============*/
 
 .custom-options {

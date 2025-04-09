@@ -1,11 +1,15 @@
 import {
-    handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
-    handleVenueMouseEnter, handleVenueMouseOut,
+    handleMarkerClick,
+    handleMarkerMouseEnter,
+    handleMarkerMouseOut,
+    handleSingleVenueDivClick,
+    handleVenueMouseEnter,
+    handleVenueMouseOut,
     handleVenueSelection,
-    handleYearSelection, handleSingleVenueDivClick
+    handleYearSelection
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
-import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
+import {handleGenreSelection} from "./exploreSearchEventHandlers.js"
 
 /*
     Removes markers from map
@@ -311,6 +315,13 @@ export const outputOneVenuesConcertsToPage = venue => {
     for (const concert of concertList){
         concertsDiv.appendChild(concert);
     }
+    const submissionLink = document.createElement('div');
+    submissionLink.innerHTML = `
+        <h2>Missing a concert?</h2>
+        <a href="#" class="link-btn">Contribute Here</a>
+    `;
+    submissionLink.classList.add('submission-link');
+    concertsDiv.appendChild(submissionLink);
 }
 
 export const generateOneVenuesConcerts = venue => {
