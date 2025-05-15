@@ -197,11 +197,16 @@ export const generateGenreList = async (map) => {
     const genreData = await fetchGenreData();
     for (const genre of genreData){
         const genreDiv = document.createElement('div');
-        genreDiv.innerHTML = `
-             <div class="genre filter-option" data-id="${genre['id']}" tabindex="-1">
-                 <h3>${genre['name'].toUpperCase()}</h3>
-             </div>
-            `;
+        genreDiv.classList.add('genre');
+        genreDiv.classList.add('filter-option');
+        genreDiv.dataset.id = genre['id'];
+        genreDiv.tabIndex = -1;
+        genreDiv.innerHTML = `<h3>${genre['name'].toUpperCase()}</h3>`;
+        // genreDiv.innerHTML = `
+        //      <div class="genre filter-option" data-id="${genre['id']}" tabindex="-1">
+        //          <h3>${genre['name'].toUpperCase()}</h3>
+        //      </div>
+        //     `;
         genreDiv.addEventListener('click', event => handleGenreSelection(event, map));
         genreList.appendChild(genreDiv);
     }
