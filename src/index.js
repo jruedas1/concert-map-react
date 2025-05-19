@@ -77,6 +77,9 @@ concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVe
 
 const yearRangeAndGenreChangeSelections = document.querySelector("#change-range-genre-div");
 yearRangeAndGenreChangeSelections.addEventListener('click', event => handleChangeYearAndGenreSelections(event, map));
+yearRangeAndGenreChangeSelections.addEventListener('keydown', event => {
+   if (event.key === 'Enter') handleChangeYearAndGenreSelections(event, map);
+});
 
 const listViewButton = document.querySelector("#list-view");
 listViewButton.addEventListener('click', handleListMapViewClick);
