@@ -202,12 +202,33 @@ export const generateGenreList = async (map) => {
         genreDiv.dataset.id = genre['id'];
         genreDiv.tabIndex = -1;
         genreDiv.innerHTML = `<h3>${genre['name'].toUpperCase()}</h3>`;
-        // genreDiv.innerHTML = `
-        //      <div class="genre filter-option" data-id="${genre['id']}" tabindex="-1">
-        //          <h3>${genre['name'].toUpperCase()}</h3>
-        //      </div>
-        //     `;
         genreDiv.addEventListener('click', event => handleGenreSelection(event, map));
+        genreDiv.addEventListener('keydown', e => {
+            if (e.key === 'ArrowDown'){
+                e.preventDefault();
+                const next = genreDiv.nextElementSibling;
+                if (next) next.focus();
+            }
+            if (e.key === 'ArrowUp'){
+                e.preventDefault();
+                const prev = genreDiv.previousElementSibling;
+                if (prev) prev.focus();
+            }
+            if (e.key === 'Enter' || e.key === 'Escape'){
+               
+                const selector = document.querySelector('#year-range .edit')
+                if (e.key === 'Enter'){
+                    e.preventDefault();
+                    genreDiv.click();
+                    selector.focus();
+                }
+                if (e.key === 'Escape'){
+                        e.preventDefault();
+                        selector.click();
+                        selector.focus();
+                    }
+                }
+            });
         genreList.appendChild(genreDiv);
     }
 }
