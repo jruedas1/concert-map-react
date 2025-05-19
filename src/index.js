@@ -126,6 +126,17 @@ confirmRangeSelectionButton.addEventListener('click', handleConfirm5YearRangeSel
 const genreFilter = document.querySelector("#genres");
 const genreList = document.querySelector("#genre-list");
 genreFilter.addEventListener('click', event => toggleVisibility(event, genreList));
+genreFilter.querySelector('.edit').addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+        if (genreList.classList.contains('hidden')) genreList.classList.remove('hidden');
+        genreList.firstElementChild.focus();
+    }
+    if (event.key === 'Tab' && event.shiftKey){
+        event.preventDefault();
+        yearRangeFilter.querySelector('.edit').focus();
+    }
+
+});
 
 const confirmGenreSelectionButton = document.querySelector("#confirm-genre-selection");
 confirmGenreSelectionButton.addEventListener('click', event => handleConfirmGenreSelection(event, map));
