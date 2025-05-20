@@ -242,7 +242,21 @@ export const generateYearList = (decade, map) => {
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
+        yearDiv.tabIndex = -1;
         yearDiv.addEventListener('click', event => handleYearSelection(event, map));
+        yearDiv.addEventListener('keydown', event => {
+           if (event.key === 'ArrowDown'){
+               event.preventDefault();
+               const next = yearDiv.nextElementSibling;
+               if (next) next.focus();
+           }
+           if (event.key === 'ArrowUp'){
+               event.preventDefault();
+               const prev = yearDiv.previousElementSibling;
+               if (prev) next.focus();
+           }
+           if (event.key === 'Enter') yearDiv.click();
+        });
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);

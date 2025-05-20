@@ -57,13 +57,38 @@ modalExploreSelector.addEventListener('click', handleSearchTypeSelection);
 const decadeFilter = document.querySelector("#decades");
 const decadeList = document.querySelector("#decade-list");
 decadeFilter.addEventListener('click', event => toggleVisibility(event, decadeList));
+decadeFilter.addEventListener('keydown', event => {
+   if (event.key === 'Enter') toggleVisibility(event, decadeList);
+   if (event.key === 'ArrowDown') {
+       decadeList.firstElementChild.focus();
+   }
+});
 for (const decade of decadeList.children){
     decade.addEventListener('click', event => handleDecadeSelection(event, map));
+    decade.addEventListener('keydown', event => {
+       if (event.key === 'Enter') decade.click();
+       if (event.key === 'ArrowDown'){
+           event.preventDefault();
+           const next = decade.nextElementSibling;
+           if (next) next.focus();
+       }
+       if (event.key === 'ArrowUp'){
+           event.preventDefault();
+           const prev = decade.previousElementSibling;
+           if (prev) prev.focus();
+       }
+    });
 }
 
 // toggle visibility of year list when the year filter is clicked
 const yearFilter = document.querySelector("#years");
 const yearList = document.querySelector("#year-list");
+yearFilter.addEventListener('keydown', event => {
+   if (event.key === 'Enter') toggleVisibility(event, yearList);
+   if (event.key === 'ArrowDown') {
+       yearList.firstElementChild.focus();
+   }
+});
 yearFilter.addEventListener('click', event => toggleVisibility(event, yearList));
 
 const confirmYearButton = document.querySelector("#confirm-year");
