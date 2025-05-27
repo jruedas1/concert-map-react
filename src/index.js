@@ -92,10 +92,13 @@ yearFilter.addEventListener('keydown', event => {
 yearFilter.addEventListener('click', event => toggleVisibility(event, yearList));
 
 const confirmYearButton = document.querySelector("#confirm-year");
-confirmYearButton.addEventListener('click', event => handleConfirmYearSelection(event, map))
+confirmYearButton.addEventListener('click', event => handleConfirmYearSelection(event, map));
 
 const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div > div");
 yearToVenueBreadcrumb.addEventListener('click', event => handleYearToVenueBreadcrumbClick(event, map));
+yearToVenueBreadcrumb.addEventListener('keydown', event => {
+    if (event.key === 'Enter') yearToVenueBreadcrumb.click();
+});
 
 const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
 concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
