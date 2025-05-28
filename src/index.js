@@ -109,6 +109,7 @@ yearToVenueBreadcrumb.addEventListener('keydown', event => {
 
 const concertsToVenuesBreadcrumb = document.querySelector("#back-to-venues");
 concertsToVenuesBreadcrumb.addEventListener('click', event => handleConcertsToVenuesBreadcrumbClick(event, map));
+concertsToVenuesBreadcrumb.addEventListener('keydown', event => event.key === 'Enter' && event.target.click());
 
 const yearRangeAndGenreChangeSelections = document.querySelector("#change-range-genre-div");
 yearRangeAndGenreChangeSelections.addEventListener('click', event => handleChangeYearAndGenreSelections(event, map));

@@ -172,6 +172,9 @@ export const outputVenueToMap = (map, venue) => {
                 popup.remove();
             });
 
+            el.addEventListener('blur', () => {
+                popup.remove();
+            });
 
             return venueMarker;
         }
