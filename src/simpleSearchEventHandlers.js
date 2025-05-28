@@ -336,6 +336,18 @@ export const handleConcertsToVenuesBreadcrumbClick = async (event) => {
     }
 }
 
+export const handleVenuesListKeyDown = event => {
+    const firstVenue = event.target.querySelector('.venue');
+    if (!firstVenue) {
+        event.target.focus();
+        return false;
+    }
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        firstVenue.focus();
+    }
+}
+
 export const handleVenueMouseEnter = (event, venueId) => {
     const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
     matchingMarker.classList.remove('marker');
@@ -346,6 +358,24 @@ export const handleVenueMouseOut = (event, venueId) => {
    const matchingMarker = map.querySelector(`[data-id='${venueId.toString()}']`);
    matchingMarker.classList.remove('y-marker');
    matchingMarker.classList.add('marker');
+}
+
+export const handleVenueKeyDown = event => {
+   if (event.key === 'ArrowDown'){
+       event.preventDefault();
+       const next = event.currentTarget.nextElementSibling;
+       if (next) setTimeout(()=>next.focus(), 0);
+   } else if (event.key === 'ArrowUp'){
+       event.preventDefault();
+       const prev = event.currentTarget.previousElementSibling;
+       if (prev) setTimeout(()=>prev.focus(), 0);
+   } else if (event.key === 'Enter'){
+       event.preventDefault();
+       event.currentTarget.click();
+   } else if (event.key === 'Escape'){
+       event.preventDefault();
+       setTimeout(()=>document.querySelector("#venues").focus(), 0);
+   }
 }
 
 // handler for marker mouse enter

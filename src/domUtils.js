@@ -2,7 +2,7 @@ import {
     handleMarkerClick, handleMarkerMouseEnter, handleMarkerMouseOut,
     handleVenueMouseEnter, handleVenueMouseOut,
     handleVenueSelection,
-    handleYearSelection, handleSingleVenueDivClick
+    handleYearSelection, handleSingleVenueDivClick, handleVenueKeyDown
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import { handleGenreSelection } from "./exploreSearchEventHandlers.js"
@@ -423,6 +423,10 @@ export const generateVenuesList = venuesArray => {
         // and the 'venue' class and the data-id attribute set to the venue id
         venueDiv.classList.add('venue');
         venueDiv.dataset.id = venue.id;
+        // for keyboard nav accessibility
+        venueDiv.tabIndex = 0;
+        // this goes with parent div
+        venueDiv.role = "option";
         // create the h3 element with the name of the venue
         const venueHeading = document.createElement('h3');
         venueHeading.innerText = venue.name;
@@ -432,6 +436,7 @@ export const generateVenuesList = venuesArray => {
         venueDiv.addEventListener('click', event => handleVenueSelection(event, venue.id, venuesArray));
         venueDiv.addEventListener('mouseover', event => handleVenueMouseEnter(event, venue.id));
         venueDiv.addEventListener('mouseout', event => handleVenueMouseOut(event, venue.id));
+        venueDiv.addEventListener('keydown', event => handleVenueKeyDown(event));
         // add the venue div to the list
         venuesOutput.push(venueDiv);
     });

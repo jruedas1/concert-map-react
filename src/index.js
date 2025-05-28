@@ -9,8 +9,12 @@ import {
     toggleVisibility
 } from "./domUtils.js";
 import {
-    handleDecadeSelection, handleConfirmYearSelection,
-    handleYearToVenueBreadcrumbClick, handleConcertsToVenuesBreadcrumbClick, handleListMapViewClick
+    handleDecadeSelection,
+    handleConfirmYearSelection,
+    handleYearToVenueBreadcrumbClick,
+    handleConcertsToVenuesBreadcrumbClick,
+    handleListMapViewClick,
+    handleVenuesListKeyDown
 } from "./simpleSearchEventHandlers.js";
 import { handleSearchTypeSelection} from "./searchTypeEventHandlers.js";
 import {
@@ -93,6 +97,9 @@ yearFilter.addEventListener('click', event => toggleVisibility(event, yearList))
 
 const confirmYearButton = document.querySelector("#confirm-year");
 confirmYearButton.addEventListener('click', event => handleConfirmYearSelection(event, map));
+
+const venuesListParent = document.querySelector("#venues");
+venuesListParent.addEventListener('keydown', handleVenuesListKeyDown);
 
 const yearToVenueBreadcrumb = document.querySelector("#back-to-year-edit-div > div");
 yearToVenueBreadcrumb.addEventListener('click', event => handleYearToVenueBreadcrumbClick(event, map));
