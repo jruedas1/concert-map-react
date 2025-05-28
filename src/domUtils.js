@@ -6,7 +6,8 @@ import {
     handleVenueMouseEnter,
     handleVenueMouseOut,
     handleVenueSelection,
-    handleYearSelection
+    handleYearSelection,
+    handleVenueKeyDown
 } from "./simpleSearchEventHandlers.js";
 import {fetchGenreData} from "./dataAccess.js";
 import {handleGenreSelection} from "./exploreSearchEventHandlers.js"
@@ -176,6 +177,9 @@ export const outputVenueToMap = (map, venue) => {
                 popup.remove();
             });
 
+            el.addEventListener('blur', () => {
+                popup.remove();
+            });
 
             return venueMarker;
         }
@@ -201,12 +205,38 @@ export const generateGenreList = async (map) => {
     const genreData = await fetchGenreData();
     for (const genre of genreData){
         const genreDiv = document.createElement('div');
-        genreDiv.innerHTML = `
-             <div class="genre filter-option" data-id="${genre['id']}">
-                 <h3>${genre['name'].toUpperCase()}</h3>
-             </div>
-            `;
+        genreDiv.classList.add('genre');
+        genreDiv.classList.add('filter-option');
+        genreDiv.dataset.id = genre['id'];
+        genreDiv.tabIndex = -1;
+        genreDiv.innerHTML = `<h3>${genre['name'].toUpperCase()}</h3>`;
         genreDiv.addEventListener('click', event => handleGenreSelection(event, map));
+        genreDiv.addEventListener('keydown', e => {
+            if (e.key === 'ArrowDown'){
+                e.preventDefault();
+                const next = genreDiv.nextElementSibling;
+                if (next) next.focus();
+            }
+            if (e.key === 'ArrowUp'){
+                e.preventDefault();
+                const prev = genreDiv.previousElementSibling;
+                if (prev) prev.focus();
+            }
+            if (e.key === 'Enter' || e.key === 'Escape'){
+               
+                const selector = document.querySelector('#year-range .edit')
+                if (e.key === 'Enter'){
+                    e.preventDefault();
+                    genreDiv.click();
+                    selector.focus();
+                }
+                if (e.key === 'Escape'){
+                        e.preventDefault();
+                        selector.click();
+                        selector.focus();
+                    }
+                }
+            });
         genreList.appendChild(genreDiv);
     }
 }
@@ -220,7 +250,21 @@ export const generateYearList = (decade, map) => {
         yearDiv.classList.add('year', 'filter-option');
         yearDiv.dataset.id = i.toString();
         yearDiv.innerHTML = `<h3>${i.toString()}</h3>`;
+        yearDiv.tabIndex = -1;
         yearDiv.addEventListener('click', event => handleYearSelection(event, map));
+        yearDiv.addEventListener('keydown', event => {
+           if (event.key === 'ArrowDown'){
+               event.preventDefault();
+               const next = yearDiv.nextElementSibling;
+               if (next) next.focus();
+           }
+           if (event.key === 'ArrowUp'){
+               event.preventDefault();
+               const prev = yearDiv.previousElementSibling;
+               if (prev) next.focus();
+           }
+           if (event.key === 'Enter') yearDiv.click();
+        });
         newYears.push(yearDiv);
     }
     yearList.replaceChildren(...newYears);
@@ -263,6 +307,8 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
         const customOption = document.createElement("div");
         // Match the content of the custom option to the corresponding hidden default
         customOption.innerText = sourceDropdown.options[i].innerText;
+        // for keyboard accessibility
+        customOption.tabIndex = -1;
         // Each option needs a click handler
         customOption.addEventListener("click", e => {
             // Loop over the hidden dropdown options to find the match
@@ -286,6 +332,36 @@ const createCustomDropdownOptions = (sourceDropdown, customSelector) => {
             // Initiate a click on the dropdown selection to close the dropdown
             customSelector.click();
         });
+        // add events for keyboard accessibility
+        // use preventDefault in each rather than one at the top --
+        // so as not to interfere with other key events
+        customOption.addEventListener('keydown', e => {
+            if (e.key === 'ArrowDown'){
+                e.preventDefault();
+                const next = customOption.nextElementSibling;
+                if (next) next.focus();
+            }
+            if (e.key === 'ArrowUp'){
+                e.preventDefault();
+                const prev = customOption.previousElementSibling;
+                if (prev) prev.focus();
+            }
+            let selector = null;
+            if (e.key === 'Enter' || e.key === 'Escape'){
+                selector = customOption.closest('.selected-and-options-flex-wrapper').querySelector('.custom-selector');
+                if (e.key === 'Enter'){
+                    e.preventDefault();
+                    customOption.click();
+                    selector.focus();
+                }
+            if (e.key === 'Escape'){
+                    e.preventDefault();
+                    selector.click();
+                    selector.focus();
+                }
+            }
+        });
+
         // Once the option div has been created, add it to the array
         customOptions.push(customOption);
     }
@@ -362,6 +438,10 @@ export const generateVenuesList = venuesArray => {
         // and the 'venue' class and the data-id attribute set to the venue id
         venueDiv.classList.add('venue');
         venueDiv.dataset.id = venue.id;
+        // for keyboard nav accessibility
+        venueDiv.tabIndex = 0;
+        // this goes with parent div
+        venueDiv.role = "option";
         // create the h3 element with the name of the venue
         const venueHeading = document.createElement('h3');
         venueHeading.innerText = venue.name;
@@ -371,6 +451,7 @@ export const generateVenuesList = venuesArray => {
         venueDiv.addEventListener('click', event => handleVenueSelection(event, venue.id, venuesArray));
         venueDiv.addEventListener('mouseover', event => handleVenueMouseEnter(event, venue.id));
         venueDiv.addEventListener('mouseout', event => handleVenueMouseOut(event, venue.id));
+        venueDiv.addEventListener('keydown', event => handleVenueKeyDown(event));
         // add the venue div to the list
         venuesOutput.push(venueDiv);
     });

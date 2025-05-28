@@ -18,28 +18,28 @@
         <main>
             <section id="filters">
                 <div id="search-type-selector" class="filter">
-                    <h3 class="search-type-selector search-mode-selector selected">SEARCH</h3>
-                    <h3 class="search-type-selector explore-mode-selector">EXPLORE</h3>
+                    <h3 class="search-type-selector search-mode-selector selected" tabindex="0">SEARCH</h3>
+                    <h3 class="search-type-selector explore-mode-selector" tabindex="0">EXPLORE</h3>
                 </div>
-                <div id="decades" class="filter">
+                <div id="decades" class="filter" tabindex="0">
                    <h3>SELECT A DECADE</h3>
-                   <p class="edit hidden">Change Decade</p>
+                   <p class="edit hidden" tabindex="0">Change Decade</p>
                 </div>
                 <div id="decade-list">
-                    <div class="decade filter-option" data-id="1970">
+                    <div class="decade filter-option" data-id="1970" tabindex="-1">
                         <h3 data-id="1970">1970s</h3>
                      </div>
-                     <div class="decade filter-option" data-id="1980">
+                     <div class="decade filter-option" data-id="1980" tabindex="-1">
                         <h3 data-id="1980">1980s</h3>
                      </div>
-                     <div class="decade filter-option" data-id="1990">
+                     <div class="decade filter-option" data-id="1990" tabindex="-1">
                         <h3 data-id="1990">1990s</h3>
                      </div>
-                     <div class="decade filter-option" data-id="2000">
+                     <div class="decade filter-option" data-id="2000" tabindex="-1">
                         <h3 data-id="2000">2000s</h3>
                      </div>
                 </div>
-                <div id="years" class="filter hidden">
+                <div id="years" class="filter hidden" tabindex="0">
                     <h3>SELECT A YEAR</h3>
                     <p class="edit hidden">Change Year</p>
                 </div>
@@ -56,7 +56,7 @@
                     <div id="back-to-year-edit-div">
                         <div>
                             <img src="./img/left-pointing-arrow.svg" alt="arrow pointing left">
-                            <p class="edit">Change Selections</p>
+                            <p class="edit" tabindex="0">Change Selections</p>
                         </div>
                         <button id="list-view" class="hidden mobile-visible list-map-button">List View</button>
                     </div>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div id="concert-to-venue-breadcrumb" class="hidden">
-                    <div id="back-to-venues">
+                    <div id="back-to-venues" tabindex="0">
                        <img src="./img/left-pointing-arrow.svg" alt="arrow pointing left">
                        <p>Back to venues</p>
                     </div>
@@ -79,14 +79,14 @@
 
                 <div id="year-range" class="filter hidden">
                     <h3>SELECT A DATE RANGE</h3>
-                    <p class="edit hidden">Edit</p>
+                    <p class="edit hidden" tabindex="0">Edit</p>
                 </div>
 
                  <div id="range-genre-breadcrumb-container" class="hidden">
                     <div id="change-range-genre-div">
                        <div>
                            <img src="./img/left-pointing-arrow.svg" alt="arrow pointing left">
-                           <p class="edit">Change Selections</p>
+                           <p class="edit" tabindex="0">Change Selections</p>
                        </div>
                        <button id="explore-list-view" class="hidden mobile-visible list-map-button">List View</button>
                     </div>
@@ -103,14 +103,14 @@
                     <select id="default-end-range-selector" class="hidden"></select>
                     <div id="custom-selector-wrapper">
                         <div class="selected-and-options-flex-wrapper">
-                            <div id="custom-start-range-selector" class="custom-selector select-selected">1970</div>
+                            <div id="custom-start-range-selector" class="custom-selector select-selected" tabindex="0">1970</div>
                             <div class="custom-select-option-wrapper hidden">
                                 <div id="custom-start-range-options" class="custom-options select-items"></div>
                             </div>
                         </div>
                         <div id="range-selection-state">to</div>
                         <div class="selected-and-options-flex-wrapper">
-                            <div id="custom-end-range-selector" class="custom-selector select-selected">1970</div>
+                            <div id="custom-end-range-selector" class="custom-selector select-selected" tabindex="0">1970</div>
                             <div class="custom-select-option-wrapper hidden">
                                 <div id="custom-end-range-options" class="custom-options select-items"></div>
                             </div>
@@ -121,7 +121,7 @@
 
                 <div id="genres" class="filter hidden">
                     <h3>SELECT A GENRE</h3>
-                     <p class="edit hidden">Edit</p>
+                     <p class="edit hidden" tabindex="0">Edit</p>
                 </div>
                 <div id="genre-list" class="hidden">
                 </div>
@@ -129,7 +129,7 @@
                      <button id="confirm-genre-selection" class="next">SHOW MY RESULTS</button>
                 </div>
 
-                <div id="venues" class="overflow-scroll"></div>
+                <div id="venues" class="overflow-scroll" tabindex="0" role="listbox" aria-label="List of Venues"></div>
                 <div id="concerts" class="overflow-scroll"></div>
             </section>
             <section id='map' class="mobile-hidden">

@@ -82,6 +82,10 @@ export const handleEdit5YearRange = event => {
     hideElement(event, showMyResultsButton);
 }
 
+export const selectFirstYearOnArrowPress = event => {
+    console.log(event);
+}
+
 /*
 * Handles interaction with the year-range selectors
 * -- Gets references to selected start and end years
@@ -171,6 +175,8 @@ export const handleConfirm5YearRangeSelection = event => {
     toggleVisibility(event, document.querySelector("#genres"));
     showElement(event, document.querySelector("#genre-list"));
     yearRangeFilter.classList.toggle('explore-selected-filter', true);
+    // for keyboard navigation
+    document.querySelector('.genre').focus();
     // If a genre is already selected, it means the user is coming from "Change Selections"
     // or is returning from the simple search after already having done a visualization
     // In this case show the "show my results" button

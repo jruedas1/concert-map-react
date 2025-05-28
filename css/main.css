@@ -211,7 +211,7 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 /*    background: var(--main-background);*/
 /*}*/
 
-.filter-option:hover, #venues div:hover, .venue-hover, .select-items div:hover {
+.filter-option:hover, #venues div:hover, .venue-hover, .select-items div:hover, .select-items div:focus {
     background: #C1DFDF;
 }
 
