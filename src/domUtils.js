@@ -394,7 +394,7 @@ export const outputOneVenuesConcertsToPage = venue => {
     const submissionLink = document.createElement('div');
     submissionLink.innerHTML = `
         <h2>Missing a concert?</h2>
-        <a href="https://dev.cedish.utsa.edu/sounds/concert-map-feedback" class="link-btn">Contribute Here</a>
+        <a href="https://cedish.utsa.edu/sounds/concert-map-feedback" class="link-btn">Contribute Here</a>
     `;
     submissionLink.classList.add('submission-link');
     concertsDiv.appendChild(submissionLink);
