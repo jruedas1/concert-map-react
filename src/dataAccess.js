@@ -31,7 +31,7 @@ export const fetchData = async key => {
 
 // Function to retrieve data for a specific year
 // This accepts a numeric value
-// Usage: fetchYearRedis(1978)
+// Usage: fetchYear(1978)
 export const fetchYear = async year => {
     try {
         const response = await fetch(`${API_ADDRESS}/years/${year}`);

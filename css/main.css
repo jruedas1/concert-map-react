@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-/* Fonts are set on the body. Font is imported from Google API */
+/* Fonts are set on the body. Font is imported from Adobe fonts (typekit) */
 body {
     font-family: "newnord", 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -58,66 +58,66 @@ Nav and main heading are flex-children to header
 Nav set up is a elements within li elements within a ul
 */
 
-header nav ul {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 2.5rem;
-}
+/*header nav ul {*/
+/*    display: flex;*/
+/*    flex-flow: row nowrap;*/
+/*    gap: 2.5rem;*/
+/*}*/
 
-header nav ul li {
-    list-style: none;
-}
+/*header nav ul li {*/
+/*    list-style: none;*/
+/*}*/
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
+/*nav a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
 
-.nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 4rem;
-        flex-direction: column;
-        width: auto;
-        transition: 0.3s;
-        z-index: 4;
-        background: var(--header-dark);
-        opacity: 0.9;
-        text-align: right;
-        padding: 1rem;
-    }
+/*.nav-menu {*/
+/*        position: fixed;*/
+/*        left: -100%;*/
+/*        top: 4rem;*/
+/*        flex-direction: column;*/
+/*        width: auto;*/
+/*        transition: 0.3s;*/
+/*        z-index: 4;*/
+/*        background: var(--header-dark);*/
+/*        opacity: 0.9;*/
+/*        text-align: right;*/
+/*        padding: 1rem;*/
+/*    }*/
 
-    .nav-menu.active {
-        left: 0;
-        right: 0;
-    }
+/*    .nav-menu.active {*/
+/*        left: 0;*/
+/*        right: 0;*/
+/*    }*/
 
-.hamburger {
-    cursor: pointer;
-}
+/*.hamburger {*/
+/*    cursor: pointer;*/
+/*}*/
 
-   .hamburger.active .bar:nth-child(1){
-        transform: translateY(0.6rem) rotate(45deg);
-    }
+/*   .hamburger.active .bar:nth-child(1){*/
+/*        transform: translateY(0.6rem) rotate(45deg);*/
+/*    }*/
 
-    .hamburger.active .bar:nth-child(2){
-        opacity: 0;
-    }
+/*    .hamburger.active .bar:nth-child(2){*/
+/*        opacity: 0;*/
+/*    }*/
 
-    .hamburger.active .bar:nth-child(3){
-         transform: translateY(-0.6rem) rotate(-45deg);
+/*    .hamburger.active .bar:nth-child(3){*/
+/*         transform: translateY(-0.6rem) rotate(-45deg);*/
 
-    }
+/*    }*/
 
-.bar {
-    display: block;
-    width: 2rem;
-    height: 0.25rem;
-    margin: 0.35rem auto;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-    background: var(--main-background);
-}
+/*.bar {*/
+/*    display: block;*/
+/*    width: 2rem;*/
+/*    height: 0.25rem;*/
+/*    margin: 0.35rem auto;*/
+/*    border-radius: 2px;*/
+/*    transition: all 0.3s ease-in-out;*/
+/*    background: var(--main-background);*/
+/*}*/
 
 /*
     Main element is a flex-child of page-wrapper
@@ -262,16 +262,6 @@ But changes to clickable via JS when it has the "Edit" prompt showing
 */
 .hidden {
    display: none;
-}
-
-/*
-    To show that the popups will not display
-    during explore mode animation.
-    Using very high-specificity selection
-    to override mapbox default.
-*/
-div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
-    cursor: not-allowed;
 }
 
 /*
@@ -697,6 +687,17 @@ Button that toggles list and map view
 .mapboxgl-popup-content p:first-of-type{
     margin-bottom: -0.3rem;
 }
+
+/*
+    To show that the popups will not display
+    during explore mode animation.
+    Using very high-specificity selection
+    to override mapbox default.
+*/
+div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
+    cursor: not-allowed;
+}
+
 
 /*==========PROGRESS BAR =========================*/
 
