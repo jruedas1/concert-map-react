@@ -1,0 +1,14 @@
+.confirm {
+    margin-top: 1.5rem;
+}
+
+.next {
+    border: 1px solid black;
+    background: var(--button-red);
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-family: "newnord", sans-serif;
+}

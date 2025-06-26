@@ -1,0 +1,46 @@
+:root {
+    --main-background: #F1EEEB;
+    --header-dark: #231F20;
+    --various-red: #AD343E;
+    --button-red: #F45B69;
+    --off-white: #F4F4F4;
+    --filter-option: #C1DFE9;
+    --explore-filter-option: #C1DFDF;
+    --concert-heading: #027d7c;
+    --genre-year-output: #067372;
+}
+
+/* Resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {height: 100%}
+
+body {
+    font-family: "newnord", 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#page-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: var(--main-background);
+}
+
+main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100dvh;
+}
+
+#map {
+    position: relative;
+    flex: 1 0 auto;
+    height: 100dvh;
+
+}

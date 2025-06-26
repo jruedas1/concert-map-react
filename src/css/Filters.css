@@ -1,0 +1,175 @@
+section#filters {
+    text-align: center;
+    flex: 0 0 20%;
+    display: flex;
+    flex-flow: column nowrap;
+    max-height: 100dvh;
+    border-right: 2px solid black;
+    background-color: var(--main-background);
+}
+
+
+#filters h3 {
+    font-size: 18px;
+}
+
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter, .filter-option, #venues div, .concert-info {
+    border-bottom: 2px solid black;
+}
+
+/*div#decades.filter, #year-range {*/
+/*    border-top: 2px solid black;*/
+/*}*/
+
+.filter, .filter-option, #venues div  {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.edit {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/*========= BREADCRUMBS ==========*/
+/*
+    Back-to-year-edit-div is to go back
+    to year selection from the venues view.
+    Its direct child contains the arrow and the
+    "change selections" prompt.
+    Back-to-venues is to go from the concerts
+    list to the venues list or view.
+*/
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
+    padding: 0.5rem;
+}
+
+#back-to-venues {
+    padding: 1rem;
+}
+
+/*
+    The arrow + "Change Selections"
+    The arrow + "Back to venues"
+*/
+#back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
+    cursor: pointer;
+}
+
+/*
+    We use this to separate the "change selections"
+    prompt from the "List View / Map View" button.
+*/
+#back-to-year-edit-div, #change-range-genre-div {
+    justify-content: space-between;
+}
+
+#back-to-year-edit-div, #back-to-venues {
+    background-color: var(--filter-option);
+}
+
+/*
+    Some of the "edit" prompts had underlines
+    This may be removed if not needed in future designs.
+    We specify that these have no underline.
+*/
+#back-to-year-edit-div p.edit, #change-range-genre-div p.edit {
+    text-decoration: none;
+}
+
+#back-to-year-edit-div p.edit, #back-to-venues p {
+    font-weight: 500;
+}
+
+/*
+    Created to arrange the breadcrumb indicators
+    Side by side rather than stacking, and to apply
+    correct colors.
+*/
+
+#year-venue-breadcrumb-flex-parent,
+#concert-to-venue-breadcrumb-flex-parent,
+#range-genre-breadcrumb-flex-parent
+
+{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+/*
+   In the back-to-venues and back-to-year breadcrumbs,
+   This contains the year.
+*/
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #range-genre-breadcrumb-flex-parent h2 {
+    border-right: 2px solid black;
+    padding: 1rem;
+}
+
+/*
+     In the concerts view, this contains the name of the venue.
+     In the venues view, it says "Venues"
+
+*/
+#year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p, #range-genre-breadcrumb-flex-parent p {
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*
+Where the venue names are displayed, long venue names can get cramped, so
+the padding here requires special treatment
+*/
+
+#concert-to-venue-breadcrumb-flex-parent h2 {
+    padding: 1rem 0 1rem 1rem;
+}
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+/* Border between the year and the venue name */
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    border-left: 2px solid black;
+}
+
+/*
+Button that toggles list and map view
+*/
+
+.list-map-button {
+    background: #232323;
+    color: var(--main-background);
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+

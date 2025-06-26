@@ -1,0 +1,25 @@
+/*  gap was originally set to 3.5 rem but this
+    effectively creates a min-width so sidebar
+    does not dynamically resize. In future,
+    set media-queries to change this with
+    different screen widths
+*/
+
+#interaction-mode-selector {
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 20%;
+    border: none;
+    padding: 1.5rem;
+    cursor: default;
+    background-color: rgba(6, 115, 114, 1);
+    color: var(--off-white);
+}
+
+#interaction-mode-selector h3 {
+    cursor: pointer;
+}
+
+#interaction-mode-selector h3.selected {
+    border-bottom: 3px solid var(--off-white);
+}
