@@ -173,3 +173,12 @@ Button that toggles list and map view
 }
 
 
+.filter-option:hover, .filter-option:focus,
+#venues div:hover, #venues div:focus,
+.venue-hover,
+.select-items div:hover,
+.select-items div:focus {
+    background: #C1DFDF;
+}
+
+

@@ -21,19 +21,21 @@ function YearList({ decade, onYearSelect }) {
         }
     };
 
+    const renderedYears = years.map((year, index) => (
+        <FilterOption
+            key={year}
+            id={year}
+            label={year}
+            onClick={onYearSelect}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            ref={(el) => (yearRefs.current[index] = el)}
+            isSelected={false} // you could hook this up to selectedYear if needed
+        />
+    ))
+
     return (
         <div id="year-list" role="listbox" aria-label="Year list">
-            {years.map((year, index) => (
-                <FilterOption
-                    key={year}
-                    id={year}
-                    label={year}
-                    onClick={onYearSelect}
-                    onKeyDown={(e) => handleKeyDown(e, index)}
-                    ref={(el) => (yearRefs.current[index] = el)}
-                    isSelected={false} // you could hook this up to selectedYear if needed
-                />
-            ))}
+            {renderedYears}
         </div>
     );
 }

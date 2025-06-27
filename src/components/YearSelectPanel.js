@@ -40,7 +40,6 @@ function YearSelectPanel(){
             {showDecadeList &&
                 <DecadeList
                     onDecadeSelect={handleSelectDecade}
-                    focusOnFirst={true}
                 />}
             {selectedDecade &&
                 <YearSelectionIndicator

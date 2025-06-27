@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import FilterOption from "./FilterOption";
 
-function DecadeList({ onDecadeSelect, focusOnFirst }) {
+function DecadeList({ onDecadeSelect }) {
     const decades = [
         { id: 1970, label: "1970s" },
         { id: 1980, label: "1980s" },
@@ -10,12 +10,6 @@ function DecadeList({ onDecadeSelect, focusOnFirst }) {
     ];
 
     const optionRefs = useRef([]);
-
-    useEffect(() => {
-        if (focusOnFirst && optionRefs.current[0]) {
-            optionRefs.current[0].focus();
-        }
-    }, [focusOnFirst]);
 
     const handleKeyDown = (e, index) => {
         if (e.key === "ArrowDown") {
