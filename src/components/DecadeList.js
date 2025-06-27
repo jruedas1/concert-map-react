@@ -1,24 +1,49 @@
-import FilterOption from './FilterOption.js';
+import { useRef, useEffect } from "react";
+import FilterOption from "./FilterOption";
 
-function DecadeList({ onDecadeSelect }){
+function DecadeList({ onDecadeSelect, focusOnFirst }) {
     const decades = [
-        { id: 1970, label: '1970s' },
-        { id: 1980, label: '1980s' },
-        { id: 1990, label: '1990s' },
-        { id: 2000, label: '2000s' },
+        { id: 1970, label: "1970s" },
+        { id: 1980, label: "1980s" },
+        { id: 1990, label: "1990s" },
+        { id: 2000, label: "2000s" },
     ];
 
-    const handleDecadeClick = (decade) => {
-        onDecadeSelect(decade);
-        return decade;
-    }
+    const optionRefs = useRef([]);
+
+    useEffect(() => {
+        if (focusOnFirst && optionRefs.current[0]) {
+            optionRefs.current[0].focus();
+        }
+    }, [focusOnFirst]);
+
+    const handleKeyDown = (e, index) => {
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            optionRefs.current[index + 1]?.focus();
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            optionRefs.current[index - 1]?.focus();
+        } else if (e.key === "Enter") {
+            onDecadeSelect(decades[index].id);
+        }
+    };
 
     return (
-        <div id="decade-list">
-            {decades.map(({ id, label }) => (
-                <FilterOption key={id} id={id} label={label} onClick={handleDecadeClick}/>
+        <div id="decade-list" role="listbox" aria-label="Decade list">
+            {decades.map(({ id, label }, index) => (
+                <FilterOption
+                    key={id}
+                    id={id}
+                    label={label}
+                    onClick={onDecadeSelect}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    ref={(el) => (optionRefs.current[index] = el)}
+                    isSelected={false}
+                />
             ))}
-        </div>)
+        </div>
+    );
 }
 
 export default DecadeList;

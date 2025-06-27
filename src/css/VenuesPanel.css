@@ -1,12 +1,3 @@
-/*===== CONCERT AND VENUE LISTS =============*/
-
-/*
-    dynamically generated venue and concert data
-    we restrict its height to the height of the
-    filters section, its parent
-    overflow-y: auto creates a scroll bar for any
-    content that overflows the max height
-*/
 #concerts, #venues {
     max-height: 100%;
     text-align: left;

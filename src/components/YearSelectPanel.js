@@ -38,7 +38,10 @@ function YearSelectPanel(){
                 onClick={handleClickDecadeSelectionIndicator}
             />
             {showDecadeList &&
-                <DecadeList onDecadeSelect={handleSelectDecade} />}
+                <DecadeList
+                    onDecadeSelect={handleSelectDecade}
+                    focusOnFirst={true}
+                />}
             {selectedDecade &&
                 <YearSelectionIndicator
                     year={selectedYear}
