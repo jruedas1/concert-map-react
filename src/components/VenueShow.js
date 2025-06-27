@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 
-const VenueShow = forwardRef(({ venue, onClick, onKeyDown }, ref) =>
-    (
+const VenueShow = forwardRef(({ venue, onClick, onKeyDown }, ref) =>{
+
+    return (
       <div
           role="option"
           className='venue'
@@ -12,7 +13,7 @@ const VenueShow = forwardRef(({ venue, onClick, onKeyDown }, ref) =>
       >
           {venue.name}
       </div>
-    ));
+    )});
 
 
 export default VenueShow;

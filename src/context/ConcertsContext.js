@@ -8,6 +8,9 @@ function Provider({ children }){
     const [selectedYear, setSelectedYear] = useState(undefined);
     const [confirmedYear, setConfirmedYear] = useState(undefined);
     const [venues, setVenues] = useState([]);
+    const [selectedVenue, setSelectedVenue] = useState(null);
+    const [hoveredVenueId, setHoveredVenueId] = useState(null);
+
 
     const year = {
         selectedDecade,
@@ -24,7 +27,11 @@ function Provider({ children }){
         venues,
         updateVenues: (retrievedVenues) => {
             setVenues(retrievedVenues);
-        }
+        },
+        selectedVenue,
+        setSelectedVenue,
+        hoveredVenueId,
+        setHoveredVenueId
     }
 
     return (

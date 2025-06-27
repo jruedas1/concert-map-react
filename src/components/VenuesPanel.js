@@ -10,7 +10,7 @@ import ChangeVenuesPrompt from "./ChangeVenuesPrompt.js";
 
 function VenuesPanel(){
     const { venues, confirmedYear, unsetConfirmedYear } = useContext(ConcertsContext);
-    const [selectedVenue, setSelectedVenue] = useState(null);
+    const { selectedVenue, setSelectedVenue } = useContext(ConcertsContext);
 
 
     const handleChangeSelections = () => {

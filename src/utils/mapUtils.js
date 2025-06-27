@@ -1,19 +1,16 @@
 import mapboxgl from "mapbox-gl";
 
-export const outputVenuesToMap = (map, venuesArray) => {
+export const outputVenuesToMap = (map, venuesArray, setSelectedVenue) => {
     venuesArray.forEach((venue) => {
-        outputVenueToMap(map, venue);
+        outputVenueToMap(map, venue, setSelectedVenue);
     });
     const markers = document.querySelectorAll('.marker');
     markers.forEach(marker => {
         const venueId = marker.dataset.id;
-        // marker.addEventListener('mouseover', event => handleMarkerMouseEnter(event, venueId));
-        // marker.addEventListener('mouseout', event => handleMarkerMouseOut(event, venueId));
-        // marker.addEventListener('click', event => handleMarkerClick(map, event, parseInt(venueId), venuesArray));
     });
 }
 
-export const outputVenueToMap = (map, venue) => {
+export const outputVenueToMap = (map, venue, setSelectedVenue) => {
     const address = venue.address;
     const cityStateZip = `${venue.city}, TX ${venue.zip}`;
     if (venue.longitude && venue.latitude){
@@ -36,18 +33,29 @@ export const outputVenueToMap = (map, venue) => {
                           `);
         venueMarker.setPopup(popup);
 
+        // on marker click, reset venue state to show concert list
+        el.addEventListener("click", () => {
+            setSelectedVenue(venue);
+        });
+
         // Show popup on hover
         el.addEventListener('mouseenter', () => {
+            el.classList.remove('marker');
+            el.classList.add('y-marker');
             popup.addTo(map);
             popup.setLngLat([venue.longitude, venue.latitude]);
         });
 
         // Hide popup when leaving the marker
         el.addEventListener('mouseleave', () => {
+            el.classList.remove('y-marker');
+            el.classList.add('marker');
             popup.remove();
         });
 
         el.addEventListener('blur', () => {
+            el.classList.remove('y-marker');
+            el.classList.add('marker');
             popup.remove();
         });
 
