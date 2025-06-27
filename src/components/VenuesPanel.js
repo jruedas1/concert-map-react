@@ -2,13 +2,14 @@ import '../css/VenuesPanel.css';
 import ChangeSelectionsPrompt from "./ChangeSelectionsPrompt.js";
 import YearVenuesIndicator from "./YearVenuesIndicator.js";
 import VenueList from "./VenueList.js";
+import YearConcertsIndicator from "./YearConcertsIndicator.js";
 import ConcertList from "./ConcertList.js";
 import {useContext, useState} from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
+import ChangeVenuesPrompt from "./ChangeVenuesPrompt.js";
 
 function VenuesPanel(){
-    const { venues, unsetConfirmedYear } = useContext(ConcertsContext);
-    const [showVenues, setShowVenues] = useState(true);
+    const { venues, confirmedYear, unsetConfirmedYear } = useContext(ConcertsContext);
     const [selectedVenue, setSelectedVenue] = useState(null);
 
 
@@ -20,12 +21,27 @@ function VenuesPanel(){
         setSelectedVenue(venue);
     }
 
+    const handleBackToVenuesClick = () => {
+        setSelectedVenue(null);
+    }
+
     return (
       <>
-          <ChangeSelectionsPrompt onClick={handleChangeSelections} />
-          <YearVenuesIndicator />
-          {!selectedVenue && <VenueList venues={venues} onVenueClick={handleVenueClick}/>}
-          {selectedVenue && <ConcertList venue={selectedVenue} />}
+          {!selectedVenue &&
+              <>
+                  <ChangeSelectionsPrompt onClick={handleChangeSelections} />
+                  <YearVenuesIndicator />
+                  <VenueList venues={venues} onVenueClick={handleVenueClick}/>
+              </>
+          }
+
+          {selectedVenue &&
+            <>
+                <ChangeVenuesPrompt onClick={handleBackToVenuesClick} />
+                <YearConcertsIndicator year={confirmedYear} venue={selectedVenue} />
+                <ConcertList venue={selectedVenue} />
+            </>
+          }
       </>
     );
 }
