@@ -41,6 +41,28 @@ section#filters {
     display: none;
 }
 
+/*
+    To show that the popups will not display
+    during explore mode animation.
+    Using very high-specificity selection
+    to override mapbox default.
+*/
+div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
+    cursor: not-allowed;
+}
+
+/*
+    After a selection has been made,
+    some filters change color
+*/
+.selected-filter {
+    background-color: var(--filter-option);
+}
+
+.explore-selected-filter, #change-range-genre-div {
+    background-color: var(--explore-filter-option);
+}
+
 /*========= BREADCRUMBS ==========*/
 /*
     Back-to-year-edit-div is to go back
@@ -70,7 +92,7 @@ section#filters {
     The arrow + "Change Selections"
     The arrow + "Back to venues"
 */
-#back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
+.back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
     cursor: pointer;
 }
 
@@ -78,11 +100,12 @@ section#filters {
     We use this to separate the "change selections"
     prompt from the "List View / Map View" button.
 */
-#back-to-year-edit-div, #change-range-genre-div {
+.back-to-year-edit-div, #change-range-genre-div {
     justify-content: space-between;
 }
 
-#back-to-year-edit-div, #back-to-venues {
+#back-to-year-edit-div,
+#back-to-venues {
     background-color: var(--filter-option);
 }
 
