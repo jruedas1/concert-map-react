@@ -196,7 +196,7 @@ Button that toggles list and map view
 }
 
 
-.filter-option:hover, .filter-option:focus,
+.filter-option:hover, .filter-option:focus,z
 #venues div:hover, #venues div:focus,
 .venue-hover,
 .select-items div:hover,

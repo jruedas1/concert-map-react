@@ -1,7 +1,11 @@
 import VenueShow from "./VenueShow.js";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import ConcertsContext from "../context/ConcertsContext.js";
 
 function VenueList({ venues, onVenueClick }){
+
+    const { hoveredVenueId } = useContext(ConcertsContext);
+
     const containerRef = useRef(null);
     const venueRefs = useRef([]);
 
@@ -39,6 +43,7 @@ function VenueList({ venues, onVenueClick }){
             onClick={()=>onVenueClick(venue)}
             onKeyDown={(e) => handleVenueKeyDown(e, index)}
             ref={(el) => (venueRefs.current[index] = el)}
+            isHovered={hoveredVenueId === venue.id}
         />
     });
 

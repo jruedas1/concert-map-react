@@ -1,8 +1,8 @@
 import mapboxgl from "mapbox-gl";
 
-export const outputVenuesToMap = (map, venuesArray, setSelectedVenue) => {
+export const outputVenuesToMap = (map, venuesArray, setSelectedVenue, setHoveredVenueId) => {
     venuesArray.forEach((venue) => {
-        outputVenueToMap(map, venue, setSelectedVenue);
+        outputVenueToMap(map, venue, setSelectedVenue, setHoveredVenueId);
     });
     const markers = document.querySelectorAll('.marker');
     markers.forEach(marker => {
@@ -10,7 +10,7 @@ export const outputVenuesToMap = (map, venuesArray, setSelectedVenue) => {
     });
 }
 
-export const outputVenueToMap = (map, venue, setSelectedVenue) => {
+export const outputVenueToMap = (map, venue, setSelectedVenue, setHoveredVenueId) => {
     const address = venue.address;
     const cityStateZip = `${venue.city}, TX ${venue.zip}`;
     if (venue.longitude && venue.latitude){
@@ -44,6 +44,7 @@ export const outputVenueToMap = (map, venue, setSelectedVenue) => {
             el.classList.add('y-marker');
             popup.addTo(map);
             popup.setLngLat([venue.longitude, venue.latitude]);
+            setHoveredVenueId(venue.id);
         });
 
         // Hide popup when leaving the marker
@@ -51,12 +52,14 @@ export const outputVenueToMap = (map, venue, setSelectedVenue) => {
             el.classList.remove('y-marker');
             el.classList.add('marker');
             popup.remove();
+            setHoveredVenueId(null);
         });
 
         el.addEventListener('blur', () => {
             el.classList.remove('y-marker');
             el.classList.add('marker');
             popup.remove();
+            setHoveredVenueId(null);
         });
 
         return venueMarker;

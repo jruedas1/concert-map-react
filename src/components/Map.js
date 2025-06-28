@@ -10,7 +10,7 @@ function Map({ venues }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
-    const { setSelectedVenue } = useContext(ConcertsContext);
+    const { setSelectedVenue, setHoveredVenueId } = useContext(ConcertsContext);
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -34,7 +34,7 @@ function Map({ venues }){
         if (mapRef.current && venues?.length > 0) {
            removeMarkers();
            removePopups();
-           outputVenuesToMap(mapRef.current, venues, setSelectedVenue);
+           outputVenuesToMap(mapRef.current, venues, setSelectedVenue, setHoveredVenueId);
         }
     }, [venues]);
 
