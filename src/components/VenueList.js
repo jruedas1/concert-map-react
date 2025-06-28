@@ -4,7 +4,7 @@ import ConcertsContext from "../context/ConcertsContext.js";
 
 function VenueList({ venues, onVenueClick }){
 
-    const { hoveredVenueId } = useContext(ConcertsContext);
+    const { setHoveredMarkerVenueId, hoveredVenueId, hoveredMarkerVenueId } = useContext(ConcertsContext);
 
     const containerRef = useRef(null);
     const venueRefs = useRef([]);
@@ -36,14 +36,24 @@ function VenueList({ venues, onVenueClick }){
         }
     };
 
-    const renderedVenues = venues.map((venue, index) => {
+    const sortedVenues = [...venues];
+
+    if (hoveredMarkerVenueId) {
+        const index = sortedVenues.findIndex(v => v.id === hoveredMarkerVenueId);
+        if (index > -1) {
+            const [hoveredVenue] = sortedVenues.splice(index, 1);
+            sortedVenues.unshift(hoveredVenue);
+        }
+    }
+
+    const renderedVenues = sortedVenues.map((venue, index) => {
         return <VenueShow
             venue={venue}
             key={venue.id}
             onClick={()=>onVenueClick(venue)}
             onKeyDown={(e) => handleVenueKeyDown(e, index)}
             ref={(el) => (venueRefs.current[index] = el)}
-            isHovered={hoveredVenueId === venue.id}
+            isHovered={hoveredVenueId === venue.id || hoveredMarkerVenueId === venue.id}
         />
     });
 
