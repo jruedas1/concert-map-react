@@ -3,7 +3,21 @@ import ConcertsContext from "../context/ConcertsContext.js";
 
 const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered }, ref) =>{
 
-    const { setHoveredVenueId } = useContext(ConcertsContext);
+    const { setHoveredVenueId, mapContainer } = useContext(ConcertsContext);
+
+    const handleVenueMouseEnter = (mapContainer) => {
+        setHoveredVenueId(venue.id);
+        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.id.toString()}']`);
+        matchingMarker.classList.remove('marker');
+        matchingMarker.classList.add('y-marker');
+    }
+
+    const handleVenueMouseLeave = (mapContainer) => {
+        setHoveredVenueId(null);
+        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.id.toString()}']`);
+        matchingMarker.classList.remove('y-marker');
+        matchingMarker.classList.add('marker');
+    }
 
     return (
       <div
@@ -13,8 +27,8 @@ const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered }, ref) =>{
           onClick={onClick}
           tabIndex={-1}
           onKeyDown={onKeyDown}
-          onMouseEnter={() => setHoveredVenueId(venue.id)}
-          onMouseLeave={() => setHoveredVenueId(null)}
+          onMouseEnter={() => handleVenueMouseEnter(mapContainer)}
+          onMouseLeave={() => handleVenueMouseLeave(mapContainer)}
       >
           {venue.name}
       </div>

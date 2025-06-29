@@ -11,6 +11,8 @@ function Provider({ children }){
     const [selectedVenue, setSelectedVenue] = useState(null);
     const [hoveredMarkerVenueId, setHoveredMarkerVenueId] = useState(null);
     const [hoveredVenueId, setHoveredVenueId] = useState(null);
+    const [map, setMap] = useState(null);
+    const [mapContainer, setMapContainer] = useState(null);
 
 
     const year = {
@@ -34,7 +36,9 @@ function Provider({ children }){
         hoveredMarkerVenueId,
         setHoveredMarkerVenueId,
         hoveredVenueId,
-        setHoveredVenueId
+        setHoveredVenueId,
+        mapContainer,
+        setMapContainer
     }
 
     return (
