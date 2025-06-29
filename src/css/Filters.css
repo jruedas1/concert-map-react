@@ -204,4 +204,23 @@ Button that toggles list and map view
     background: #C1DFDF;
 }
 
+@media screen and (min-width: 1144px) {
+    section#filters {
+        flex: 0 0 30%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1144px) {
+    section#filters {
+        flex-basis: 37%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section#filters {
+        border-right: none;
+        flex: 0 0 auto;
+        max-height: 100dvh;
+    }
+}
 
