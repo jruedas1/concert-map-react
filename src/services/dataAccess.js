@@ -38,3 +38,12 @@ export const fetchGenreData = async () => {
         console.error("Problem fetching genres:", error);
     }
 }
+
+export const fetchGenreConcertsInYearRange = async (genreId, startYear, endYear) => {
+    try {
+        const response = await fetch(`${API_ADDRESS}/genres/${genreId}/from/${startYear}/to/${endYear}`);
+        return await response.json();
+    } catch (error){
+        console.error("Problem fetching concerts in year range", error);
+    }
+}

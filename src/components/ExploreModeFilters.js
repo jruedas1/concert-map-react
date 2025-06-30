@@ -1,6 +1,6 @@
 import {useState, useContext, useEffect} from "react";
 import GenresContext from "../context/GenresContext.js";
-import { fetchGenreData } from "../services/dataAccess.js";
+import {fetchGenreConcertsInYearRange, fetchGenreData} from "../services/dataAccess.js";
 import DateRangeSelectionIndicator from "./DateRangeSelectionIndicator.js";
 import DualDropdownSection from "./DualDropdownSection.js";
 import SelectGenreButton from "./SelectGenreButton.js";
@@ -65,6 +65,11 @@ function ExploreModeFilters(){
         setShowShowResultsButton(true);
     }
 
+    const handleGetGenreResults = async (startYear, endYear, genre) => {
+        const genreRangeData = await fetchGenreConcertsInYearRange(genre.id, startYear, endYear);
+        console.log(genreRangeData);
+    }
+
     return (
         <section>
             <DateRangeSelectionIndicator
@@ -84,7 +89,12 @@ function ExploreModeFilters(){
                                 genres={genres}
                                 handleGenreClick={handleGenreClick}
                               />}
-            {showShowResultsButton && <ShowGenreResultsButton />}
+            {showShowResultsButton && <ShowGenreResultsButton
+                                        startYear={startYear}
+                                        endYear={endYear}
+                                        genre={selectedGenre}
+                                        onClick={handleGetGenreResults}
+                                      />}
 
         </section>
     );
