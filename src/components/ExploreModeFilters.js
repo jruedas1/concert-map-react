@@ -6,6 +6,7 @@ import DualDropdownSection from "./DualDropdownSection.js";
 import SelectGenreButton from "./SelectGenreButton.js";
 import GenreSelectionIndicator from "./GenreSelectionIndicator.js";
 import GenreList from "./GenreList.js";
+import ShowGenreResultsButton from "./ShowGenreResultsButton.js";
 
 function ExploreModeFilters(){
 
@@ -16,7 +17,9 @@ function ExploreModeFilters(){
     const [showRangeSelection, setShowRangeSelection] = useState(true);
     const [showGenreSelection, setShowGenreSelection] = useState(false);
     const [showGenreList, setShowGenreList] = useState(false);
-    const { startYear, endYear } = useContext(GenresContext);
+    const [genreSelected, setGenreSelected] = useState(false);
+    const [showShowResultsButton, setShowShowResultsButton] = useState(false);
+    const { startYear, endYear, selectedGenre, setSelectedGenre } = useContext(GenresContext);
 
     useEffect(() => {
         const getGenres = async() => {
@@ -33,8 +36,33 @@ function ExploreModeFilters(){
         setShowGenreList(true);
     }
 
+    const handleToggleRangeSelection = () => {
+        setShowRangeSelection(prev => !prev);
+        setShowGenreSelection(false);
+        setShowGenreList(false);
+        setShowShowResultsButton(false);
+        setRangeSelected(false);
+    }
+
     const handleToggleGenreList = () => {
         setShowGenreList(prev => !prev);
+    }
+
+    function capitalizeWords(str) {
+        return str.replace(/(^|[^a-zA-Z0-9])([a-z])/g, (match, sep, char) => {
+            return sep + char.toUpperCase();
+        });
+    }
+
+    const handleGenreClick = (genre, id)=> {
+        const capGenre = capitalizeWords(genre);
+        setSelectedGenre({
+            genre: capGenre,
+            id
+        });
+        setGenreSelected(true);
+        setShowGenreList(false);
+        setShowShowResultsButton(true);
     }
 
     return (
@@ -43,11 +71,21 @@ function ExploreModeFilters(){
                rangeSelected={rangeSelected}
                startYear={startYear}
                endYear={endYear}
+               onClick={handleToggleRangeSelection}
             />
             {showRangeSelection && <DualDropdownSection />}
             {showRangeSelection && <SelectGenreButton  onClick={handleClickSelectGenre} />}
-            {showGenreSelection && <GenreSelectionIndicator onClick={handleToggleGenreList}/>}
-            {showGenreList && <GenreList genres={genres} />}
+            {showGenreSelection && <GenreSelectionIndicator
+                                        onClick={handleToggleGenreList}
+                                        genreSelected={genreSelected}
+                                        selectedGenre={selectedGenre}
+                                   />}
+            {showGenreList && <GenreList
+                                genres={genres}
+                                handleGenreClick={handleGenreClick}
+                              />}
+            {showShowResultsButton && <ShowGenreResultsButton />}
+
         </section>
     );
 }
