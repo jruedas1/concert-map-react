@@ -1,8 +1,9 @@
-function DateRangeSelectionIndicator(){
+function DateRangeSelectionIndicator({ rangeSelected, startYear, endYear }){
     return (
         <div id="year-range" className="filter">
-            <h3>SELECT A DATE RANGE</h3>
-            <p className="edit hidden" tabIndex="0">Edit</p>
+            {!rangeSelected && <h3>SELECT A DATE RANGE</h3>}
+            {rangeSelected && <h3>{startYear}-{endYear}</h3>}
+            {rangeSelected && <p className="edit" tabIndex="0">Edit</p>}
         </div>
     );
 }
