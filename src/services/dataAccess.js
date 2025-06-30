@@ -22,3 +22,21 @@ export const fetchYear = async year => {
         console.error("Problem with fetch operation:", error);
     }
 }
+
+export const fetchGenreData = async () => {
+    try {
+        const response = await fetch(`${API_ADDRESS}/json/genres`);
+        const genres = await response.json();
+        console.log(genres);
+        const genreNames = [];
+        for (const genre of genres['genres']) {
+            genreNames.push({
+                id: genre['id'],
+                name: genre['name']
+            });
+        }
+        return genreNames;
+    } catch (error) {
+        console.error("Problem fetching genres:", error);
+    }
+}

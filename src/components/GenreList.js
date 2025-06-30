@@ -1,7 +1,12 @@
-function GenreList() {
+import GenreShow from "./GenreShow.js";
+
+function GenreList({ genres }) {
+    const renderedGenres = genres.map(genre => (
+        <GenreShow key={genre['id']} genre={genre['name']} id={genre['id']} />
+    ))
     return (
         <div id="genre-list">
-            Genre List
+            {renderedGenres}
         </div>
     );
 }
