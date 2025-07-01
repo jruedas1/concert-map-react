@@ -1,5 +1,6 @@
 import {useState, useContext, useEffect} from "react";
 import GenresContext from "../context/GenresContext.js";
+import AnimationContext from "../context/AnimationContext.js";
 import {fetchGenreConcertsInYearRange, fetchGenreData} from "../services/dataAccess.js";
 import DateRangeSelectionIndicator from "./DateRangeSelectionIndicator.js";
 import DualDropdownSection from "./DualDropdownSection.js";
@@ -19,7 +20,12 @@ function ExploreModeFilters(){
     const [showGenreList, setShowGenreList] = useState(false);
     const [genreSelected, setGenreSelected] = useState(false);
     const [showShowResultsButton, setShowShowResultsButton] = useState(false);
-    const { startYear, endYear, selectedGenre, setSelectedGenre } = useContext(GenresContext);
+    const { startYear,
+            endYear,
+            selectedGenre,
+            setSelectedGenre,
+          } = useContext(GenresContext);
+    const { setGenreConcerts } = useContext(AnimationContext);
 
     useEffect(() => {
         const getGenres = async() => {
@@ -68,6 +74,7 @@ function ExploreModeFilters(){
     const handleGetGenreResults = async (startYear, endYear, genre) => {
         const genreRangeData = await fetchGenreConcertsInYearRange(genre.id, startYear, endYear);
         console.log(genreRangeData);
+        setGenreConcerts(genreRangeData);
     }
 
     return (

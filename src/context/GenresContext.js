@@ -6,6 +6,7 @@ function Provider({ children }){
     const [startYear, setStartYear] = useState(1970);
     const [endYear, setEndYear] = useState(1970);
     const [selectedGenre, setSelectedGenre] = useState(null);
+    const [genreYearRangeData, setGenreYearRangeData] = useState([]);
 
     const genres = {
         startYear,
@@ -13,7 +14,9 @@ function Provider({ children }){
         endYear,
         setEndYear,
         selectedGenre,
-        setSelectedGenre
+        setSelectedGenre,
+        genreYearRangeData,
+        setGenreYearRangeData
     }
 
     return (

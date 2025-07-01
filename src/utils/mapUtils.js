@@ -76,3 +76,5 @@ export const removePopups = () => {
     popups.forEach(popup => popup.remove());
 };
 
+
+
