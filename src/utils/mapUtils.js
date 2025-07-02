@@ -25,7 +25,6 @@ export const outputVenueToMap = (map, venue, setSelectedVenue, setHoveredMarkerV
             offset: [30, 0],
             anchor: 'left'
         })
-            // .setHTML('<h2>'+ venue.name + '</h2>');
             .setHTML(`
                             <h2>${venue.name}</h2>
                             <p>${address}</p>

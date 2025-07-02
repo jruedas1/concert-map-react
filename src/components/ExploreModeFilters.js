@@ -1,7 +1,7 @@
 import {useState, useContext, useEffect} from "react";
 import GenresContext from "../context/GenresContext.js";
 import AnimationContext from "../context/AnimationContext.js";
-import {fetchGenreConcertsInYearRange, fetchGenreData} from "../services/dataAccess.js";
+import {fetchGenreConcertsInYearRange, fetchGenreData, getVenue} from "../services/dataAccess.js";
 import DateRangeSelectionIndicator from "./DateRangeSelectionIndicator.js";
 import DualDropdownSection from "./DualDropdownSection.js";
 import SelectGenreButton from "./SelectGenreButton.js";
@@ -10,8 +10,6 @@ import GenreList from "./GenreList.js";
 import ShowGenreResultsButton from "./ShowGenreResultsButton.js";
 
 function ExploreModeFilters(){
-
-
 
     const [genres, setGenres] = useState([]);
     const [rangeSelected, setRangeSelected] = useState(false);
@@ -73,6 +71,7 @@ function ExploreModeFilters(){
 
     const handleGetGenreResults = async (startYear, endYear, genre) => {
         const genreRangeData = await fetchGenreConcertsInYearRange(genre.id, startYear, endYear);
+        console.log('fetched from API:');
         console.log(genreRangeData);
         setGenreConcerts(genreRangeData);
     }

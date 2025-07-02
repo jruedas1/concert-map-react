@@ -4,13 +4,16 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import "../css/Map.css";
 import access_token from './keys.js';
 import ConcertsContext from "../context/ConcertsContext.js";
+import AnimationContext from "../context/AnimationContext.js";
 import { outputVenuesToMap, removeMarkers, removePopups } from "../utils/mapUtils.js";
+
 
 function Map({ venues }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
     const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId} = useContext(ConcertsContext);
+    const { genreConcerts, genreConcertIndex } = useContext(AnimationContext);
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -39,6 +42,13 @@ function Map({ venues }){
            outputVenuesToMap(mapRef.current, venues, setSelectedVenue, setHoveredMarkerVenueId);
         }
     }, [venues]);
+
+    useEffect(() => {
+        if (mapRef.current && genreConcerts?.length > 0) {
+            const concert = genreConcerts[genreConcertIndex];
+            console.log(concert);
+        }
+    }, [genreConcertIndex]);
 
     return <div id="map" ref={mapContainerRef} />;
 }
