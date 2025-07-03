@@ -79,5 +79,29 @@ export const findMarkerById = (map, id) => {
     return map['_container'].querySelector(`[data-id='${id.toString()}']`);
 }
 
+export const highlightMarker = marker => {
+    marker.classList.remove('marker');
+    marker.classList.add('y-marker');
+}
+
+export const deHighlightMarker = marker => {
+    marker.classList.remove('y-marker');
+    marker.classList.add('marker');
+}
+
+export const findHighlightedMarkers = (map) => {
+    return map['_container'].querySelectorAll('.y-marker');
+}
+
+export const findAndDeHighlightMarkers = (map) => {
+    const highlightedMarkers = findHighlightedMarkers(map);
+    if (highlightedMarkers.length !== 0) highlightedMarkers.forEach(marker => deHighlightMarker(marker));
+}
+
+export const findAndHighlightMarker = (map, venueId) => {
+    const marker = findMarkerById(map, venueId);
+    if (marker) highlightMarker(marker);
+}
+
 
 

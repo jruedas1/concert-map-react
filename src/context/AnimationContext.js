@@ -13,6 +13,11 @@ function Provider({children}){
         setIsAnimating(false);
     };
 
+    const startAnimation = () => {
+        setGenreConcertIndex(0);
+        setIsAnimating(true);
+    };
+
     const animation = {
         genreConcerts,
         setGenreConcerts,
@@ -40,10 +45,8 @@ function Provider({children}){
 
     useEffect(()=>{
         console.log(uniqueVenues);
-        if (genreConcerts?.length > 0) {
-
-            setGenreConcertIndex(-1);
-            setIsAnimating(true);
+        if (uniqueVenues && genreConcerts?.length > 0) {
+            startAnimation();
         }
     }, [uniqueVenues]);
 

@@ -9,7 +9,9 @@ import { outputVenueToMap,
     outputVenuesToMap,
     removeMarkers,
     removePopups,
-    findMarkerById
+    findMarkerById,
+    findAndDeHighlightMarkers,
+    findAndHighlightMarker
 } from "../utils/mapUtils.js";
 
 
@@ -50,6 +52,8 @@ function Map({ venues }){
 
     useEffect(() => {
         if (mapRef.current && genreConcerts?.length > 0) {
+            console.log(genreConcerts);
+            console.log(genreConcertIndex);
             const concert = genreConcerts[genreConcertIndex];
             console.log(concert);
             console.log(concert["venue_id"]);
@@ -57,11 +61,12 @@ function Map({ venues }){
             const venue = uniqueVenues[venueId];
             console.log(venue);
             const venueMarker = findMarkerById(mapRef.current, venueId);
-            console.log(venueMarker);
+            if (venueMarker) findAndHighlightMarker(mapRef.current, venueId);
             if (!venueMarker) {
                 const marker = outputVenueToMap(mapRef.current, venue, setSelectedVenue, setHoveredMarkerVenueId);
-            }
-
+                findAndDeHighlightMarkers(mapRef.current);
+                findAndHighlightMarker(mapRef.current, venueId);
+                }
         }
     }, [genreConcertIndex]);
 
