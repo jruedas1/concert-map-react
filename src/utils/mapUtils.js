@@ -75,5 +75,9 @@ export const removePopups = () => {
     popups.forEach(popup => popup.remove());
 };
 
+export const findMarkerById = (map, id) => {
+    return map['_container'].querySelector(`[data-id='${id.toString()}']`);
+}
+
 
 

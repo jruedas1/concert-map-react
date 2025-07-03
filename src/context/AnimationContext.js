@@ -6,6 +6,7 @@ const AnimationContext = createContext();
 function Provider({children}){
     const [genreConcerts, setGenreConcerts] = useState([]);
     const [genreConcertIndex, setGenreConcertIndex] = useState(-1);
+    const [uniqueVenues, setUniqueVenues] = useState(null);
     const [isAnimating, setIsAnimating] = useState(false);
 
     const stopAnimation = () => {
@@ -17,16 +18,34 @@ function Provider({children}){
         setGenreConcerts,
         genreConcertIndex,
         setGenreConcertIndex,
-        stopAnimation
+        stopAnimation,
+        uniqueVenues
     }
 
+    // this works but it's clunky and slow compared to having all the data
+    // stored in genres all at once
+    useEffect(() => {
+       const getUniqueVenues = async () => {
+           const uniqueVenueIds = [... new Set(genreConcerts.map(concert => concert['venue_id']))];
+           const uniqueVenues = await Promise.all(uniqueVenueIds.map(venueId => getVenue(venueId)));
+           const uniqueVenueMap = uniqueVenues.reduce((acc, venue) => {
+               acc[venue.id] = venue;
+               return acc;
+           }, {});
+           console.log(uniqueVenueMap);
+           setUniqueVenues(uniqueVenueMap);
+       }
+       getUniqueVenues();
+    }, [genreConcerts]);
+
     useEffect(()=>{
+        console.log(uniqueVenues);
         if (genreConcerts?.length > 0) {
 
             setGenreConcertIndex(-1);
             setIsAnimating(true);
         }
-    }, [genreConcerts]);
+    }, [uniqueVenues]);
 
     useEffect(() => {
         if (!isAnimating) return;
