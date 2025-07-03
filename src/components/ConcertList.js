@@ -1,8 +1,8 @@
 import ConcertShow from "./ConcertShow.js";
 
-function ConcertList({venue}) {
+function ConcertList({concerts}) {
 
-    const renderedConcerts = venue.concerts.map((concert) => {
+    const renderedConcerts = concerts.map((concert) => {
         return <ConcertShow concert={concert} key={concert.id} />;
     });
     return (

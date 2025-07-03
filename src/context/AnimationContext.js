@@ -27,7 +27,7 @@ function Provider({children}){
         uniqueVenues
     }
 
-    // this works but it's clunky and slow compared to having all the data
+    // this works, but it's clunky and slow compared to having all the data
     // stored in genres all at once
     useEffect(() => {
        const getUniqueVenues = async () => {

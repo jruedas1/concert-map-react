@@ -29,7 +29,9 @@ function VenuesPanel(){
       <>
           {!selectedVenue &&
               <>
-                  <ChangeSelectionsPrompt onClick={handleChangeSelections} />
+                  <ChangeSelectionsPrompt
+                      divId="back-to-year-edit-div"
+                      onClick={handleChangeSelections} />
                   <YearVenuesIndicator />
                   <VenueList venues={venues} onVenueClick={handleVenueClick}/>
               </>
@@ -39,7 +41,7 @@ function VenuesPanel(){
             <>
                 <ChangeVenuesPrompt onClick={handleBackToVenuesClick} />
                 <YearConcertsIndicator year={confirmedYear} venue={selectedVenue} />
-                <ConcertList venue={selectedVenue} />
+                <ConcertList concerts={selectedVenue.concerts} />
             </>
           }
       </>

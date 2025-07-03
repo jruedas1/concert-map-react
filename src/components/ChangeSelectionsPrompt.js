@@ -1,4 +1,4 @@
-function ChangeSelectionsPrompt({ onClick }){
+function ChangeSelectionsPrompt({ onClick, divId }){
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -8,7 +8,7 @@ function ChangeSelectionsPrompt({ onClick }){
     };
 
     return (
-        <div id="back-to-year-edit-div">
+        <div id={divId}>
             <div tabIndex="0"
                  onClick={onClick}
                  onKeyDown={handleKeyDown}
