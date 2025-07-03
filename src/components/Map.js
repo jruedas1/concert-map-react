@@ -61,12 +61,11 @@ function Map({ venues }){
             const venue = uniqueVenues[venueId];
             console.log(venue);
             const venueMarker = findMarkerById(mapRef.current, venueId);
-            if (venueMarker) findAndHighlightMarker(mapRef.current, venueId);
+            findAndDeHighlightMarkers(mapRef.current);
             if (!venueMarker) {
                 const marker = outputVenueToMap(mapRef.current, venue, setSelectedVenue, setHoveredMarkerVenueId);
-                findAndDeHighlightMarkers(mapRef.current);
-                findAndHighlightMarker(mapRef.current, venueId);
-                }
+            }
+            findAndHighlightMarker(mapRef.current, venueId);
         }
     }, [genreConcertIndex]);
 
