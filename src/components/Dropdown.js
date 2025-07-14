@@ -22,6 +22,17 @@ function Dropdown ({ options, selectedYear, onSelect, id }) {
         setIsOpen(false);
     }
 
+    const renderedOptions = options.map((year) => (
+        <div
+            key={year}
+            className={`custom-option ${year === selectedYear ? "same-as-selected" : ""}`}
+            onClick={() => handleOptionClick(year)}
+        >
+            {year}
+        </div>
+    ));
+
+
     return (
         <div className="selected-and-options-flex-wrapper">
             <div
@@ -32,11 +43,9 @@ function Dropdown ({ options, selectedYear, onSelect, id }) {
                 {selectedYear}
             </div>
             <div className='custom-select-option-wrapper'>
-                {isOpen && <DropdownOptions
-                    options={options}
-                    onClick={handleOptionClick}
-                    selectedYear={selectedYear}
-                />}
+                {isOpen && <div className='custom-options select-items'>
+                    {renderedOptions}
+                </div>}
             </div>
         </div>
     );
