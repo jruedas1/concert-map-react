@@ -20,19 +20,19 @@ function DualDropdownSection(){
 
     return (
         <div id="custom-selector-wrapper">
-           <Dropdown
-               id="custom-start-range-selector"
-               options={startOptions}
-               selectedYear={startYear}
-               onSelect={setStartYear}
-           />
-           <div id="range-selection-state">to</div>
-           <Dropdown
-               id="custom-end-range-selector"
-               options={endOptions}
-               selectedYear={endYear}
-               onSelect={setEndYear}
-           />
+            <Dropdown
+                id="custom-start-range-selector"
+                options={startOptions}
+                selectedYear={startYear}
+                onSelect={setStartYear}
+            />
+            <div id="range-selection-state">to</div>
+            <Dropdown
+                id="custom-end-range-selector"
+                options={endOptions}
+                selectedYear={endYear}
+                onSelect={setEndYear}
+            />
         </div>
     );
 }
