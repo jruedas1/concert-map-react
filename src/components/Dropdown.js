@@ -1,34 +1,25 @@
 import { useState, useContext } from "react";
-import DropdownOptions from "./DropdownOptions.js";
-import GenresContext from "../context/GenresContext.js";
 
-function Dropdown ({ options, selectedYear, onSelect, id }) {
+function Dropdown ({ options, value, onChange }) {
 
     const [isOpen, setIsOpen] = useState(false);
-    const { startYear, setStartYear, endYear, setEndYear } = useContext(GenresContext);
 
     const toggleDropdown = () => {
         setIsOpen(prev => !prev);
     };
 
     const handleOptionClick = (year) => {
-        onSelect(year);
-        if (id.includes("end")) {
-            if (year < startYear) setStartYear(year);
-        }
-        if (id.includes("start")) {
-            if (year > endYear) setEndYear(year);
-        }
+        onChange(year);
         setIsOpen(false);
     }
 
-    const renderedOptions = options.map((year) => (
+    const renderedOptions = options.map((option) => (
         <div
-            key={year}
-            className={`custom-option ${year === selectedYear ? "same-as-selected" : ""}`}
-            onClick={() => handleOptionClick(year)}
+            key={option}
+            className={`custom-option ${option === value ? "same-as-selected" : ""}`}
+            onClick={() => handleOptionClick(option)}
         >
-            {year}
+            {option}
         </div>
     ));
 
@@ -40,7 +31,7 @@ function Dropdown ({ options, selectedYear, onSelect, id }) {
                 tabIndex={0}
                 onClick={toggleDropdown}
             >
-                {selectedYear}
+                {value}
             </div>
             <div className='custom-select-option-wrapper'>
                 {isOpen && <div className='custom-options select-items'>

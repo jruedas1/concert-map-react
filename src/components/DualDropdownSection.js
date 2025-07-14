@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import '../css/DualDropdownSection.css';
 import Dropdown from "./Dropdown";
 import GenresContext from "../context/GenresContext.js";
@@ -18,20 +18,32 @@ function DualDropdownSection(){
 
     const { startYear, setStartYear, endYear, setEndYear } = useContext(GenresContext);
 
+    const handleStartYearChange = (newStart) => {
+        setStartYear(newStart);
+        if (newStart > endYear) {
+            setEndYear(newStart);
+        }
+    };
+
+    const handleEndYearChange = (newEnd) => {
+        setEndYear(newEnd);
+        if (newEnd < startYear) {
+            setStartYear(newEnd);
+        }
+    };
+
     return (
         <div id="custom-selector-wrapper">
             <Dropdown
-                id="custom-start-range-selector"
                 options={startOptions}
-                selectedYear={startYear}
-                onSelect={setStartYear}
+                value={startYear}
+                onChange={handleStartYearChange}
             />
             <div id="range-selection-state">to</div>
             <Dropdown
-                id="custom-end-range-selector"
                 options={endOptions}
-                selectedYear={endYear}
-                onSelect={setEndYear}
+                value={endYear}
+                onChange={handleEndYearChange}
             />
         </div>
     );
