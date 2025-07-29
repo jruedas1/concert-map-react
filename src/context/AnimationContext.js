@@ -9,6 +9,10 @@ function Provider({children}){
     const [uniqueVenues, setUniqueVenues] = useState(null);
     const [isAnimating, setIsAnimating] = useState(false);
 
+    const progress = genreConcerts.length ?
+        (genreConcertIndex + 1) / genreConcerts.length * 100 :
+        0;
+
     const stopAnimation = () => {
         setIsAnimating(false);
     };
@@ -24,7 +28,8 @@ function Provider({children}){
         genreConcertIndex,
         setGenreConcertIndex,
         stopAnimation,
-        uniqueVenues
+        uniqueVenues,
+        progress
     }
 
     // this works, but it's clunky and slow compared to having all the data
@@ -37,14 +42,12 @@ function Provider({children}){
                acc[venue.id] = venue;
                return acc;
            }, {});
-           console.log(uniqueVenueMap);
            setUniqueVenues(uniqueVenueMap);
        }
        getUniqueVenues();
     }, [genreConcerts]);
 
     useEffect(()=>{
-        console.log(uniqueVenues);
         if (uniqueVenues && genreConcerts?.length > 0) {
             startAnimation();
         }
@@ -54,7 +57,6 @@ function Provider({children}){
         if (!isAnimating) return;
 
         if (genreConcertIndex >= genreConcerts.length - 1) {
-            console.log("animation finished");
             setIsAnimating(false);
             return;
         }

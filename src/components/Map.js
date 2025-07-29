@@ -13,6 +13,7 @@ import { outputVenueToMap,
     findAndDeHighlightMarkers,
     findAndHighlightMarker
 } from "../utils/mapUtils.js";
+import ProgressBar from "./ProgressBar";
 
 
 function Map({ venues }){
@@ -52,14 +53,14 @@ function Map({ venues }){
 
     useEffect(() => {
         if (mapRef.current && genreConcerts?.length > 0) {
-            console.log(genreConcerts);
-            console.log(genreConcertIndex);
+            // console.log(genreConcerts);
+            // console.log(genreConcertIndex);
             const concert = genreConcerts[genreConcertIndex];
-            console.log(concert);
-            console.log(concert["venue_id"]);
+            // console.log(concert);
+            // console.log(concert["venue_id"]);
             const venueId = concert["venue_id"];
             const venue = uniqueVenues[venueId];
-            console.log(venue);
+            // console.log(venue);
             const venueMarker = findMarkerById(mapRef.current, venueId);
             findAndDeHighlightMarkers(mapRef.current);
             if (!venueMarker) {
@@ -69,7 +70,12 @@ function Map({ venues }){
         }
     }, [genreConcertIndex]);
 
-    return <div id="map" ref={mapContainerRef} />;
+    return (
+        <div id="map" ref={mapContainerRef}>
+            <ProgressBar className="progress-bar" />
+        </div>
+
+    );
 }
 
 export default Map;
