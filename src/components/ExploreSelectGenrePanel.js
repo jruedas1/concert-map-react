@@ -9,7 +9,7 @@ import GenreSelectionIndicator from "./GenreSelectionIndicator.js";
 import GenreList from "./GenreList.js";
 import ShowGenreResultsButton from "./ShowGenreResultsButton.js";
 
-function ExploreSelectGenrePanel() {
+function ExploreSelectGenrePanel({ resetTrigger }) {
     const [genres, setGenres] = useState([]);
     const [rangeSelected, setRangeSelected] = useState(false);
     const [showRangeSelection, setShowRangeSelection] = useState(true);
@@ -19,7 +19,7 @@ function ExploreSelectGenrePanel() {
     const [showShowResultsButton, setShowShowResultsButton] = useState(false);
 
     const { startYear, endYear, selectedGenre, setSelectedGenre } = useContext(GenresContext);
-    const { setGenreConcerts } = useContext(AnimationContext);
+    const { setGenreConcerts, setIsAnimating } = useContext(AnimationContext);
 
     useEffect(() => {
         const getGenres = async () => {
@@ -67,6 +67,15 @@ function ExploreSelectGenrePanel() {
         const genreRangeData = await fetchGenreConcertsInYearRange(selectedGenre.id, startYear, endYear);
         setGenreConcerts(genreRangeData);
     };
+
+    useEffect(() => {
+        setRangeSelected(false);
+        setShowRangeSelection(true);
+        setShowGenreSelection(false);
+        setShowGenreList(false);
+        setGenreSelected(false);
+        setShowShowResultsButton(false);
+    }, [resetTrigger]);
 
     return (
         <section>

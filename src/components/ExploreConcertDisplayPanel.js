@@ -5,7 +5,7 @@ import ChangeSelectionsPrompt from "./ChangeSelectionsPrompt.js";
 import DateRangeGenreIndicator from "./DateRangeGenreIndicator.js";
 import ConcertList from "./ConcertList.js";
 
-function ExploreConcertDisplayPanel() {
+function ExploreConcertDisplayPanel({ onChangeSelection }) {
     const { selectedGenre, startYear, endYear } = useContext(GenresContext);
     const { genreConcerts, genreConcertIndex } = useContext(AnimationContext);
 
@@ -16,7 +16,7 @@ function ExploreConcertDisplayPanel() {
 
     return (
       <>
-        <ChangeSelectionsPrompt divId="change-range-genre-div" />
+        <ChangeSelectionsPrompt divId="change-range-genre-div" onClick={onChangeSelection} />
         <DateRangeGenreIndicator
             selectedGenre={selectedGenre}
             startYear={startYear}
