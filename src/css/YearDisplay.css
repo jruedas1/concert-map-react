@@ -1,0 +1,10 @@
+#animation-year-output {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    z-index: 4;
+    color: var(--genre-year-output);
+    font-size: 5rem;
+    font-family: "newnord", sans-serif;
+
+}

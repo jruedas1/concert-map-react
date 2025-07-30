@@ -14,6 +14,7 @@ import { outputVenueToMap,
     findAndHighlightMarker
 } from "../utils/mapUtils.js";
 import ProgressBar from "./ProgressBar";
+import YearDisplay from "./YearDisplay";
 
 
 function Map({ venues }){
@@ -72,6 +73,7 @@ function Map({ venues }){
 
     return (
         <div id="map" ref={mapContainerRef}>
+            <YearDisplay />
             <ProgressBar className="progress-bar" />
         </div>
 

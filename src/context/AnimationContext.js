@@ -13,6 +13,10 @@ function Provider({children}){
         (genreConcertIndex + 1) / genreConcerts.length * 100 :
         0;
 
+    const currentYear = genreConcertIndex >= 0 ?
+        genreConcerts[genreConcertIndex].Year
+        : null;
+
     const stopAnimation = () => {
         setIsAnimating(false);
     };
@@ -29,7 +33,8 @@ function Provider({children}){
         setGenreConcertIndex,
         stopAnimation,
         uniqueVenues,
-        progress
+        progress,
+        currentYear
     }
 
     // this works, but it's clunky and slow compared to having all the data

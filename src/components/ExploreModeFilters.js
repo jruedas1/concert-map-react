@@ -3,6 +3,7 @@ import AnimationContext from "../context/AnimationContext.js";
 import GenresContext from "../context/GenresContext";
 import ExploreSelectGenrePanel from "./ExploreSelectGenrePanel.js";
 import ExploreConcertDisplayPanel from "./ExploreConcertDisplayPanel.js";
+import {removeMarkers} from "../utils/mapUtils";
 
 function ExploreModeFilters() {
     const { genreConcerts, setGenreConcerts, setGenreConcertIndex, stopAnimation } = useContext(AnimationContext);
@@ -16,6 +17,7 @@ function ExploreModeFilters() {
         setGenreConcertIndex(-1);
         setSelectedGenre(null);
         setResetTrigger(prev => prev + 1);
+        removeMarkers();
     }
 
     return (
