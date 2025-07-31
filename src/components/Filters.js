@@ -4,7 +4,7 @@ import SearchModeFilters from "./SearchModeFilters.js";
 import InteractionModeSelector from "./InteractionModeSelector.js";
 import ExploreModeFilters from "./ExploreModeFilters.js";
 import AnimationContext from "../context/AnimationContext";
-import {removeMarkers} from "../utils/mapUtils";
+import { removeMarkers } from "../utils/mapUtils";
 
 function Filters(){
     const [interactionMode, setInteractionMode] = useState('search');
