@@ -26,6 +26,13 @@ function Provider({children}){
         setIsAnimating(true);
     };
 
+    const resetAnimation = () => {
+        setGenreConcerts([]);
+        setGenreConcertIndex(-1);
+        setIsAnimating(false);
+        setUniqueVenues(null);
+    }
+
     const animation = {
         genreConcerts,
         setGenreConcerts,
@@ -34,7 +41,8 @@ function Provider({children}){
         stopAnimation,
         uniqueVenues,
         progress,
-        currentYear
+        currentYear,
+        resetAnimation
     }
 
     // this works, but it's clunky and slow compared to having all the data
