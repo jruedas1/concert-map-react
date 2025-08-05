@@ -28,20 +28,6 @@ function Dropdown ({ options, value, onChange }) {
         }
     };
 
-    // const handleOptionKeyDown = (e, index) => {
-    //     if (e.key === "ArrowDown") {
-    //         e.preventDefault();
-    //         if (index < options.length - 1) {
-    //             setFocusedIndex(index + 1);
-    //         }
-    //     } else if (e.key === "ArrowUp") {
-    //         e.preventDefault();
-    //         if (index > 0) {
-    //             setFocusedIndex(index - 1);
-    //         }
-    //     }
-    // };
-
     useEffect(() => {
         if (isOpen && focusedIndex >= 0 && optionsRef.current[focusedIndex]) {
             optionsRef.current[focusedIndex].focus();
