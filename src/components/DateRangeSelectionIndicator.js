@@ -16,7 +16,7 @@ function DateRangeSelectionIndicator({ rangeSelected, startYear, endYear, onClic
             {rangeSelected && <p
                 className="edit"
                 tabIndex="0"
-                onKeyDown={onClick}
+                onKeyDown={handleKeyDown}
             >
                 Edit
             </p>}
