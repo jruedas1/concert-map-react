@@ -98,6 +98,7 @@ function ExploreSelectGenrePanel({ resetTrigger }) {
                 <GenreList
                     genres={genres}
                     handleGenreClick={handleGenreClick}
+                    selectedGenre={selectedGenre}
                 />
             )}
             {showShowResultsButton && (
