@@ -5,6 +5,7 @@ function Dropdown ({ options, value, onChange }) {
     const [isOpen, setIsOpen] = useState(false);
     const [focusedIndex, setFocusedIndex] = useState(-1);
     const optionsRef = useRef([]);
+    const buttonRef = useRef(null);
 
     const toggleDropdown = () => {
         setIsOpen(prev => !prev);
@@ -70,10 +71,12 @@ function Dropdown ({ options, value, onChange }) {
                 } else if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     handleOptionClick(option);
+                    buttonRef.current?.focus();
                 } else if (e.key === "Escape"){
                     e.preventDefault();
                     setIsOpen(false);
                     setFocusedIndex(-1);
+                    buttonRef.current?.focus();
                 }
             }}
         >
@@ -86,6 +89,7 @@ function Dropdown ({ options, value, onChange }) {
         <div className="selected-and-options-flex-wrapper">
             <div
                 className={`custom-selector select-selected ${isOpen ? "select-arrow-active" : ""}`}
+                ref={buttonRef}
                 tabIndex={0}
                 onClick={toggleDropdown}
                 onKeyDown={handleKeyDown}
