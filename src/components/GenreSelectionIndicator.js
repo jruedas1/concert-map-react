@@ -1,4 +1,11 @@
 function GenreSelectionIndicator({ onClick, genreSelected, selectedGenre }) {
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onClick();
+        }
+    };
+
     return (
         <div
             id="genres"
@@ -7,7 +14,14 @@ function GenreSelectionIndicator({ onClick, genreSelected, selectedGenre }) {
         >
             {!genreSelected && <h3>SELECT A GENRE</h3>}
             {genreSelected && <h3>{selectedGenre.genre}</h3>}
-            {genreSelected && <p className="edit" tabIndex="0">Edit</p>}
+            {genreSelected && <p
+                className="edit"
+                tabIndex="0"
+                onKeyDown={handleKeyDown}
+                >
+                  Edit
+                </p>
+            }
         </div>
     );
 }
