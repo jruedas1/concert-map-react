@@ -4,11 +4,12 @@ function Dropdown ({ options, value, onChange }) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [focusedIndex, setFocusedIndex] = useState(-1);
+
     const optionsRef = useRef([]);
     const buttonRef = useRef(null);
 
     const toggleDropdown = () => {
-        setIsOpen(prev => !prev);
+        setIsOpen(prev => !prev)
         setFocusedIndex(-1);
     };
 
@@ -19,12 +20,15 @@ function Dropdown ({ options, value, onChange }) {
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault(); // prevent scrolling on space
+            e.preventDefault();
             toggleDropdown();
+            const currentIndex = options.indexOf(value);
+            setFocusedIndex(currentIndex !== -1 ? currentIndex : 0);
         }
         if (e.key === "ArrowDown" && isOpen) {
             e.preventDefault();
-            setFocusedIndex(0); // move into options only if already open
+            const currentIndex = options.indexOf(value);
+            setFocusedIndex(currentIndex !== -1 ? currentIndex : 0);
         }
     };
 
@@ -40,7 +44,7 @@ function Dropdown ({ options, value, onChange }) {
             ref={el => optionsRef.current[index] = el}
             className={`custom-option ${option === value ? "same-as-selected" : ""}`}
             onClick={() => handleOptionClick(option)}
-            tabIndex={-1}
+            tabIndex={focusedIndex === index ? 0 : -1}
             role="option"
             aria-selected={option === value}
             onKeyDown={(e) => {

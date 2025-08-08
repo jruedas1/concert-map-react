@@ -16,6 +16,8 @@ function DateRangeSelectionIndicator({ rangeSelected, startYear, endYear, onClic
             {rangeSelected && <p
                 className="edit"
                 tabIndex="0"
+                role="button"
+                aria-label="Edit date range"
                 onKeyDown={handleKeyDown}
             >
                 Edit

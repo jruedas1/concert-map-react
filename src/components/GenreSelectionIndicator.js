@@ -17,6 +17,8 @@ function GenreSelectionIndicator({ onClick, genreSelected, selectedGenre }) {
             {genreSelected && <p
                 className="edit"
                 tabIndex="0"
+                role="button"
+                aria-label="Edit genre"
                 onKeyDown={handleKeyDown}
                 >
                   Edit
