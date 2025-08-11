@@ -22,7 +22,7 @@ function Map({ venues }){
     const mapContainerRef = useRef();
 
     const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId} = useContext(ConcertsContext);
-    const { genreConcerts, genreConcertIndex, uniqueVenues } = useContext(AnimationContext);
+    const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -54,22 +54,34 @@ function Map({ venues }){
 
     useEffect(() => {
         if (mapRef.current && genreConcerts?.length > 0) {
-            // console.log(genreConcerts);
-            // console.log(genreConcertIndex);
             const concert = genreConcerts[genreConcertIndex];
-            // console.log(concert);
-            // console.log(concert["venue_id"]);
             const venueId = concert["venue_id"];
             const venue = uniqueVenues[venueId];
-            // console.log(venue);
             const venueMarker = findMarkerById(mapRef.current, venueId);
             findAndDeHighlightMarkers(mapRef.current);
             if (!venueMarker) {
                 const marker = outputVenueToMap(mapRef.current, venue, setSelectedVenue, setHoveredMarkerVenueId);
+                if (marker){
+                    console.log(marker);
+                    if (isAnimating){
+                        marker.getElement().classList.add('disabled');
+                        marker._popup._classList.add('hidden');
+                    }
+                    markersRef.current.push(marker);
+                }
             }
             findAndHighlightMarker(mapRef.current, venueId);
         }
     }, [genreConcertIndex]);
+
+    useEffect(() => {
+        if (!isAnimating) {
+            markersRef.current.forEach(marker => {
+                marker._popup._classList.delete('hidden');
+                marker.getElement().classList.remove('disabled');
+            });
+        }
+    }, [isAnimating]);
 
     return (
         <div id="map" ref={mapContainerRef}>

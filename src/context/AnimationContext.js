@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useEffect, useRef, useState} from "react";
 import {getVenue} from "../services/dataAccess.js";
 
 const AnimationContext = createContext();
@@ -8,6 +8,8 @@ function Provider({children}){
     const [genreConcertIndex, setGenreConcertIndex] = useState(-1);
     const [uniqueVenues, setUniqueVenues] = useState(null);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    const markersRef = useRef([]);
 
     const progress = genreConcerts.length ?
         (genreConcertIndex + 1) / genreConcerts.length * 100 :
@@ -22,6 +24,7 @@ function Provider({children}){
     };
 
     const startAnimation = () => {
+        markersRef.current = [];
         setGenreConcertIndex(0);
         setIsAnimating(true);
     };
@@ -31,6 +34,7 @@ function Provider({children}){
         setGenreConcertIndex(-1);
         setIsAnimating(false);
         setUniqueVenues(null);
+        markersRef.current = [];
     }
 
     const animation = {
@@ -42,7 +46,9 @@ function Provider({children}){
         uniqueVenues,
         progress,
         currentYear,
-        resetAnimation
+        resetAnimation,
+        isAnimating,
+        markersRef
     }
 
     // this works, but it's clunky and slow compared to having all the data
