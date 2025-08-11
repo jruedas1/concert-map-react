@@ -62,7 +62,6 @@ function Map({ venues }){
             if (!venueMarker) {
                 const marker = outputVenueToMap(mapRef.current, venue, setSelectedVenue, setHoveredMarkerVenueId);
                 if (marker){
-                    console.log(marker);
                     if (isAnimating){
                         marker.getElement().classList.add('disabled');
                         marker._popup._classList.add('hidden');

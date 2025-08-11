@@ -1,8 +1,11 @@
-function DecadeSelectionIndicator({ decade, onClick }){
+function DecadeSelectionIndicator({ decade, onClick, isListOpen, onArrowDown }){
     const handleKeyDown = (e) => {
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             onClick();
+        } else if (e.key === "ArrowDown"){
+            e.preventDefault();
+            if (isListOpen) onArrowDown();
         }
     };
 

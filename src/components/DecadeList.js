@@ -1,15 +1,12 @@
-import { useRef, useEffect } from "react";
 import FilterOption from "./FilterOption";
 
-function DecadeList({ onDecadeSelect }) {
+function DecadeList({ onDecadeSelect, optionRefs }) {
     const decades = [
         { id: 1970, label: "1970s" },
         { id: 1980, label: "1980s" },
         { id: 1990, label: "1990s" },
         { id: 2000, label: "2000s" },
     ];
-
-    const optionRefs = useRef([]);
 
     const handleKeyDown = (e, index) => {
         if (e.key === "ArrowDown") {

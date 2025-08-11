@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
 import DecadeSelectionIndicator from './DecadeSelectionIndicator.js';
 import DecadeList from "./DecadeList.js";
@@ -11,6 +11,11 @@ function YearSelectPanel(){
         selectedDecade, updateSelectedDecade,
         showDecadeList, updateShowDecadeList} = useContext(ConcertsContext);
     const [showYearList, setShowYearList] = useState(false);
+
+    const decadeListRefs = useRef([]);
+    const yearListRefs = useRef([]);
+    const focusFirstDecade = () => decadeListRefs.current[0].focus();
+    const focusFirstYear = () => yearListRefs.current[0].focus();
 
     const handleSelectDecade = (selectedDecade) => {
         updateSelectedDecade(selectedDecade);
@@ -36,19 +41,25 @@ function YearSelectPanel(){
             <DecadeSelectionIndicator
                 decade={selectedDecade}
                 onClick={handleClickDecadeSelectionIndicator}
+                isListOpen={showDecadeList}
+                onArrowDown={focusFirstDecade}
             />
             {showDecadeList &&
                 <DecadeList
                     onDecadeSelect={handleSelectDecade}
+                    optionRefs={decadeListRefs}
                 />}
             {selectedDecade &&
                 <YearSelectionIndicator
                     year={selectedYear}
                     onClick={handleClickYearSelectionIndicator}
+                    isListOpen={showYearList}
+                    onArrowDown={focusFirstYear}
                 />}
             {showYearList && <YearList
                 decade={selectedDecade}
                 onYearSelect={handleSelectYear}
+                optionRefs={yearListRefs}
             />}
             {selectedYear && <SearchResultsButton />}
         </>

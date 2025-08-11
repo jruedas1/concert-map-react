@@ -1,8 +1,8 @@
 import { useRef, useEffect } from "react";
 import FilterOption from "./FilterOption";
 
-function YearList({ decade, onYearSelect }) {
-    const yearRefs = useRef([]);
+function YearList({ decade, onYearSelect, optionRefs }) {
+    const yearRefs = optionRefs;
     const years = Array.from({ length: 10 }, (_, i) => decade + i);
 
     const handleKeyDown = (event, index) => {
@@ -29,7 +29,7 @@ function YearList({ decade, onYearSelect }) {
             onClick={onYearSelect}
             onKeyDown={(e) => handleKeyDown(e, index)}
             ref={(el) => (yearRefs.current[index] = el)}
-            isSelected={false} // you could hook this up to selectedYear if needed
+            isSelected={false}
         />
     ))
 
