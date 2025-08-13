@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import ConcertsContext from "../context/ConcertsContext";
 import FilterOption from "./FilterOption";
 
 function DecadeList({ onDecadeSelect, optionRefs }) {
+
+    const { selectedDecade } = useContext(ConcertsContext);
+
     const decades = [
         { id: 1970, label: "1970s" },
         { id: 1980, label: "1980s" },
@@ -30,7 +35,7 @@ function DecadeList({ onDecadeSelect, optionRefs }) {
                     onClick={onDecadeSelect}
                     onKeyDown={(e) => handleKeyDown(e, index)}
                     ref={(el) => (optionRefs.current[index] = el)}
-                    isSelected={false}
+                    isSelected={selectedDecade === id}
                 />
             ))}
         </div>

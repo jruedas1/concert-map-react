@@ -1,7 +1,10 @@
-import { useRef, useEffect } from "react";
+import { useContext } from "react";
+import ConcertsContext from "../context/ConcertsContext";
 import FilterOption from "./FilterOption";
 
 function YearList({ decade, onYearSelect, optionRefs }) {
+    const { selectedYear } = useContext(ConcertsContext);
+
     const yearRefs = optionRefs;
     const years = Array.from({ length: 10 }, (_, i) => decade + i);
 
@@ -29,7 +32,7 @@ function YearList({ decade, onYearSelect, optionRefs }) {
             onClick={onYearSelect}
             onKeyDown={(e) => handleKeyDown(e, index)}
             ref={(el) => (yearRefs.current[index] = el)}
-            isSelected={false}
+            isSelected={ selectedYear === year }
         />
     ))
 

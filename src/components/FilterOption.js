@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 
 const FilterOption = forwardRef(({ label, id, onClick, onKeyDown, isSelected }, ref) => (
     <div
-        className={`filter-option ${isSelected ? "selected" : ""}`}
+        className={`filter-option ${isSelected ? "selected-filter" : ""}`}
         data-id={id}
         role="option"
         aria-selected={isSelected}
