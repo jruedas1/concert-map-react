@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import {useContext, useRef, useState} from "react";
 import ConcertsContext from "../context/ConcertsContext";
 import FilterOption from "./FilterOption";
 
@@ -13,20 +13,41 @@ function DecadeList({ onDecadeSelect, optionRefs }) {
         { id: 2000, label: "2000s" },
     ];
 
+    const [activeIndex, setActiveIndex] = useState(
+        selectedDecade ? decades.findIndex(decade => decade.id === selectedDecade.id) : 0
+    );
+
+    const listRef = useRef(null);
+
     const handleKeyDown = (e, index) => {
         if (e.key === "ArrowDown") {
             e.preventDefault();
-            optionRefs.current[index + 1]?.focus();
+            setActiveIndex(prev => {
+                const nextIndex = Math.min(prev + 1, decades.length - 1);
+                optionRefs.current[nextIndex]?.focus();
+                return nextIndex;
+            })
         } else if (e.key === "ArrowUp") {
             e.preventDefault();
-            optionRefs.current[index - 1]?.focus();
+            setActiveIndex(prev => {
+                const nextIndex = Math.max(prev - 1, 0);
+                optionRefs.current[nextIndex]?.focus();
+                return nextIndex;
+            })
         } else if (e.key === "Enter") {
-            onDecadeSelect(decades[index].id);
+            onDecadeSelect(decades[activeIndex].id);
         }
     };
 
     return (
-        <div id="decade-list" role="listbox" aria-label="Decade list">
+        <div id="decade-list"
+             ref={listRef}
+             role="listbox"
+             aria-activedescendant={`option-${decades[activeIndex]}.id`}
+             aria-label="Decade list"
+             tabIndex={0}
+             onKeyDown={handleKeyDown}
+        >
             {decades.map(({ id, label }, index) => (
                 <FilterOption
                     key={id}
@@ -36,6 +57,7 @@ function DecadeList({ onDecadeSelect, optionRefs }) {
                     onKeyDown={(e) => handleKeyDown(e, index)}
                     ref={(el) => (optionRefs.current[index] = el)}
                     isSelected={selectedDecade === id}
+                    isActive={index === activeIndex}
                 />
             ))}
         </div>
