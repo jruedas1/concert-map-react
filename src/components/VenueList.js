@@ -1,42 +1,22 @@
 import VenueShow from "./VenueShow.js";
-import { useRef, useEffect, useContext } from "react";
+import { useRef, useEffect, useContext, useState } from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
 
 function VenueList({ venues, onVenueClick }){
 
     const { setHoveredMarkerVenueId, hoveredVenueId, hoveredMarkerVenueId } = useContext(ConcertsContext);
 
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const containerRef = useRef(null);
     const venueRefs = useRef([]);
 
+    const sortedVenues = [...venues];
+
     useEffect(() => {
         venueRefs.current = venueRefs.current.slice(0, venues.length);
-    }, [venues]);
+    }, [sortedVenues]);
 
-    const handleListKeyDown = (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            venueRefs.current[0]?.focus();
-        }
-    };
-
-    const handleVenueKeyDown = (e, index) => {
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            venueRefs.current[index + 1]?.focus();
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            venueRefs.current[index - 1]?.focus();
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            onVenueClick(venues[index]);
-        } else if (e.key === "Escape") {
-            e.preventDefault();
-            containerRef.current?.focus();
-        }
-    };
-
-    const sortedVenues = [...venues];
 
     if (hoveredMarkerVenueId) {
         const index = sortedVenues.findIndex(v => v.id === hoveredMarkerVenueId);
@@ -46,6 +26,43 @@ function VenueList({ venues, onVenueClick }){
         }
     }
 
+    const handleListKeyDown = (e) => {
+        if (e.key === "Enter" || e.key === "ArrowDown") {
+            e.preventDefault();
+            venueRefs.current[0]?.focus();
+        }
+    };
+
+    const handleVenueKeyDown = (e, index) => {
+        e.stopPropagation();
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            const next = Math.min(index + 1, sortedVenues.length - 1);
+            venueRefs.current[next]?.focus();
+            setActiveIndex(next);
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            const next = Math.max(index - 1, 0);
+            venueRefs.current[next]?.focus();
+            setActiveIndex(next);
+        } else if (e.key === "Enter") {
+            e.preventDefault();
+            onVenueClick(sortedVenues[index]);
+        } else if (e.key === "Escape") {
+            e.preventDefault();
+            containerRef.current?.focus();
+        } else if (e.key === "Home") {
+            e.preventDefault();
+            venueRefs.current[0]?.focus();
+            setActiveIndex(0);
+        } else if (e.key === "End") {
+            e.preventDefault();
+            const last = sortedVenues.length - 1;
+            venueRefs.current[last]?.focus();
+            setActiveIndex(last);
+        }
+    };
+
     const renderedVenues = sortedVenues.map((venue, index) => {
         return <VenueShow
             venue={venue}
@@ -54,6 +71,7 @@ function VenueList({ venues, onVenueClick }){
             onKeyDown={(e) => handleVenueKeyDown(e, index)}
             ref={(el) => (venueRefs.current[index] = el)}
             isHovered={hoveredVenueId === venue.id || hoveredMarkerVenueId === venue.id}
+            isActive={activeIndex === index}
         />
     });
 
@@ -65,6 +83,7 @@ function VenueList({ venues, onVenueClick }){
              aria-label="List of Venues"
              ref={containerRef}
              onKeyDown={handleListKeyDown}
+             aria-activedescendant={`venue-${sortedVenues[activeIndex]?.id}`}
         >
             {renderedVenues}
         </div>

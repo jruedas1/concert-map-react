@@ -1,7 +1,7 @@
 import { forwardRef, useContext } from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
 
-const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered }, ref) =>{
+const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered, isActive }, ref) =>{
 
     const { setHoveredVenueId, mapContainer } = useContext(ConcertsContext);
 
@@ -21,7 +21,9 @@ const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered }, ref) =>{
 
     return (
       <div
+          id={`venue-${venue.id}`}
           role="option"
+          aria-selected={isHovered || isActive}
           className={`venue ${isHovered ? "venue-hover" : ""}`}
           ref={ref}
           onClick={onClick}
