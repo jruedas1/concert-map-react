@@ -61,3 +61,25 @@
     border-style: solid;
     border-color: transparent transparent transparent black;
 }
+
+@media screen and (max-width: 768px) {
+    #modalContent {
+        max-height: 100dvh;
+        max-width: 75%;
+        padding: 1rem 0;
+    }
+
+    #modalContent h2 {
+        font-size: 1.3rem;
+    }
+
+    #modalOptionDescriptions {
+        flex-flow: column nowrap;
+        gap: 1rem;
+        margin-top: 4%;
+    }
+
+    #modalOptionDescriptions > div {
+        gap: 0.5rem;
+    }
+}
