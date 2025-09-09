@@ -48,3 +48,28 @@ main {
 .hidden {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-visible {
+        display: initial;
+    }
+
+    main {
+        flex-flow: column nowrap;
+    }
+
+    section#filters {
+        border-right: none;
+        flex: 0 0 auto;
+        max-height: 100dvh;
+    }
+
+    #map {
+        flex: 1;
+        max-height: unset;
+    }
+}

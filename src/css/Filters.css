@@ -41,6 +41,10 @@ section#filters {
     display: none;
 }
 
+#year-list {
+    overflow-y: scroll;
+}
+
 /*
     To show that the popups will not display
     during explore mode animation.
@@ -212,7 +216,13 @@ Button that toggles list and map view
     }
 }
 
-@media (min-width: 768px) and (max-width: 1144px) {
+@media (min-width: 996px) and (max-width: 1143px) {
+    section#filters {
+        flex-basis: 37%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 995px) {
     section#filters {
         flex-basis: 37%;
     }

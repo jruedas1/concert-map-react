@@ -83,7 +83,7 @@ function Map({ venues }){
     }, [isAnimating]);
 
     return (
-        <div id="map" ref={mapContainerRef}>
+        <div id="map" className="mobile-hidden" ref={mapContainerRef}>
             <YearDisplay />
             <ProgressBar className="progress-bar" />
         </div>
