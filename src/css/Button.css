@@ -1,0 +1,15 @@
+.secondary {
+    background-color: #232323;
+    color: var(--main-background);
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+#back-to-year-edit-div button {
+    margin-right: 1rem;
+}

@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function ChangeSelectionsPrompt({ onClick, divId }){
 
     const handleKeyDown = (e) => {
@@ -18,6 +20,7 @@ function ChangeSelectionsPrompt({ onClick, divId }){
                 <img src="/img/left-pointing-arrow.svg" alt="arrow pointing left"/>
                 <p className="edit">Change Selections</p>
             </div>
+            <Button secondary rounded>List View</Button>
         </div>
     );
 }

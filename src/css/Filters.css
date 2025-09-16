@@ -86,6 +86,10 @@ div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
     font-size: 1.3rem;
 }
 
+#back-to-year-edit-div {
+    justify-content: space-between;
+}
+
 #back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
     padding: 0.5rem;
 }
