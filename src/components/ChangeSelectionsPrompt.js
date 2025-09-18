@@ -20,7 +20,7 @@ function ChangeSelectionsPrompt({ onClick, divId }){
                 <img src="/img/left-pointing-arrow.svg" alt="arrow pointing left"/>
                 <p className="edit">Change Selections</p>
             </div>
-            <Button secondary rounded>List View</Button>
+            <Button secondary rounded>Map View</Button>
         </div>
     );
 }
