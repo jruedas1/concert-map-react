@@ -12,7 +12,6 @@ function VenuesPanel(){
     const { venues, confirmedYear, unsetConfirmedYear } = useContext(ConcertsContext);
     const { selectedVenue, setSelectedVenue } = useContext(ConcertsContext);
 
-
     const handleChangeSelections = () => {
         unsetConfirmedYear();
     }
@@ -33,7 +32,10 @@ function VenuesPanel(){
                       divId="back-to-year-edit-div"
                       onClick={handleChangeSelections} />
                   <YearVenuesIndicator />
-                  <VenueList venues={venues} onVenueClick={handleVenueClick}/>
+                  <VenueList
+                      venues={venues}
+                      onVenueClick={handleVenueClick}
+                  />
               </>
           }
 

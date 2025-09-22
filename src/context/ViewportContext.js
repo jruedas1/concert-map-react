@@ -7,9 +7,12 @@ function Provider({ children }) {
 
     useEffect(() => {
         function handleResize() {
-            setIsMobile(window.innerWidth < 768);
+            const mobile = window.innerWidth < 768;
+            setIsMobile(prev => {
+                if (prev !== mobile) return mobile;
+                return prev;
+                });
         }
-
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);

@@ -21,7 +21,7 @@ function Map({ venues }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
-    const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId} = useContext(ConcertsContext);
+    const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId, confirmedYear} = useContext(ConcertsContext);
     const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
 
     useEffect(() => {
@@ -83,7 +83,11 @@ function Map({ venues }){
     }, [isAnimating]);
 
     return (
-        <div id="map" className="mobile-hidden" ref={mapContainerRef}>
+        <div
+            id="map"
+            className={`${!confirmedYear ? "mobile-hidden" : ''}`}
+            ref={mapContainerRef}
+        >
             <YearDisplay />
             <ProgressBar className="progress-bar" />
         </div>
