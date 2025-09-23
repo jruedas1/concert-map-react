@@ -4,6 +4,7 @@ const ViewportContext = createContext();
 
 function Provider({ children }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [view, setView] = useState("map");
 
     useEffect(() => {
         function handleResize() {
@@ -18,7 +19,7 @@ function Provider({ children }) {
     }, []);
 
     return (
-        <ViewportContext.Provider value={{ isMobile }}>
+        <ViewportContext.Provider value={{ isMobile, view, setView }}>
             {children}
         </ViewportContext.Provider>
     );

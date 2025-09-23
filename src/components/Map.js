@@ -5,6 +5,7 @@ import "../css/Map.css";
 import access_token from './keys.js';
 import ConcertsContext from "../context/ConcertsContext.js";
 import AnimationContext from "../context/AnimationContext.js";
+import ViewportContext from "../context/ViewportContext";
 import { outputVenueToMap,
     outputVenuesToMap,
     removeMarkers,
@@ -23,6 +24,8 @@ function Map({ venues }){
 
     const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId, confirmedYear} = useContext(ConcertsContext);
     const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
+    const { view } = useContext(ViewportContext);
+
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -94,7 +97,7 @@ function Map({ venues }){
     return (
         <div
             id="map"
-            className={`${!confirmedYear ? "mobile-hidden" : ''}`}
+            className={`${view==="list" ||  !confirmedYear ? "mobile-hidden" : ''}`}
             ref={mapContainerRef}
         >
             <YearDisplay />

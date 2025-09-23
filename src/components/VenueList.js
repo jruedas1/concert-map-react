@@ -2,11 +2,12 @@ import VenueShow from "./VenueShow.js";
 import { useRef, useEffect, useContext, useState } from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
 import ViewportContext from "../context/ViewportContext";
+import map from "./Map";
 
 function VenueList({ venues, onVenueClick }){
 
     const { setHoveredMarkerVenueId, hoveredVenueId, hoveredMarkerVenueId } = useContext(ConcertsContext);
-    const { isMobile } = useContext(ViewportContext);
+    const { isMobile, view } = useContext(ViewportContext);
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -77,11 +78,13 @@ function VenueList({ venues, onVenueClick }){
         />
     });
 
+    const mapView = view === "map";
+
     return (
         <div id="venues"
              className={
-                    `${isMobile? "mobile-hidden" : ""}
-                    "overflow-scroll"
+                    `${mapView && isMobile ? "mobile-hidden" : ""}
+                    overflow-scroll
                 `}
              tabIndex="0"
              role="listbox"

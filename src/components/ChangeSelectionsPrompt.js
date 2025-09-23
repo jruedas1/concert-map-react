@@ -1,6 +1,9 @@
 import Button from "./Button";
+import {useContext} from "react";
+import ViewportContext from "../context/ViewportContext";
 
 function ChangeSelectionsPrompt({ onClick, divId }){
+    const { isMobile, view, setView } = useContext(ViewportContext);
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -8,6 +11,10 @@ function ChangeSelectionsPrompt({ onClick, divId }){
             onClick();
         }
     };
+
+    const handleListMapButtonClick = () => {
+        setView(prev => (prev === "map" ? "list" : "map"));
+    }
 
     return (
         <div id={divId}>
@@ -20,7 +27,9 @@ function ChangeSelectionsPrompt({ onClick, divId }){
                 <img src="/img/left-pointing-arrow.svg" alt="arrow pointing left"/>
                 <p className="edit">Change Selections</p>
             </div>
-            <Button secondary rounded>Map View</Button>
+            {isMobile && <Button secondary rounded onClick={handleListMapButtonClick}>
+                {view === "map" ? "List View" : "Map View"}
+            </Button>}
         </div>
     );
 }

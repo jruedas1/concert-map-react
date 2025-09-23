@@ -5,14 +5,15 @@ function Button({
     children,
     primary,
     secondary,
-    rounded
+    rounded,
+    onClick
 }){
     const classes = classnames( {
         'secondary' : secondary,
         'rounded' : rounded
     });
 
-    return <button className={classes}>{children}</button>
+    return <button className={classes} onClick={onClick}>{children}</button>
 }
 
 export default Button;
