@@ -68,8 +68,4 @@ main {
         max-height: 100dvh;
     }
 
-    #map {
-        flex: 1;
-        max-height: unset;
-    }
 }

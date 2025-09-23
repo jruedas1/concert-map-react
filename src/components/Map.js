@@ -82,6 +82,15 @@ function Map({ venues }){
         }
     }, [isAnimating]);
 
+    useEffect(() => {
+        if (mapRef.current && confirmedYear) {
+            // Wait one tick so CSS has applied
+            setTimeout(() => {
+                mapRef.current.resize();
+            }, 0);
+        }
+    }, [confirmedYear]);
+
     return (
         <div
             id="map"

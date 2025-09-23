@@ -69,3 +69,12 @@
 div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
     cursor: not-allowed;
 }
+
+@media screen and (max-width: 768px) {
+
+    #map {
+        flex: 1;
+        max-height: unset;
+        overflow: hidden;
+    }
+}
