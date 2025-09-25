@@ -75,6 +75,5 @@ div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
     #map {
         flex: 1;
         max-height: unset;
-        overflow: hidden;
     }
 }

@@ -92,7 +92,7 @@ function Map({ venues }){
                 mapRef.current.resize();
             }, 0);
         }
-    }, [confirmedYear]);
+    }, [confirmedYear, view]);
 
     return (
         <div
