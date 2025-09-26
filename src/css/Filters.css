@@ -102,7 +102,7 @@ div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
     The arrow + "Change Selections"
     The arrow + "Back to venues"
 */
-.back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
+#back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
     cursor: pointer;
 }
 
