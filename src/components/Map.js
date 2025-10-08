@@ -22,7 +22,7 @@ function Map({ venues }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
-    const { setMapContainer, setSelectedVenue,
+    const { setMapContainer, selectedVenue, setSelectedVenue,
         setHoveredMarkerVenueId, confirmedYear,
     } = useContext(ConcertsContext);
     const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
@@ -110,7 +110,7 @@ function Map({ venues }){
     return (
         <div
             id="map"
-            className={`${view==="list" ||  !confirmedYear ? "mobile-hidden" : ''}`}
+            className={`${view==="list" ||  !confirmedYear || (isMobile && selectedVenue && !singleVenueMode) ? "mobile-hidden" : ''}`}
             ref={mapContainerRef}
         >
             <YearDisplay />

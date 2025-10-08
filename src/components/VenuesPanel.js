@@ -16,6 +16,7 @@ function VenuesPanel(){
 
     const handleChangeSelections = () => {
         unsetConfirmedYear();
+        setSelectedVenue(null);
         setSingleVenueMode(false);
     }
 
@@ -25,8 +26,6 @@ function VenuesPanel(){
     }
 
     const handleBackToVenuesClick = () => {
-
-            setSelectedVenue(null);
             if (selectedVenue) setSingleVenueMode(true);
     }
 
