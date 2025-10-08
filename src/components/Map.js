@@ -22,9 +22,11 @@ function Map({ venues }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
-    const { setMapContainer, setSelectedVenue, setHoveredMarkerVenueId, confirmedYear} = useContext(ConcertsContext);
+    const { setMapContainer, setSelectedVenue,
+        setHoveredMarkerVenueId, confirmedYear,
+    } = useContext(ConcertsContext);
     const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
-    const { view } = useContext(ViewportContext);
+    const { view, isMobile, singleVenueMode, setSingleVenueMode } = useContext(ViewportContext);
 
 
     useEffect(() => {
@@ -51,7 +53,12 @@ function Map({ venues }){
         if (mapRef.current && venues?.length > 0) {
            removeMarkers();
            removePopups();
-           outputVenuesToMap(mapRef.current, venues, setSelectedVenue, setHoveredMarkerVenueId);
+           outputVenuesToMap(mapRef.current,
+               venues,
+               setSelectedVenue,
+               setHoveredMarkerVenueId,
+               isMobile,
+               setSingleVenueMode);
         }
     }, [venues]);
 
@@ -63,7 +70,13 @@ function Map({ venues }){
             const venueMarker = findMarkerById(mapRef.current, venueId);
             findAndDeHighlightMarkers(mapRef.current);
             if (!venueMarker) {
-                const marker = outputVenueToMap(mapRef.current, venue, setSelectedVenue, setHoveredMarkerVenueId);
+                const marker = outputVenueToMap(mapRef.current,
+                    venue,
+                    setSelectedVenue,
+                    setHoveredMarkerVenueId,
+                    isMobile,
+                    setSingleVenueMode
+                    );
                 if (marker){
                     if (isAnimating){
                         marker.getElement().classList.add('disabled');

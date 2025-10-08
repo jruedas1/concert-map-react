@@ -5,11 +5,18 @@ import Map from './components/Map.js';
 import Modal from "./components/Modal";
 import ConcertsContext from "./context/ConcertsContext.js";
 import AnimationContext from "./context/AnimationContext";
+import ViewportContext from "./context/ViewportContext";
 import { fetchYear } from "./services/dataAccess.js";
 import {removeMarkers} from "./utils/mapUtils";
+import SingleVenue from "./components/SingleVenue";
 
 function App(){
-    const { confirmedYear, venues, updateVenues } = useContext(ConcertsContext);
+    const { isMobile, view, singleVenueMode } = useContext(ViewportContext);
+    const { confirmedYear,
+        venues,
+        updateVenues,
+        selectedVenue
+    } = useContext(ConcertsContext);
     const { resetAnimation } = useContext(AnimationContext);
     const [showModal, setShowModal] = useState(true);
     const [interactionMode, setInteractionMode] = useState('search');
@@ -38,11 +45,19 @@ function App(){
         setInteractionMode('explore');
     }
 
+    console.log(singleVenueMode);
+
     return (
         <div id="page-wrapper">
             <main>
                 <Filters onModeSelect={handleModeSelection} interactionMode={interactionMode} />
                 <Map venues={venues} />
+                {(singleVenueMode && selectedVenue) && (
+                    <SingleVenue
+                        venue={selectedVenue}
+                        onClick={() => console.log('clicked single venue')}
+                    />
+                )}
                 {showModal && <Modal onClose={handleModalClose} onExploreClick={handleModalButtonClick} />}
             </main>
         </div>

@@ -14,7 +14,6 @@ function Provider({ children }){
     const [map, setMap] = useState(null);
     const [mapContainer, setMapContainer] = useState(null);
 
-
     const year = {
         selectedDecade,
         updateSelectedDecade: (decade) => setSelectedDecade(decade),

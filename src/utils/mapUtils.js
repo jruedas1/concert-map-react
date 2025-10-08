@@ -10,7 +10,13 @@ export const outputVenuesToMap = (map, venuesArray, setSelectedVenue, setHovered
     });
 }
 
-export const outputVenueToMap = (map, venue, setSelectedVenue, setHoveredMarkerVenueId) => {
+export const outputVenueToMap = (map,
+                                 venue,
+                                 setSelectedVenue,
+                                 setHoveredMarkerVenueId,
+                                 isMobile,
+                                 setSingleVenueMode
+) => {
     const address = venue.address;
     const cityStateZip = `${venue.city}, TX ${venue.zip}`;
     if (venue.longitude && venue.latitude){
@@ -35,6 +41,7 @@ export const outputVenueToMap = (map, venue, setSelectedVenue, setHoveredMarkerV
         // on marker click, reset venue state to show concert list
         el.addEventListener("click", () => {
             setSelectedVenue(venue);
+            if (isMobile) setSingleVenueMode(true);
         });
 
         // Show popup on hover
