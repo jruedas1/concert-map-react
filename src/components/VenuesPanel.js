@@ -10,7 +10,7 @@ import ViewportContext from "../context/ViewportContext";
 import ChangeVenuesPrompt from "./ChangeVenuesPrompt.js";
 
 function VenuesPanel(){
-    const { venues, confirmedYear, unsetConfirmedYear, showSingleVenue, setShowSingleVenue } = useContext(ConcertsContext);
+    const { venues, confirmedYear, unsetConfirmedYear } = useContext(ConcertsContext);
     const { selectedVenue, setSelectedVenue } = useContext(ConcertsContext);
     const { singleVenueMode, setSingleVenueMode } = useContext(ViewportContext);
 

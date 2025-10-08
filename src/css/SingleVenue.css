@@ -1,0 +1,5 @@
+.single-venue {
+    background: var(--main-background);
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+}

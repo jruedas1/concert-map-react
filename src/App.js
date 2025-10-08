@@ -11,7 +11,7 @@ import {removeMarkers} from "./utils/mapUtils";
 import SingleVenue from "./components/SingleVenue";
 
 function App(){
-    const { isMobile, view, singleVenueMode } = useContext(ViewportContext);
+    const { singleVenueMode } = useContext(ViewportContext);
     const { confirmedYear,
         venues,
         updateVenues,
@@ -45,7 +45,9 @@ function App(){
         setInteractionMode('explore');
     }
 
-    console.log(singleVenueMode);
+    const handleSingleVenueClick = () => {
+        console.log("yoooo")
+    }
 
     return (
         <div id="page-wrapper">
@@ -55,7 +57,7 @@ function App(){
                 {(singleVenueMode && selectedVenue) && (
                     <SingleVenue
                         venue={selectedVenue}
-                        onClick={() => console.log('clicked single venue')}
+                        onClick={handleSingleVenueClick}
                     />
                 )}
                 {showModal && <Modal onClose={handleModalClose} onExploreClick={handleModalButtonClick} />}
