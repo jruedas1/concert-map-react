@@ -9,7 +9,7 @@ import ConcertList from "./ConcertList.js";
 function ExploreConcertDisplayPanel({ onChangeSelection }) {
     const { selectedGenre, startYear, endYear } = useContext(GenresContext);
     const { genreConcerts, genreConcertIndex } = useContext(AnimationContext);
-    const { isMobile } = useContext(ViewportContext);
+    const { isMobile, view } = useContext(ViewportContext);
 
     const visibleConcerts = genreConcerts
         .slice(0, genreConcertIndex + 1)
@@ -24,7 +24,7 @@ function ExploreConcertDisplayPanel({ onChangeSelection }) {
             startYear={startYear}
             endYear={endYear}
         />
-          {!isMobile &&  <ConcertList concerts={visibleConcerts} />}
+          {!isMobile || (isMobile && view === "list") &&  <ConcertList concerts={visibleConcerts} />}
       </>
     );
 }
