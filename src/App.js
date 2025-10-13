@@ -53,7 +53,7 @@ function App(){
         <div id="page-wrapper">
             <main>
                 <Filters onModeSelect={handleModeSelection} interactionMode={interactionMode} />
-                <Map venues={venues} />
+                <Map venues={venues} interactionMode={interactionMode} />
                 {(isMobile && singleVenueMode && selectedVenue) && (
                     <SingleVenue
                         venue={selectedVenue}

@@ -18,16 +18,15 @@ import ProgressBar from "./ProgressBar";
 import YearDisplay from "./YearDisplay";
 
 
-function Map({ venues }){
+function Map({ venues, interactionMode }){
     const mapRef = useRef();
     const mapContainerRef = useRef();
 
     const { setMapContainer, selectedVenue, setSelectedVenue,
         setHoveredMarkerVenueId, confirmedYear,
     } = useContext(ConcertsContext);
-    const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef } = useContext(AnimationContext);
+    const { genreConcerts, genreConcertIndex, uniqueVenues, isAnimating, markersRef, progress } = useContext(AnimationContext);
     const { view, isMobile, singleVenueMode, setSingleVenueMode } = useContext(ViewportContext);
-
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -103,14 +102,32 @@ function Map({ venues }){
             // Wait one tick so CSS has applied
             setTimeout(() => {
                 mapRef.current.resize();
-            }, 0);
+            }, 100);
         }
     }, [confirmedYear, view]);
+
+    // for explore mode mobile
+    useEffect(() => {
+        const map = mapRef.current;
+        const observer = new MutationObserver(() => {
+            if (mapContainerRef.current.offsetParent !== null) {
+                map.resize();
+            }
+        });
+        observer.observe(mapContainerRef.current, { attributes: true, attributeFilter: ["class"] });
+        return () => observer.disconnect();
+    }, []);
+
 
     return (
         <div
             id="map"
-            className={`${view==="list" ||  !confirmedYear || (isMobile && selectedVenue && !singleVenueMode) ? "mobile-hidden" : ''}`}
+            className={`${
+                view==="list" ||
+                (interactionMode === "search" && !confirmedYear) || 
+                (isMobile && selectedVenue && !singleVenueMode) ||
+                (interactionMode === "explore" && genreConcerts.length === 0)
+                    ? "mobile-hidden" : ''}`}
             ref={mapContainerRef}
         >
             <YearDisplay />
