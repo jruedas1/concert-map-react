@@ -24,7 +24,7 @@ function ExploreConcertDisplayPanel({ onChangeSelection }) {
             startYear={startYear}
             endYear={endYear}
         />
-          {!isMobile || (isMobile && view === "list") &&  <ConcertList concerts={visibleConcerts} />}
+        {(!isMobile || (isMobile && view === "list")) &&  <ConcertList concerts={visibleConcerts} />}
       </>
     );
 }
