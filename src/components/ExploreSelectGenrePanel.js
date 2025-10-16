@@ -4,10 +4,9 @@ import AnimationContext from "../context/AnimationContext.js";
 import { fetchGenreData, fetchGenreConcertsInYearRange } from "../services/dataAccess.js";
 import DateRangeSelectionIndicator from "./DateRangeSelectionIndicator.js";
 import DualDropdownSection from "./DualDropdownSection.js";
-import SelectGenreButton from "./SelectGenreButton.js";
 import GenreSelectionIndicator from "./GenreSelectionIndicator.js";
 import GenreList from "./GenreList.js";
-import ShowGenreResultsButton from "./ShowGenreResultsButton.js";
+import Button from "./Button";
 
 function ExploreSelectGenrePanel({ resetTrigger }) {
     const [genres, setGenres] = useState([]);
@@ -86,7 +85,12 @@ function ExploreSelectGenrePanel({ resetTrigger }) {
                 onClick={handleToggleRangeSelection}
             />
             {showRangeSelection && <DualDropdownSection />}
-            {showRangeSelection && <SelectGenreButton onClick={handleClickSelectGenre} />}
+            {showRangeSelection && <Button
+                onClick={handleClickSelectGenre}
+                className='next'
+            >
+                SELECT GENRE
+            </Button>}
             {showGenreSelection && (
                 <GenreSelectionIndicator
                     onClick={handleToggleGenreList}
@@ -102,12 +106,15 @@ function ExploreSelectGenrePanel({ resetTrigger }) {
                 />
             )}
             {showShowResultsButton && (
-                <ShowGenreResultsButton
-                    startYear={startYear}
-                    endYear={endYear}
-                    genre={selectedGenre}
-                    onClick={handleGetGenreResults}
-                />
+                <div id="confirm-genre-parent"
+                     className="confirm">
+                    <Button primary
+                            className='next'
+                            onClick={handleGetGenreResults}
+                    >
+                        SHOW MY RESULTS
+                    </Button>
+                </div>
             )}
         </section>
     );

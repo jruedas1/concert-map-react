@@ -6,9 +6,11 @@ function Button({
     primary,
     secondary,
     rounded,
+    className,
     onClick
 }){
-    const classes = classnames( {
+    const classes = classnames(
+        className, {
         'primary' : primary,
         'secondary' : secondary,
         'rounded' : rounded

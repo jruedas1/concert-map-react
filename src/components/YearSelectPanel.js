@@ -1,16 +1,19 @@
 import { useState, useContext, useRef } from "react";
 import ConcertsContext from "../context/ConcertsContext.js";
+import ViewportContext from "../context/ViewportContext";
 import DecadeSelectionIndicator from './DecadeSelectionIndicator.js';
 import DecadeList from "./DecadeList.js";
 import YearList from "./YearList.js";
 import YearSelectionIndicator from "./YearSelectionIndicator.js";
-import SearchResultsButton from "./SearchResultsButton.js";
 import Button from "./Button";
 
 function YearSelectPanel(){
     const { selectedYear, updateSelectedYear,
         selectedDecade, updateSelectedDecade,
-        showDecadeList, updateShowDecadeList} = useContext(ConcertsContext);
+        showDecadeList, updateShowDecadeList,
+        confirmYearSelection } = useContext(ConcertsContext);
+    const { isMobile, setSingleVenueMode } = useContext(ViewportContext);
+
     const [showYearList, setShowYearList] = useState(false);
 
     const decadeListRefs = useRef([]);
@@ -35,6 +38,11 @@ function YearSelectPanel(){
 
     const handleClickYearSelectionIndicator = () => {
         setShowYearList(!showYearList);
+    }
+
+    const handleConfirmYear = () => {
+        confirmYearSelection();
+        if (isMobile) setSingleVenueMode(true);
     }
 
     return(
@@ -62,7 +70,15 @@ function YearSelectPanel(){
                 onYearSelect={handleSelectYear}
                 optionRefs={yearListRefs}
             />}
-            {selectedYear && <SearchResultsButton />}
+            <div id='confirm-year-parent' className='confirm'>
+                {selectedYear && <Button
+                      primary
+                      className='next'
+                      onClick={handleConfirmYear}
+                >
+                    SHOW MY RESULTS
+                </Button>}
+            </div>
         </>
     );
 }
