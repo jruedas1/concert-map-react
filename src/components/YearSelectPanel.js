@@ -5,6 +5,7 @@ import DecadeList from "./DecadeList.js";
 import YearList from "./YearList.js";
 import YearSelectionIndicator from "./YearSelectionIndicator.js";
 import SearchResultsButton from "./SearchResultsButton.js";
+import Button from "./Button";
 
 function YearSelectPanel(){
     const { selectedYear, updateSelectedYear,
