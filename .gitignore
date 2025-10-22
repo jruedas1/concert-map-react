@@ -28,9 +28,6 @@ dist-ssr
 keys.js
 */keys.js
 
-# Vite config files
-eslint.config.js
-vite.config.js
 README.md
 
 # Generated source files
