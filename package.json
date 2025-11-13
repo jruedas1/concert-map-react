@@ -7,6 +7,7 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "rm -f index.html && cp -R dist/* .",
     "lint": "eslint concert-map-react",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
