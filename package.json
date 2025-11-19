@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://jruedas1.github.io/concert-map-react",
+  "homepage": "https://dev.cedish.utsa.edu/sounds/get-lost-sa-concerts-mapped",
   "dependencies": {
     "@types/mapbox-gl": "^3.4.1",
     "classnames": "^2.5.1",
