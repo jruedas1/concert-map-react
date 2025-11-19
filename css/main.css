@@ -1,0 +1,928 @@
+:root {
+    --main-background: #F1EEEB;
+    --header-dark: #231F20;
+    --various-red: #AD343E;
+    --button-red: #F45B69;
+    --off-white: #F4F4F4;
+    --filter-option: #C1DFE9;
+    --explore-filter-option: #C1DFDF;
+    --concert-heading: #027d7c;
+    --genre-year-output: #067372;
+}
+
+/* Resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fonts are set on the body. Font is imported from Adobe fonts (typekit) */
+body {
+    font-family: "newnord", 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+/*
+All content is wrapped in a page-wrapper
+Within the page-wrapper, main components are rows
+*/
+
+#page-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: var(--main-background);
+}
+
+/*
+Top component is the header
+Header contains a main heading and a nav
+Nav and main heading are flex-children to header
+*/
+
+/*header {*/
+/*    display: flex;*/
+/*    flex-flow: row nowrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background-color: var(--header-dark);*/
+/*    color: #F5F5F5;*/
+/*    padding: 0 4dvh;*/
+/*}*/
+
+/*header h1 {*/
+/*   margin: auto;*/
+/*}*/
+
+/*
+Nav set up is a elements within li elements within a ul
+*/
+
+/*header nav ul {*/
+/*    display: flex;*/
+/*    flex-flow: row nowrap;*/
+/*    gap: 2.5rem;*/
+/*}*/
+
+/*header nav ul li {*/
+/*    list-style: none;*/
+/*}*/
+
+/*nav a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.nav-menu {*/
+/*        position: fixed;*/
+/*        left: -100%;*/
+/*        top: 4rem;*/
+/*        flex-direction: column;*/
+/*        width: auto;*/
+/*        transition: 0.3s;*/
+/*        z-index: 4;*/
+/*        background: var(--header-dark);*/
+/*        opacity: 0.9;*/
+/*        text-align: right;*/
+/*        padding: 1rem;*/
+/*    }*/
+
+/*    .nav-menu.active {*/
+/*        left: 0;*/
+/*        right: 0;*/
+/*    }*/
+
+/*.hamburger {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*   .hamburger.active .bar:nth-child(1){*/
+/*        transform: translateY(0.6rem) rotate(45deg);*/
+/*    }*/
+
+/*    .hamburger.active .bar:nth-child(2){*/
+/*        opacity: 0;*/
+/*    }*/
+
+/*    .hamburger.active .bar:nth-child(3){*/
+/*         transform: translateY(-0.6rem) rotate(-45deg);*/
+
+/*    }*/
+
+/*.bar {*/
+/*    display: block;*/
+/*    width: 2rem;*/
+/*    height: 0.25rem;*/
+/*    margin: 0.35rem auto;*/
+/*    border-radius: 2px;*/
+/*    transition: all 0.3s ease-in-out;*/
+/*    background: var(--main-background);*/
+/*}*/
+
+/*
+    Main element is a flex-child of page-wrapper
+    Main has two components, the filters and the map
+*/
+
+main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+/*
+    filters column is a flex parent
+    flex direction is column
+
+    max-height:100dvh is set in order to
+    prevent the filters section from growing
+    in height when dynamically generated
+    venues or concert data is created
+*/
+
+section#filters {
+    text-align: center;
+
+    flex: 0 0 20%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    /*max-height: calc(100dvh - 70px);*/
+    max-height: 100dvh;
+
+    border-right: 2px solid black;
+    background-color: var(--main-background);
+}
+
+#filters h3 {
+    font-size: 18px;
+}
+
+.genre-list-visible {
+   display: block;
+}
+
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter, .filter-option, #venues div, .concert-info {
+    border-bottom: 2px solid black;
+}
+
+div#decades.filter, #year-range {
+    border-top: 2px solid black;
+}
+
+#year-list {
+    overflow-y: scroll;
+}
+
+/*
+    Make sure all the filter options have pointer cursors
+    to indicate they are clickable
+*/
+.filter, .filter-option, #venues div  {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/*
+Year-range filter is by default non-clickable
+But changes to clickable via JS when it has the "Edit" prompt showing
+*/
+
+#year-range {
+    padding: 1rem;
+    cursor: default;
+}
+
+/*
+    Filter options are choices that appear when
+    user clicks on a genre selector: decade, year, genre
+*/
+/*.filter-option {*/
+/*    background: var(--main-background);*/
+/*}*/
+
+.filter-option:hover, .filter-option:focus, #venues div:hover, #venues div:focus , .venue-hover, .select-items div:hover, .select-items div:focus {
+    background: #C1DFDF;
+}
+
+/*
+    search-type-selector is the top selector that
+    switches between major search modes
+*/
+
+#search-type-selector {
+    border: none;
+    padding: 1.5rem;
+    cursor: default;
+    background-color: rgba(6, 115, 114, 1);
+    color: var(--off-white);
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+#search-type-selector h3 {
+    cursor: pointer;
+}
+
+#search-type-selector h3.selected {
+    border-bottom: 3px solid var(--off-white);
+}
+
+/*
+    The 'edit' text that appears when
+    a decade and/or year are selected
+*/
+.edit {
+    text-decoration: underline;
+}
+/*
+
+*/
+#selected-decade {
+    font-size: 1.8rem;
+    font-weight: 550;
+    text-transform: none;
+}
+
+/*
+    This is applied to the decade and year
+    lists until the "select a decade" and
+    "select a year" filters are clicked
+    Then it is reapplied after a selection is made
+*/
+.hidden {
+   display: none;
+}
+
+/*
+    After a selection has been made,
+    some filters change color
+*/
+.selected-filter {
+    background-color: var(--filter-option);
+}
+
+.explore-selected-filter, #change-range-genre-div {
+    background-color: var(--explore-filter-option);
+}
+
+/*========= BREADCRUMBS ==========*/
+/*
+    Back-to-year-edit-div is to go back
+    to year selection from the venues view.
+    Its direct child contains the arrow and the
+    "change selections" prompt.
+    Back-to-venues is to go from the concerts
+    list to the venues list or view.
+*/
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#back-to-year-edit-div, #back-to-year-edit-div>div, #back-to-venues, #change-range-genre-div, #change-range-genre-div>div {
+    padding: 0.5rem;
+}
+
+#back-to-venues {
+    padding: 1rem;
+}
+
+/*
+    The arrow + "Change Selections"
+    The arrow + "Back to venues"
+*/
+#back-to-year-edit-div > div, #back-to-venues, #change-range-genre-div {
+    cursor: pointer;
+}
+
+/*
+    We use this to separate the "change selections"
+    prompt from the "List View / Map View" button.
+*/
+#back-to-year-edit-div, #change-range-genre-div {
+    justify-content: space-between;
+}
+
+#back-to-year-edit-div, #back-to-venues {
+    background-color: var(--filter-option);
+}
+
+/*
+    Some of the "edit" prompts had underlines
+    This may be removed if not needed in future designs.
+    We specify that these have no underline.
+*/
+#back-to-year-edit-div p.edit, #change-range-genre-div p.edit {
+    text-decoration: none;
+}
+
+#back-to-year-edit-div p.edit, #back-to-venues p {
+    font-weight: 500;
+}
+
+/*
+    Created to arrange the breadcrumb indicators
+    Side by side rather than stacking, and to apply
+    correct colors.
+*/
+
+#year-venue-breadcrumb-flex-parent,
+#concert-to-venue-breadcrumb-flex-parent,
+#range-genre-breadcrumb-flex-parent
+
+{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+/*
+   In the back-to-venues and back-to-year breadcrumbs,
+   This contains the year.
+*/
+#year-venue-breadcrumb-flex-parent h2#year-breadcrumb, #range-genre-breadcrumb-flex-parent h2 {
+    border-right: 2px solid black;
+    padding: 1rem;
+}
+
+/*
+     In the concerts view, this contains the name of the venue.
+     In the venues view, it says "Venues"
+
+*/
+#year-venue-breadcrumb-flex-parent p, #concert-to-venue-breadcrumb-flex-parent p, #range-genre-breadcrumb-flex-parent p {
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*
+Where the venue names are displayed, long venue names can get cramped, so
+the padding here requires special treatment
+*/
+
+#concert-to-venue-breadcrumb-flex-parent h2 {
+    padding: 1rem 0 1rem 1rem;
+}
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+/* Border between the year and the venue name */
+
+#concert-to-venue-breadcrumb-flex-parent p {
+    border-left: 2px solid black;
+}
+
+/*
+Button that toggles list and map view
+*/
+
+.list-map-button {
+    background: #232323;
+    color: var(--main-background);
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/*===== CONCERT AND VENUE LISTS =============*/
+
+/*
+    dynamically generated venue and concert data
+    we restrict its height to the height of the
+    filters section, its parent
+    overflow-y: auto creates a scroll bar for any
+    content that overflows the max height
+*/
+#concerts, #venues {
+    max-height: 100%;
+    text-align: left;
+}
+
+.overflow-scroll {
+    overflow-y: scroll;
+}
+
+.concert-info {
+    padding: 1rem;
+}
+
+.concert-info h3 {
+    margin-bottom: 1rem;
+    color: var(--concert-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.concert-info p {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.concert-info p:last-of-type {
+    padding-top: 1rem;
+}
+
+/*===== NEXT BUTTONS =======*/
+
+.confirm {
+    margin-top: 1.5rem;
+}
+
+.next {
+    border: 1px solid black;
+    background: var(--button-red);
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-family: "newnord", sans-serif;
+}
+
+/*==== VENUE DISPLAYS ====*/
+/*  The venues have a hover event on them
+    This prevents the inner element, the h3
+    from triggering the event, which would
+    result in duplicated hover behavior
+*/
+
+.venue > h3 {
+    pointer-events: none;
+}
+
+/*
+    This goes with the JS-triggered
+    animation on venue marker hover
+*/
+
+.venue {
+    transition: transform 0.3s ease-in-out, opacity 0.2s;
+}
+
+/*====== SUBMISSION LINK =====*/
+
+.submission-link {
+    background-color: #C1DFDF;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1.7rem 1rem;
+    gap: 1rem;
+    border-bottom: 2px solid black;
+}
+
+.submission-link h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.link-btn {
+    color: #FFFFFF;
+    background-color: #231F20;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 1.1rem 1.5rem 1rem 1.5rem;
+    width: fit-content;
+    text-decoration: none;
+}
+
+/*===========EXPLORE TAB =============*/
+
+.custom-options {
+    max-height: 50dvh;
+    overflow-y: scroll;
+}
+
+#custom-selector-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    gap: 1.2rem;
+    padding: 2rem 1rem;
+    font-size: 1.3rem;
+}
+
+.custom-selector, .same-as-selected, #range-selection-state {
+    font-weight: 700;
+}
+
+.selected-and-options-flex-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    background: transparent;
+    width: 50%;
+}
+
+.select-selected {
+    border: 2px solid black;
+}
+
+.select-items {
+    border-bottom: 2px solid black;
+}
+
+.select-items div {
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
+}
+
+.select-selected, .select-items div {
+    position: relative;
+    padding: 0.8rem 1rem 0.5rem 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.select-selected::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.3rem);
+    right: 0.5rem;
+    width: 0;
+    height: 0;
+    border-left-width: 0.6rem;
+    border-right-width: 0.6rem;
+    border-top-width: 0.8rem;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active::after {
+    border-top: none;
+    border-bottom-width: 0.8rem;
+    border-color: transparent transparent black transparent;
+    top: calc(50% - 0.4rem);
+}
+
+.double-border {
+    border-bottom-width: 5px;
+    border-bottom-style: double;
+}
+
+.filter-border-top {
+    border-top: 2px solid black;
+}
+
+#range-selection-state {
+    color: #067372;
+}
+
+#confirm-range-selection {
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding: 1.2rem 2.5rem 1.2em 1.2rem;
+}
+
+#confirm-range-selection::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.6rem);
+    right: 0.7rem;
+    width: 0;
+    height: 0;
+    border-left-width: 0.5rem;
+    border-bottom-width: 0.6rem;
+    border-top-width: 0.6rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+#year-range-breadcrumb {
+    font-size: 1.3rem;
+}
+
+#genre-list .genre h3 {
+    font-weight: 500;
+}
+
+/*========== MAP ===========*/
+
+#map {
+    position: relative;
+    flex: 1 0 auto;
+    /*height: calc(100dvh - 70px);*/
+    height: 100dvh;
+}
+
+
+/*
+    These are the map markers.
+ */
+
+.marker {
+    background-image: url('../img/marker-red-small.svg');
+    background-size: cover;
+    width: 30px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.y-marker {
+    background-image: url('../img/marker-red-large.svg');
+    background-size: cover;
+    width: 60px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#animation-year-output {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    z-index: 4;
+    color: var(--genre-year-output);
+    font-size: 5rem;
+    font-family: "newnord", sans-serif;
+}
+
+/* Popups */
+
+.mapboxgl-popup {
+    border: 2px solid black;
+     z-index: 2;
+}
+
+.mapboxgl-popup-content {
+     padding-bottom: 0.5rem;
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+.mapboxgl-popup-content h2 {
+    margin-bottom: 1rem;
+}
+
+.mapboxgl-popup-content p:first-of-type{
+    margin-bottom: -0.3rem;
+}
+
+/*
+    To show that the popups will not display
+    during explore mode animation.
+    Using very high-specificity selection
+    to override mapbox default.
+*/
+div.mapboxgl-canvas-container div.mapboxgl-marker.disabled {
+    cursor: not-allowed;
+}
+
+
+/*==========PROGRESS BAR =========================*/
+
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    height: 12px;
+    width: 100%;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--button-red);
+    transition: width 0.3s ease;
+}
+
+/*========= MOBILE-VIEW SINGLE-CONCERT OUTPUT =====*/
+
+.single-venue, #single-concert-div {
+    position: fixed;
+    bottom: 0;
+    width: 100dvw;
+    background: var(--main-background);
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+}
+
+/*========== FOOTER ==========*/
+
+/*
+    Footer has a logo area left and a contacts/links area right
+*/
+
+footer {
+    background: var(--header-dark);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 10rem;
+}
+
+footer ul {
+    color: white;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+/*
+Adjacent sibling selector (all li elements that immediately
+follow an li element with margin-top sets the gap between
+list items without adding a top margin to the whole list
+props to https://stackoverflow.com/questions/19254411/how-do-i-set-vertical-space-between-list-items
+*/
+
+footer ul li+li {
+    margin-top: 1.5rem;
+}
+
+/*======= MODAL =========*/
+
+#modalWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 238, 235, 0.9);
+    backdrop-filter: blur(0px);
+    opacity: 1;
+    z-index: 3;
+}
+
+#modalWrapper.hideModal {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modalWrapper.showModal {
+    opacity: 1;
+    pointer-events: all;
+    backdrop-filter: blur(1px);
+}
+
+#modalContent {
+    width: 65%;
+}
+
+#modalOptionDescriptions {
+    margin-top: 10%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 15%;
+}
+
+#modalOptionDescriptions > div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+#modalContent button {
+    position: relative;
+    background: transparent;
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.9rem 2.2rem 0.7rem 1.1rem;
+    font-family: "newnord", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#modalContent button::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-55%);
+    width: 0;
+    height: 0;
+    border-top-width: 0.6rem;
+    border-bottom-width: 0.6rem;
+    border-left-width: 0.45rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+@media screen and (min-width: 1144px) {
+    section#filters {
+        flex: 0 0 30%;
+    }
+}
+
+@media screen and (min-width: 996px) {
+    .mapboxgl-popup {
+        max-width: 339px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 995px) {
+    .select-selected {
+        padding-left: 0.5rem;
+    }
+    section#filters {
+        flex-basis: 37%;
+    }
+}
+
+@media (min-width: 996px) and (max-width: 1143px) {
+    section#filters {
+        flex-basis: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-visible {
+        display: initial;
+    }
+
+    main {
+        flex-flow: column nowrap;
+    }
+
+    section#filters {
+        border-right: none;
+        flex: 0 0 auto;
+        max-height: 100dvh;
+    }
+
+    #map {
+        flex: 1;
+        max-height: unset;
+    }
+
+    #animation-year-output {
+        font-size: 3.7rem;
+        top: 2rem;
+    }
+
+    #single-concert-div {
+        position: unset;
+        bottom: unset;
+        cursor: default;
+    }
+
+    #single-concert-div .concert-info {
+        border-bottom: none;
+    }
+
+    #modalContent {
+        max-height: 100dvh;
+        max-width: 75%;
+        padding: 1rem 0;
+    }
+
+    #modalContent h2 {
+        font-size: 1.3rem;
+    }
+
+    #modalOptionDescriptions {
+        flex-flow: column nowrap;
+        gap: 1rem;
+        margin-top: 4%;
+    }
+
+    #modalOptionDescriptions > div {
+        gap: 0.5rem;
+    }
+
+    /*#modalOptionDescriptions > div:nth-of-type(2) {*/
+    /*   padding-top: 0.5rem;*/
+    /*}*/
+}
