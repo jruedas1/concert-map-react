@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const ViewportContext = createContext();
 
 function Provider({ children }) {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(false);
     const [view, setView] = useState("map");
     const [singleVenueMode, setSingleVenueMode] = useState(false);
 
@@ -15,6 +15,7 @@ function Provider({ children }) {
                 return prev;
                 });
         }
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
