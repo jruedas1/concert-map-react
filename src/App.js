@@ -25,7 +25,8 @@ function App(){
     useEffect(()=>{
         const getVenues = async () => {
             const year = await fetchYear(confirmedYear);
-            updateVenues(year.venues);
+            updateVenues(year.venues.features);
+            console.log(year.venues.features)
         }
        if (confirmedYear) {
            getVenues();

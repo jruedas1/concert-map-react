@@ -69,7 +69,7 @@ function VenueList({ venues, onVenueClick }){
     const renderedVenues = sortedVenues.map((venue, index) => {
         return <VenueShow
             venue={venue}
-            key={venue.id}
+            key={venue.properties.id}
             onClick={()=>onVenueClick(venue)}
             onKeyDown={(e) => handleVenueKeyDown(e, index)}
             ref={(el) => (venueRefs.current[index] = el)}

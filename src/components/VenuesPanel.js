@@ -48,7 +48,7 @@ function VenuesPanel(){
             <>
                 <ChangeVenuesPrompt onClick={handleBackToVenuesClick} />
                 <YearConcertsIndicator year={confirmedYear} venue={selectedVenue} />
-                <ConcertList concerts={selectedVenue.concerts} />
+                <ConcertList concerts={selectedVenue.properties.concerts} />
             </>
           )}
       </>

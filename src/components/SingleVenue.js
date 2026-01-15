@@ -1,13 +1,13 @@
 import '../css/SingleVenue.css';
 
 function SingleVenue({ venue, onClick }){
-
+    console.log(venue)
     return (
         <div
             className="single-venue"
             onClick={onClick}
         >
-            <h3>{venue.name}</h3>
+            <h3>{venue.properties.name}</h3>
             <p>
                 {venue.address}
                 <br/>

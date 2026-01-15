@@ -6,22 +6,22 @@ const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered, isActive }
     const { setHoveredVenueId, mapContainer } = useContext(ConcertsContext);
 
     const handleVenueMouseEnter = (mapContainer) => {
-        setHoveredVenueId(venue.id);
-        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.id.toString()}']`);
+        setHoveredVenueId(venue.properties.id);
+        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.properties.id.toString()}']`);
         matchingMarker.classList.remove('marker');
         matchingMarker.classList.add('y-marker');
     }
 
     const handleVenueMouseLeave = (mapContainer) => {
         setHoveredVenueId(null);
-        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.id.toString()}']`);
+        const matchingMarker = mapContainer.querySelector(`[data-id='${venue.properties.id.toString()}']`);
         matchingMarker.classList.remove('y-marker');
         matchingMarker.classList.add('marker');
     }
 
     return (
       <div
-          id={`venue-${venue.id}`}
+          id={`venue-${venue.properties.id}`}
           role="option"
           aria-selected={isHovered || isActive}
           className={`venue ${isHovered ? "venue-hover" : ""}`}
@@ -32,7 +32,7 @@ const VenueShow = forwardRef(({ venue, onClick, onKeyDown, isHovered, isActive }
           onMouseEnter={() => handleVenueMouseEnter(mapContainer)}
           onMouseLeave={() => handleVenueMouseLeave(mapContainer)}
       >
-          {venue.name}
+          {venue.properties.name}
       </div>
     )});
 

@@ -1,16 +1,15 @@
 
 
 // Remote:
-const expressAddress = "dev.cedish.utsa.edu/devconcerts-api";
-const expressPort = 7860;
-const protocol = 'https';
-const API_ADDRESS = `${protocol}://${expressAddress}`;
-
-// local
-// const expressAddress = "localhost";
+// const expressAddress = "dev.cedish.utsa.edu/devconcerts-api";
 // const expressPort = 7860;
-// const protocol = 'http';
-// const API_ADDRESS = `${protocol}://${expressAddress}:${expressPort}`;
+// const protocol = 'https';
+// const API_ADDRESS = `${protocol}://${expressAddress}`;
+
+const expressAddress = "localhost";
+const expressPort = 7860;
+const protocol = 'http';
+const API_ADDRESS = `${protocol}://${expressAddress}:${expressPort}`;
 
 export const fetchYear = async year => {
     try {

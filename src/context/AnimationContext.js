@@ -58,7 +58,7 @@ function Provider({children}){
            const uniqueVenueIds = [... new Set(genreConcerts.map(concert => concert['venue_id']))];
            const uniqueVenues = await Promise.all(uniqueVenueIds.map(venueId => getVenue(venueId)));
            const uniqueVenueMap = uniqueVenues.reduce((acc, venue) => {
-               acc[venue.id] = venue;
+               acc[venue.properties.id] = venue;
                return acc;
            }, {});
            setUniqueVenues(uniqueVenueMap);

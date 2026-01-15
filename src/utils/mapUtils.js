@@ -17,14 +17,21 @@ export const outputVenueToMap = (map,
                                  isMobile,
                                  setSingleVenueMode
 ) => {
-    const address = venue.address;
-    const cityStateZip = `${venue.city}, TX ${venue.zip}`;
-    if (venue.longitude && venue.latitude){
+    let venueLongitude = null;
+    let venueLatitude = null;
+    if (venue.geometry) {
+        venueLongitude = venue.geometry.coordinates[0];
+        venueLatitude = venue.geometry.coordinates[1];
+    }
+
+    const address = venue.properties.address;
+    const cityStateZip = `${venue.properties.city}, TX ${venue.properties.zip}`;
+    if (venueLongitude && venueLatitude){
         const el = document.createElement('div');
         el.className = 'marker';
-        el.setAttribute('data-id', venue.id);
+        el.setAttribute('data-id', venue.properties.id);
         const venueMarker = new mapboxgl.Marker(el);
-        venueMarker.setLngLat([venue.longitude, venue.latitude]);
+        venueMarker.setLngLat([venueLongitude, venueLatitude]);
         venueMarker.addTo(map);
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -32,7 +39,7 @@ export const outputVenueToMap = (map,
             anchor: 'left'
         })
             .setHTML(`
-                            <h2>${venue.name}</h2>
+                            <h2>${venue.properties.name}</h2>
                             <p>${address}</p>
                             <p>${cityStateZip}</p>
                           `);
@@ -49,8 +56,8 @@ export const outputVenueToMap = (map,
             el.classList.remove('marker');
             el.classList.add('y-marker');
             popup.addTo(map);
-            popup.setLngLat([venue.longitude, venue.latitude]);
-            setHoveredMarkerVenueId(venue.id);
+            popup.setLngLat([venueLongitude, venueLatitude]);
+            setHoveredMarkerVenueId(venue.properties.id);
         });
 
         // Hide popup when leaving the marker
