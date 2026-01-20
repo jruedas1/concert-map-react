@@ -51,13 +51,35 @@ function Provider({children}){
         markersRef
     }
 
+    const normalizeVenue = (feature) => {
+        if (!feature) return null;
+
+        const { geometry, properties } = feature;
+
+        return {
+            id: properties.id,
+            name: properties.venue_name,
+            address: properties.address,
+            city: properties.city,
+            state: properties.state,
+            zip: properties.zip,
+            longitude: geometry?.coordinates?.[0] ?? null,
+            latitude: geometry?.coordinates?.[1] ?? null
+        };
+    };
+
+
     // this works, but it's clunky and slow compared to having all the data
     // stored in genres all at once
     useEffect(() => {
        const getUniqueVenues = async () => {
-           const uniqueVenueIds = [... new Set(genreConcerts.map(concert => concert['venue_id']))];
+           console.log(genreConcerts);
+           const uniqueVenueIds = [... new Set(genreConcerts.map(
+               feature => feature.properties.venue_id)
+               .filter(Boolean))];
            const uniqueVenues = await Promise.all(uniqueVenueIds.map(venueId => getVenue(venueId)));
-           const uniqueVenueMap = uniqueVenues.reduce((acc, venue) => {
+           const uniqueVenueMap = uniqueVenues.reduce((acc, feature) => {
+               const venue = normalizeVenue(feature);
                acc[venue.id] = venue;
                return acc;
            }, {});
@@ -85,6 +107,15 @@ function Provider({children}){
         }, 300);
         return ()=> clearTimeout(delay);
     }, [genreConcertIndex, isAnimating]);
+
+    useEffect(() => {
+        console.log("genreConcerts", genreConcerts);
+    }, [genreConcerts]);
+
+    useEffect(() => {
+        console.log("uniqueVenues", uniqueVenues);
+    }, [uniqueVenues]);
+
 
     return (
         <AnimationContext.Provider value={animation}>
