@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "prebuild": "rm -rf dist assets img index.html",
+    "prebuild": "rm -rf dist assets",
     "build": "vite build",
     "postbuild": "rm -f index.html && cp -R dist/* .",
     "lint": "eslint concert-map-react",
