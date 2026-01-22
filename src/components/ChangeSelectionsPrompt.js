@@ -24,7 +24,7 @@ function ChangeSelectionsPrompt({ onClick, divId }){
                  role="button"
                  aria-label="Change Selections"
             >
-                <img src="/img/left-pointing-arrow.svg" alt="arrow pointing left"/>
+                <img src={`${import.meta.env.BASE_URL}img/left-pointing-arrow.svg`} alt="arrow pointing left"/>
                 <p className="edit">Change Selections</p>
             </div>
             {isMobile && <Button secondary rounded onClick={handleListMapButtonClick}>

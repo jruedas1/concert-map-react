@@ -30,7 +30,12 @@ keys.js
 
 # Vite config files
 eslint.config.js
+
 README.md
 
 # Generated source files
 package-lock.json
+assets
+img
+
+*/__pycache__/*

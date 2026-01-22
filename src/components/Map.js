@@ -64,7 +64,11 @@ function Map({ venues, interactionMode }){
     useEffect(() => {
         if (mapRef.current && genreConcerts?.length > 0) {
             const concert = genreConcerts[genreConcertIndex];
-            const venueId = concert["venue_id"];
+            const venueId = concert.properties? concert.properties.venue_id : concert["venue_id"];
+            if (!venueId) {
+                console.warn("Concert missing venue_id: ", concert);
+                return;
+            }
             const venue = uniqueVenues[venueId];
             const venueMarker = findMarkerById(mapRef.current, venueId);
             findAndDeHighlightMarkers(mapRef.current);

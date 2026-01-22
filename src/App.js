@@ -25,7 +25,17 @@ function App(){
     useEffect(()=>{
         const getVenues = async () => {
             const year = await fetchYear(confirmedYear);
-            updateVenues(year.venues);
+            updateVenues(year.venues.features.map(v => ({
+                ...v,
+                longitude: v.geometry ? v.geometry.coordinates[0] : null,
+                latitude: v.geometry ? v.geometry.coordinates[1] : null,
+                id: v.properties.id,
+                name: v.properties.name,
+                address: v.properties.address,
+                city: v.properties.city,
+                zip: v.properties.zip,
+                concerts: v.properties.concerts
+            })));
         }
        if (confirmedYear) {
            getVenues();
