@@ -23,11 +23,11 @@ function GenreList({ genres, handleGenreClick, selectedGenre }) {
         }
     }, [focusedIndex]);
 
-    useEffect(() => {
-        if (genres.length > 0) {
-            setFocusedIndex(0);
-        }
-    }, [genres]);
+    // useEffect(() => {
+    //     if (genres.length > 0) {
+    //         setFocusedIndex(0);
+    //     }
+    // }, [genres]);
 
 
     const renderedGenres = genres.map((genre, index) => (
