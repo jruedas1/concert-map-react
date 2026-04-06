@@ -27,11 +27,47 @@
 #shareConcertModalTitle {
     padding: 1.75rem 1rem 1.25rem 1rem;
     border-bottom: 1px solid lightgrey;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
+
 
 #shareConcertModalTitle h3 {
    font-weight: 850;
-    font-size: 1.5rem;
+   font-size: 1.5rem;
+}
+
+#shareConcertModalTitle button {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
+    opacity: 0.5;
+}
+
+#shareConcertModalTitle button:hover {
+    opacity: 1;
+}
+
+#shareConcertModalTitle button:before, #shareConcertModalTitle button:after {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    content: '';
+    height: 1.6rem;
+    width: 0.15rem;
+    background-color: #000000;
+}
+
+#shareConcertModalTitle button:before {
+    transform: rotate(45deg);
+}
+
+#shareConcertModalTitle button:after {
+    transform: rotate(-45deg);
 }
 
 .modalBody {
@@ -45,4 +81,19 @@
     flex: 1;
     border: none;
 
+}
+
+#shareConcertModalClose {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    padding: 1rem;
+    border-top: 1px solid lightgrey;
+}
+
+#shareConcertModalClose button {
+    border: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.03rem;
 }

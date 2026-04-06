@@ -1,5 +1,6 @@
 import '../css/ShareConcertModal.css'
 import ReactDOM from "react-dom";
+import Button from "./Button";
 
 function ShareConcertModal({ onClose }){
     return ReactDOM.createPortal(
@@ -7,6 +8,8 @@ function ShareConcertModal({ onClose }){
             <div id="shareConcertModalContent">
                 <div id="shareConcertModalTitle">
                     <h3>ADD A MISSING CONCERT</h3>
+                    <button>
+                    </button>
                 </div>
                 <div className='modalBody'>
                     <iframe
@@ -16,6 +19,11 @@ function ShareConcertModal({ onClose }){
                         // style={{ width: "1px", minWidth: "100%" }}
                         allow="geolocation; microphone; camera"
                     />
+                </div>
+                <div id="shareConcertModalClose">
+                    <Button primary rounded onClick={onClose}>
+                        Close
+                    </Button>
                 </div>
             </div>
 
