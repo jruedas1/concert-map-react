@@ -1,7 +1,14 @@
+import {useState} from "react";
 import ConcertShow from "./ConcertShow.js";
 import Button from "./Button";
+import ShareConcertModal from "./ShareConcertModal";
 
 function ConcertList({concerts}) {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClick = () => setShowModal(true);
+
+    const handleClose = () => setShowModal(false);
 
     const renderedConcerts = concerts.map((concert) => {
 
@@ -14,9 +21,10 @@ function ConcertList({concerts}) {
             {renderedConcerts}
             <div className="share-concert">
                 <h3>Missing a concert?</h3>
-                <a>
+                <Button className='plain' onClick={handleClick}>
                     CONTRIBUTE HERE
-                </a>
+                </Button>
+                {showModal && <ShareConcertModal onClose={handleClose}/>}
             </div>
         </div>
     )

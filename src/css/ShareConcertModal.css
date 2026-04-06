@@ -1,0 +1,48 @@
+.shareConcertModalWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 238, 235, 0.8);
+    z-index: 4;
+}
+
+#shareConcertModalContent {
+    background-color: white;
+    width: 65%;
+    height: 65%;
+    z-index: 4;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+}
+
+#shareConcertModalTitle {
+    padding: 1.75rem 1rem 1.25rem 1rem;
+    border-bottom: 1px solid lightgrey;
+}
+
+#shareConcertModalTitle h3 {
+   font-weight: 850;
+    font-size: 1.5rem;
+}
+
+.modalBody {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+}
+
+.webform-share-iframe {
+    width: 100%;
+    flex: 1;
+    border: none;
+
+}
