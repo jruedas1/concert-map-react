@@ -3,6 +3,7 @@ import '../css/Button.css';
 
 function Button({
     children,
+    plain,
     primary,
     secondary,
     rounded,
@@ -11,6 +12,7 @@ function Button({
 }){
     const classes = classnames(
         className, {
+        'plain': plain,
         'primary' : primary,
         'secondary' : secondary,
         'rounded' : rounded
