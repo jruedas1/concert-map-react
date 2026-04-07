@@ -5,10 +5,17 @@ import ShareConcertModal from "./ShareConcertModal";
 
 function ConcertList({concerts}) {
     const [showModal, setShowModal] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
 
     const handleClick = () => setShowModal(true);
 
-    const handleClose = () => setShowModal(false);
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setShowModal(false);
+            setIsClosing(false);
+        }, 300);
+    }
 
     const renderedConcerts = concerts.map((concert) => {
 
@@ -24,7 +31,7 @@ function ConcertList({concerts}) {
                 <Button className='plain' onClick={handleClick}>
                     CONTRIBUTE HERE
                 </Button>
-                {showModal && <ShareConcertModal onClose={handleClose}/>}
+                {showModal && <ShareConcertModal onClose={handleClose} isClosing={isClosing}/>}
             </div>
         </div>
     )

@@ -1,3 +1,25 @@
+@keyframes modalOpenIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalCloseOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px); /* moves up as it fades */
+    }
+}
+
 .shareConcertModalWrapper {
     position: absolute;
     top: 0;
@@ -11,6 +33,11 @@
     justify-content: center;
     background-color: rgba(241, 238, 235, 0.8);
     z-index: 4;
+    animation: modalOpenIn 0.3s ease forwards;
+}
+
+.shareConcertModalWrapper.closing {
+    animation: modalCloseOut 0.3s ease forwards;
 }
 
 #shareConcertModalContent {

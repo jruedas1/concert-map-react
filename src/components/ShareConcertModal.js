@@ -2,9 +2,11 @@ import '../css/ShareConcertModal.css'
 import ReactDOM from "react-dom";
 import Button from "./Button";
 
-function ShareConcertModal({ onClose }){
+function ShareConcertModal({ onClose, isClosing }){
     return ReactDOM.createPortal(
-        <div className='shareConcertModalWrapper' onClick={onClose} >
+        <div className={`shareConcertModalWrapper ${isClosing ? 'closing' : ''}`}
+             onClick={onClose}
+        >
             <div id="shareConcertModalContent">
                 <div id="shareConcertModalTitle">
                     <h3>ADD A MISSING CONCERT</h3>
