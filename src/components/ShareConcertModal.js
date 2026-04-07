@@ -16,7 +16,6 @@ function ShareConcertModal({ onClose }){
                         src="https://cedish.utsa.edu/sounds/webform/add_a_missing_concert/share/iframe-resizer/4.2.10"
                         title="Add a Missing Concert"
                         className="webform-share-iframe"
-                        // style={{ width: "1px", minWidth: "100%" }}
                         allow="geolocation; microphone; camera"
                     />
                 </div>

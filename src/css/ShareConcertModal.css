@@ -15,8 +15,9 @@
 
 #shareConcertModalContent {
     background-color: white;
-    width: 65%;
-    height: 65%;
+    width: 70%;
+    height: 80%;
+    max-width: 900px;
     z-index: 4;
     border-radius: 8px;
     display: flex;
@@ -96,4 +97,25 @@
     font-weight: 500;
     font-size: 1.1rem;
     letter-spacing: 0.03rem;
+}
+
+@media screen and (max-width: 992px) {
+    #shareConcertModalContent {
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  #shareConcertModalContent {
+      width: 80%;
+      height: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    #shareConcertModalContent {
+        width: 97%;
+        height: 97%;
+    }
 }
