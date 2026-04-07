@@ -8,13 +8,21 @@ import ConcertList from "./ConcertList.js";
 
 function ExploreConcertDisplayPanel({ onChangeSelection }) {
     const { selectedGenre, startYear, endYear } = useContext(GenresContext);
-    const { genreConcerts, genreConcertIndex } = useContext(AnimationContext);
+    const { genreConcerts, genreConcertIndex, isAnimating } = useContext(AnimationContext);
     const { isMobile, view } = useContext(ViewportContext);
 
     const visibleConcerts = genreConcerts
         .slice(0, genreConcertIndex + 1)
         .slice()
         .reverse();
+
+    // this is to fix an async gap where the component has rendered
+    // We don't want the Missing a Concert? div showing up until
+    // the animation is done running ... but if we hitch it
+    // only to "isAnimating" it will show for a split second
+    // when the component renders but before the animation flag
+    // has flipped to true
+    const animationPending = isAnimating || genreConcertIndex === -1;
 
     return (
       <>
@@ -24,7 +32,8 @@ function ExploreConcertDisplayPanel({ onChangeSelection }) {
             startYear={startYear}
             endYear={endYear}
         />
-        {(!isMobile || (isMobile && view === "list")) &&  <ConcertList concerts={visibleConcerts} />}
+        {(!isMobile || (isMobile && view === "list")) &&
+            <ConcertList concerts={visibleConcerts} isAnimating={animationPending} />}
       </>
     );
 }

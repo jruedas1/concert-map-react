@@ -3,7 +3,7 @@ import ConcertShow from "./ConcertShow.js";
 import Button from "./Button";
 import ShareConcertModal from "./ShareConcertModal";
 
-function ConcertList({concerts}) {
+function ConcertList({ concerts, isAnimating=false }) {
     const [showModal, setShowModal] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
 
@@ -26,6 +26,7 @@ function ConcertList({concerts}) {
     return (
         <div id="concerts" className="overflow-scroll">
             {renderedConcerts}
+            {!isAnimating && (
             <div className="share-concert">
                 <h3>Missing a concert?</h3>
                 <Button className='plain' onClick={handleClick}>
@@ -33,6 +34,7 @@ function ConcertList({concerts}) {
                 </Button>
                 {showModal && <ShareConcertModal onClose={handleClose} isClosing={isClosing}/>}
             </div>
+            )}
         </div>
     )
 }
